@@ -6,9 +6,11 @@ bibliography: manuscript_citations.bib
 format: 
   html:
     toc: true
+    keep-tex: true
     theme: cosmo
   pdf:
     toc: true
+    keep-tex: true
 execute:
   echo: false
   warning: false
