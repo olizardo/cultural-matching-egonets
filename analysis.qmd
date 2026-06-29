@@ -38,7 +38,7 @@ df_period <- readRDS(here("data", "processed", "adjacent_waves.rds")) %>%
     persisted = as.numeric(tie_persist > 0),
     female_factor = factor(female, levels = c(0, 1), labels = c("Men", "Women")),
     alterfemale_factor = factor(alterfemale, levels = c(0, 1), labels = c("Men", "Women")),
-    close_factor = factor(close, levels = c(1, 2, 3), labels = c("Not Close", "Somewhat Close", "Close")),
+    close_factor = factor(close, levels = c(3, 2, 1), labels = c("Not Close", "Somewhat Close", "Close")),
     same_dorm = as.numeric(reltype == 3 | reltype == 4),
     is_friend = as.numeric(reltype == 6),
     race_homophily = case_when(
