@@ -231,6 +231,8 @@ ggsave(here::here("Plots", "interaction_closeness.png"), plot = p_int, width = 1
 p_int
 ```
 As the marginal effects plot clearly demonstrates, the role of cultural matching varies substantially by subjective closeness. For "Not Close" ties (the steepest slopes), an increase in shared cultural tastes—whether measured through closed-form domains or open-ended activities—dramatically increases the probability of tie persistence. Conversely, for ties that are already "Close," the slope is essentially flat. This suggests that shared cultural tastes provide critical scaffolding that helps weak ties survive, whereas strong ties are resilient to decay regardless of cultural matching. Similarly, network opacity exerts its most severe negative effect on ties that are not subjectively close.
+\newpage
+
 ## Appendix: Descriptive Statistics
 ```{r}
 #| label: tbl-descriptives-cont
