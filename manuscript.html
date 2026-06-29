@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Omar Lizardo et al.">
+<meta name="dcterms.date" content="2026-06-28">
+
+<title>Cultural Matching and the Persistence of Social Ties</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="manuscript_files/libs/clipboard/clipboard.min.js"></script>
+<script src="manuscript_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="manuscript_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="manuscript_files/libs/quarto-html/popper.min.js"></script>
+<script src="manuscript_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="manuscript_files/libs/quarto-html/anchor.min.js"></script>
+<link href="manuscript_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="manuscript_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="manuscript_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="manuscript_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="manuscript_files/libs/bootstrap/bootstrap-67270d1595a62d14f123c043d4fb2f18.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#theoretical-framework" id="toc-theoretical-framework" class="nav-link" data-scroll-target="#theoretical-framework">Theoretical Framework</a>
+  <ul class="collapse">
+  <li><a href="#tastes-and-social-networks-two-perspectives" id="toc-tastes-and-social-networks-two-perspectives" class="nav-link" data-scroll-target="#tastes-and-social-networks-two-perspectives">Tastes and Social Networks: Two Perspectives</a></li>
+  <li><a href="#cultural-matching-and-tie-persistence" id="toc-cultural-matching-and-tie-persistence" class="nav-link" data-scroll-target="#cultural-matching-and-tie-persistence">Cultural Matching and Tie Persistence</a></li>
+  <li><a href="#network-opacity" id="toc-network-opacity" class="nav-link" data-scroll-target="#network-opacity">Network Opacity</a></li>
+  </ul></li>
+  <li><a href="#data-and-methods" id="toc-data-and-methods" class="nav-link" data-scroll-target="#data-and-methods">Data and Methods</a>
+  <ul class="collapse">
+  <li><a href="#study-waves" id="toc-study-waves" class="nav-link" data-scroll-target="#study-waves">Study Waves</a></li>
+  <li><a href="#measures" id="toc-measures" class="nav-link" data-scroll-target="#measures">Measures</a></li>
+  <li><a href="#methodological-approach-and-modeling-strategy" id="toc-methodological-approach-and-modeling-strategy" class="nav-link" data-scroll-target="#methodological-approach-and-modeling-strategy">Methodological Approach and Modeling Strategy</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#baseline-models-overall-cultural-matching" id="toc-baseline-models-overall-cultural-matching" class="nav-link" data-scroll-target="#baseline-models-overall-cultural-matching">Baseline Models: Overall Cultural Matching</a></li>
+  <li><a href="#network-opacity-1" id="toc-network-opacity-1" class="nav-link" data-scroll-target="#network-opacity-1">Network Opacity</a></li>
+  <li><a href="#model-fit-and-comparison" id="toc-model-fit-and-comparison" class="nav-link" data-scroll-target="#model-fit-and-comparison">Model Fit and Comparison</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="manuscript.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Cultural Matching and the Persistence of Social Ties</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Omar Lizardo et al. </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 28, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>A central puzzle in the sociology of culture and social networks is the co-evolution of social ties and cultural tastes. Traditional sociological models of taste formation posit that an individual’s cultural profile is largely a product of their current social network configuration. Tastes are assumed to diffuse through existing homophilous ties, which are themselves structured by socio-demographic similarity—“status homophily” (<span class="citation" data-cites="lazarsfeld1954 mcpherson2001">(<a href="#ref-lazarsfeld1954" role="doc-biblioref">Lazarsfeld and Merton 1954</a>; <a href="#ref-mcpherson2001" role="doc-biblioref">McPherson et al. 2001</a>)</span>). Under this view, “birds of a feather flock together,” and due to this mutual flocking, they end up consuming the same cultural goods (<span class="citation" data-cites="mark1998b mark2003">(<a href="#ref-mark1998b" role="doc-biblioref">Mark 1998b</a>, <a href="#ref-mark2003" role="doc-biblioref">2003</a>)</span>). Tastes are construed as highly malleable, “thin” contents liable to shift whenever the surrounding network ties change.</p>
+<p>Yet, longitudinal network research reveals that personal networks are constantly in flux, with ties constantly being added, modified, and deleted (<span class="citation" data-cites="burt2000 burt2002 wellman1997">(<a href="#ref-burt2000" role="doc-biblioref">Burt 2000</a>, <a href="#ref-burt2002" role="doc-biblioref">2002</a>; <a href="#ref-wellman1997" role="doc-biblioref">Wellman et al. 1997</a>)</span>). This empirical fact of network volatility raises a major question: if networks are unstable and tastes are merely thin, network-contingent contents, how do we account for the durable, resilient cultural profiles that individuals maintain over time (<span class="citation" data-cites="bourdieu1984 holt1998">(<a href="#ref-bourdieu1984" role="doc-biblioref">Bourdieu 1984</a>; <a href="#ref-holt1998" role="doc-biblioref">Holt 1998</a>)</span>)?</p>
+<p>In this paper, we develop and test a <strong>cultural matching model</strong> of tie persistence. We propose that instead of tastes merely adapting to match pre-existing networks, pre-existing cultural dispositions serve as an active “social glue” that determines which network ties survive and which dissolve. Under this model, dyadic cultural matching (commonalities in tastes and activities) increases the over-time stability and cognitive salience of social ties, net of usual dyadic determinants such as subjective closeness and tie duration.</p>
+<p>Using rich longitudinal ego-network data from the NetSense study, we track the persistence of social ties across multiple college-year transitions. To isolate peer dynamics, we restrict our focus to non-kin, on-campus student ties. We unpack this cultural matching mechanism in two ways. First, we establish the baseline protective effect of aggregate cultural matching on tie persistence. Second, we explore the role of “network opacity”—the degree to which an ego lacks knowledge of their alter’s preferences (indicated by “Don’t Know” responses)—as an independent predictor of tie decay.</p>
+</section>
+<section id="theoretical-framework" class="level2">
+<h2 class="anchored" data-anchor-id="theoretical-framework">Theoretical Framework</h2>
+<section id="tastes-and-social-networks-two-perspectives" class="level3">
+<h3 class="anchored" data-anchor-id="tastes-and-social-networks-two-perspectives">Tastes and Social Networks: Two Perspectives</h3>
+<p>The relationship between cultural tastes and social networks has been conceptualized in two contrasting ways in sociological theory. The <strong>network transmission perspective</strong> views tastes as malleable, network-contingent contents (<span class="citation" data-cites="erickson1988 erickson1996 mark1998a mark2003">(<a href="#ref-erickson1988" role="doc-biblioref">Erickson 1988</a>, <a href="#ref-erickson1996" role="doc-biblioref">1996</a>; <a href="#ref-mark1998a" role="doc-biblioref">Mark 1998a</a>, <a href="#ref-mark2003" role="doc-biblioref">2003</a>)</span>). In this view, social ties are the “pipes” or conduits through which cultural practices diffuse (<span class="citation" data-cites="borgatti2005 carley1991">(<a href="#ref-borgatti2005" role="doc-biblioref">Borgatti 2005</a>; <a href="#ref-carley1991" role="doc-biblioref">Carley 1991</a>)</span>). Tastes are learned, adopted, and abandoned based on local bandwagon imitation within an actor’s immediate ego network (<span class="citation" data-cites="mark2003">(<a href="#ref-mark2003" role="doc-biblioref">Mark 2003</a>)</span>). Because personal networks exhibit substantial over-time volatility—with 30% to 60% turnover annually in most personal networks (<span class="citation" data-cites="morgan1997 suitor1997">(<a href="#ref-morgan1997" role="doc-biblioref">Morgan et al. 1997</a>; <a href="#ref-suitor1997" role="doc-biblioref">Suitor et al. 1997</a>)</span>)—the network transmission perspective implies that individual tastes must exhibit corresponding volatility.</p>
+<p>In contrast, the <strong>cultural capital perspective</strong> conceptualizes tastes as highly durable, embodied dispositions reaped from early socialization (<span class="citation" data-cites="bourdieu1984 bourdieu1990 holt1997 holt1998">(<a href="#ref-bourdieu1984" role="doc-biblioref">Bourdieu 1984</a>, <a href="#ref-bourdieu1990" role="doc-biblioref">1990</a>; <a href="#ref-holt1997" role="doc-biblioref">Holt 1997</a>, <a href="#ref-holt1998" role="doc-biblioref">1998</a>)</span>). Tastes are part of a person’s embodied cultural capital, encoded in memory traces, habitual tendencies, and cognitive schemas that are highly resilient and resistant to short-term network fluctuations (<span class="citation" data-cites="bourdieu2000 lizardo2006">(<a href="#ref-bourdieu2000" role="doc-biblioref">Bourdieu 2000</a>; <a href="#ref-lizardo2006" role="doc-biblioref">Lizardo 2006</a>)</span>). If tastes are durable and personal networks are volatile, it is highly probable that tastes serve as <em>drivers</em> of network connections rather than being exclusively determined by them (<span class="citation" data-cites="lizardo2006">(<a href="#ref-lizardo2006" role="doc-biblioref">Lizardo 2006</a>)</span>).</p>
+<p>This leads to the concept of <strong>choice homophily</strong> or cultural matching: new social connections are selected, and existing connections are maintained, based on pre-existing cultural compatibility (<span class="citation" data-cites="lazarsfeld1954 werner1979">(<a href="#ref-lazarsfeld1954" role="doc-biblioref">Lazarsfeld and Merton 1954</a>; <a href="#ref-werner1979" role="doc-biblioref">Werner and Parmelee 1979</a>)</span>). In other words, socio-demographic homophily may frequently operate as a <em>by-product</em> of active contact selection keyed around cultural alignment, rather than homophily acting as an exogenous structural constraint (<span class="citation" data-cites="carley1991 dimaggio1987">(<a href="#ref-carley1991" role="doc-biblioref">Carley 1991</a>; <a href="#ref-dimaggio1987" role="doc-biblioref">DiMaggio 1987</a>)</span>).</p>
+</section>
+<section id="cultural-matching-and-tie-persistence" class="level3">
+<h3 class="anchored" data-anchor-id="cultural-matching-and-tie-persistence">Cultural Matching and Tie Persistence</h3>
+<p>A major challenge for any newly formed social relationship is what Burt (<span class="citation" data-cites="burt2000">(<a href="#ref-burt2000" role="doc-biblioref">Burt 2000</a>)</span>), drawing on Stinchcombe (<span class="citation" data-cites="stinchcombe1965">(<a href="#ref-stinchcombe1965" role="doc-biblioref">Stinchcombe 1965</a>)</span>), refers to as the <strong>“liability of newness.”</strong> Newly formed dyadic ties are fragile and exhibit a high baseline hazard of decay (“tie decay”), which steeply declines as a relationship matures and ripens into close friendship. What stabilizes a tie and helps it overcome this liability of newness?</p>
+<p>While classic network models emphasize structural factors (such as network constraint or multiplexity) and dyadic factors (such as subjective closeness), we propose that <strong>cultural matching</strong> serves as a vital stabilizing mechanism. Shared tastes and cultural practices provide a common cognitive and behavioral baseline that facilitates smooth, low-cost social interaction (<span class="citation" data-cites="collins2004 dimaggio1987">(<a href="#ref-collins2004" role="doc-biblioref">Collins 2004</a>; <a href="#ref-dimaggio1987" role="doc-biblioref">DiMaggio 1987</a>)</span>). When ego and alter share cultural dispositions, they can engage in shared activities and coordinate behavior with minimal friction. Over time, this cultural alignment increases the cognitive salience of the alter, rendering the tie resistant to decay and facilitating its retention in the ego’s active network (<span class="citation" data-cites="burt2000">(<a href="#ref-burt2000" role="doc-biblioref">Burt 2000</a>)</span>).</p>
+<p>Therefore, we expect that commonalities in cultural tastes and leisure practices will significantly reduce the hazard of tie decay, net of subjective closeness and structural controls (<strong>The Baseline Matching Hypothesis</strong>).</p>
+</section>
+<section id="network-opacity" class="level3">
+<h3 class="anchored" data-anchor-id="network-opacity">Network Opacity</h3>
+<p>Finally, we introduce the concept of <strong>network opacity</strong>. If shared cultural knowledge stabilizes ties, then a lack of mutual cultural knowledge—network opacity—is a diagnostic signal of relationship precarity. When an ego reports “Don’t Know” regarding an alter’s preferences across multiple cultural domains, this indicates a lack of conversational intimacy and shared experiences, which should independently predict a higher hazard of tie dissolution (<span class="citation" data-cites="burt2002 wellman1997">(<a href="#ref-burt2002" role="doc-biblioref">Burt 2002</a>; <a href="#ref-wellman1997" role="doc-biblioref">Wellman et al. 1997</a>)</span>). We test both the main effect of network opacity on tie decay and whether opacity moderates the protective effect of known cultural matches.</p>
+</section>
+</section>
+<section id="data-and-methods" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-methods">Data and Methods</h2>
+<p>We collected information on the cultural habits of ego-alter pairs using both a series of closed-form domain questions and open-ended activity nominations. For the closed-form items, egos were asked to rate both their own and their alters’ level of interest across six broad cultural and leisure domains: music, movies, books, sports, games, and outdoor activities. For the open-ended items, respondents freely nominated up to five leisure activities they enjoyed, and then indicated whether their alter also engaged in each nominated activity.</p>
+<section id="study-waves" class="level3">
+<h3 class="anchored" data-anchor-id="study-waves">Study Waves</h3>
+<p>The NetSense study is a longitudinal survey of college students collected over multiple waves. For this analysis of tie persistence, we pool data across adjacent waves to construct a person-period dataset. To isolate peer dynamics, we restrict our sample to non-kin, on-campus ties (i.e., alters who are also students at Notre Dame). Specifically, we focus on transitions between: - <strong>Wave 1 to Wave 2</strong>: Capturing tie dynamics over the first year of college. - <strong>Wave 2 to Wave 5</strong>: Spanning the middle years of the college experience (approximately a 3-year gap). - <strong>Wave 5 to Wave 6</strong>: Capturing the transition through the final year and toward graduation.</p>
+</section>
+<section id="measures" class="level3">
+<h3 class="anchored" data-anchor-id="measures">Measures</h3>
+<p><strong>Dependent Variable</strong> - <em>Tie Persistence</em>: A binary indicator taking a value of 1 if a social tie reported by an ego in a baseline wave (e.g., Wave 1) is still present in the subsequent wave (e.g., Wave 2), and 0 if the tie has dissolved (i.e., the alter is no longer listed in the ego’s network).</p>
+<p><strong>Independent Variables</strong> - <em>Closed-Form Cultural Matching</em>: A count variable (ranging from 0 to 6) indicating the number of closed-form cultural domains in which the ego and alter share similar tastes or participation levels. The domains assessed include music, movies, books, sports, games, and outdoor activities. - <em>Open-Ended Activity Matching</em>: A count variable (ranging from 0 to 5) capturing the number of shared open-ended activity nominations. - <em>Network Opacity</em>: A count variable (ranging from 0 to 6) measuring the number of cultural domains for which the ego responded “Don’t Know” regarding their alter’s preferences.</p>
+<p><strong>Control Variables</strong> - <em>Tie Characteristics</em>: We control for the subjective closeness of the relationship (<code>Not Close</code>, <code>Somewhat Close</code>, <code>Close</code>), and the duration of the tie. - <em>Demographics</em>: Ego and alter gender (<code>Female</code> / <code>Male</code>) and their interaction to account for homophily. - <em>Network Structure</em>: Variables capturing properties of the ego’s broader network, including the proportion of kin (<code>kinnet</code>), the proportion of friends (<code>friendnet</code>), and the mean closeness of the network (<code>meanclose</code>). - <em>Time Period</em>: Dummy variables for the specific wave intervals (Wave 1-2, Wave 2-5, Wave 5-6) to account for differing baseline rates of tie dissolution over different time gaps.</p>
+</section>
+<section id="methodological-approach-and-modeling-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="methodological-approach-and-modeling-strategy">Methodological Approach and Modeling Strategy</h3>
+<p>We adopt a unified <strong>Discrete-Time Survival Analysis</strong> (event history modeling) approach. To accomplish this, we structured the longitudinal network data into a person-period format, pooling all adjacent wave transitions (Wave 1 to 2, Wave 2 to 5, and Wave 5 to 6) into a single dataset. We model the probability of tie persistence (vs.&nbsp;dissolution) as a function of cultural matching and network opacity using mixed-effects logistic regression (<code>lme4::glmer</code> in R).</p>
+<p>This updated modeling strategy introduces several key improvements: 1. <strong>Simultaneous Estimation</strong>: By modeling all waves simultaneously, we gain statistical power and provide a generalized estimate of tie persistence over the entire study period. 2. <strong>Baseline Hazard Modeling</strong>: We include fixed effects for the specific wave periods (<code>period</code>) to flexibly control for the baseline hazard of tie dissolution, acknowledging that tie decay rates differ between the 1-year (Wave 1-2, Wave 5-6) and 3-year (Wave 2-5) intervals. 3. <strong>Accounting for Clustering</strong>: We include a random intercept for each ego (<code>1 | egoid</code>) to account for the unobserved heterogeneity and non-independence of multiple alter ties nested within the same ego. 4. <strong>Predictive Margins</strong>: To facilitate interpretation of the logistic regression coefficients, we use the <code>marginaleffects</code> package to compute and visualize predicted probabilities of tie persistence across the range of our variables of interest.</p>
+</section>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="baseline-models-overall-cultural-matching" class="level3">
+<h3 class="anchored" data-anchor-id="baseline-models-overall-cultural-matching">Baseline Models: Overall Cultural Matching</h3>
+<p>Our initial models assess the effect of cultural matching on tie persistence. Model 1 includes only closed-form cultural matches. Model 2 adds the count of shared open-ended activities to test whether these actively recalled commonalities provide additional explanatory power. The table below presents the odds ratios for these baseline models.</p>
+<div class="cell">
+<div id="tbl-baseline" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-baseline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Odds Ratios for Tie Persistence (Baseline Models)
+</figcaption>
+<div aria-describedby="tbl-baseline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_t8vs7bz0cjw49cxeq53w = TinyTable.createTableFunctions("tinytable_t8vs7bz0cjw49cxeq53w");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '32', j: 2 }, { i: '32', j: 3 } ], css_id: 'tinytable_css_71zdmcqy6w050gt2q38o',}, 
+          { positions: [ { i: '28', j: 2 }, { i: '28', j: 3 } ], css_id: 'tinytable_css_ng25ez7bbjfkpjli466z',}, 
+          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 }, { i: '7', j: 2 }, { i: '8', j: 2 }, { i: '9', j: 2 }, { i: '10', j: 2 }, { i: '11', j: 2 }, { i: '12', j: 2 }, { i: '13', j: 2 }, { i: '14', j: 2 }, { i: '15', j: 2 }, { i: '16', j: 2 }, { i: '17', j: 2 }, { i: '18', j: 2 }, { i: '19', j: 2 }, { i: '20', j: 2 }, { i: '21', j: 2 }, { i: '22', j: 2 }, { i: '23', j: 2 }, { i: '24', j: 2 }, { i: '25', j: 2 }, { i: '26', j: 2 }, { i: '27', j: 2 }, { i: '29', j: 2 }, { i: '30', j: 2 }, { i: '31', j: 2 }, { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 }, { i: '12', j: 3 }, { i: '13', j: 3 }, { i: '14', j: 3 }, { i: '15', j: 3 }, { i: '16', j: 3 }, { i: '17', j: 3 }, { i: '18', j: 3 }, { i: '19', j: 3 }, { i: '20', j: 3 }, { i: '21', j: 3 }, { i: '22', j: 3 }, { i: '23', j: 3 }, { i: '24', j: 3 }, { i: '25', j: 3 }, { i: '26', j: 3 }, { i: '27', j: 3 }, { i: '29', j: 3 }, { i: '30', j: 3 }, { i: '31', j: 3 } ], css_id: 'tinytable_css_guy8lwhfdv1fmv8h2n5a',}, 
+          { positions: [ { i: '0', j: 2 }, { i: '0', j: 3 } ], css_id: 'tinytable_css_pkpmgpclj1ir6x1eavog',}, 
+          { positions: [ { i: '32', j: 1 } ], css_id: 'tinytable_css_31q5to68x7j5mfaeovhz',}, 
+          { positions: [ { i: '28', j: 1 } ], css_id: 'tinytable_css_uzx9m0thogq9yrpgtaoz',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 }, { i: '7', j: 1 }, { i: '8', j: 1 }, { i: '9', j: 1 }, { i: '10', j: 1 }, { i: '11', j: 1 }, { i: '12', j: 1 }, { i: '13', j: 1 }, { i: '14', j: 1 }, { i: '15', j: 1 }, { i: '16', j: 1 }, { i: '17', j: 1 }, { i: '18', j: 1 }, { i: '19', j: 1 }, { i: '20', j: 1 }, { i: '21', j: 1 }, { i: '22', j: 1 }, { i: '23', j: 1 }, { i: '24', j: 1 }, { i: '25', j: 1 }, { i: '26', j: 1 }, { i: '27', j: 1 }, { i: '29', j: 1 }, { i: '30', j: 1 }, { i: '31', j: 1 } ], css_id: 'tinytable_css_og3zv33er9eubpzhekw8',}, 
+          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_8dgmypvp5wtb27ofld5v',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_t8vs7bz0cjw49cxeq53w.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_t8vs7bz0cjw49cxeq53w td.tinytable_css_71zdmcqy6w050gt2q38o, #tinytable_t8vs7bz0cjw49cxeq53w th.tinytable_css_71zdmcqy6w050gt2q38o {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
+    #tinytable_t8vs7bz0cjw49cxeq53w td.tinytable_css_ng25ez7bbjfkpjli466z, #tinytable_t8vs7bz0cjw49cxeq53w th.tinytable_css_ng25ez7bbjfkpjli466z {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
+    #tinytable_t8vs7bz0cjw49cxeq53w td.tinytable_css_guy8lwhfdv1fmv8h2n5a, #tinytable_t8vs7bz0cjw49cxeq53w th.tinytable_css_guy8lwhfdv1fmv8h2n5a { text-align: center }
+    #tinytable_t8vs7bz0cjw49cxeq53w td.tinytable_css_pkpmgpclj1ir6x1eavog, #tinytable_t8vs7bz0cjw49cxeq53w th.tinytable_css_pkpmgpclj1ir6x1eavog {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
+    #tinytable_t8vs7bz0cjw49cxeq53w td.tinytable_css_31q5to68x7j5mfaeovhz, #tinytable_t8vs7bz0cjw49cxeq53w th.tinytable_css_31q5to68x7j5mfaeovhz {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
+    #tinytable_t8vs7bz0cjw49cxeq53w td.tinytable_css_uzx9m0thogq9yrpgtaoz, #tinytable_t8vs7bz0cjw49cxeq53w th.tinytable_css_uzx9m0thogq9yrpgtaoz {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
+    #tinytable_t8vs7bz0cjw49cxeq53w td.tinytable_css_og3zv33er9eubpzhekw8, #tinytable_t8vs7bz0cjw49cxeq53w th.tinytable_css_og3zv33er9eubpzhekw8 { text-align: left }
+    #tinytable_t8vs7bz0cjw49cxeq53w td.tinytable_css_8dgmypvp5wtb27ofld5v, #tinytable_t8vs7bz0cjw49cxeq53w th.tinytable_css_8dgmypvp5wtb27ofld5v {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_t8vs7bz0cjw49cxeq53w" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1"> </th>
+                <th scope="col" data-row="0" data-col="2">Model 1: Closed</th>
+                <th scope="col" data-row="0" data-col="3">Model 2: + Open</th>
+              </tr>
+        </thead>
+        <tfoot><tr><td colspan="3">+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td></tr></tfoot>
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">Closed-Form Matches</td>
+                  <td data-row="1" data-col="2">1.229***</td>
+                  <td data-row="1" data-col="3">1.177**</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1"></td>
+                  <td data-row="2" data-col="2">(0.060)</td>
+                  <td data-row="2" data-col="3">(0.059)</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">Open-Ended Matches</td>
+                  <td data-row="3" data-col="2"></td>
+                  <td data-row="3" data-col="3">1.320***</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1"></td>
+                  <td data-row="4" data-col="2"></td>
+                  <td data-row="4" data-col="3">(0.071)</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="1">Tie: Somewhat Close</td>
+                  <td data-row="5" data-col="2">0.514***</td>
+                  <td data-row="5" data-col="3">0.564***</td>
+                </tr>
+                <tr>
+                  <td data-row="6" data-col="1"></td>
+                  <td data-row="6" data-col="2">(0.070)</td>
+                  <td data-row="6" data-col="3">(0.078)</td>
+                </tr>
+                <tr>
+                  <td data-row="7" data-col="1">Tie: Close</td>
+                  <td data-row="7" data-col="2">0.332***</td>
+                  <td data-row="7" data-col="3">0.369***</td>
+                </tr>
+                <tr>
+                  <td data-row="8" data-col="1"></td>
+                  <td data-row="8" data-col="2">(0.070)</td>
+                  <td data-row="8" data-col="3">(0.079)</td>
+                </tr>
+                <tr>
+                  <td data-row="9" data-col="1">Tie Duration</td>
+                  <td data-row="9" data-col="2">0.990</td>
+                  <td data-row="9" data-col="3">0.991</td>
+                </tr>
+                <tr>
+                  <td data-row="10" data-col="1"></td>
+                  <td data-row="10" data-col="2">(0.015)</td>
+                  <td data-row="10" data-col="3">(0.015)</td>
+                </tr>
+                <tr>
+                  <td data-row="11" data-col="1">Ego: Female</td>
+                  <td data-row="11" data-col="2">1.075</td>
+                  <td data-row="11" data-col="3">1.049</td>
+                </tr>
+                <tr>
+                  <td data-row="12" data-col="1"></td>
+                  <td data-row="12" data-col="2">(0.400)</td>
+                  <td data-row="12" data-col="3">(0.393)</td>
+                </tr>
+                <tr>
+                  <td data-row="13" data-col="1">Alter: Female</td>
+                  <td data-row="13" data-col="2">1.400*</td>
+                  <td data-row="13" data-col="3">1.293</td>
+                </tr>
+                <tr>
+                  <td data-row="14" data-col="1"></td>
+                  <td data-row="14" data-col="2">(0.236)</td>
+                  <td data-row="14" data-col="3">(0.222)</td>
+                </tr>
+                <tr>
+                  <td data-row="15" data-col="1">Ego Female × Alter Female</td>
+                  <td data-row="15" data-col="2">0.628+</td>
+                  <td data-row="15" data-col="3">0.709</td>
+                </tr>
+                <tr>
+                  <td data-row="16" data-col="1"></td>
+                  <td data-row="16" data-col="2">(0.163)</td>
+                  <td data-row="16" data-col="3">(0.187)</td>
+                </tr>
+                <tr>
+                  <td data-row="17" data-col="1">Tie: Same Dorm / Roommate</td>
+                  <td data-row="17" data-col="2">1.273</td>
+                  <td data-row="17" data-col="3">1.270</td>
+                </tr>
+                <tr>
+                  <td data-row="18" data-col="1"></td>
+                  <td data-row="18" data-col="2">(0.351)</td>
+                  <td data-row="18" data-col="3">(0.353)</td>
+                </tr>
+                <tr>
+                  <td data-row="19" data-col="1">Tie: Race Homophily</td>
+                  <td data-row="19" data-col="2">0.970</td>
+                  <td data-row="19" data-col="3">0.965</td>
+                </tr>
+                <tr>
+                  <td data-row="20" data-col="1"></td>
+                  <td data-row="20" data-col="2">(0.191)</td>
+                  <td data-row="20" data-col="3">(0.191)</td>
+                </tr>
+                <tr>
+                  <td data-row="21" data-col="1">Tie: Race Unknown</td>
+                  <td data-row="21" data-col="2">0.167***</td>
+                  <td data-row="21" data-col="3">0.169***</td>
+                </tr>
+                <tr>
+                  <td data-row="22" data-col="1"></td>
+                  <td data-row="22" data-col="2">(0.031)</td>
+                  <td data-row="22" data-col="3">(0.031)</td>
+                </tr>
+                <tr>
+                  <td data-row="23" data-col="1">Period: Wave 2-5</td>
+                  <td data-row="23" data-col="2">0.050***</td>
+                  <td data-row="23" data-col="3">0.071***</td>
+                </tr>
+                <tr>
+                  <td data-row="24" data-col="1"></td>
+                  <td data-row="24" data-col="2">(0.017)</td>
+                  <td data-row="24" data-col="3">(0.024)</td>
+                </tr>
+                <tr>
+                  <td data-row="25" data-col="1">Period: Wave 5-6</td>
+                  <td data-row="25" data-col="2">0.084***</td>
+                  <td data-row="25" data-col="3">0.113***</td>
+                </tr>
+                <tr>
+                  <td data-row="26" data-col="1"></td>
+                  <td data-row="26" data-col="2">(0.029)</td>
+                  <td data-row="26" data-col="3">(0.040)</td>
+                </tr>
+                <tr>
+                  <td data-row="27" data-col="1">Intercept</td>
+                  <td data-row="27" data-col="2">11.509***</td>
+                  <td data-row="27" data-col="3">4.430**</td>
+                </tr>
+                <tr>
+                  <td data-row="28" data-col="1"></td>
+                  <td data-row="28" data-col="2">(5.380)</td>
+                  <td data-row="28" data-col="3">(2.225)</td>
+                </tr>
+                <tr>
+                  <td data-row="29" data-col="1">Num.Obs.</td>
+                  <td data-row="29" data-col="2">3251</td>
+                  <td data-row="29" data-col="3">3251</td>
+                </tr>
+                <tr>
+                  <td data-row="30" data-col="1">AIC</td>
+                  <td data-row="30" data-col="2">2557.8</td>
+                  <td data-row="30" data-col="3">2532.4</td>
+                </tr>
+                <tr>
+                  <td data-row="31" data-col="1">BIC</td>
+                  <td data-row="31" data-col="2">2643.0</td>
+                  <td data-row="31" data-col="3">2623.7</td>
+                </tr>
+                <tr>
+                  <td data-row="32" data-col="1">RMSE</td>
+                  <td data-row="32" data-col="2">0.32</td>
+                  <td data-row="32" data-col="3">0.32</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The baseline models demonstrate a robust, positive relationship between cultural matching and tie persistence among non-kin, on-campus peers. In Model 1, each additional closed-form match significantly increases the odds of a tie persisting. When we introduce open-ended matches in Model 2, both variables independently predict tie persistence, demonstrating the value of incorporating both open and closed-form items.</p>
+</section>
+<section id="network-opacity-1" class="level3">
+<h3 class="anchored" data-anchor-id="network-opacity-1">Network Opacity</h3>
+<p>Finally, we explore the role of “network opacity”—the degree to which an ego lacks knowledge of their alter’s cultural tastes, measured by the number of “Don’t Know” responses. We test both the main effect of opacity and its interaction with cultural matching.</p>
+<div class="cell">
+<div id="tbl-opacity" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-opacity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Odds Ratios for Tie Persistence (Network Opacity Models)
+</figcaption>
+<div aria-describedby="tbl-opacity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_6k3szfpzl51mh0wqjdco = TinyTable.createTableFunctions("tinytable_6k3szfpzl51mh0wqjdco");
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '38', j: 2 }, { i: '38', j: 3 }, { i: '38', j: 4 }, { i: '38', j: 5 } ], css_id: 'tinytable_css_h47jaywt3e3zxv5wx9km',}, 
+          { positions: [ { i: '34', j: 2 }, { i: '34', j: 3 }, { i: '34', j: 4 }, { i: '34', j: 5 } ], css_id: 'tinytable_css_y226suvq0we62w9h12ct',}, 
+          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 }, { i: '7', j: 2 }, { i: '8', j: 2 }, { i: '9', j: 2 }, { i: '10', j: 2 }, { i: '11', j: 2 }, { i: '12', j: 2 }, { i: '13', j: 2 }, { i: '14', j: 2 }, { i: '15', j: 2 }, { i: '16', j: 2 }, { i: '17', j: 2 }, { i: '18', j: 2 }, { i: '19', j: 2 }, { i: '20', j: 2 }, { i: '21', j: 2 }, { i: '22', j: 2 }, { i: '23', j: 2 }, { i: '24', j: 2 }, { i: '25', j: 2 }, { i: '26', j: 2 }, { i: '27', j: 2 }, { i: '28', j: 2 }, { i: '29', j: 2 }, { i: '30', j: 2 }, { i: '31', j: 2 }, { i: '32', j: 2 }, { i: '33', j: 2 }, { i: '35', j: 2 }, { i: '36', j: 2 }, { i: '37', j: 2 }, { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 }, { i: '12', j: 3 }, { i: '13', j: 3 }, { i: '14', j: 3 }, { i: '15', j: 3 }, { i: '16', j: 3 }, { i: '17', j: 3 }, { i: '18', j: 3 }, { i: '19', j: 3 }, { i: '20', j: 3 }, { i: '21', j: 3 }, { i: '22', j: 3 }, { i: '23', j: 3 }, { i: '24', j: 3 }, { i: '25', j: 3 }, { i: '26', j: 3 }, { i: '27', j: 3 }, { i: '28', j: 3 }, { i: '29', j: 3 }, { i: '30', j: 3 }, { i: '31', j: 3 }, { i: '32', j: 3 }, { i: '33', j: 3 }, { i: '35', j: 3 }, { i: '36', j: 3 }, { i: '37', j: 3 }, { i: '1', j: 4 }, { i: '2', j: 4 }, { i: '3', j: 4 }, { i: '4', j: 4 }, { i: '5', j: 4 }, { i: '6', j: 4 }, { i: '7', j: 4 }, { i: '8', j: 4 }, { i: '9', j: 4 }, { i: '10', j: 4 }, { i: '11', j: 4 }, { i: '12', j: 4 }, { i: '13', j: 4 }, { i: '14', j: 4 }, { i: '15', j: 4 }, { i: '16', j: 4 }, { i: '17', j: 4 }, { i: '18', j: 4 }, { i: '19', j: 4 }, { i: '20', j: 4 }, { i: '21', j: 4 }, { i: '22', j: 4 }, { i: '23', j: 4 }, { i: '24', j: 4 }, { i: '25', j: 4 }, { i: '26', j: 4 }, { i: '27', j: 4 }, { i: '28', j: 4 }, { i: '29', j: 4 }, { i: '30', j: 4 }, { i: '31', j: 4 }, { i: '32', j: 4 }, { i: '33', j: 4 }, { i: '35', j: 4 }, { i: '36', j: 4 }, { i: '37', j: 4 }, { i: '1', j: 5 }, { i: '2', j: 5 }, { i: '3', j: 5 }, { i: '4', j: 5 }, { i: '5', j: 5 }, { i: '6', j: 5 }, { i: '7', j: 5 }, { i: '8', j: 5 }, { i: '9', j: 5 }, { i: '10', j: 5 }, { i: '11', j: 5 }, { i: '12', j: 5 }, { i: '13', j: 5 }, { i: '14', j: 5 }, { i: '15', j: 5 }, { i: '16', j: 5 }, { i: '17', j: 5 }, { i: '18', j: 5 }, { i: '19', j: 5 }, { i: '20', j: 5 }, { i: '21', j: 5 }, { i: '22', j: 5 }, { i: '23', j: 5 }, { i: '24', j: 5 }, { i: '25', j: 5 }, { i: '26', j: 5 }, { i: '27', j: 5 }, { i: '28', j: 5 }, { i: '29', j: 5 }, { i: '30', j: 5 }, { i: '31', j: 5 }, { i: '32', j: 5 }, { i: '33', j: 5 }, { i: '35', j: 5 }, { i: '36', j: 5 }, { i: '37', j: 5 } ], css_id: 'tinytable_css_28p4q001n70s6i2hmxhh',}, 
+          { positions: [ { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 } ], css_id: 'tinytable_css_wjt1p86e3nqqj9mzr7s3',}, 
+          { positions: [ { i: '38', j: 1 } ], css_id: 'tinytable_css_esz6utot08a34vhbq32n',}, 
+          { positions: [ { i: '34', j: 1 } ], css_id: 'tinytable_css_e8pgkgx2p8mbo61cwr7r',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 }, { i: '7', j: 1 }, { i: '8', j: 1 }, { i: '9', j: 1 }, { i: '10', j: 1 }, { i: '11', j: 1 }, { i: '12', j: 1 }, { i: '13', j: 1 }, { i: '14', j: 1 }, { i: '15', j: 1 }, { i: '16', j: 1 }, { i: '17', j: 1 }, { i: '18', j: 1 }, { i: '19', j: 1 }, { i: '20', j: 1 }, { i: '21', j: 1 }, { i: '22', j: 1 }, { i: '23', j: 1 }, { i: '24', j: 1 }, { i: '25', j: 1 }, { i: '26', j: 1 }, { i: '27', j: 1 }, { i: '28', j: 1 }, { i: '29', j: 1 }, { i: '30', j: 1 }, { i: '31', j: 1 }, { i: '32', j: 1 }, { i: '33', j: 1 }, { i: '35', j: 1 }, { i: '36', j: 1 }, { i: '37', j: 1 } ], css_id: 'tinytable_css_ttofhzdcrdwdswir4ejp',}, 
+          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_lif3acv6nj00k0kf01k7',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_6k3szfpzl51mh0wqjdco.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_6k3szfpzl51mh0wqjdco td.tinytable_css_h47jaywt3e3zxv5wx9km, #tinytable_6k3szfpzl51mh0wqjdco th.tinytable_css_h47jaywt3e3zxv5wx9km {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
+    #tinytable_6k3szfpzl51mh0wqjdco td.tinytable_css_y226suvq0we62w9h12ct, #tinytable_6k3szfpzl51mh0wqjdco th.tinytable_css_y226suvq0we62w9h12ct {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
+    #tinytable_6k3szfpzl51mh0wqjdco td.tinytable_css_28p4q001n70s6i2hmxhh, #tinytable_6k3szfpzl51mh0wqjdco th.tinytable_css_28p4q001n70s6i2hmxhh { text-align: center }
+    #tinytable_6k3szfpzl51mh0wqjdco td.tinytable_css_wjt1p86e3nqqj9mzr7s3, #tinytable_6k3szfpzl51mh0wqjdco th.tinytable_css_wjt1p86e3nqqj9mzr7s3 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
+    #tinytable_6k3szfpzl51mh0wqjdco td.tinytable_css_esz6utot08a34vhbq32n, #tinytable_6k3szfpzl51mh0wqjdco th.tinytable_css_esz6utot08a34vhbq32n {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
+    #tinytable_6k3szfpzl51mh0wqjdco td.tinytable_css_e8pgkgx2p8mbo61cwr7r, #tinytable_6k3szfpzl51mh0wqjdco th.tinytable_css_e8pgkgx2p8mbo61cwr7r {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
+    #tinytable_6k3szfpzl51mh0wqjdco td.tinytable_css_ttofhzdcrdwdswir4ejp, #tinytable_6k3szfpzl51mh0wqjdco th.tinytable_css_ttofhzdcrdwdswir4ejp { text-align: left }
+    #tinytable_6k3szfpzl51mh0wqjdco td.tinytable_css_lif3acv6nj00k0kf01k7, #tinytable_6k3szfpzl51mh0wqjdco th.tinytable_css_lif3acv6nj00k0kf01k7 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_6k3szfpzl51mh0wqjdco" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+              <tr>
+                <th scope="col" data-row="0" data-col="1"> </th>
+                <th scope="col" data-row="0" data-col="2">Opacity Main Effects</th>
+                <th scope="col" data-row="0" data-col="3">Closed Interaction</th>
+                <th scope="col" data-row="0" data-col="4">Open Interaction</th>
+                <th scope="col" data-row="0" data-col="5">Both Interactions</th>
+              </tr>
+        </thead>
+        <tfoot><tr><td colspan="5">+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td></tr></tfoot>
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">Closed-Form Matches</td>
+                  <td data-row="1" data-col="2">1.091</td>
+                  <td data-row="1" data-col="3">1.095</td>
+                  <td data-row="1" data-col="4">1.092</td>
+                  <td data-row="1" data-col="5">1.096+</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1"></td>
+                  <td data-row="2" data-col="2">(0.058)</td>
+                  <td data-row="2" data-col="3">(0.060)</td>
+                  <td data-row="2" data-col="4">(0.058)</td>
+                  <td data-row="2" data-col="5">(0.061)</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1">Open-Ended Matches</td>
+                  <td data-row="3" data-col="2">1.291***</td>
+                  <td data-row="3" data-col="3">1.291***</td>
+                  <td data-row="3" data-col="4">1.285***</td>
+                  <td data-row="3" data-col="5">1.283***</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1"></td>
+                  <td data-row="4" data-col="2">(0.070)</td>
+                  <td data-row="4" data-col="3">(0.070)</td>
+                  <td data-row="4" data-col="4">(0.076)</td>
+                  <td data-row="4" data-col="5">(0.077)</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="1">Network Opacity (Unknowns)</td>
+                  <td data-row="5" data-col="2">0.771***</td>
+                  <td data-row="5" data-col="3">0.777***</td>
+                  <td data-row="5" data-col="4">0.761**</td>
+                  <td data-row="5" data-col="5">0.766**</td>
+                </tr>
+                <tr>
+                  <td data-row="6" data-col="1"></td>
+                  <td data-row="6" data-col="2">(0.045)</td>
+                  <td data-row="6" data-col="3">(0.051)</td>
+                  <td data-row="6" data-col="4">(0.065)</td>
+                  <td data-row="6" data-col="5">(0.067)</td>
+                </tr>
+                <tr>
+                  <td data-row="7" data-col="1">Closed-Form × Opacity</td>
+                  <td data-row="7" data-col="2"></td>
+                  <td data-row="7" data-col="3">0.989</td>
+                  <td data-row="7" data-col="4"></td>
+                  <td data-row="7" data-col="5">0.987</td>
+                </tr>
+                <tr>
+                  <td data-row="8" data-col="1"></td>
+                  <td data-row="8" data-col="2"></td>
+                  <td data-row="8" data-col="3">(0.043)</td>
+                  <td data-row="8" data-col="4"></td>
+                  <td data-row="8" data-col="5">(0.044)</td>
+                </tr>
+                <tr>
+                  <td data-row="9" data-col="1">Open-Ended × Opacity</td>
+                  <td data-row="9" data-col="2"></td>
+                  <td data-row="9" data-col="3"></td>
+                  <td data-row="9" data-col="4">1.007</td>
+                  <td data-row="9" data-col="5"></td>
+                </tr>
+                <tr>
+                  <td data-row="10" data-col="1"></td>
+                  <td data-row="10" data-col="2"></td>
+                  <td data-row="10" data-col="3"></td>
+                  <td data-row="10" data-col="4">(0.037)</td>
+                  <td data-row="10" data-col="5"></td>
+                </tr>
+                <tr>
+                  <td data-row="11" data-col="1">Tie: Somewhat Close</td>
+                  <td data-row="11" data-col="2">0.590***</td>
+                  <td data-row="11" data-col="3">0.591***</td>
+                  <td data-row="11" data-col="4">0.590***</td>
+                  <td data-row="11" data-col="5">0.591***</td>
+                </tr>
+                <tr>
+                  <td data-row="12" data-col="1"></td>
+                  <td data-row="12" data-col="2">(0.082)</td>
+                  <td data-row="12" data-col="3">(0.082)</td>
+                  <td data-row="12" data-col="4">(0.082)</td>
+                  <td data-row="12" data-col="5">(0.082)</td>
+                </tr>
+                <tr>
+                  <td data-row="13" data-col="1">Tie: Close</td>
+                  <td data-row="13" data-col="2">0.453***</td>
+                  <td data-row="13" data-col="3">0.453***</td>
+                  <td data-row="13" data-col="4">0.452***</td>
+                  <td data-row="13" data-col="5">0.452***</td>
+                </tr>
+                <tr>
+                  <td data-row="14" data-col="1"></td>
+                  <td data-row="14" data-col="2">(0.099)</td>
+                  <td data-row="14" data-col="3">(0.100)</td>
+                  <td data-row="14" data-col="4">(0.099)</td>
+                  <td data-row="14" data-col="5">(0.099)</td>
+                </tr>
+                <tr>
+                  <td data-row="15" data-col="1">Tie Duration</td>
+                  <td data-row="15" data-col="2">0.982</td>
+                  <td data-row="15" data-col="3">0.982</td>
+                  <td data-row="15" data-col="4">0.982</td>
+                  <td data-row="15" data-col="5">0.982</td>
+                </tr>
+                <tr>
+                  <td data-row="16" data-col="1"></td>
+                  <td data-row="16" data-col="2">(0.016)</td>
+                  <td data-row="16" data-col="3">(0.016)</td>
+                  <td data-row="16" data-col="4">(0.016)</td>
+                  <td data-row="16" data-col="5">(0.016)</td>
+                </tr>
+                <tr>
+                  <td data-row="17" data-col="1">Ego: Female</td>
+                  <td data-row="17" data-col="2">1.035</td>
+                  <td data-row="17" data-col="3">1.036</td>
+                  <td data-row="17" data-col="4">1.033</td>
+                  <td data-row="17" data-col="5">1.034</td>
+                </tr>
+                <tr>
+                  <td data-row="18" data-col="1"></td>
+                  <td data-row="18" data-col="2">(0.394)</td>
+                  <td data-row="18" data-col="3">(0.395)</td>
+                  <td data-row="18" data-col="4">(0.394)</td>
+                  <td data-row="18" data-col="5">(0.394)</td>
+                </tr>
+                <tr>
+                  <td data-row="19" data-col="1">Alter: Female</td>
+                  <td data-row="19" data-col="2">1.241</td>
+                  <td data-row="19" data-col="3">1.241</td>
+                  <td data-row="19" data-col="4">1.240</td>
+                  <td data-row="19" data-col="5">1.241</td>
+                </tr>
+                <tr>
+                  <td data-row="20" data-col="1"></td>
+                  <td data-row="20" data-col="2">(0.215)</td>
+                  <td data-row="20" data-col="3">(0.215)</td>
+                  <td data-row="20" data-col="4">(0.215)</td>
+                  <td data-row="20" data-col="5">(0.215)</td>
+                </tr>
+                <tr>
+                  <td data-row="21" data-col="1">Ego Female × Alter Female</td>
+                  <td data-row="21" data-col="2">0.737</td>
+                  <td data-row="21" data-col="3">0.739</td>
+                  <td data-row="21" data-col="4">0.738</td>
+                  <td data-row="21" data-col="5">0.740</td>
+                </tr>
+                <tr>
+                  <td data-row="22" data-col="1"></td>
+                  <td data-row="22" data-col="2">(0.196)</td>
+                  <td data-row="22" data-col="3">(0.197)</td>
+                  <td data-row="22" data-col="4">(0.196)</td>
+                  <td data-row="22" data-col="5">(0.197)</td>
+                </tr>
+                <tr>
+                  <td data-row="23" data-col="1">Tie: Same Dorm / Roommate</td>
+                  <td data-row="23" data-col="2">1.223</td>
+                  <td data-row="23" data-col="3">1.221</td>
+                  <td data-row="23" data-col="4">1.223</td>
+                  <td data-row="23" data-col="5">1.221</td>
+                </tr>
+                <tr>
+                  <td data-row="24" data-col="1"></td>
+                  <td data-row="24" data-col="2">(0.344)</td>
+                  <td data-row="24" data-col="3">(0.344)</td>
+                  <td data-row="24" data-col="4">(0.344)</td>
+                  <td data-row="24" data-col="5">(0.344)</td>
+                </tr>
+                <tr>
+                  <td data-row="25" data-col="1">Tie: Race Homophily</td>
+                  <td data-row="25" data-col="2">0.920</td>
+                  <td data-row="25" data-col="3">0.920</td>
+                  <td data-row="25" data-col="4">0.917</td>
+                  <td data-row="25" data-col="5">0.916</td>
+                </tr>
+                <tr>
+                  <td data-row="26" data-col="1"></td>
+                  <td data-row="26" data-col="2">(0.184)</td>
+                  <td data-row="26" data-col="3">(0.184)</td>
+                  <td data-row="26" data-col="4">(0.184)</td>
+                  <td data-row="26" data-col="5">(0.184)</td>
+                </tr>
+                <tr>
+                  <td data-row="27" data-col="1">Tie: Race Unknown</td>
+                  <td data-row="27" data-col="2">0.159***</td>
+                  <td data-row="27" data-col="3">0.159***</td>
+                  <td data-row="27" data-col="4">0.158***</td>
+                  <td data-row="27" data-col="5">0.158***</td>
+                </tr>
+                <tr>
+                  <td data-row="28" data-col="1"></td>
+                  <td data-row="28" data-col="2">(0.030)</td>
+                  <td data-row="28" data-col="3">(0.030)</td>
+                  <td data-row="28" data-col="4">(0.030)</td>
+                  <td data-row="28" data-col="5">(0.030)</td>
+                </tr>
+                <tr>
+                  <td data-row="29" data-col="1">Period: Wave 2-5</td>
+                  <td data-row="29" data-col="2">0.062***</td>
+                  <td data-row="29" data-col="3">0.061***</td>
+                  <td data-row="29" data-col="4">0.061***</td>
+                  <td data-row="29" data-col="5">0.061***</td>
+                </tr>
+                <tr>
+                  <td data-row="30" data-col="1"></td>
+                  <td data-row="30" data-col="2">(0.021)</td>
+                  <td data-row="30" data-col="3">(0.021)</td>
+                  <td data-row="30" data-col="4">(0.021)</td>
+                  <td data-row="30" data-col="5">(0.021)</td>
+                </tr>
+                <tr>
+                  <td data-row="31" data-col="1">Period: Wave 5-6</td>
+                  <td data-row="31" data-col="2">0.090***</td>
+                  <td data-row="31" data-col="3">0.090***</td>
+                  <td data-row="31" data-col="4">0.090***</td>
+                  <td data-row="31" data-col="5">0.090***</td>
+                </tr>
+                <tr>
+                  <td data-row="32" data-col="1"></td>
+                  <td data-row="32" data-col="2">(0.032)</td>
+                  <td data-row="32" data-col="3">(0.032)</td>
+                  <td data-row="32" data-col="4">(0.032)</td>
+                  <td data-row="32" data-col="5">(0.032)</td>
+                </tr>
+                <tr>
+                  <td data-row="33" data-col="1">Intercept</td>
+                  <td data-row="33" data-col="2">8.084***</td>
+                  <td data-row="33" data-col="3">8.070***</td>
+                  <td data-row="33" data-col="4">8.185***</td>
+                  <td data-row="33" data-col="5">8.195***</td>
+                </tr>
+                <tr>
+                  <td data-row="34" data-col="1"></td>
+                  <td data-row="34" data-col="2">(4.250)</td>
+                  <td data-row="34" data-col="3">(4.244)</td>
+                  <td data-row="34" data-col="4">(4.333)</td>
+                  <td data-row="34" data-col="5">(4.340)</td>
+                </tr>
+                <tr>
+                  <td data-row="35" data-col="1">Num.Obs.</td>
+                  <td data-row="35" data-col="2">3251</td>
+                  <td data-row="35" data-col="3">3251</td>
+                  <td data-row="35" data-col="4">3251</td>
+                  <td data-row="35" data-col="5">3251</td>
+                </tr>
+                <tr>
+                  <td data-row="36" data-col="1">AIC</td>
+                  <td data-row="36" data-col="2">2513.5</td>
+                  <td data-row="36" data-col="3">2515.4</td>
+                  <td data-row="36" data-col="4">2515.4</td>
+                  <td data-row="36" data-col="5">2517.3</td>
+                </tr>
+                <tr>
+                  <td data-row="37" data-col="1">BIC</td>
+                  <td data-row="37" data-col="2">2610.8</td>
+                  <td data-row="37" data-col="3">2618.9</td>
+                  <td data-row="37" data-col="4">2618.9</td>
+                  <td data-row="37" data-col="5">2626.9</td>
+                </tr>
+                <tr>
+                  <td data-row="38" data-col="1">RMSE</td>
+                  <td data-row="38" data-col="2">0.32</td>
+                  <td data-row="38" data-col="3">0.32</td>
+                  <td data-row="38" data-col="4">0.32</td>
+                  <td data-row="38" data-col="5">0.32</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>In our final models, we assessed the role of <strong>network opacity</strong>—the degree to which an ego lacks knowledge of their alter’s cultural tastes, operationalized as the number of “Don’t Know” responses across the six cultural domains.</p>
+<p>The Opacity Main Effects model reveals that network opacity is a significant and independent predictor of tie dissolution. This suggests that a lack of shared cultural knowledge signals a weaker or more precarious tie, independent of the actual cultural similarities they do share.</p>
+<p>When testing for interactions in non-linear models such as logistic regression, simply examining the multiplicative interaction coefficients can be misleading. Following the recommendations of <span class="citation" data-cites="mize2019best">Mize (<a href="#ref-mize2019best" role="doc-biblioref">2019</a>)</span>, we formally tested the interactions by calculating the second differences in predicted probabilities (Average Marginal Effects). We computed how the effect of moving from the minimum to the maximum number of matches changes as network opacity goes from its minimum (0) to maximum (6) value.</p>
+<p>Consistent with the non-significant interaction coefficients in the Closed Interaction and Open Interaction models, the second differences in predicted probabilities are also not statistically significant. The marginal effect of closed-form matches only increases by 0.015 (<span class="math inline">\(p = 0.921\)</span>) when network opacity is at its maximum compared to its minimum, and the effect of open-ended matches only increases by 0.102 (<span class="math inline">\(p = 0.345\)</span>). This indicates that the protective effect of known cultural matches remains relatively stable regardless of how much else the ego doesn’t know about the alter. As visualized below, higher network opacity uniformly lowers the baseline probability of tie persistence.</p>
+<p>To compare these competing dynamics, <strong>Figure <a href="#fig-combined" class="quarto-xref">Figure&nbsp;1</a></strong> visualizes the marginal effect (calculated as the change from the minimum to the maximum value) of closed-form matches, open-ended matches, and network opacity on the predicted probability of tie persistence.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-combined" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-combined-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="manuscript_files/figure-html/fig-combined-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-combined-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Marginal Effects of Cultural Matches and Network Opacity (Min to Max)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="model-fit-and-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="model-fit-and-comparison">Model Fit and Comparison</h3>
+<p>To evaluate the relative performance of our different model specifications, we present a comparative summary of the fit statistics for all models in <a href="#tbl-comparison" class="quarto-xref">Table&nbsp;3</a>.</p>
+<div class="cell">
+<div id="tbl-comparison" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Model Fit Comparison (Log-Likelihood, AIC, and BIC)
+</figcaption>
+<div aria-describedby="tbl-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">N Obs</th>
+<th style="text-align: right;">Log Likelihood</th>
+<th style="text-align: right;">AIC</th>
+<th style="text-align: right;">BIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Model 1: Closed</td>
+<td style="text-align: right;">3251</td>
+<td style="text-align: right;">-1264.91</td>
+<td style="text-align: right;">2557.82</td>
+<td style="text-align: right;">2643.03</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Model 2: + Open</td>
+<td style="text-align: right;">3251</td>
+<td style="text-align: right;">-1251.21</td>
+<td style="text-align: right;">2532.42</td>
+<td style="text-align: right;">2623.72</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Model 3: + Opacity</td>
+<td style="text-align: right;">3251</td>
+<td style="text-align: right;">-1240.73</td>
+<td style="text-align: right;">2513.46</td>
+<td style="text-align: right;">2610.84</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Model 4: Closed Int</td>
+<td style="text-align: right;">3251</td>
+<td style="text-align: right;">-1240.70</td>
+<td style="text-align: right;">2515.40</td>
+<td style="text-align: right;">2618.87</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Model 5: Open Int</td>
+<td style="text-align: right;">3251</td>
+<td style="text-align: right;">-1240.70</td>
+<td style="text-align: right;">2515.40</td>
+<td style="text-align: right;">2618.88</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Model 6: Both Int</td>
+<td style="text-align: right;">3251</td>
+<td style="text-align: right;">-1240.66</td>
+<td style="text-align: right;">2517.32</td>
+<td style="text-align: right;">2626.88</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The fit statistics reveal several important patterns: - <strong>Open-ended matches add value</strong>: The addition of open-ended matches in Model 2 significantly improves the model fit (lower AIC and BIC) over Model 1. - <strong>Opacity is critical</strong>: Model 3 (Opacity Main Effects) significantly improves model fit over the models including only cultural matches. - <strong>No support for opacity interactions</strong>: The opacity interaction models (Models 4, 5, and 6) do not statistically improve model fit over Model 3, indicating that the effects of cultural matching and network opacity are relatively stable and additive.</p>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This analysis updates previous Stata-based workflows to a modern R approach, providing robust evidence for the role of closed-form and open-ended cultural matching, as well as network opacity, in the persistence of non-kin peer ties over time.</p>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-borgatti2005" class="csl-entry" role="listitem">
+Borgatti, Stephen P. 2005. <span>“Centrality and Network Flow.”</span> <em>Social Networks</em> 27 (1): 55–71.
+</div>
+<div id="ref-bourdieu1984" class="csl-entry" role="listitem">
+Bourdieu, Pierre. 1984. <em>Distinction: A Social Critique of the Judgement of Taste</em>. Translated by Richard Nice. Harvard University Press.
+</div>
+<div id="ref-bourdieu1990" class="csl-entry" role="listitem">
+Bourdieu, Pierre. 1990. <em>The Logic of Practice</em>. Polity Press.
+</div>
+<div id="ref-bourdieu2000" class="csl-entry" role="listitem">
+Bourdieu, Pierre. 2000. <em>Pascalian Meditations</em>. Stanford University Press.
+</div>
+<div id="ref-burt2000" class="csl-entry" role="listitem">
+Burt, Ronald S. 2000. <span>“Decay Functions.”</span> <em>Social Networks</em> 22 (1): 1–28.
+</div>
+<div id="ref-burt2002" class="csl-entry" role="listitem">
+Burt, Ronald S. 2002. <span>“Bridge Decay.”</span> <em>Social Networks</em> 24 (4): 333–63.
+</div>
+<div id="ref-carley1991" class="csl-entry" role="listitem">
+Carley, Kathleen M. 1991. <span>“A Theory of Group Stability.”</span> <em>American Sociological Review</em> 56 (3): 331–54.
+</div>
+<div id="ref-collins2004" class="csl-entry" role="listitem">
+Collins, Randall. 2004. <em>Interaction Ritual Chains</em>. Princeton University Press.
+</div>
+<div id="ref-dimaggio1987" class="csl-entry" role="listitem">
+DiMaggio, Paul. 1987. <span>“Classification in Art.”</span> <em>American Sociological Review</em> 52 (4): 440–55.
+</div>
+<div id="ref-erickson1988" class="csl-entry" role="listitem">
+Erickson, Bonnie H. 1988. <span>“The Relational Basis of Attitudes.”</span> In <em>Social Structures: A Network Approach</em>, edited by Barry Wellman and S. D. Berkowitz. Cambridge University Press.
+</div>
+<div id="ref-erickson1996" class="csl-entry" role="listitem">
+Erickson, Bonnie H. 1996. <span>“Culture, Class, and Connections.”</span> <em>American Journal of Sociology</em> 102 (1): 217–52.
+</div>
+<div id="ref-holt1997" class="csl-entry" role="listitem">
+Holt, Douglas B. 1997. <span>“Distinction in America? Recovering <span>Bourdieu</span>’s Theory of Tastes from Its Critics.”</span> <em>Poetics</em> 25 (2): 93–120.
+</div>
+<div id="ref-holt1998" class="csl-entry" role="listitem">
+Holt, Douglas B. 1998. <span>“Does Cultural Capital Structure American Consumption?”</span> <em>Journal of Consumer Research</em> 25 (1): 1–25.
+</div>
+<div id="ref-lazarsfeld1954" class="csl-entry" role="listitem">
+Lazarsfeld, Paul F., and Robert K. Merton. 1954. <span>“Friendship as a Social Process: A Substantive and Methodological Analysis.”</span> In <em>Freedom and Control in Modern Society</em>, edited by Morroe Berger, Theodore Abel, and Charles Page. Van Nostrand.
+</div>
+<div id="ref-lizardo2006" class="csl-entry" role="listitem">
+Lizardo, Omar. 2006. <span>“How Cultural Tastes Shape Personal Networks.”</span> <em>American Sociological Review</em> 71 (5): 778–807.
+</div>
+<div id="ref-mark1998a" class="csl-entry" role="listitem">
+Mark, Noah P. 1998a. <span>“Beyond Individual Differences: Social Differentiation from First Principles.”</span> <em>American Sociological Review</em> 63 (3): 309–30.
+</div>
+<div id="ref-mark1998b" class="csl-entry" role="listitem">
+Mark, Noah P. 1998b. <span>“Birds of a Feather Sing Together.”</span> <em>Social Forces</em> 77 (2): 453–85.
+</div>
+<div id="ref-mark2003" class="csl-entry" role="listitem">
+Mark, Noah P. 2003. <span>“Culture and Competition: Homophily and Distancing Explanations for Cultural Niches.”</span> <em>American Sociological Review</em> 68 (3): 319–45.
+</div>
+<div id="ref-mcpherson2001" class="csl-entry" role="listitem">
+McPherson, Miller, Lynn Smith-Lovin, and James M. Cook. 2001. <span>“Birds of a Feather: Homophily in Social Networks.”</span> <em>Annual Review of Sociology</em> 27 (1): 415–44.
+</div>
+<div id="ref-mize2019best" class="csl-entry" role="listitem">
+Mize, Trenton D. 2019. <span>“Best Practices for Estimating, Interpreting, and Presenting Nonlinear Interaction Effects.”</span> <em>Sociological Science</em> 6: 81–117.
+</div>
+<div id="ref-morgan1997" class="csl-entry" role="listitem">
+Morgan, David L., Margaret B. Neal, and Paula Carder. 1997. <span>“The Stability of Core and Peripheral Networks over Time.”</span> <em>Social Networks</em> 19 (1): 9–25.
+</div>
+<div id="ref-stinchcombe1965" class="csl-entry" role="listitem">
+Stinchcombe, Arthur L. 1965. <span>“Social Structure and Organizations.”</span> In <em>Handbook of Organizations</em>, edited by James G. March. Rand McNally.
+</div>
+<div id="ref-suitor1997" class="csl-entry" role="listitem">
+Suitor, J. Jill, Barry Wellman, and David L. Morgan. 1997. <span>“It’s about Time: How, Why, and When Networks Change.”</span> <em>Social Networks</em> 19 (1): 1–7.
+</div>
+<div id="ref-wellman1997" class="csl-entry" role="listitem">
+Wellman, Barry, Renita Yuk-Lin Wong, David Tindall, and Nancy Nazer. 1997. <span>“A Decade of Network Change: Turnover, Persistence and Stability in Personal Communities.”</span> <em>Social Networks</em> 19 (1): 27–50.
+</div>
+<div id="ref-werner1979" class="csl-entry" role="listitem">
+Werner, Carol, and Pat Parmelee. 1979. <span>“Similarity of Leisure Activities and Friendship Selection.”</span> <em>Personality and Social Psychology Bulletin</em> 5 (2): 240–42.
+</div>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
