@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.28)  29 JUN 2026 07:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.28)  29 JUN 2026 10:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -709,7 +709,11 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 205.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 211.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./manuscript.aux)
+) (./manuscript.aux
+
+LaTeX Warning: Label `tbl-descriptives-cat' multiply defined.
+
+)
 \openout1 = `manuscript.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 211.
@@ -780,85 +784,90 @@ Package microtype Info: Loading generic protrusion settings for font family
  [1
 
 
-{/home/omarlizardo/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/omarlizardo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2] [3]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 380.
- (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [4]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 485.
+{/home/omarlizardo/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/omarlizardo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2]
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 338.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 485.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 338.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 485.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 338.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 485.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 338.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 485.
+(Font)              <10.95> on input line 338.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 485.
+(Font)              <8> on input line 338.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 485.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 485.
+(Font)              <6> on input line 338.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 338.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 485.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 338.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 485.
+) [3]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 381.
+ (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [4]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 491.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-
-LaTeX Warning: Float too large for page by 41.38814pt on input line 489.
-
-
-Overfull \hbox (113.59251pt too wide) in paragraph at lines 565--566
+Overfull \hbox (16.67178pt too wide) in paragraph at lines 491--492
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 146.98808pt on input line 569.
+LaTeX Warning: Float too large for page by 129.38809pt on input line 495.
 
-[5{/home/omarlizardo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/omarlizardo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] [6{/home/omarlizardo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [7]
-<manuscript_files/figure-latex/fig-combined-1.pdf, id=60, 397.485pt x 252.945pt>
-File: manuscript_files/figure-latex/fig-combined-1.pdf Graphic file (type pdf)
-<use manuscript_files/figure-latex/fig-combined-1.pdf>
-Package pdftex.def Info: manuscript_files/figure-latex/fig-combined-1.pdf  used on input line 613.
+[5] [6{/home/omarlizardo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/home/omarlizardo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/omarlizardo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+<analysis_files/figure-pdf/fig-combined-1.pdf, id=53, 397.485pt x 252.945pt>
+File: analysis_files/figure-pdf/fig-combined-1.pdf Graphic file (type pdf)
+<use analysis_files/figure-pdf/fig-combined-1.pdf>
+Package pdftex.def Info: analysis_files/figure-pdf/fig-combined-1.pdf  used on input line 508.
 (pdftex.def)             Requested size: 397.48402pt x 252.94438pt.
- [8 <./manuscript_files/figure-latex/fig-combined-1.pdf>] [9] [10] (./manuscript.aux)
+<analysis_files/figure-pdf/fig-closeness-interactions-1.pdf, id=55, 867.24pt x 361.35pt>
+File: analysis_files/figure-pdf/fig-closeness-interactions-1.pdf Graphic file (type pdf)
+<use analysis_files/figure-pdf/fig-closeness-interactions-1.pdf>
+Package pdftex.def Info: analysis_files/figure-pdf/fig-closeness-interactions-1.pdf  used on input line 537.
+(pdftex.def)             Requested size: 867.2379pt x 361.34912pt.
+ [7 <./analysis_files/figure-pdf/fig-combined-1.pdf>] [8 <./analysis_files/figure-pdf/fig-closeness-interactions-1.pdf>] [9] (./manuscript.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 26165 strings out of 469097
- 538946 string characters out of 5457857
- 1181407 words of memory out of 5000000
- 54703 multiletter control sequences out of 15000+600000
- 680297 words of font info for 152 fonts, out of 8000000 for 9000
+ 25750 strings out of 469097
+ 530526 string characters out of 5457857
+ 1132790 words of memory out of 5000000
+ 54330 multiletter control sequences out of 15000+600000
+ 679622 words of font info for 145 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 108i,9n,108p,11232b,3574s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,9n,108p,11232b,2220s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on manuscript.pdf (10 pages, 202581 bytes).
+Output written on manuscript.pdf (9 pages, 202746 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
- 57 named destinations out of 1000 (max. 500000)
- 28790 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 179 PDF objects out of 1000 (max. 8388607)
+ 146 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
+ 28787 words of extra memory for PDF output out of 29859 (max. 10000000)
 

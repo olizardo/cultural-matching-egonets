@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1782742469.18224 "manuscript.tex" "manuscript.pdf" "manuscript" 1782742470.82803 0
+["pdflatex"] 1782752966.70793 "manuscript.tex" "manuscript.pdf" "manuscript" 1782752968.01914 0
   "/home/omarlizardo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1782672756.40142 2375 baa924870cfb487815765f9094cf3728 ""
   "/home/omarlizardo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1782672756.40242 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/home/omarlizardo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1782672756.40342 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -137,13 +137,14 @@
   "/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/xcolor/x11nam.def" 1782672754.53741 9125 edad0294b4f7dd6df8c57b02b40a0855 ""
   "/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty" 1782672754.53841 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/xurl/xurl.sty" 1641763214 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "/home/omarlizardo/.TinyTeX/texmf-dist/web2c/texmf.cnf" 1782672754.0124 43630 e9fa012910491fe5ae08a72c3c2997a7 ""
-  "/home/omarlizardo/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1782673794 490110 afd372a4502e003df73309b8cb2a84c6 ""
+  "/home/omarlizardo/.TinyTeX/texmf-dist/web2c/texmf.cnf" 1782667392 43815 bcd8835056a2dfac260166a1c9541261 ""
+  "/home/omarlizardo/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1782751696 490110 afd372a4502e003df73309b8cb2a84c6 ""
   "/home/omarlizardo/.TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1782673841 2306334 2ab474859f481f82b81b7a3ab8e9a5be ""
   "/home/omarlizardo/.TinyTeX/texmf.cnf" 1782672756.56742 637 edd806fb06a89761a6034e1968af9017 ""
-  "manuscript.aux" 1782742470.7516 10026 7fc5fc2c0be236027ad705e961e37976 "pdflatex"
-  "manuscript.tex" 1782708958.65978 33288 deb8aea1d113460a778ad161bd0426b9 ""
-  "manuscript_files/figure-latex/fig-combined-1.pdf" 1782708957.62287 4969 583c95b52e8d101ff5912088348e70d5 ""
+  "analysis_files/figure-pdf/fig-closeness-interactions-1.pdf" 1782752831.53933 5687 9ed94fef4ad2481f799cb9d40f49fa31 ""
+  "analysis_files/figure-pdf/fig-combined-1.pdf" 1782752829.02507 4974 69454e6c10a29994281ae155ce215c8a ""
+  "manuscript.aux" 1782752967.96175 9112 baa173e77cd1af74bd77db2fef62caf7 "pdflatex"
+  "manuscript.tex" 1782752951.33219 33478 c54aaaf40da7daace2d5a1e7a8b808f7 ""
   (generated)
   "manuscript.aux"
   "manuscript.log"

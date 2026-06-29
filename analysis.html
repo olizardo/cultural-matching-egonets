@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<head>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
 
-<meta charset="utf-8" />
-<meta name="generator" content="quarto-1.9.38" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-
-<meta name="author" content="Omar Lizardo et al." />
-<meta name="dcterms.date" content="2026-06-29" />
+<meta name="author" content="Omar Lizardo et al.">
+<meta name="dcterms.date" content="2026-06-29">
 
 <title>Cultural Matching Analysis</title>
 <style>
@@ -27,37 +25,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
-<!-- htmldependencies:E3FAD763 -->
+
+<script src="analysis_files/libs/clipboard/clipboard.min.js"></script>
+<script src="analysis_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="analysis_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="analysis_files/libs/quarto-html/popper.min.js"></script>
+<script src="analysis_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="analysis_files/libs/quarto-html/anchor.min.js"></script>
+<link href="analysis_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="analysis_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="analysis_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="analysis_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="analysis_files/libs/bootstrap/bootstrap-67270d1595a62d14f123c043d4fb2f18.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
 
-<body>
+<body class="quarto-light">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <div id="quarto-toc-target"></div>
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#main-effects-models" id="toc-main-effects-models" class="nav-link" data-scroll-target="#main-effects-models">Main Effects Models</a>
+  <ul class="collapse">
+  <li><a href="#marginal-effects" id="toc-marginal-effects" class="nav-link" data-scroll-target="#marginal-effects">Marginal Effects</a></li>
+  </ul></li>
+  <li><a href="#subjective-closeness-interactions" id="toc-subjective-closeness-interactions" class="nav-link" data-scroll-target="#subjective-closeness-interactions">Subjective Closeness Interactions</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="analysis.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -91,35 +92,21 @@ div.csl-indent {
 
 </header>
 
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#overview" id="toc-overview">Overview</a></li>
-  <li><a href="#baseline-models" id="toc-baseline-models">Baseline Models</a></li>
-  <li><a href="#network-opacity-models" id="toc-network-opacity-models">Network Opacity Models</a>
-  <ul>
-  <li><a href="#marginal-effects" id="toc-marginal-effects">Marginal Effects</a></li>
-  </ul></li>
-  <li><a href="#model-fit-comparison" id="toc-model-fit-comparison">Model Fit Comparison</a></li>
-  <li><a href="#friendship-interactions" id="toc-friendship-interactions">Friendship Interactions</a></li>
-  </ul>
-</nav>
+
 <section id="overview" class="level2">
-<h2>Overview</h2>
-<p>This analysis file examines the role of cultural matching and network opacity in predicting the persistence of social ties over time. We pool data across adjacent waves from the NetSense study to construct a person-period dataset, restricting the sample to non-kin, on-campus student ties.</p>
-<p>We estimate the probability of tie persistence as a function of cultural matching (closed-form domains and open-ended activities) and network opacity (the number of “Don’t Know” responses regarding an alter’s preferences) using mixed-effects logistic regression (<code>lme4::glmer</code>).</p>
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This analysis file examines the role of cultural matching and network opacity in predicting the persistence of social ties over time. We pool data across adjacent waves from the NetSense study to construct a person-period dataset, restricting the sample to non-kin, on-campus student ties. We estimate the probability of tie persistence as a function of cultural matching (closed-form domains and open-ended activities) and network opacity (the number of “Don’t Know” responses regarding an alter’s preferences) using mixed-effects logistic regression (<code>lme4::glmer</code>).</p>
 </section>
-<section id="baseline-models" class="level2">
-<h2>Baseline Models</h2>
-<p>The following models assess the main effects of closed-form and open-ended cultural matching on the odds of tie persistence. Both closed and open-ended measures independently predict persistence.</p>
+<section id="main-effects-models" class="level2">
+<h2 class="anchored" data-anchor-id="main-effects-models">Main Effects Models</h2>
+<p>The following models assess the main effects of closed-form cultural matching, open-ended cultural matching, and network opacity on the odds of tie persistence. Model 1 shows that closed-form matches independently predict persistence. Model 2 introduces open-ended matches, demonstrating the value of incorporating both open and closed-form items. Model 3 incorporates network opacity (the number of “Don’t know” responses regarding an alter’s preferences). The main effects model reveals that a lack of shared cultural knowledge signals a weaker tie.</p>
 <div class="cell">
-<div id="tbl-baseline" class="cell quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-tbl">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-baseline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table 1: Odds Ratios for Tie Persistence (Baseline Models)
+<div id="tbl-models" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Odds Ratios for Tie Persistence (Main Effects Models)
 </figcaption>
-<div aria-describedby="tbl-baseline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <!-- preamble start -->
 
@@ -127,25 +114,25 @@ Table 1: Odds Ratios for Tie Persistence (Baseline Models)
 
     <script>
       // Create table-specific functions using external factory
-      const tableFns_ybik667y9dixrsbxckev = TinyTable.createTableFunctions("tinytable_ybik667y9dixrsbxckev");
+      const tableFns_ug6an3t3xorevscchhes = TinyTable.createTableFunctions("tinytable_ug6an3t3xorevscchhes");
       // tinytable span after
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '34', j: 2 }, { i: '34', j: 3 } ], css_id: 'tinytable_css_src5m23jhkev3odqjjtc',}, 
-          { positions: [ { i: '30', j: 2 }, { i: '30', j: 3 } ], css_id: 'tinytable_css_e7z001x7cpww032l0xhd',}, 
-          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 }, { i: '7', j: 2 }, { i: '8', j: 2 }, { i: '9', j: 2 }, { i: '10', j: 2 }, { i: '11', j: 2 }, { i: '12', j: 2 }, { i: '13', j: 2 }, { i: '14', j: 2 }, { i: '15', j: 2 }, { i: '16', j: 2 }, { i: '17', j: 2 }, { i: '18', j: 2 }, { i: '19', j: 2 }, { i: '20', j: 2 }, { i: '21', j: 2 }, { i: '22', j: 2 }, { i: '23', j: 2 }, { i: '24', j: 2 }, { i: '25', j: 2 }, { i: '26', j: 2 }, { i: '27', j: 2 }, { i: '28', j: 2 }, { i: '29', j: 2 }, { i: '31', j: 2 }, { i: '32', j: 2 }, { i: '33', j: 2 }, { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 }, { i: '12', j: 3 }, { i: '13', j: 3 }, { i: '14', j: 3 }, { i: '15', j: 3 }, { i: '16', j: 3 }, { i: '17', j: 3 }, { i: '18', j: 3 }, { i: '19', j: 3 }, { i: '20', j: 3 }, { i: '21', j: 3 }, { i: '22', j: 3 }, { i: '23', j: 3 }, { i: '24', j: 3 }, { i: '25', j: 3 }, { i: '26', j: 3 }, { i: '27', j: 3 }, { i: '28', j: 3 }, { i: '29', j: 3 }, { i: '31', j: 3 }, { i: '32', j: 3 }, { i: '33', j: 3 } ], css_id: 'tinytable_css_0ja5qoensuq5tumwzk57',}, 
-          { positions: [ { i: '0', j: 2 }, { i: '0', j: 3 } ], css_id: 'tinytable_css_tycd0geotood669jxunw',}, 
-          { positions: [ { i: '34', j: 1 } ], css_id: 'tinytable_css_golz9hqxbkihd36gblja',}, 
-          { positions: [ { i: '30', j: 1 } ], css_id: 'tinytable_css_gowlb6tqr42w5lvy8dzq',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 }, { i: '7', j: 1 }, { i: '8', j: 1 }, { i: '9', j: 1 }, { i: '10', j: 1 }, { i: '11', j: 1 }, { i: '12', j: 1 }, { i: '13', j: 1 }, { i: '14', j: 1 }, { i: '15', j: 1 }, { i: '16', j: 1 }, { i: '17', j: 1 }, { i: '18', j: 1 }, { i: '19', j: 1 }, { i: '20', j: 1 }, { i: '21', j: 1 }, { i: '22', j: 1 }, { i: '23', j: 1 }, { i: '24', j: 1 }, { i: '25', j: 1 }, { i: '26', j: 1 }, { i: '27', j: 1 }, { i: '28', j: 1 }, { i: '29', j: 1 }, { i: '31', j: 1 }, { i: '32', j: 1 }, { i: '33', j: 1 } ], css_id: 'tinytable_css_0dx3q7hlr8cyg80ebxe3',}, 
-          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_mt1xte1ghksc9hxjtzlu',}, 
+          { positions: [ { i: '37', j: 2 }, { i: '37', j: 3 }, { i: '37', j: 4 } ], css_id: 'tinytable_css_j3vkbwpe29r8qu0amfgt',}, 
+          { positions: [ { i: '34', j: 2 }, { i: '34', j: 3 }, { i: '34', j: 4 } ], css_id: 'tinytable_css_4gz1taj7vmwrmqmm48up',}, 
+          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 }, { i: '7', j: 2 }, { i: '8', j: 2 }, { i: '9', j: 2 }, { i: '10', j: 2 }, { i: '11', j: 2 }, { i: '12', j: 2 }, { i: '13', j: 2 }, { i: '14', j: 2 }, { i: '15', j: 2 }, { i: '16', j: 2 }, { i: '17', j: 2 }, { i: '18', j: 2 }, { i: '19', j: 2 }, { i: '20', j: 2 }, { i: '21', j: 2 }, { i: '22', j: 2 }, { i: '23', j: 2 }, { i: '24', j: 2 }, { i: '25', j: 2 }, { i: '26', j: 2 }, { i: '27', j: 2 }, { i: '28', j: 2 }, { i: '29', j: 2 }, { i: '30', j: 2 }, { i: '31', j: 2 }, { i: '32', j: 2 }, { i: '33', j: 2 }, { i: '35', j: 2 }, { i: '36', j: 2 }, { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 }, { i: '12', j: 3 }, { i: '13', j: 3 }, { i: '14', j: 3 }, { i: '15', j: 3 }, { i: '16', j: 3 }, { i: '17', j: 3 }, { i: '18', j: 3 }, { i: '19', j: 3 }, { i: '20', j: 3 }, { i: '21', j: 3 }, { i: '22', j: 3 }, { i: '23', j: 3 }, { i: '24', j: 3 }, { i: '25', j: 3 }, { i: '26', j: 3 }, { i: '27', j: 3 }, { i: '28', j: 3 }, { i: '29', j: 3 }, { i: '30', j: 3 }, { i: '31', j: 3 }, { i: '32', j: 3 }, { i: '33', j: 3 }, { i: '35', j: 3 }, { i: '36', j: 3 }, { i: '1', j: 4 }, { i: '2', j: 4 }, { i: '3', j: 4 }, { i: '4', j: 4 }, { i: '5', j: 4 }, { i: '6', j: 4 }, { i: '7', j: 4 }, { i: '8', j: 4 }, { i: '9', j: 4 }, { i: '10', j: 4 }, { i: '11', j: 4 }, { i: '12', j: 4 }, { i: '13', j: 4 }, { i: '14', j: 4 }, { i: '15', j: 4 }, { i: '16', j: 4 }, { i: '17', j: 4 }, { i: '18', j: 4 }, { i: '19', j: 4 }, { i: '20', j: 4 }, { i: '21', j: 4 }, { i: '22', j: 4 }, { i: '23', j: 4 }, { i: '24', j: 4 }, { i: '25', j: 4 }, { i: '26', j: 4 }, { i: '27', j: 4 }, { i: '28', j: 4 }, { i: '29', j: 4 }, { i: '30', j: 4 }, { i: '31', j: 4 }, { i: '32', j: 4 }, { i: '33', j: 4 }, { i: '35', j: 4 }, { i: '36', j: 4 } ], css_id: 'tinytable_css_mruwintq2aqpkgo8os2w',}, 
+          { positions: [ { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 } ], css_id: 'tinytable_css_oyqzuajcoakvbb2q2laf',}, 
+          { positions: [ { i: '37', j: 1 } ], css_id: 'tinytable_css_rlo4t2gsdo74gvh1rm80',}, 
+          { positions: [ { i: '34', j: 1 } ], css_id: 'tinytable_css_7byretay8z7qommcde7l',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 }, { i: '7', j: 1 }, { i: '8', j: 1 }, { i: '9', j: 1 }, { i: '10', j: 1 }, { i: '11', j: 1 }, { i: '12', j: 1 }, { i: '13', j: 1 }, { i: '14', j: 1 }, { i: '15', j: 1 }, { i: '16', j: 1 }, { i: '17', j: 1 }, { i: '18', j: 1 }, { i: '19', j: 1 }, { i: '20', j: 1 }, { i: '21', j: 1 }, { i: '22', j: 1 }, { i: '23', j: 1 }, { i: '24', j: 1 }, { i: '25', j: 1 }, { i: '26', j: 1 }, { i: '27', j: 1 }, { i: '28', j: 1 }, { i: '29', j: 1 }, { i: '30', j: 1 }, { i: '31', j: 1 }, { i: '32', j: 1 }, { i: '33', j: 1 }, { i: '35', j: 1 }, { i: '36', j: 1 } ], css_id: 'tinytable_css_0l2trdd1xf1y5niwu8nn',}, 
+          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_xykc1ybisbqo8l0v0l4u',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  tableFns_ybik667y9dixrsbxckev.styleCell(cell.i, cell.j, group.css_id);
+                  tableFns_ug6an3t3xorevscchhes.styleCell(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -154,553 +141,249 @@ Table 1: Odds Ratios for Tie Persistence (Baseline Models)
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
     <style>
     /* tinytable css entries after */
-    #tinytable_ybik667y9dixrsbxckev td.tinytable_css_src5m23jhkev3odqjjtc, #tinytable_ybik667y9dixrsbxckev th.tinytable_css_src5m23jhkev3odqjjtc {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
-    #tinytable_ybik667y9dixrsbxckev td.tinytable_css_e7z001x7cpww032l0xhd, #tinytable_ybik667y9dixrsbxckev th.tinytable_css_e7z001x7cpww032l0xhd {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
-    #tinytable_ybik667y9dixrsbxckev td.tinytable_css_0ja5qoensuq5tumwzk57, #tinytable_ybik667y9dixrsbxckev th.tinytable_css_0ja5qoensuq5tumwzk57 { text-align: center }
-    #tinytable_ybik667y9dixrsbxckev td.tinytable_css_tycd0geotood669jxunw, #tinytable_ybik667y9dixrsbxckev th.tinytable_css_tycd0geotood669jxunw {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
-    #tinytable_ybik667y9dixrsbxckev td.tinytable_css_golz9hqxbkihd36gblja, #tinytable_ybik667y9dixrsbxckev th.tinytable_css_golz9hqxbkihd36gblja {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
-    #tinytable_ybik667y9dixrsbxckev td.tinytable_css_gowlb6tqr42w5lvy8dzq, #tinytable_ybik667y9dixrsbxckev th.tinytable_css_gowlb6tqr42w5lvy8dzq {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
-    #tinytable_ybik667y9dixrsbxckev td.tinytable_css_0dx3q7hlr8cyg80ebxe3, #tinytable_ybik667y9dixrsbxckev th.tinytable_css_0dx3q7hlr8cyg80ebxe3 { text-align: left }
-    #tinytable_ybik667y9dixrsbxckev td.tinytable_css_mt1xte1ghksc9hxjtzlu, #tinytable_ybik667y9dixrsbxckev th.tinytable_css_mt1xte1ghksc9hxjtzlu {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
+    #tinytable_ug6an3t3xorevscchhes td.tinytable_css_j3vkbwpe29r8qu0amfgt, #tinytable_ug6an3t3xorevscchhes th.tinytable_css_j3vkbwpe29r8qu0amfgt {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
+    #tinytable_ug6an3t3xorevscchhes td.tinytable_css_4gz1taj7vmwrmqmm48up, #tinytable_ug6an3t3xorevscchhes th.tinytable_css_4gz1taj7vmwrmqmm48up {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
+    #tinytable_ug6an3t3xorevscchhes td.tinytable_css_mruwintq2aqpkgo8os2w, #tinytable_ug6an3t3xorevscchhes th.tinytable_css_mruwintq2aqpkgo8os2w { text-align: center }
+    #tinytable_ug6an3t3xorevscchhes td.tinytable_css_oyqzuajcoakvbb2q2laf, #tinytable_ug6an3t3xorevscchhes th.tinytable_css_oyqzuajcoakvbb2q2laf {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
+    #tinytable_ug6an3t3xorevscchhes td.tinytable_css_rlo4t2gsdo74gvh1rm80, #tinytable_ug6an3t3xorevscchhes th.tinytable_css_rlo4t2gsdo74gvh1rm80 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
+    #tinytable_ug6an3t3xorevscchhes td.tinytable_css_7byretay8z7qommcde7l, #tinytable_ug6an3t3xorevscchhes th.tinytable_css_7byretay8z7qommcde7l {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
+    #tinytable_ug6an3t3xorevscchhes td.tinytable_css_0l2trdd1xf1y5niwu8nn, #tinytable_ug6an3t3xorevscchhes th.tinytable_css_0l2trdd1xf1y5niwu8nn { text-align: left }
+    #tinytable_ug6an3t3xorevscchhes td.tinytable_css_xykc1ybisbqo8l0v0l4u, #tinytable_ug6an3t3xorevscchhes th.tinytable_css_xykc1ybisbqo8l0v0l4u {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
     </style>
     <div class="container">
-      <table class="tinytable" id="tinytable_ybik667y9dixrsbxckev" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
+      <table class="tinytable" id="tinytable_ug6an3t3xorevscchhes" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         
         <thead>
               <tr>
                 <th scope="col" data-row="0" data-col="1"> </th>
                 <th scope="col" data-row="0" data-col="2">Model 1: Closed</th>
                 <th scope="col" data-row="0" data-col="3">Model 2: + Open</th>
+                <th scope="col" data-row="0" data-col="4">Model 3: + Opacity</th>
               </tr>
         </thead>
-        <tfoot><tr><td colspan='3'>+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001</td></tr></tfoot>
+        <tfoot><tr><td colspan="4">+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td></tr></tfoot>
         <tbody>
                 <tr>
                   <td data-row="1" data-col="1">Closed-Form Matches</td>
-                  <td data-row="1" data-col="2">1.231***</td>
-                  <td data-row="1" data-col="3">1.179**</td>
+                  <td data-row="1" data-col="2">1.225***</td>
+                  <td data-row="1" data-col="3">1.174**</td>
+                  <td data-row="1" data-col="4"></td>
                 </tr>
                 <tr>
                   <td data-row="2" data-col="1"></td>
                   <td data-row="2" data-col="2">(0.060)</td>
                   <td data-row="2" data-col="3">(0.059)</td>
+                  <td data-row="2" data-col="4"></td>
                 </tr>
                 <tr>
                   <td data-row="3" data-col="1">Open-Ended Matches</td>
                   <td data-row="3" data-col="2"></td>
-                  <td data-row="3" data-col="3">1.321***</td>
+                  <td data-row="3" data-col="3">1.322***</td>
+                  <td data-row="3" data-col="4">1.310***</td>
                 </tr>
                 <tr>
                   <td data-row="4" data-col="1"></td>
                   <td data-row="4" data-col="2"></td>
-                  <td data-row="4" data-col="3">(0.071)</td>
+                  <td data-row="4" data-col="3">(0.072)</td>
+                  <td data-row="4" data-col="4">(0.071)</td>
                 </tr>
                 <tr>
-                  <td data-row="5" data-col="1">Tie: Somewhat Close</td>
-                  <td data-row="5" data-col="2">0.513***</td>
-                  <td data-row="5" data-col="3">0.563***</td>
-                </tr>
-                <tr>
-                  <td data-row="6" data-col="1"></td>
-                  <td data-row="6" data-col="2">(0.070)</td>
-                  <td data-row="6" data-col="3">(0.078)</td>
-                </tr>
-                <tr>
-                  <td data-row="7" data-col="1">Tie: Close</td>
-                  <td data-row="7" data-col="2">0.319***</td>
-                  <td data-row="7" data-col="3">0.352***</td>
-                </tr>
-                <tr>
-                  <td data-row="8" data-col="1"></td>
-                  <td data-row="8" data-col="2">(0.071)</td>
-                  <td data-row="8" data-col="3">(0.079)</td>
-                </tr>
-                <tr>
-                  <td data-row="9" data-col="1">Tie Duration</td>
-                  <td data-row="9" data-col="2">0.991</td>
-                  <td data-row="9" data-col="3">0.992</td>
-                </tr>
-                <tr>
-                  <td data-row="10" data-col="1"></td>
-                  <td data-row="10" data-col="2">(0.015)</td>
-                  <td data-row="10" data-col="3">(0.016)</td>
-                </tr>
-                <tr>
-                  <td data-row="11" data-col="1">Ego: Female</td>
-                  <td data-row="11" data-col="2">1.070</td>
-                  <td data-row="11" data-col="3">1.043</td>
-                </tr>
-                <tr>
-                  <td data-row="12" data-col="1"></td>
-                  <td data-row="12" data-col="2">(0.398)</td>
-                  <td data-row="12" data-col="3">(0.390)</td>
-                </tr>
-                <tr>
-                  <td data-row="13" data-col="1">Alter: Female</td>
-                  <td data-row="13" data-col="2">1.400*</td>
-                  <td data-row="13" data-col="3">1.293</td>
-                </tr>
-                <tr>
-                  <td data-row="14" data-col="1"></td>
-                  <td data-row="14" data-col="2">(0.236)</td>
-                  <td data-row="14" data-col="3">(0.222)</td>
-                </tr>
-                <tr>
-                  <td data-row="15" data-col="1">Ego Female × Alter Female</td>
-                  <td data-row="15" data-col="2">0.631+</td>
-                  <td data-row="15" data-col="3">0.714</td>
-                </tr>
-                <tr>
-                  <td data-row="16" data-col="1"></td>
-                  <td data-row="16" data-col="2">(0.164)</td>
-                  <td data-row="16" data-col="3">(0.188)</td>
-                </tr>
-                <tr>
-                  <td data-row="17" data-col="1">Tie: Same Dorm / Roommate</td>
-                  <td data-row="17" data-col="2">1.078</td>
-                  <td data-row="17" data-col="3">1.032</td>
-                </tr>
-                <tr>
-                  <td data-row="18" data-col="1"></td>
-                  <td data-row="18" data-col="2">(0.412)</td>
-                  <td data-row="18" data-col="3">(0.399)</td>
-                </tr>
-                <tr>
-                  <td data-row="19" data-col="1">Tie: Friend</td>
-                  <td data-row="19" data-col="2">0.842</td>
-                  <td data-row="19" data-col="3">0.807</td>
-                </tr>
-                <tr>
-                  <td data-row="20" data-col="1"></td>
-                  <td data-row="20" data-col="2">(0.229)</td>
-                  <td data-row="20" data-col="3">(0.223)</td>
-                </tr>
-                <tr>
-                  <td data-row="21" data-col="1">Tie: Race Homophily</td>
-                  <td data-row="21" data-col="2">0.971</td>
-                  <td data-row="21" data-col="3">0.965</td>
-                </tr>
-                <tr>
-                  <td data-row="22" data-col="1"></td>
-                  <td data-row="22" data-col="2">(0.191)</td>
-                  <td data-row="22" data-col="3">(0.192)</td>
-                </tr>
-                <tr>
-                  <td data-row="23" data-col="1">Tie: Race Unknown</td>
-                  <td data-row="23" data-col="2">0.167***</td>
-                  <td data-row="23" data-col="3">0.169***</td>
-                </tr>
-                <tr>
-                  <td data-row="24" data-col="1"></td>
-                  <td data-row="24" data-col="2">(0.031)</td>
-                  <td data-row="24" data-col="3">(0.032)</td>
-                </tr>
-                <tr>
-                  <td data-row="25" data-col="1">Period: Wave 2-5</td>
-                  <td data-row="25" data-col="2">0.050***</td>
-                  <td data-row="25" data-col="3">0.072***</td>
-                </tr>
-                <tr>
-                  <td data-row="26" data-col="1"></td>
-                  <td data-row="26" data-col="2">(0.017)</td>
-                  <td data-row="26" data-col="3">(0.024)</td>
-                </tr>
-                <tr>
-                  <td data-row="27" data-col="1">Period: Wave 5-6</td>
-                  <td data-row="27" data-col="2">0.086***</td>
-                  <td data-row="27" data-col="3">0.116***</td>
-                </tr>
-                <tr>
-                  <td data-row="28" data-col="1"></td>
-                  <td data-row="28" data-col="2">(0.030)</td>
-                  <td data-row="28" data-col="3">(0.041)</td>
-                </tr>
-                <tr>
-                  <td data-row="29" data-col="1">Intercept</td>
-                  <td data-row="29" data-col="2">13.389***</td>
-                  <td data-row="29" data-col="3">5.331**</td>
-                </tr>
-                <tr>
-                  <td data-row="30" data-col="1"></td>
-                  <td data-row="30" data-col="2">(7.045)</td>
-                  <td data-row="30" data-col="3">(2.965)</td>
-                </tr>
-                <tr>
-                  <td data-row="31" data-col="1">Num.Obs.</td>
-                  <td data-row="31" data-col="2">3251</td>
-                  <td data-row="31" data-col="3">3251</td>
-                </tr>
-                <tr>
-                  <td data-row="32" data-col="1">AIC</td>
-                  <td data-row="32" data-col="2">2559.4</td>
-                  <td data-row="32" data-col="3">2533.8</td>
-                </tr>
-                <tr>
-                  <td data-row="33" data-col="1">BIC</td>
-                  <td data-row="33" data-col="2">2650.7</td>
-                  <td data-row="33" data-col="3">2631.1</td>
-                </tr>
-                <tr>
-                  <td data-row="34" data-col="1">RMSE</td>
-                  <td data-row="34" data-col="2">0.32</td>
-                  <td data-row="34" data-col="3">0.32</td>
-                </tr>
-        </tbody>
-      </table>
-    </div>
-<!-- hack to avoid NA insertion in last line -->
-</div>
-</div>
-</figure>
-</div>
-</div>
-</section>
-<section id="network-opacity-models" class="level2">
-<h2>Network Opacity Models</h2>
-<p>These models incorporate network opacity. The main effects model reveals that a lack of shared cultural knowledge signals a weaker tie. Interaction models show that the protective effect of known cultural matches remains relatively stable regardless of how much else the ego doesn’t know about the alter. Following <span class="citation" data-cites="mize2019best">Mize (<a href="#ref-mize2019best" role="doc-biblioref">2019</a>)</span>, non-significant interaction coefficients are supported by formal tests of second differences in average marginal effects, which are also not statistically significant.</p>
-<div class="cell">
-<div id="tbl-opacity" class="cell quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-tbl">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-opacity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table 2: Odds Ratios for Tie Persistence (Network Opacity Models)
-</figcaption>
-<div aria-describedby="tbl-opacity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<!-- preamble start -->
-
-    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
-
-    <script>
-      // Create table-specific functions using external factory
-      const tableFns_x6mozgm13iv6fk8pe56x = TinyTable.createTableFunctions("tinytable_x6mozgm13iv6fk8pe56x");
-      // tinytable span after
-      window.addEventListener('load', function () {
-          var cellsToStyle = [
-            // tinytable style arrays after
-          { positions: [ { i: '40', j: 2 }, { i: '40', j: 3 }, { i: '40', j: 4 }, { i: '40', j: 5 } ], css_id: 'tinytable_css_ide7s1iair89ibz4d7ov',}, 
-          { positions: [ { i: '36', j: 2 }, { i: '36', j: 3 }, { i: '36', j: 4 }, { i: '36', j: 5 } ], css_id: 'tinytable_css_m6dvxc7sw3gjyfcf2wjl',}, 
-          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 }, { i: '7', j: 2 }, { i: '8', j: 2 }, { i: '9', j: 2 }, { i: '10', j: 2 }, { i: '11', j: 2 }, { i: '12', j: 2 }, { i: '13', j: 2 }, { i: '14', j: 2 }, { i: '15', j: 2 }, { i: '16', j: 2 }, { i: '17', j: 2 }, { i: '18', j: 2 }, { i: '19', j: 2 }, { i: '20', j: 2 }, { i: '21', j: 2 }, { i: '22', j: 2 }, { i: '23', j: 2 }, { i: '24', j: 2 }, { i: '25', j: 2 }, { i: '26', j: 2 }, { i: '27', j: 2 }, { i: '28', j: 2 }, { i: '29', j: 2 }, { i: '30', j: 2 }, { i: '31', j: 2 }, { i: '32', j: 2 }, { i: '33', j: 2 }, { i: '34', j: 2 }, { i: '35', j: 2 }, { i: '37', j: 2 }, { i: '38', j: 2 }, { i: '39', j: 2 }, { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 }, { i: '12', j: 3 }, { i: '13', j: 3 }, { i: '14', j: 3 }, { i: '15', j: 3 }, { i: '16', j: 3 }, { i: '17', j: 3 }, { i: '18', j: 3 }, { i: '19', j: 3 }, { i: '20', j: 3 }, { i: '21', j: 3 }, { i: '22', j: 3 }, { i: '23', j: 3 }, { i: '24', j: 3 }, { i: '25', j: 3 }, { i: '26', j: 3 }, { i: '27', j: 3 }, { i: '28', j: 3 }, { i: '29', j: 3 }, { i: '30', j: 3 }, { i: '31', j: 3 }, { i: '32', j: 3 }, { i: '33', j: 3 }, { i: '34', j: 3 }, { i: '35', j: 3 }, { i: '37', j: 3 }, { i: '38', j: 3 }, { i: '39', j: 3 }, { i: '1', j: 4 }, { i: '2', j: 4 }, { i: '3', j: 4 }, { i: '4', j: 4 }, { i: '5', j: 4 }, { i: '6', j: 4 }, { i: '7', j: 4 }, { i: '8', j: 4 }, { i: '9', j: 4 }, { i: '10', j: 4 }, { i: '11', j: 4 }, { i: '12', j: 4 }, { i: '13', j: 4 }, { i: '14', j: 4 }, { i: '15', j: 4 }, { i: '16', j: 4 }, { i: '17', j: 4 }, { i: '18', j: 4 }, { i: '19', j: 4 }, { i: '20', j: 4 }, { i: '21', j: 4 }, { i: '22', j: 4 }, { i: '23', j: 4 }, { i: '24', j: 4 }, { i: '25', j: 4 }, { i: '26', j: 4 }, { i: '27', j: 4 }, { i: '28', j: 4 }, { i: '29', j: 4 }, { i: '30', j: 4 }, { i: '31', j: 4 }, { i: '32', j: 4 }, { i: '33', j: 4 }, { i: '34', j: 4 }, { i: '35', j: 4 }, { i: '37', j: 4 }, { i: '38', j: 4 }, { i: '39', j: 4 }, { i: '1', j: 5 }, { i: '2', j: 5 }, { i: '3', j: 5 }, { i: '4', j: 5 }, { i: '5', j: 5 }, { i: '6', j: 5 }, { i: '7', j: 5 }, { i: '8', j: 5 }, { i: '9', j: 5 }, { i: '10', j: 5 }, { i: '11', j: 5 }, { i: '12', j: 5 }, { i: '13', j: 5 }, { i: '14', j: 5 }, { i: '15', j: 5 }, { i: '16', j: 5 }, { i: '17', j: 5 }, { i: '18', j: 5 }, { i: '19', j: 5 }, { i: '20', j: 5 }, { i: '21', j: 5 }, { i: '22', j: 5 }, { i: '23', j: 5 }, { i: '24', j: 5 }, { i: '25', j: 5 }, { i: '26', j: 5 }, { i: '27', j: 5 }, { i: '28', j: 5 }, { i: '29', j: 5 }, { i: '30', j: 5 }, { i: '31', j: 5 }, { i: '32', j: 5 }, { i: '33', j: 5 }, { i: '34', j: 5 }, { i: '35', j: 5 }, { i: '37', j: 5 }, { i: '38', j: 5 }, { i: '39', j: 5 } ], css_id: 'tinytable_css_ilyikkx3734gv3kajpmc',}, 
-          { positions: [ { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 } ], css_id: 'tinytable_css_90cwgf245tjvz2g7an2z',}, 
-          { positions: [ { i: '40', j: 1 } ], css_id: 'tinytable_css_aoqj26lm73w9og0ha159',}, 
-          { positions: [ { i: '36', j: 1 } ], css_id: 'tinytable_css_zl6flaw0jsnuz4xzg2gc',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 }, { i: '7', j: 1 }, { i: '8', j: 1 }, { i: '9', j: 1 }, { i: '10', j: 1 }, { i: '11', j: 1 }, { i: '12', j: 1 }, { i: '13', j: 1 }, { i: '14', j: 1 }, { i: '15', j: 1 }, { i: '16', j: 1 }, { i: '17', j: 1 }, { i: '18', j: 1 }, { i: '19', j: 1 }, { i: '20', j: 1 }, { i: '21', j: 1 }, { i: '22', j: 1 }, { i: '23', j: 1 }, { i: '24', j: 1 }, { i: '25', j: 1 }, { i: '26', j: 1 }, { i: '27', j: 1 }, { i: '28', j: 1 }, { i: '29', j: 1 }, { i: '30', j: 1 }, { i: '31', j: 1 }, { i: '32', j: 1 }, { i: '33', j: 1 }, { i: '34', j: 1 }, { i: '35', j: 1 }, { i: '37', j: 1 }, { i: '38', j: 1 }, { i: '39', j: 1 } ], css_id: 'tinytable_css_qjvcc4w3ei6wyjblj8kn',}, 
-          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_bkss9zc0wa2yfdmush5n',}, 
-          ];
-
-          // Loop over the arrays to style the cells
-          cellsToStyle.forEach(function (group) {
-              group.positions.forEach(function (cell) {
-                  tableFns_x6mozgm13iv6fk8pe56x.styleCell(cell.i, cell.j, group.css_id);
-              });
-          });
-      });
-    </script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
-    <style>
-    /* tinytable css entries after */
-    #tinytable_x6mozgm13iv6fk8pe56x td.tinytable_css_ide7s1iair89ibz4d7ov, #tinytable_x6mozgm13iv6fk8pe56x th.tinytable_css_ide7s1iair89ibz4d7ov {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
-    #tinytable_x6mozgm13iv6fk8pe56x td.tinytable_css_m6dvxc7sw3gjyfcf2wjl, #tinytable_x6mozgm13iv6fk8pe56x th.tinytable_css_m6dvxc7sw3gjyfcf2wjl {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
-    #tinytable_x6mozgm13iv6fk8pe56x td.tinytable_css_ilyikkx3734gv3kajpmc, #tinytable_x6mozgm13iv6fk8pe56x th.tinytable_css_ilyikkx3734gv3kajpmc { text-align: center }
-    #tinytable_x6mozgm13iv6fk8pe56x td.tinytable_css_90cwgf245tjvz2g7an2z, #tinytable_x6mozgm13iv6fk8pe56x th.tinytable_css_90cwgf245tjvz2g7an2z {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
-    #tinytable_x6mozgm13iv6fk8pe56x td.tinytable_css_aoqj26lm73w9og0ha159, #tinytable_x6mozgm13iv6fk8pe56x th.tinytable_css_aoqj26lm73w9og0ha159 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
-    #tinytable_x6mozgm13iv6fk8pe56x td.tinytable_css_zl6flaw0jsnuz4xzg2gc, #tinytable_x6mozgm13iv6fk8pe56x th.tinytable_css_zl6flaw0jsnuz4xzg2gc {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
-    #tinytable_x6mozgm13iv6fk8pe56x td.tinytable_css_qjvcc4w3ei6wyjblj8kn, #tinytable_x6mozgm13iv6fk8pe56x th.tinytable_css_qjvcc4w3ei6wyjblj8kn { text-align: left }
-    #tinytable_x6mozgm13iv6fk8pe56x td.tinytable_css_bkss9zc0wa2yfdmush5n, #tinytable_x6mozgm13iv6fk8pe56x th.tinytable_css_bkss9zc0wa2yfdmush5n {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
-    </style>
-    <div class="container">
-      <table class="tinytable" id="tinytable_x6mozgm13iv6fk8pe56x" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
-        
-        <thead>
-              <tr>
-                <th scope="col" data-row="0" data-col="1"> </th>
-                <th scope="col" data-row="0" data-col="2">Opacity Main Effects</th>
-                <th scope="col" data-row="0" data-col="3">Closed Interaction</th>
-                <th scope="col" data-row="0" data-col="4">Open Interaction</th>
-                <th scope="col" data-row="0" data-col="5">Both Interactions</th>
-              </tr>
-        </thead>
-        <tfoot><tr><td colspan='5'>+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001</td></tr></tfoot>
-        <tbody>
-                <tr>
-                  <td data-row="1" data-col="1">Closed-Form Matches</td>
-                  <td data-row="1" data-col="2">1.092+</td>
-                  <td data-row="1" data-col="3">1.095+</td>
-                  <td data-row="1" data-col="4">1.092+</td>
-                  <td data-row="1" data-col="5">1.096+</td>
-                </tr>
-                <tr>
-                  <td data-row="2" data-col="1"></td>
-                  <td data-row="2" data-col="2">(0.058)</td>
-                  <td data-row="2" data-col="3">(0.060)</td>
-                  <td data-row="2" data-col="4">(0.058)</td>
-                  <td data-row="2" data-col="5">(0.061)</td>
-                </tr>
-                <tr>
-                  <td data-row="3" data-col="1">Open-Ended Matches</td>
-                  <td data-row="3" data-col="2">1.293***</td>
-                  <td data-row="3" data-col="3">1.293***</td>
-                  <td data-row="3" data-col="4">1.289***</td>
-                  <td data-row="3" data-col="5">1.287***</td>
-                </tr>
-                <tr>
-                  <td data-row="4" data-col="1"></td>
-                  <td data-row="4" data-col="2">(0.071)</td>
-                  <td data-row="4" data-col="3">(0.071)</td>
-                  <td data-row="4" data-col="4">(0.077)</td>
-                  <td data-row="4" data-col="5">(0.077)</td>
-                </tr>
-                <tr>
-                  <td data-row="5" data-col="1">Network Opacity (Unknowns)</td>
-                  <td data-row="5" data-col="2">0.768***</td>
-                  <td data-row="5" data-col="3">0.772***</td>
-                  <td data-row="5" data-col="4">0.761**</td>
-                  <td data-row="5" data-col="5">0.765**</td>
+                  <td data-row="5" data-col="1">Network Opacity</td>
+                  <td data-row="5" data-col="2"></td>
+                  <td data-row="5" data-col="3"></td>
+                  <td data-row="5" data-col="4">0.748***</td>
                 </tr>
                 <tr>
                   <td data-row="6" data-col="1"></td>
-                  <td data-row="6" data-col="2">(0.044)</td>
-                  <td data-row="6" data-col="3">(0.051)</td>
-                  <td data-row="6" data-col="4">(0.065)</td>
-                  <td data-row="6" data-col="5">(0.067)</td>
+                  <td data-row="6" data-col="2"></td>
+                  <td data-row="6" data-col="3"></td>
+                  <td data-row="6" data-col="4">(0.042)</td>
                 </tr>
                 <tr>
-                  <td data-row="7" data-col="1">Closed-Form × Opacity</td>
-                  <td data-row="7" data-col="2"></td>
-                  <td data-row="7" data-col="3">0.991</td>
-                  <td data-row="7" data-col="4"></td>
-                  <td data-row="7" data-col="5">0.990</td>
+                  <td data-row="7" data-col="1">Subjective Closeness: Somewhat</td>
+                  <td data-row="7" data-col="2">0.526***</td>
+                  <td data-row="7" data-col="3">0.574***</td>
+                  <td data-row="7" data-col="4">0.583***</td>
                 </tr>
                 <tr>
                   <td data-row="8" data-col="1"></td>
-                  <td data-row="8" data-col="2"></td>
-                  <td data-row="8" data-col="3">(0.044)</td>
-                  <td data-row="8" data-col="4"></td>
-                  <td data-row="8" data-col="5">(0.044)</td>
+                  <td data-row="8" data-col="2">(0.073)</td>
+                  <td data-row="8" data-col="3">(0.081)</td>
+                  <td data-row="8" data-col="4">(0.082)</td>
                 </tr>
                 <tr>
-                  <td data-row="9" data-col="1">Open-Ended × Opacity</td>
-                  <td data-row="9" data-col="2"></td>
-                  <td data-row="9" data-col="3"></td>
-                  <td data-row="9" data-col="4">1.005</td>
-                  <td data-row="9" data-col="5"></td>
+                  <td data-row="9" data-col="1">Subjective Closeness: Close</td>
+                  <td data-row="9" data-col="2">0.332***</td>
+                  <td data-row="9" data-col="3">0.365***</td>
+                  <td data-row="9" data-col="4">0.419***</td>
                 </tr>
                 <tr>
                   <td data-row="10" data-col="1"></td>
-                  <td data-row="10" data-col="2"></td>
-                  <td data-row="10" data-col="3"></td>
-                  <td data-row="10" data-col="4">(0.037)</td>
-                  <td data-row="10" data-col="5"></td>
+                  <td data-row="10" data-col="2">(0.075)</td>
+                  <td data-row="10" data-col="3">(0.083)</td>
+                  <td data-row="10" data-col="4">(0.097)</td>
                 </tr>
                 <tr>
-                  <td data-row="11" data-col="1">Tie: Somewhat Close</td>
-                  <td data-row="11" data-col="2">0.590***</td>
-                  <td data-row="11" data-col="3">0.591***</td>
-                  <td data-row="11" data-col="4">0.590***</td>
-                  <td data-row="11" data-col="5">0.590***</td>
+                  <td data-row="11" data-col="1">Tie Duration (Years)</td>
+                  <td data-row="11" data-col="2">1.026</td>
+                  <td data-row="11" data-col="3">1.015</td>
+                  <td data-row="11" data-col="4">0.987</td>
                 </tr>
                 <tr>
                   <td data-row="12" data-col="1"></td>
-                  <td data-row="12" data-col="2">(0.082)</td>
-                  <td data-row="12" data-col="3">(0.082)</td>
-                  <td data-row="12" data-col="4">(0.082)</td>
-                  <td data-row="12" data-col="5">(0.082)</td>
+                  <td data-row="12" data-col="2">(0.048)</td>
+                  <td data-row="12" data-col="3">(0.048)</td>
+                  <td data-row="12" data-col="4">(0.048)</td>
                 </tr>
                 <tr>
-                  <td data-row="13" data-col="1">Tie: Close</td>
-                  <td data-row="13" data-col="2">0.424***</td>
-                  <td data-row="13" data-col="3">0.425***</td>
-                  <td data-row="13" data-col="4">0.424***</td>
-                  <td data-row="13" data-col="5">0.424***</td>
+                  <td data-row="13" data-col="1">Tie Duration Squared</td>
+                  <td data-row="13" data-col="2">0.998</td>
+                  <td data-row="13" data-col="3">0.999</td>
+                  <td data-row="13" data-col="4">1.000</td>
                 </tr>
                 <tr>
                   <td data-row="14" data-col="1"></td>
-                  <td data-row="14" data-col="2">(0.097)</td>
-                  <td data-row="14" data-col="3">(0.097)</td>
-                  <td data-row="14" data-col="4">(0.097)</td>
-                  <td data-row="14" data-col="5">(0.097)</td>
+                  <td data-row="14" data-col="2">(0.003)</td>
+                  <td data-row="14" data-col="3">(0.003)</td>
+                  <td data-row="14" data-col="4">(0.003)</td>
                 </tr>
                 <tr>
-                  <td data-row="15" data-col="1">Tie Duration</td>
-                  <td data-row="15" data-col="2">0.983</td>
-                  <td data-row="15" data-col="3">0.983</td>
-                  <td data-row="15" data-col="4">0.983</td>
-                  <td data-row="15" data-col="5">0.983</td>
+                  <td data-row="15" data-col="1">Ego: Woman</td>
+                  <td data-row="15" data-col="2">1.084</td>
+                  <td data-row="15" data-col="3">1.045</td>
+                  <td data-row="15" data-col="4">1.016</td>
                 </tr>
                 <tr>
                   <td data-row="16" data-col="1"></td>
-                  <td data-row="16" data-col="2">(0.016)</td>
-                  <td data-row="16" data-col="3">(0.016)</td>
-                  <td data-row="16" data-col="4">(0.016)</td>
-                  <td data-row="16" data-col="5">(0.016)</td>
+                  <td data-row="16" data-col="2">(0.404)</td>
+                  <td data-row="16" data-col="3">(0.392)</td>
+                  <td data-row="16" data-col="4">(0.385)</td>
                 </tr>
                 <tr>
-                  <td data-row="17" data-col="1">Ego: Female</td>
-                  <td data-row="17" data-col="2">1.028</td>
-                  <td data-row="17" data-col="3">1.028</td>
-                  <td data-row="17" data-col="4">1.026</td>
-                  <td data-row="17" data-col="5">1.027</td>
+                  <td data-row="17" data-col="1">Alter: Woman</td>
+                  <td data-row="17" data-col="2">1.414*</td>
+                  <td data-row="17" data-col="3">1.300</td>
+                  <td data-row="17" data-col="4">1.247</td>
                 </tr>
                 <tr>
                   <td data-row="18" data-col="1"></td>
-                  <td data-row="18" data-col="2">(0.391)</td>
-                  <td data-row="18" data-col="3">(0.391)</td>
-                  <td data-row="18" data-col="4">(0.390)</td>
-                  <td data-row="18" data-col="5">(0.391)</td>
+                  <td data-row="18" data-col="2">(0.240)</td>
+                  <td data-row="18" data-col="3">(0.224)</td>
+                  <td data-row="18" data-col="4">(0.217)</td>
                 </tr>
                 <tr>
-                  <td data-row="19" data-col="1">Alter: Female</td>
-                  <td data-row="19" data-col="2">1.241</td>
-                  <td data-row="19" data-col="3">1.242</td>
-                  <td data-row="19" data-col="4">1.241</td>
-                  <td data-row="19" data-col="5">1.241</td>
+                  <td data-row="19" data-col="1">Ego Woman × Alter Woman</td>
+                  <td data-row="19" data-col="2">0.622+</td>
+                  <td data-row="19" data-col="3">0.714</td>
+                  <td data-row="19" data-col="4">0.750</td>
                 </tr>
                 <tr>
                   <td data-row="20" data-col="1"></td>
-                  <td data-row="20" data-col="2">(0.215)</td>
-                  <td data-row="20" data-col="3">(0.215)</td>
-                  <td data-row="20" data-col="4">(0.215)</td>
-                  <td data-row="20" data-col="5">(0.215)</td>
+                  <td data-row="20" data-col="2">(0.163)</td>
+                  <td data-row="20" data-col="3">(0.190)</td>
+                  <td data-row="20" data-col="4">(0.202)</td>
                 </tr>
                 <tr>
-                  <td data-row="21" data-col="1">Ego Female × Alter Female</td>
-                  <td data-row="21" data-col="2">0.743</td>
-                  <td data-row="21" data-col="3">0.745</td>
-                  <td data-row="21" data-col="4">0.743</td>
-                  <td data-row="21" data-col="5">0.745</td>
+                  <td data-row="21" data-col="1">Roommate/Dormmate</td>
+                  <td data-row="21" data-col="2">1.117</td>
+                  <td data-row="21" data-col="3">1.031</td>
+                  <td data-row="21" data-col="4">0.886</td>
                 </tr>
                 <tr>
                   <td data-row="22" data-col="1"></td>
-                  <td data-row="22" data-col="2">(0.198)</td>
-                  <td data-row="22" data-col="3">(0.199)</td>
-                  <td data-row="22" data-col="4">(0.198)</td>
-                  <td data-row="22" data-col="5">(0.199)</td>
+                  <td data-row="22" data-col="2">(0.441)</td>
+                  <td data-row="22" data-col="3">(0.413)</td>
+                  <td data-row="22" data-col="4">(0.357)</td>
                 </tr>
                 <tr>
-                  <td data-row="23" data-col="1">Tie: Same Dorm / Roommate</td>
-                  <td data-row="23" data-col="2">0.913</td>
-                  <td data-row="23" data-col="3">0.914</td>
-                  <td data-row="23" data-col="4">0.915</td>
-                  <td data-row="23" data-col="5">0.917</td>
+                  <td data-row="23" data-col="1">Friend</td>
+                  <td data-row="23" data-col="2">0.811</td>
+                  <td data-row="23" data-col="3">0.775</td>
+                  <td data-row="23" data-col="4">0.727</td>
                 </tr>
                 <tr>
                   <td data-row="24" data-col="1"></td>
-                  <td data-row="24" data-col="2">(0.356)</td>
-                  <td data-row="24" data-col="3">(0.357)</td>
-                  <td data-row="24" data-col="4">(0.357)</td>
-                  <td data-row="24" data-col="5">(0.358)</td>
+                  <td data-row="24" data-col="2">(0.224)</td>
+                  <td data-row="24" data-col="3">(0.217)</td>
+                  <td data-row="24" data-col="4">(0.204)</td>
                 </tr>
                 <tr>
-                  <td data-row="25" data-col="1">Tie: Friend</td>
-                  <td data-row="25" data-col="2">0.740</td>
-                  <td data-row="25" data-col="3">0.742</td>
-                  <td data-row="25" data-col="4">0.742</td>
-                  <td data-row="25" data-col="5">0.745</td>
+                  <td data-row="25" data-col="1">Frequency: Weekly/Daily</td>
+                  <td data-row="25" data-col="2">1.120</td>
+                  <td data-row="25" data-col="3">1.158</td>
+                  <td data-row="25" data-col="4">1.115</td>
                 </tr>
                 <tr>
                   <td data-row="26" data-col="1"></td>
-                  <td data-row="26" data-col="2">(0.206)</td>
-                  <td data-row="26" data-col="3">(0.207)</td>
-                  <td data-row="26" data-col="4">(0.207)</td>
-                  <td data-row="26" data-col="5">(0.208)</td>
+                  <td data-row="26" data-col="2">(0.184)</td>
+                  <td data-row="26" data-col="3">(0.192)</td>
+                  <td data-row="26" data-col="4">(0.187)</td>
                 </tr>
                 <tr>
-                  <td data-row="27" data-col="1">Tie: Race Homophily</td>
-                  <td data-row="27" data-col="2">0.920</td>
-                  <td data-row="27" data-col="3">0.920</td>
-                  <td data-row="27" data-col="4">0.918</td>
-                  <td data-row="27" data-col="5">0.917</td>
+                  <td data-row="27" data-col="1">Race Homophily: Same Race</td>
+                  <td data-row="27" data-col="2">0.967</td>
+                  <td data-row="27" data-col="3">0.961</td>
+                  <td data-row="27" data-col="4">0.921</td>
                 </tr>
                 <tr>
                   <td data-row="28" data-col="1"></td>
-                  <td data-row="28" data-col="2">(0.184)</td>
-                  <td data-row="28" data-col="3">(0.184)</td>
+                  <td data-row="28" data-col="2">(0.191)</td>
+                  <td data-row="28" data-col="3">(0.191)</td>
                   <td data-row="28" data-col="4">(0.185)</td>
-                  <td data-row="28" data-col="5">(0.185)</td>
                 </tr>
                 <tr>
-                  <td data-row="29" data-col="1">Tie: Race Unknown</td>
-                  <td data-row="29" data-col="2">0.159***</td>
-                  <td data-row="29" data-col="3">0.159***</td>
-                  <td data-row="29" data-col="4">0.159***</td>
-                  <td data-row="29" data-col="5">0.159***</td>
+                  <td data-row="29" data-col="1">Race Homophily: Unknown</td>
+                  <td data-row="29" data-col="2">0.162***</td>
+                  <td data-row="29" data-col="3">0.165***</td>
+                  <td data-row="29" data-col="4">0.157***</td>
                 </tr>
                 <tr>
                   <td data-row="30" data-col="1"></td>
                   <td data-row="30" data-col="2">(0.030)</td>
-                  <td data-row="30" data-col="3">(0.030)</td>
+                  <td data-row="30" data-col="3">(0.031)</td>
                   <td data-row="30" data-col="4">(0.030)</td>
-                  <td data-row="30" data-col="5">(0.030)</td>
                 </tr>
                 <tr>
-                  <td data-row="31" data-col="1">Period: Wave 2-5</td>
-                  <td data-row="31" data-col="2">0.063***</td>
-                  <td data-row="31" data-col="3">0.063***</td>
+                  <td data-row="31" data-col="1">Time Period: Wave 2-5</td>
+                  <td data-row="31" data-col="2">0.053***</td>
+                  <td data-row="31" data-col="3">0.074***</td>
                   <td data-row="31" data-col="4">0.063***</td>
-                  <td data-row="31" data-col="5">0.063***</td>
                 </tr>
                 <tr>
                   <td data-row="32" data-col="1"></td>
-                  <td data-row="32" data-col="2">(0.021)</td>
-                  <td data-row="32" data-col="3">(0.021)</td>
-                  <td data-row="32" data-col="4">(0.021)</td>
-                  <td data-row="32" data-col="5">(0.021)</td>
+                  <td data-row="32" data-col="2">(0.018)</td>
+                  <td data-row="32" data-col="3">(0.025)</td>
+                  <td data-row="32" data-col="4">(0.022)</td>
                 </tr>
                 <tr>
-                  <td data-row="33" data-col="1">Period: Wave 5-6</td>
-                  <td data-row="33" data-col="2">0.093***</td>
-                  <td data-row="33" data-col="3">0.093***</td>
-                  <td data-row="33" data-col="4">0.093***</td>
-                  <td data-row="33" data-col="5">0.093***</td>
+                  <td data-row="33" data-col="1">Time Period: Wave 5-6</td>
+                  <td data-row="33" data-col="2">0.090***</td>
+                  <td data-row="33" data-col="3">0.120***</td>
+                  <td data-row="33" data-col="4">0.088***</td>
                 </tr>
                 <tr>
                   <td data-row="34" data-col="1"></td>
-                  <td data-row="34" data-col="2">(0.033)</td>
-                  <td data-row="34" data-col="3">(0.033)</td>
-                  <td data-row="34" data-col="4">(0.033)</td>
-                  <td data-row="34" data-col="5">(0.033)</td>
+                  <td data-row="34" data-col="2">(0.031)</td>
+                  <td data-row="34" data-col="3">(0.042)</td>
+                  <td data-row="34" data-col="4">(0.032)</td>
                 </tr>
                 <tr>
-                  <td data-row="35" data-col="1">Intercept</td>
-                  <td data-row="35" data-col="2">10.549***</td>
-                  <td data-row="35" data-col="3">10.509***</td>
-                  <td data-row="35" data-col="4">10.619***</td>
-                  <td data-row="35" data-col="5">10.594***</td>
+                  <td data-row="35" data-col="1">Num.Obs.</td>
+                  <td data-row="35" data-col="2">3251</td>
+                  <td data-row="35" data-col="3">3251</td>
+                  <td data-row="35" data-col="4">3251</td>
                 </tr>
                 <tr>
-                  <td data-row="36" data-col="1"></td>
-                  <td data-row="36" data-col="2">(6.125)</td>
-                  <td data-row="36" data-col="3">(6.107)</td>
-                  <td data-row="36" data-col="4">(6.188)</td>
-                  <td data-row="36" data-col="5">(6.176)</td>
+                  <td data-row="36" data-col="1">AIC</td>
+                  <td data-row="36" data-col="2">2562.3</td>
+                  <td data-row="36" data-col="3">2536.7</td>
+                  <td data-row="36" data-col="4">2518.5</td>
                 </tr>
                 <tr>
-                  <td data-row="37" data-col="1">Num.Obs.</td>
-                  <td data-row="37" data-col="2">3251</td>
-                  <td data-row="37" data-col="3">3251</td>
-                  <td data-row="37" data-col="4">3251</td>
-                  <td data-row="37" data-col="5">3251</td>
-                </tr>
-                <tr>
-                  <td data-row="38" data-col="1">AIC</td>
-                  <td data-row="38" data-col="2">2514.2</td>
-                  <td data-row="38" data-col="3">2516.1</td>
-                  <td data-row="38" data-col="4">2516.2</td>
-                  <td data-row="38" data-col="5">2518.1</td>
-                </tr>
-                <tr>
-                  <td data-row="39" data-col="1">BIC</td>
-                  <td data-row="39" data-col="2">2617.7</td>
-                  <td data-row="39" data-col="3">2625.7</td>
-                  <td data-row="39" data-col="4">2625.7</td>
-                  <td data-row="39" data-col="5">2633.7</td>
-                </tr>
-                <tr>
-                  <td data-row="40" data-col="1">RMSE</td>
-                  <td data-row="40" data-col="2">0.32</td>
-                  <td data-row="40" data-col="3">0.32</td>
-                  <td data-row="40" data-col="4">0.32</td>
-                  <td data-row="40" data-col="5">0.32</td>
+                  <td data-row="37" data-col="1">BIC</td>
+                  <td data-row="37" data-col="2">2665.8</td>
+                  <td data-row="37" data-col="3">2646.3</td>
+                  <td data-row="37" data-col="4">2628.1</td>
                 </tr>
         </tbody>
       </table>
@@ -712,17 +395,17 @@ Table 2: Odds Ratios for Tie Persistence (Network Opacity Models)
 </div>
 </div>
 <section id="marginal-effects" class="level3">
-<h3>Marginal Effects</h3>
-<p><strong>Figure <a href="#fig-combined" class="quarto-xref">Figure 1</a></strong> visualizes the marginal effect (calculated as the change from the minimum to the maximum value) of closed-form matches, open-ended matches, and network opacity on the predicted probability of tie persistence.</p>
+<h3 class="anchored" data-anchor-id="marginal-effects">Marginal Effects</h3>
+<p><strong>Figure <a href="#fig-combined" class="quarto-xref">Figure&nbsp;1</a></strong> visualizes the marginal effect (calculated as the change from the minimum to the maximum value) of closed-form matches, open-ended matches, and network opacity on the predicted probability of tie persistence.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-combined" class="quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
+<div id="fig-combined" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-combined-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="analysis_files/figure-html/fig-combined-1.png" class="img-fluid" width="672" />
+<img src="analysis_files/figure-html/fig-combined-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-combined-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure 1: Marginal Effects of Cultural Matches and Network Opacity (Min to Max)
+Figure&nbsp;1: Marginal Effects of Cultural Matches and Network Opacity (Min to Max)
 </figcaption>
 </figure>
 </div>
@@ -730,69 +413,210 @@ Figure 1: Marginal Effects of Cultural Matches and Network Opacity (Min to Max)
 </div>
 </section>
 </section>
-<section id="model-fit-comparison" class="level2">
-<h2>Model Fit Comparison</h2>
-<p>A comparative summary of the fit statistics for all models, demonstrating that the Opacity Main Effects model provides the best overall fit (lowest AIC/BIC) and that adding interaction terms does not statistically improve model fit.</p>
+<section id="subjective-closeness-interactions" class="level2">
+<h2 class="anchored" data-anchor-id="subjective-closeness-interactions">Subjective Closeness Interactions</h2>
+<p>To test whether the protective effects of cultural matching or the detrimental effects of network opacity depend on the strength of the tie, we estimated auxiliary interaction models between subjective closeness and each of the three cultural variables. While interaction terms in logistic regression models can be difficult to interpret directly from coefficients due to the non-linear link function, computing predicted probabilities across the range of the variables provides a clearer picture of the underlying dynamics.</p>
+<p><strong>Figure <a href="#fig-closeness-interactions" class="quarto-xref">Figure&nbsp;2</a></strong> plots the marginal effects of the three cultural variables across the three levels of subjective closeness.</p>
 <div class="cell">
-<div id="tbl-comparison" class="cell quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-tbl">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table 3: Model Fit Comparison (Log-Likelihood, AIC, and BIC)
-</figcaption>
-<div aria-describedby="tbl-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="cell caption-top">
+<div id="fig-closeness-interactions" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-closeness-interactions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="analysis_files/figure-html/fig-closeness-interactions-1.png" class="img-fluid figure-img" width="1152">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-closeness-interactions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Predicted Probability of Tie Persistence by Cultural Matching, Network Opacity, and Subjective Closeness
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>As the marginal effects plot clearly demonstrates, the role of cultural matching varies substantially by subjective closeness. For “Not Close” ties (the steepest slopes), an increase in shared cultural tastes—whether measured through closed-form domains or open-ended activities—dramatically increases the probability of tie persistence. Conversely, for ties that are already “Close,” the slope is essentially flat. This suggests that shared cultural tastes provide critical scaffolding that helps weak ties survive, whereas strong ties are resilient to decay regardless of cultural matching. Similarly, network opacity exerts its most severe negative effect on ties that are not subjectively close. ## Appendix: Descriptive Statistics</p>
+<div class="cell">
+<div id="tbl-descriptives-cont" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-descriptives-cont-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Descriptive Statistics for Continuous Variables
+</figcaption>
+<div aria-describedby="tbl-descriptives-cont-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Model</th>
-<th style="text-align: right;">N Obs</th>
-<th style="text-align: right;">Log Likelihood</th>
-<th style="text-align: right;">AIC</th>
-<th style="text-align: right;">BIC</th>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">SD</th>
+<th style="text-align: right;">Min</th>
+<th style="text-align: right;">Max</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Model 1: Closed</td>
-<td style="text-align: right;">3251</td>
-<td style="text-align: right;">-1264.68</td>
-<td style="text-align: right;">2559.37</td>
-<td style="text-align: right;">2650.67</td>
+<td style="text-align: left;">Closed-Form Matches</td>
+<td style="text-align: right;">2.12</td>
+<td style="text-align: right;">1.47</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">6</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Model 2: + Open</td>
-<td style="text-align: right;">3251</td>
-<td style="text-align: right;">-1250.88</td>
-<td style="text-align: right;">2533.75</td>
-<td style="text-align: right;">2631.14</td>
+<td style="text-align: left;">Open-Ended Matches</td>
+<td style="text-align: right;">2.44</td>
+<td style="text-align: right;">1.32</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">5</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Model 3: + Opacity</td>
-<td style="text-align: right;">3251</td>
-<td style="text-align: right;">-1240.09</td>
-<td style="text-align: right;">2514.18</td>
-<td style="text-align: right;">2617.65</td>
+<td style="text-align: left;">Cultural Network Opacity</td>
+<td style="text-align: right;">0.81</td>
+<td style="text-align: right;">1.51</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">6</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Model 4: Closed Int</td>
-<td style="text-align: right;">3251</td>
-<td style="text-align: right;">-1240.07</td>
-<td style="text-align: right;">2516.14</td>
-<td style="text-align: right;">2625.70</td>
+<td style="text-align: left;">Tie Duration (Years)</td>
+<td style="text-align: right;">3.01</td>
+<td style="text-align: right;">4.19</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">20</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell">
+<div id="tbl-descriptives-cat" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-descriptives-cat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Descriptive Statistics for Categorical Variables
+</figcaption>
+<div aria-describedby="tbl-descriptives-cat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Category</th>
+<th style="text-align: right;">N</th>
+<th style="text-align: right;">Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Alter Gender</td>
+<td style="text-align: left;">Men</td>
+<td style="text-align: right;">1160</td>
+<td style="text-align: right;">53.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Alter Gender</td>
+<td style="text-align: left;">Women</td>
+<td style="text-align: right;">1007</td>
+<td style="text-align: right;">46.5</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Model 5: Open Int</td>
-<td style="text-align: right;">3251</td>
-<td style="text-align: right;">-1240.08</td>
-<td style="text-align: right;">2516.15</td>
-<td style="text-align: right;">2625.71</td>
+<td style="text-align: left;">Ego Gender</td>
+<td style="text-align: left;">Men</td>
+<td style="text-align: right;">1127</td>
+<td style="text-align: right;">52.7</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Model 6: Both Int</td>
-<td style="text-align: right;">3251</td>
-<td style="text-align: right;">-1240.05</td>
-<td style="text-align: right;">2518.10</td>
-<td style="text-align: right;">2633.75</td>
+<td style="text-align: left;">Ego Gender</td>
+<td style="text-align: left;">Women</td>
+<td style="text-align: right;">1010</td>
+<td style="text-align: right;">47.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Friend</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">236</td>
+<td style="text-align: right;">10.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Friend</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">1939</td>
+<td style="text-align: right;">89.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Race Homophily</td>
+<td style="text-align: left;">Heterophilous</td>
+<td style="text-align: right;">217</td>
+<td style="text-align: right;">10.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Race Homophily</td>
+<td style="text-align: left;">Homophilous</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">23.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Race Homophily</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: right;">1458</td>
+<td style="text-align: right;">67.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Roommate/Dormmate</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">2062</td>
+<td style="text-align: right;">94.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Roommate/Dormmate</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">113</td>
+<td style="text-align: right;">5.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Subjective Closeness</td>
+<td style="text-align: left;">Close</td>
+<td style="text-align: right;">302</td>
+<td style="text-align: right;">14.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Subjective Closeness</td>
+<td style="text-align: left;">Not Close</td>
+<td style="text-align: right;">712</td>
+<td style="text-align: right;">33.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Subjective Closeness</td>
+<td style="text-align: left;">Somewhat Close</td>
+<td style="text-align: right;">1127</td>
+<td style="text-align: right;">52.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tie Persisted</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">1489</td>
+<td style="text-align: right;">68.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tie Persisted</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">686</td>
+<td style="text-align: right;">31.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Time Period</td>
+<td style="text-align: left;">Wave 1 to 2</td>
+<td style="text-align: right;">104</td>
+<td style="text-align: right;">4.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Time Period</td>
+<td style="text-align: left;">Wave 2 to 5</td>
+<td style="text-align: right;">1365</td>
+<td style="text-align: right;">62.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Time Period</td>
+<td style="text-align: left;">Wave 5 to 6</td>
+<td style="text-align: right;">706</td>
+<td style="text-align: right;">32.5</td>
 </tr>
 </tbody>
 </table>
@@ -802,257 +626,10 @@ Table 3: Model Fit Comparison (Log-Likelihood, AIC, and BIC)
 </div>
 </div>
 </section>
-<section id="friendship-interactions" class="level2">
-<h2>Friendship Interactions</h2>
-<p>In addition to cultural matching and general network opacity, we examine how the status of the tie specifically labeled as a “friend” modifies these effects. Specifically, we interact the <code>is_friend</code> indicator with network opacity.</p>
-<div class="cell">
-<div id="tbl-friend-interactions" class="cell quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-tbl">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-friend-interactions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table 4: Odds Ratios for Tie Persistence (Friendship Interaction Models)
-</figcaption>
-<div aria-describedby="tbl-friend-interactions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<!-- preamble start -->
-
-    <script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
-
-    <script>
-      // Create table-specific functions using external factory
-      const tableFns_9vxpr8g6vsvxyvp6n5gg = TinyTable.createTableFunctions("tinytable_9vxpr8g6vsvxyvp6n5gg");
-      // tinytable span after
-      window.addEventListener('load', function () {
-          var cellsToStyle = [
-            // tinytable style arrays after
-          { positions: [ { i: '38', j: 2 } ], css_id: 'tinytable_css_sdz3vqjiskarj9v5f21q',}, 
-          { positions: [ { i: '34', j: 2 } ], css_id: 'tinytable_css_z3qwjd1pe05lh977bnms',}, 
-          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 }, { i: '7', j: 2 }, { i: '8', j: 2 }, { i: '9', j: 2 }, { i: '10', j: 2 }, { i: '11', j: 2 }, { i: '12', j: 2 }, { i: '13', j: 2 }, { i: '14', j: 2 }, { i: '15', j: 2 }, { i: '16', j: 2 }, { i: '17', j: 2 }, { i: '18', j: 2 }, { i: '19', j: 2 }, { i: '20', j: 2 }, { i: '21', j: 2 }, { i: '22', j: 2 }, { i: '23', j: 2 }, { i: '24', j: 2 }, { i: '25', j: 2 }, { i: '26', j: 2 }, { i: '27', j: 2 }, { i: '28', j: 2 }, { i: '29', j: 2 }, { i: '30', j: 2 }, { i: '31', j: 2 }, { i: '32', j: 2 }, { i: '33', j: 2 }, { i: '35', j: 2 }, { i: '36', j: 2 }, { i: '37', j: 2 } ], css_id: 'tinytable_css_hr6gs8o6z3n699sza6jc',}, 
-          { positions: [ { i: '0', j: 2 } ], css_id: 'tinytable_css_efielob3jyddgbzkv4hl',}, 
-          { positions: [ { i: '38', j: 1 } ], css_id: 'tinytable_css_cqzc7kw7l02jw2cuzziu',}, 
-          { positions: [ { i: '34', j: 1 } ], css_id: 'tinytable_css_eqgweqlynhaz410qs8vo',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 }, { i: '7', j: 1 }, { i: '8', j: 1 }, { i: '9', j: 1 }, { i: '10', j: 1 }, { i: '11', j: 1 }, { i: '12', j: 1 }, { i: '13', j: 1 }, { i: '14', j: 1 }, { i: '15', j: 1 }, { i: '16', j: 1 }, { i: '17', j: 1 }, { i: '18', j: 1 }, { i: '19', j: 1 }, { i: '20', j: 1 }, { i: '21', j: 1 }, { i: '22', j: 1 }, { i: '23', j: 1 }, { i: '24', j: 1 }, { i: '25', j: 1 }, { i: '26', j: 1 }, { i: '27', j: 1 }, { i: '28', j: 1 }, { i: '29', j: 1 }, { i: '30', j: 1 }, { i: '31', j: 1 }, { i: '32', j: 1 }, { i: '33', j: 1 }, { i: '35', j: 1 }, { i: '36', j: 1 }, { i: '37', j: 1 } ], css_id: 'tinytable_css_77z9ns450s2xi55yfd41',}, 
-          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_tech0m82hzdq1bj3ie10',}, 
-          ];
-
-          // Loop over the arrays to style the cells
-          cellsToStyle.forEach(function (group) {
-              group.positions.forEach(function (cell) {
-                  tableFns_9vxpr8g6vsvxyvp6n5gg.styleCell(cell.i, cell.j, group.css_id);
-              });
-          });
-      });
-    </script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
-    <style>
-    /* tinytable css entries after */
-    #tinytable_9vxpr8g6vsvxyvp6n5gg td.tinytable_css_sdz3vqjiskarj9v5f21q, #tinytable_9vxpr8g6vsvxyvp6n5gg th.tinytable_css_sdz3vqjiskarj9v5f21q {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
-    #tinytable_9vxpr8g6vsvxyvp6n5gg td.tinytable_css_z3qwjd1pe05lh977bnms, #tinytable_9vxpr8g6vsvxyvp6n5gg th.tinytable_css_z3qwjd1pe05lh977bnms {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
-    #tinytable_9vxpr8g6vsvxyvp6n5gg td.tinytable_css_hr6gs8o6z3n699sza6jc, #tinytable_9vxpr8g6vsvxyvp6n5gg th.tinytable_css_hr6gs8o6z3n699sza6jc { text-align: center }
-    #tinytable_9vxpr8g6vsvxyvp6n5gg td.tinytable_css_efielob3jyddgbzkv4hl, #tinytable_9vxpr8g6vsvxyvp6n5gg th.tinytable_css_efielob3jyddgbzkv4hl {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
-    #tinytable_9vxpr8g6vsvxyvp6n5gg td.tinytable_css_cqzc7kw7l02jw2cuzziu, #tinytable_9vxpr8g6vsvxyvp6n5gg th.tinytable_css_cqzc7kw7l02jw2cuzziu {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
-    #tinytable_9vxpr8g6vsvxyvp6n5gg td.tinytable_css_eqgweqlynhaz410qs8vo, #tinytable_9vxpr8g6vsvxyvp6n5gg th.tinytable_css_eqgweqlynhaz410qs8vo {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
-    #tinytable_9vxpr8g6vsvxyvp6n5gg td.tinytable_css_77z9ns450s2xi55yfd41, #tinytable_9vxpr8g6vsvxyvp6n5gg th.tinytable_css_77z9ns450s2xi55yfd41 { text-align: left }
-    #tinytable_9vxpr8g6vsvxyvp6n5gg td.tinytable_css_tech0m82hzdq1bj3ie10, #tinytable_9vxpr8g6vsvxyvp6n5gg th.tinytable_css_tech0m82hzdq1bj3ie10 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: left }
-    </style>
-    <div class="container">
-      <table class="tinytable" id="tinytable_9vxpr8g6vsvxyvp6n5gg" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
-        
-        <thead>
-              <tr>
-                <th scope="col" data-row="0" data-col="1"> </th>
-                <th scope="col" data-row="0" data-col="2">Opacity × Friend</th>
-              </tr>
-        </thead>
-        <tfoot><tr><td colspan='2'>+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001</td></tr></tfoot>
-        <tbody>
-                <tr>
-                  <td data-row="1" data-col="1">Closed-Form Matches</td>
-                  <td data-row="1" data-col="2">1.092+</td>
-                </tr>
-                <tr>
-                  <td data-row="2" data-col="1"></td>
-                  <td data-row="2" data-col="2">(0.058)</td>
-                </tr>
-                <tr>
-                  <td data-row="3" data-col="1">Open-Ended Matches</td>
-                  <td data-row="3" data-col="2">1.286***</td>
-                </tr>
-                <tr>
-                  <td data-row="4" data-col="1"></td>
-                  <td data-row="4" data-col="2">(0.070)</td>
-                </tr>
-                <tr>
-                  <td data-row="5" data-col="1">Network Opacity</td>
-                  <td data-row="5" data-col="2">0.948</td>
-                </tr>
-                <tr>
-                  <td data-row="6" data-col="1"></td>
-                  <td data-row="6" data-col="2">(0.109)</td>
-                </tr>
-                <tr>
-                  <td data-row="7" data-col="1">Tie: Friend</td>
-                  <td data-row="7" data-col="2">1.167</td>
-                </tr>
-                <tr>
-                  <td data-row="8" data-col="1"></td>
-                  <td data-row="8" data-col="2">(0.417)</td>
-                </tr>
-                <tr>
-                  <td data-row="9" data-col="1">Opacity × Friend</td>
-                  <td data-row="9" data-col="2">0.777*</td>
-                </tr>
-                <tr>
-                  <td data-row="10" data-col="1"></td>
-                  <td data-row="10" data-col="2">(0.093)</td>
-                </tr>
-                <tr>
-                  <td data-row="11" data-col="1">Tie: Somewhat Close</td>
-                  <td data-row="11" data-col="2">0.598***</td>
-                </tr>
-                <tr>
-                  <td data-row="12" data-col="1"></td>
-                  <td data-row="12" data-col="2">(0.083)</td>
-                </tr>
-                <tr>
-                  <td data-row="13" data-col="1">Tie: Close</td>
-                  <td data-row="13" data-col="2">0.416***</td>
-                </tr>
-                <tr>
-                  <td data-row="14" data-col="1"></td>
-                  <td data-row="14" data-col="2">(0.096)</td>
-                </tr>
-                <tr>
-                  <td data-row="15" data-col="1">Tie Duration</td>
-                  <td data-row="15" data-col="2">0.983</td>
-                </tr>
-                <tr>
-                  <td data-row="16" data-col="1"></td>
-                  <td data-row="16" data-col="2">(0.016)</td>
-                </tr>
-                <tr>
-                  <td data-row="17" data-col="1">Ego: Female</td>
-                  <td data-row="17" data-col="2">1.019</td>
-                </tr>
-                <tr>
-                  <td data-row="18" data-col="1"></td>
-                  <td data-row="18" data-col="2">(0.389)</td>
-                </tr>
-                <tr>
-                  <td data-row="19" data-col="1">Alter: Female</td>
-                  <td data-row="19" data-col="2">1.231</td>
-                </tr>
-                <tr>
-                  <td data-row="20" data-col="1"></td>
-                  <td data-row="20" data-col="2">(0.214)</td>
-                </tr>
-                <tr>
-                  <td data-row="21" data-col="1">Ego Female × Alter Female</td>
-                  <td data-row="21" data-col="2">0.773</td>
-                </tr>
-                <tr>
-                  <td data-row="22" data-col="1"></td>
-                  <td data-row="22" data-col="2">(0.207)</td>
-                </tr>
-                <tr>
-                  <td data-row="23" data-col="1">Tie: Same Dorm / Roommate</td>
-                  <td data-row="23" data-col="2">1.342</td>
-                </tr>
-                <tr>
-                  <td data-row="24" data-col="1"></td>
-                  <td data-row="24" data-col="2">(0.582)</td>
-                </tr>
-                <tr>
-                  <td data-row="25" data-col="1">Tie: Race Homophily</td>
-                  <td data-row="25" data-col="2">0.916</td>
-                </tr>
-                <tr>
-                  <td data-row="26" data-col="1"></td>
-                  <td data-row="26" data-col="2">(0.184)</td>
-                </tr>
-                <tr>
-                  <td data-row="27" data-col="1">Tie: Race Unknown</td>
-                  <td data-row="27" data-col="2">0.155***</td>
-                </tr>
-                <tr>
-                  <td data-row="28" data-col="1"></td>
-                  <td data-row="28" data-col="2">(0.030)</td>
-                </tr>
-                <tr>
-                  <td data-row="29" data-col="1">Period: Wave 2-5</td>
-                  <td data-row="29" data-col="2">0.063***</td>
-                </tr>
-                <tr>
-                  <td data-row="30" data-col="1"></td>
-                  <td data-row="30" data-col="2">(0.022)</td>
-                </tr>
-                <tr>
-                  <td data-row="31" data-col="1">Period: Wave 5-6</td>
-                  <td data-row="31" data-col="2">0.093***</td>
-                </tr>
-                <tr>
-                  <td data-row="32" data-col="1"></td>
-                  <td data-row="32" data-col="2">(0.033)</td>
-                </tr>
-                <tr>
-                  <td data-row="33" data-col="1">Intercept</td>
-                  <td data-row="33" data-col="2">7.077**</td>
-                </tr>
-                <tr>
-                  <td data-row="34" data-col="1"></td>
-                  <td data-row="34" data-col="2">(4.355)</td>
-                </tr>
-                <tr>
-                  <td data-row="35" data-col="1">Num.Obs.</td>
-                  <td data-row="35" data-col="2">3251</td>
-                </tr>
-                <tr>
-                  <td data-row="36" data-col="1">AIC</td>
-                  <td data-row="36" data-col="2">2511.4</td>
-                </tr>
-                <tr>
-                  <td data-row="37" data-col="1">BIC</td>
-                  <td data-row="37" data-col="2">2621.0</td>
-                </tr>
-                <tr>
-                  <td data-row="38" data-col="1">RMSE</td>
-                  <td data-row="38" data-col="2">0.32</td>
-                </tr>
-        </tbody>
-      </table>
-    </div>
-<!-- hack to avoid NA insertion in last line -->
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p>The model indicates a significant negative interaction between network opacity and friendship status. Network opacity decreases the likelihood of tie persistence significantly more when the alter is considered a friend compared to when they are not.</p>
-<p><strong>Figure <a href="#fig-friend-opacity" class="quarto-xref">Figure 2</a></strong> visualizes this interaction.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-friend-opacity" class="quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-friend-opacity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="analysis_files/figure-html/fig-friend-opacity-1.png" class="img-fluid" width="672" />
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-friend-opacity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure 2: Interaction of Network Opacity and Friendship Status
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-mize2019best" class="csl-entry" role="listitem">
-Mize, Trenton D. 2019. <span>“Best Practices for Estimating, Interpreting, and Presenting Nonlinear Interaction Effects.”</span> <em>Sociological Science</em> 6: 81–117.
-</div>
-</div>
-</section>
 
 </main>
 <!-- /main column -->
-<script id = "quarto-html-after-body" type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -1454,6 +1031,7 @@ Mize, Trenton D. 2019. <span>“Best Practices for Estimating, Interpreting, and
   </script>
 </div> <!-- /content -->
 
-</body>
 
-</html>
+
+
+</body></html>
