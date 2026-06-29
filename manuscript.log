@@ -1,9 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.28)  29 JUN 2026 14:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.28)  29 JUN 2026 14:15
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**manuscript.tex
-(./manuscript.tex
+**"/home/omarlizardo/NETWORKS PROJECTS/cultural-matching-egonets/manuscript.tex"
+(/home/omarlizardo/NETWORKS PROJECTS/cultural-matching-egonets/manuscript.tex
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
 (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/koma-script/scrartcl.cls
@@ -549,7 +550,7 @@ Overfull \hbox (4.97548pt too wide) in alignment at lines 229--270
  [] [] [] [] 
  []
 
-[8] [9] [10] (./manuscript.bbl [11]) [12] (./manuscript.aux)
+[8] [9] [10] [11] (./manuscript.bbl [12]) [13] (./manuscript.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
@@ -560,18 +561,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 19258 strings out of 469097
- 382437 string characters out of 5457857
+ 19260 strings out of 469097
+ 382630 string characters out of 5457857
  931705 words of memory out of 5000000
  47903 multiletter control sequences out of 15000+600000
  642499 words of font info for 151 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 108i,7n,107p,11213b,1185s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,7n,107p,11277b,1203s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/omarlizardo/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on manuscript.pdf (12 pages, 172859 bytes).
+Output written on manuscript.pdf (13 pages, 173162 bytes).
 PDF statistics:
- 312 PDF objects out of 1000 (max. 8388607)
- 270 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
+ 317 PDF objects out of 1000 (max. 8388607)
+ 274 compressed objects within 3 object streams
+ 59 named destinations out of 1000 (max. 500000)
  31371 words of extra memory for PDF output out of 35830 (max. 10000000)
 
