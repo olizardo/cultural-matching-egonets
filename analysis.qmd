@@ -30,7 +30,7 @@ library(broom.mixed)
 ego_race <- readRDS(here("data", "processed", "ego_race.rds"))
 alter_race <- readRDS(here("data", "processed", "alter_race.rds"))
 df_period <- readRDS(here("data", "processed", "adjacent_waves.rds")) %>%
-  filter(kin == 0, campustie == 1) %>%
+  filter(kin == 0, campustie == 1, !is.na(alterid)) %>%
   left_join(ego_race, by = c("egoid" = "sender")) %>%
   left_join(alter_race, by = c("alterid" = "receiver")) %>%
   mutate(
@@ -47,7 +47,7 @@ df_period <- readRDS(here("data", "processed", "adjacent_waves.rds")) %>%
       TRUE ~ "Heterophilous"
     ),
     race_homophily = factor(race_homophily, levels = c("Heterophilous", "Homophilous", "Unknown")),
-    freq_high = as.numeric(freq_factor %in% c("Weekly", "Daily")),
+    freq_high = if_else(freq_factor %in% c("Weekly", "Daily"), 1, 0, missing = NA_real_),
     duration_sq = duration_^2
   ) %>%
   filter(!is.na(same_dorm), !is.na(freq_high))
