@@ -35,6 +35,10 @@
 \begin{document}
 \maketitle
 
+\begin{abstract}
+This paper develops and tests a cultural matching model of social tie persistence using longitudinal ego-network data from the NetSense study. We find that shared cultural tastes serve as a critical mechanism for stabilizing social ties, particularly for weaker relationships, while network opacity—a lack of knowledge regarding an alter's preferences—independently accelerates tie dissolution.
+\end{abstract}
+
 \section{Introduction}\label{introduction}
 
 A central puzzle in the sociology of culture and social networks is the
@@ -175,7 +179,7 @@ focus on transitions between:
     \item \emph{Time Period}: Dummy variables for the specific wave intervals (Wave 1-2, Wave 2-5, Wave 5-6) to account for differing baseline rates of tie dissolution over different time gaps.
 \end{itemize}
 
-For a full summary of descriptive statistics for all variables used in the analysis, including means, standard deviations, and percentages, see Tables 4 and 5 in the Appendix.
+For a full summary of descriptive statistics for all variables used in the analysis, including means, standard deviations, and percentages, see Tables \ref{tbl-descriptives-cont} and \ref{tbl-descriptives-cat} in the Appendix.
 
 \subsection{Methodological Approach and Modeling Strategy}\label{methodological-approach-and-modeling-strategy}
 
@@ -203,8 +207,8 @@ As the marginal effects plot clearly demonstrates, the role of cultural matching
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[keepaspectratio]{analysis_files/figure-pdf/fig-combined-1.pdf}
-\caption{\label{fig-combined}Marginal Effects of Cultural Matching and Network Opacity on Tie Persistence}
+\includegraphics[width=0.8\linewidth,keepaspectratio]{analysis_files/figure-pdf/fig-combined-1.pdf}
+\caption{\label{fig-combined}Marginal Effects of Cultural Matching and Network Opacity on Tie Persistence. Note: Estimates represent the average marginal effect on the probability of tie persistence.}
 \end{figure}
 
 \newpage
@@ -212,8 +216,7 @@ As the marginal effects plot clearly demonstrates, the role of cultural matching
 \centering
 % Force the image to scale to the width of the page margins
 \includegraphics[width=\linewidth,keepaspectratio]{analysis_files/figure-pdf/fig-closeness-interactions-1.pdf}
-\caption{\label{fig-closeness-interactions}Marginal Effects of Cultural Matching and Network Opacity on Tie Persistence by Subjective Closeness}
-\end{figure}
+\caption{\label{fig-closeness-interactions}Marginal Effects of Cultural Matching and Network Opacity on Tie Persistence by Subjective Closeness. Note: Estimates represent the average marginal effect on the probability of tie persistence.}
 \newpage
 
 \section*{Tables}

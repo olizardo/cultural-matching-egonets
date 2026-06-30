@@ -105,41 +105,10 @@ modelsummary(
     "same_dorm" = "Roommate/Dormmate",
     "is_friend" = "Friend",
     "freq_high" = "Frequency: Weekly/Daily",
-    
-    
     "race_homophilyHomophilous" = "Race Homophily: Same Race",
     "race_homophilyUnknown" = "Race Homophily: Unknown",
     "periodWave 2 to 5" = "Time Period: Wave 2-5",
     "periodWave 5 to 6" = "Time Period: Wave 5-6"
-    
-  ),
-  gof_map = c("nobs", "aic", "bic")
-)
-modelsummary(
-  list("Model 1: Closed" = mod_closed, "Model 2: + Open" = mod_open, "Model 3: + Opacity" = mod_opac_base),
-  stars = TRUE,
-  exponentiate = TRUE,
-  coef_map = c(
-    "num_match_closed" = "Closed-Form Matches",
-    "open_match_count" = "Open-Ended Matches",
-    "num_unknown" = "Network Opacity",
-    "close_factorSomewhat Close" = "Subjective Closeness: Somewhat",
-    "close_factorClose" = "Subjective Closeness: Close",
-    "duration_" = "Tie Duration (Years)",
-    "duration_sq" = "Tie Duration Squared",
-    "female_factorWomen" = "Ego: Woman",
-    "alterfemale_factorWomen" = "Alter: Woman",
-    "female_factorWomen:alterfemale_factorWomen" = "Ego Woman × Alter Woman",
-    "same_dorm" = "Roommate/Dormmate",
-    "is_friend" = "Friend",
-    "freq_high" = "Frequency: Weekly/Daily",
-    
-    
-    "race_homophilyHomophilous" = "Race Homophily: Same Race",
-    "race_homophilyUnknown" = "Race Homophily: Unknown",
-    "periodWave 2 to 5" = "Time Period: Wave 2-5",
-    "periodWave 5 to 6" = "Time Period: Wave 5-6"
-    
   ),
   gof_map = c("nobs", "aic", "bic")
 )
@@ -151,19 +120,19 @@ modelsummary(
 #| fig-cap: "Marginal Effects of Cultural Matches and Network Opacity (Min to Max)"
 comp_closed <- comparisons(
   mod_open,
-  variables = list(num_match_closed = c(0, 6)),
+  variables = list(num_match_closed = range(df_period$num_match_closed, na.rm = TRUE)),
   newdata = datagrid(),
   re.form = NA
 ) %>% as_tibble() %>% mutate(Predictor = "Closed-Form Matches")
 comp_open <- comparisons(
   mod_open,
-  variables = list(open_match_count = c(0, 5)),
+  variables = list(open_match_count = range(df_period$open_match_count, na.rm = TRUE)),
   newdata = datagrid(),
   re.form = NA
 ) %>% as_tibble() %>% mutate(Predictor = "Open-Ended Matches")
 comp_opacity <- comparisons(
   mod_opac_base,
-  variables = list(num_unknown = c(0, 6)),
+  variables = list(num_unknown = range(df_period$num_unknown, na.rm = TRUE)),
   newdata = datagrid(),
   re.form = NA
 ) %>% as_tibble() %>% mutate(Predictor = "Network Opacity (Unknowns)")
@@ -176,7 +145,7 @@ p <- ggplot(comp_combined, aes(y = Predictor, x = estimate, fill = Predictor, co
   scale_fill_manual(values = c("Closed-Form Matches" = "#1f78b4", "Open-Ended Matches" = "#33a02c", "Network Opacity (Unknowns)" = "#e31a1c")) +
   scale_color_manual(values = c("Closed-Form Matches" = "#12476b", "Open-Ended Matches" = "#1e5e1a", "Network Opacity (Unknowns)" = "#941113")) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "gray50") +
-  labs(y = NULL, x = "Marginal Effect on Tie Persistence\n(Min to Max)") +
+  labs(y = NULL, x = "Average Marginal Effect\n(Prob. of Persistence)") +
   theme_minimal(base_size = 14) +
   theme(legend.position = "none")
 ggsave(here::here("Plots", "marginal_effects.png"), plot = p, width = 8, height = 6)
@@ -224,7 +193,7 @@ p_int <- ggplot(comp_int_combined, aes(y = close_factor, x = estimate, fill = Cu
   scale_x_continuous(labels = scales::percent_format()) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "gray50") +
   facet_wrap(~Cultural_Variable) +
-  labs(y = "Subjective Closeness", x = "Marginal Effect on Tie Persistence\n(Min to Max)") +
+  labs(y = "Subjective Closeness", x = "Average Marginal Effect\n(Prob. of Persistence)") +
   scale_fill_manual(values = c("Closed-Form Matches" = "#1f78b4", "Open-Ended Matches" = "#33a02c", "Network Opacity (Unknowns)" = "#e31a1c")) +
   scale_color_manual(values = c("Closed-Form Matches" = "#12476b", "Open-Ended Matches" = "#1e5e1a", "Network Opacity (Unknowns)" = "#941113")) +
   theme_minimal(base_size = 14) +
@@ -237,14 +206,10 @@ As the marginal effects plot clearly demonstrates, the role of cultural matching
 
 ## Appendix: Descriptive Statistics
 ```{r}
-#| label: tbl-descriptives-cont
-#| tbl-cap: "Descriptive Statistics for Continuous Variables"
-library(knitr)
+#| label: tbl-descriptives
+#| tbl-cap: "Descriptive Statistics"
+library(modelsummary)
 desc_data <- readRDS(here::here("data", "processed", "descriptives.rds"))
-kable(desc_data$cont, digits = 2)
-```
-```{r}
-#| label: tbl-descriptives-cat
-#| tbl-cap: "Descriptive Statistics for Categorical Variables"
-kable(desc_data$cat, digits = 1)
+datasummary_df(desc_data$cont, output = "kableExtra")
+datasummary_df(desc_data$cat, output = "kableExtra")
 ```
