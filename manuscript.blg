@@ -3,44 +3,47 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: manuscript.aux
 The style file: plainnat.bst
 Database file #1: manuscript_citations.bib
+Warning--I didn't find a database entry for "lizardo2026tastes"
+Warning--I didn't find a database entry for "lizardo2026persistence"
 You've used 24 entries,
             2773 wiz_defined-function locations,
-            734 strings with 7471 characters,
-and the built_in function-call counts, 9978 in all, are:
-= -- 928
-> -- 374
-< -- 23
-+ -- 136
-- -- 111
-* -- 743
-:= -- 1525
-add.period$ -- 75
+            739 strings with 7610 characters,
+and the built_in function-call counts, 10315 in all, are:
+= -- 969
+> -- 389
+< -- 24
++ -- 140
+- -- 115
+* -- 769
+:= -- 1564
+add.period$ -- 76
 call.type$ -- 24
-change.case$ -- 103
+change.case$ -- 105
 chr.to.int$ -- 23
 cite$ -- 48
-duplicate$ -- 519
-empty$ -- 952
-format.name$ -- 139
-if$ -- 2108
+duplicate$ -- 532
+empty$ -- 976
+format.name$ -- 145
+if$ -- 2192
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 28
+missing$ -- 27
 newline$ -- 128
-num.names$ -- 102
-pop$ -- 212
+num.names$ -- 104
+pop$ -- 213
 preamble$ -- 1
-purify$ -- 83
+purify$ -- 84
 quote$ -- 0
-skip$ -- 349
+skip$ -- 364
 stack$ -- 0
-substring$ -- 502
-swap$ -- 49
-text.length$ -- 3
+substring$ -- 540
+swap$ -- 58
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 244
+type$ -- 249
 warning$ -- 0
-while$ -- 118
+while$ -- 122
 width$ -- 0
-write$ -- 325
+write$ -- 327
+(There were 2 warnings)

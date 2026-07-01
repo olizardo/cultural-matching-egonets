@@ -15,15 +15,15 @@ Pierre Bourdieu.
 \newblock \emph{Distinction: A Social Critique of the Judgement of Taste}.
 \newblock Harvard University Press, Cambridge, 1984.
 
+\bibitem[Bourdieu(1986)]{bourdieu1986}
+Pierre Bourdieu.
+\newblock The forms of capital.
+\newblock In John~G. Richardson, editor, \emph{Handbook of Theory and Research for the Sociology of Education}, pages 241--258. Greenwood, New York, 1986.
+
 \bibitem[Bourdieu(1990)]{bourdieu1990}
 Pierre Bourdieu.
 \newblock \emph{The Logic of Practice}.
 \newblock Polity Press, Cambridge, 1990.
-
-\bibitem[Bourdieu(2000)]{bourdieu2000}
-Pierre Bourdieu.
-\newblock \emph{Pascalian Meditations}.
-\newblock Stanford University Press, Stanford, 2000.
 
 \bibitem[Burt(2000)]{burt2000}
 Ronald~S. Burt.
@@ -75,11 +75,6 @@ Paul~F. Lazarsfeld and Robert~K. Merton.
 \newblock Friendship as a social process: A substantive and methodological analysis.
 \newblock In Morroe Berger, Theodore Abel, and Charles Page, editors, \emph{Freedom and Control in Modern Society}, pages 18--66. Van Nostrand, New York, 1954.
 
-\bibitem[Lizardo(2006)]{lizardo2006}
-Omar Lizardo.
-\newblock How cultural tastes shape personal networks.
-\newblock \emph{American Sociological Review}, 71\penalty0 (5):\penalty0 778--807, 2006.
-
 \bibitem[Mark(1998{\natexlab{a}})]{mark1998a}
 Noah~P. Mark.
 \newblock Beyond individual differences: Social differentiation from first principles.
@@ -114,6 +109,11 @@ Arthur~L. Stinchcombe.
 J.~Jill Suitor, Barry Wellman, and David~L. Morgan.
 \newblock It's about time: How, why, and when networks change.
 \newblock \emph{Social Networks}, 19\penalty0 (1):\penalty0 1--7, 1997.
+
+\bibitem[Vaisey and Lizardo(2010)]{vaisey2010}
+Stephen Vaisey and Omar Lizardo.
+\newblock Can cultural worldviews influence network composition?
+\newblock \emph{Social Forces}, 88\penalty0 (4):\penalty0 1595--1618, 2010.
 
 \bibitem[Wellman et~al.(1997)Wellman, Wong, Tindall, and Nazer]{wellman1997}
 Barry Wellman, Renita Yuk-Lin Wong, David Tindall, and Nancy Nazer.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.28)  29 JUN 2026 15:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.28)  30 JUN 2026 17:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -441,55 +441,51 @@ Package: siunitx 2026-05-15 v3.5.5 A comprehensive (SI) units package
 \l__siunitx_sexagesimal_marker_box=\box71
 \l__siunitx_sexagesimal_unit_box=\box72
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 29.
- (./manuscript.aux
-
-LaTeX Warning: Label `tbl-models' multiply defined.
-
-)
+Package hyperref Info: Option `colorlinks' set `true' on input line 26.
+ (./manuscript.aux)
 \openout1 = `manuscript.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-Package scrbase Info: activating english \abstractname on input line 35.
-Package scrbase Info: activating english \partname on input line 35.
-Package scrbase Info: activating english \figurename on input line 35.
-Package scrbase Info: activating english \tablename on input line 35.
-Package scrbase Info: activating english \contentsname on input line 35.
-Package scrbase Info: activating english \listfigurename on input line 35.
-Package scrbase Info: activating english \listtablename on input line 35.
-Package scrbase Info: activating english \refname on input line 35.
-Package scrbase Info: activating english \indexname on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+Package scrbase Info: activating english \abstractname on input line 32.
+Package scrbase Info: activating english \partname on input line 32.
+Package scrbase Info: activating english \figurename on input line 32.
+Package scrbase Info: activating english \tablename on input line 32.
+Package scrbase Info: activating english \contentsname on input line 32.
+Package scrbase Info: activating english \listfigurename on input line 32.
+Package scrbase Info: activating english \listtablename on input line 32.
+Package scrbase Info: activating english \refname on input line 32.
+Package scrbase Info: activating english \indexname on input line 32.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 35.
-LaTeX Info: Redefining \microtypecontext on input line 35.
-Package microtype Info: Applying patch `item' on input line 35.
-Package microtype Info: Applying patch `toc' on input line 35.
-Package microtype Info: Applying patch `eqnum' on input line 35.
-Package microtype Info: Applying patch `footnote' on input line 35.
-Package microtype Info: Applying patch `verbatim' on input line 35.
-LaTeX Info: Redefining \microtypesetup on input line 35.
+Package hyperref Info: Link coloring ON on input line 32.
+LaTeX Info: Redefining \microtypecontext on input line 32.
+Package microtype Info: Applying patch `item' on input line 32.
+Package microtype Info: Applying patch `toc' on input line 32.
+Package microtype Info: Applying patch `eqnum' on input line 32.
+Package microtype Info: Applying patch `footnote' on input line 32.
+Package microtype Info: Applying patch `verbatim' on input line 32.
+LaTeX Info: Redefining \microtypesetup on input line 32.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -511,67 +507,62 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 {/home/omarlizardo/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 139.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 139.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [3] [4] [5]
-<analysis_files/figure-pdf/fig-combined-1.pdf, id=146, 397.485pt x 252.945pt>
+) [3]
+Overfull \hbox (20.28297pt too wide) in paragraph at lines 94--95
+[]\OT1/cmr/m/it/10.95 (-20) Demographics\OT1/cmr/m/n/10.95 (-20) : Ego and al-ter gen-der with in-ter-ac-tion terms, and race ho-mophily (\OT1/cmtt/m/n/10.95 Homophilous\OT1/cmr/m/n/10.95 (-20) ,
+ []
+
+
+LaTeX Warning: Reference `tbl-descriptives-cont' on page 4 undefined on input line 98.
+
+
+LaTeX Warning: Reference `tbl-descriptives-cat' on page 4 undefined on input line 98.
+
+<analysis_files/figure-pdf/fig-combined-1.pdf, id=125, 397.485pt x 252.945pt>
 File: analysis_files/figure-pdf/fig-combined-1.pdf Graphic file (type pdf)
 <use analysis_files/figure-pdf/fig-combined-1.pdf>
-Package pdftex.def Info: analysis_files/figure-pdf/fig-combined-1.pdf  used on input line 206.
-(pdftex.def)             Requested size: 397.48402pt x 252.94438pt.
- [6 <./analysis_files/figure-pdf/fig-combined-1.pdf>]
-<analysis_files/figure-pdf/fig-closeness-interactions-1.pdf, id=159, 867.24pt x 361.35pt>
+Package pdftex.def Info: analysis_files/figure-pdf/fig-combined-1.pdf  used on input line 106.
+(pdftex.def)             Requested size: 357.4094pt x 227.4477pt.
+[4]
+<analysis_files/figure-pdf/fig-closeness-interactions-1.pdf, id=136, 867.24pt x 361.35pt>
 File: analysis_files/figure-pdf/fig-closeness-interactions-1.pdf Graphic file (type pdf)
 <use analysis_files/figure-pdf/fig-closeness-interactions-1.pdf>
-Package pdftex.def Info: analysis_files/figure-pdf/fig-closeness-interactions-1.pdf  used on input line 214.
+Package pdftex.def Info: analysis_files/figure-pdf/fig-closeness-interactions-1.pdf  used on input line 113.
 (pdftex.def)             Requested size: 446.76004pt x 186.1497pt.
- [7 <./analysis_files/figure-pdf/fig-closeness-interactions-1.pdf>]
-Overfull \hbox (4.97548pt too wide) in alignment at lines 221--226
- [] [] [] [] 
- []
-
-
-Overfull \hbox (4.97548pt too wide) in alignment at lines 226--229
- [] [] [] [] 
- []
-
-
-Overfull \hbox (4.97548pt too wide) in alignment at lines 229--270
- [] [] [] [] 
- []
-
-[8] [9] [10] [11] (./manuscript.bbl [12]) [13] (./manuscript.aux)
+ [5 <./analysis_files/figure-pdf/fig-combined-1.pdf>] (./manuscript.bbl [6 <./analysis_files/figure-pdf/fig-closeness-interactions-1.pdf>]) [7] (./manuscript.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
  ***********
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19259 strings out of 469097
- 382444 string characters out of 5457857
- 931705 words of memory out of 5000000
- 47903 multiletter control sequences out of 15000+600000
- 642499 words of font info for 151 fonts, out of 8000000 for 9000
+ 19187 strings out of 469097
+ 381491 string characters out of 5457857
+ 925705 words of memory out of 5000000
+ 47864 multiletter control sequences out of 15000+600000
+ 640288 words of font info for 134 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 108i,7n,107p,11213b,1203s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/omarlizardo/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on manuscript.pdf (13 pages, 173155 bytes).
+ 108i,7n,107p,11213b,1193s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/omarlizardo/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on manuscript.pdf (7 pages, 131976 bytes).
 PDF statistics:
- 317 PDF objects out of 1000 (max. 8388607)
- 274 compressed objects within 3 object streams
- 59 named destinations out of 1000 (max. 500000)
- 31371 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 251 PDF objects out of 1000 (max. 8388607)
+ 222 compressed objects within 3 object streams
+ 46 named destinations out of 1000 (max. 500000)
+ 25195 words of extra memory for PDF output out of 29859 (max. 10000000)
 
