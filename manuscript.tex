@@ -68,36 +68,86 @@ We collected information on the cultural habits of ego-alter pairs using both a 
 
 \subsection{Study Waves}\label{study-waves}
 
-The NetSense study is a longitudinal survey of college students collected over multiple waves. For this analysis of tie persistence, we pool data across adjacent waves to construct a person-period dataset. To isolate peer dynamics, we restrict our sample to non-kin, on-campus ties (i.e., alters who are also students at Notre Dame). Specifically, we focus on transitions between: 
-\begin{itemize}
-    \item \textbf{Wave 1 to Wave 2}: Capturing tie dynamics over the first year of college.
-    \item \textbf{Wave 2 to Wave 5}: Spanning the middle years of the college experience (approximately a 3-year gap).
-    \item \textbf{Wave 5 to Wave 6}: Capturing the transition through the final year and toward graduation.
-\end{itemize}
+The NetSense study is a longitudinal survey of college students collected over multiple waves. For this analysis of tie persistence, we pool data across adjacent waves to construct a person-period dataset. To isolate peer dynamics, we restrict our sample to non-kin, on-campus ties (i.e., alters who are also students at Notre Dame). To capture relationship dynamics across the entirety of the college experience, we construct a discrete-time person-period dataset spanning all available adjacent survey waves (Wave 1 through Wave 8). This design allows us to observe tie persistence continuously across varying intervals of the students' academic careers, capturing both the initial network churn of freshman year and the consolidation of networks approaching graduation.
 
 \subsection{Measures}\label{measures}
 
 \subsubsection{Dependent Variable}
-\emph{Tie Persistence}: A binary indicator taking a value of 1 if a social tie reported by an ego in a baseline wave (e.g., Wave 1) is still present in the subsequent wave (e.g., Wave 2), and 0 if the tie has dissolved (i.e., the alter is no longer listed in the ego's network).
+\emph{Tie Persistence}: A binary indicator taking a value of 1 if a social tie reported by an ego in a baseline wave (e.g., Wave 1) is still present in the subsequent wave (e.g., Wave 2), and 0 if the tie has dissolved (i.e., the alter is no longer listed in the ego's network). To determine tie presence, egos were asked to list the people with whom they interact most frequently, with the prompt: ``Please list the people with whom you have spent the most time in the last month.'' Egos could nominate up to 20 alters in each wave.
 
 \subsubsection{Independent Variables} 
 \begin{itemize}
-    \item \emph{Closed-Form Cultural Matching}: A count variable (ranging from 0 to 6) indicating the number of closed-form cultural domains in which the ego and alter share similar tastes or participation levels.
-    \item \emph{Open-Ended Activity Matching}: A count variable (ranging from 0 to 5) capturing the number of shared open-ended activity nominations.
-    \item \emph{Cultural Network Opacity}: A count variable (ranging from 0 to 6) measuring the number of cultural domains for which the ego responded ``Don't know'' regarding their alter's preferences.
+    \item \emph{Closed-Form Cultural Matching}: A count variable (ranging from 0 to 6) indicating the number of closed-form cultural domains in which the ego and alter share similar tastes. Egos were asked to rate their own interest and their alters' interest across six broad domains: music, movies, books, sports, games, and outdoor activities. The specific survey prompt for egos was: ``How interested are you in the following activities?'' and for alters: ``How interested is this person in the following activities?'' Response categories included ``Very interested,'' ``Somewhat interested,'' and ``Not at all interested.'' A domain was scored as a ``match'' if the ego rated both themselves and their alter identically.
+    \item \emph{Open-Ended Activity Matching}: A count variable (ranging from 0 to 5) capturing the number of shared specific activity nominations. Egos were asked to freely list up to five leisure activities they enjoyed with the prompt: ``Please list up to 5 specific activities that you enjoy doing in your free time.'' Subsequently, for each alter, the ego was asked to check boxes indicating which of these specific activities the alter also enjoyed, prompted with: ``Which of your favorite activities does this person also enjoy?''
+    \item \emph{Cultural Network Opacity}: A count variable (ranging from 0 to 6) measuring the number of cultural domains for which the ego responded ``Don't know'' regarding their alter's preferences. For the closed-form domain questions regarding alters (``How interested is this person in the following activities?''), respondents were provided a fourth response category: ``Don't know.'' This variable sums the number of domains where this option was selected.
 \end{itemize}
 
 \subsubsection{Control Variables}
 \begin{itemize}
-    \item \emph{Tie Characteristics}: We control for subjective closeness (\texttt{Not Close}, \texttt{Somewhat Close}, \texttt{Close}), tie duration, and formal relationship type (\texttt{Friend} or \texttt{Roommate/Dormmate}).
-    \item \emph{Frequency of Interaction}: Categorized as \texttt{Daily}, \texttt{Weekly}, \texttt{Monthly}, with \texttt{Less often} as reference.
-    \item \emph{Demographics}: Ego and alter gender with interaction terms, and race homophily (\texttt{Homophilous}, \texttt{Heterophilous}, \texttt{Unknown}).
-    \item \emph{Time Period}: Dummy variables for wave intervals.
+    \item \emph{Subjective Closeness}: Measured with the prompt, ``How close are you to this person?'' Response categories were ``Not close'' (1), ``Somewhat close'' (2), and ``Very close'' (3). This is treated as a factor variable in the models.
+    \item \emph{Relationship Type}: Derived from the prompt ``How are you connected to this person?'' We include binary indicators for whether the tie is a \texttt{Friend} (vs. other types) or a \texttt{Roommate/Dormmate} (capturing on-campus structural proximity).
+    \item \emph{Frequency of Interaction}: Measured with the prompt, ``How often do you communicate with this person?'' Responses were dichotomized into a \texttt{High Frequency} indicator (\texttt{Daily} or \texttt{Weekly}) versus the reference category (\texttt{Monthly} or \texttt{Less often}).
+    \item \emph{Tie Duration}: A continuous measure of how long the ego has known the alter (in years), asked via ``How long have you known this person?'' We include both the linear and squared terms (\emph{Duration Squared}) to account for nonlinearities in the liability of newness.
+    \item \emph{Demographics}: We control for ego gender and alter gender (1 = Woman, 0 = Man), along with a multiplicative interaction term to capture same-gender vs. cross-gender dynamics. We also include a measure of \emph{Race Homophily}, constructed by matching self-reported race for the ego and self-reported race for the alter. Ties are classified as \texttt{Homophilous} (same race), \texttt{Heterophilous} (different race), or \texttt{Unknown} (if either ego or alter race was missing).
+    \item \emph{Time Period}: Dummy variables for each wave transition interval (Wave 1 to 2, Wave 2 to 3, Wave 3 to 4, Wave 4 to 5, Wave 5 to 6, Wave 6 to 7, Wave 7 to 8) to allow the baseline hazard of tie persistence to vary across the entire panel span.
 \end{itemize}
+
+\subsection{Analytical Strategy and Model Specification}\label{analytical-strategy}
+
+Because our data tracks relationships over time and individuals can nominate multiple alters, our data structure consists of dyad-periods nested within egos. To properly analyze tie persistence and account for right-censoring, we employ a discrete-time survival analysis framework (event history modeling). Since the outcome variable—whether a tie persists into the next wave—is binary, we estimate the hazard of tie survival using mixed-effects logistic regression. 
+
+To address the non-independence of observations arising from the clustered nature of the ego-network data (multiple ties per ego), we include random intercepts for egos. This accounts for unobserved, time-invariant individual heterogeneity in the baseline propensity to maintain ties. 
+
+The models take the following general form:
+\begin{equation}
+\text{logit}(P(Y_{ijt} = 1)) = \beta_0 + \beta_1 X_{ijt} + \beta_2 C_{ijt} + u_i
+\end{equation}
+where $Y_{ijt}$ is the indicator of tie persistence for ego $i$ and alter $j$ at time $t$, $X_{ijt}$ represents the vector of our core theoretical predictors (cultural matching and network opacity), $C_{ijt}$ is a vector of dyadic and structural control variables (including time period indicators to allow the baseline hazard to vary), and $u_i$ is the ego-specific random intercept, assumed to be normally distributed with mean zero.
+
+All models are estimated via maximum likelihood using the \texttt{glmer} function from the \texttt{lme4} package in \textsf{R}, utilizing the BOBYQA optimizer to ensure model convergence. In models interacting subjective closeness with our cultural variables, we calculate and plot average marginal effects to facilitate interpretation of the non-linear interaction terms.
 
 For a full summary of descriptive statistics, see Tables \ref{tbl-descriptives-cont} and \ref{tbl-descriptives-cat} in the Appendix.
 
 \section{Results}\label{results}
+
+Our analysis proceeds in two stages. First, we examine the main effects of cultural matching and network opacity on the likelihood of tie persistence, holding dyadic and structural factors constant. Second, we explore how the role of cultural matching and network opacity varies across different levels of baseline tie strength (subjective closeness).
+
+\subsection{Main Effects: Cultural Matching and Network Opacity}
+
+Table \ref{tbl-models} presents the odds ratios from a series of mixed-effects logistic regression models predicting tie survival. Model 1 establishes our baseline, demonstrating that \textbf{closed-form cultural matching} significantly increases the odds of tie persistence. For each additional broad cultural domain (e.g., music, movies, sports) in which an ego and alter share tastes, the tie is substantially more likely to survive into the subsequent wave, net of controls for subjective closeness, tie duration, frequency of interaction, and demographic homophily.
+
+In Model 2, we introduce \textbf{open-ended activity matches}. The inclusion of this variable demonstrates that specific, shared behavioral practices (such as co-participating in a particular hobby or sport) provide additive protective value above and beyond broad categorical taste similarities. Both closed-form and open-ended matching independently reduce the hazard of tie decay.
+
+Model 3 tests the independent effect of \textbf{network opacity}---measured as the number of domains in which the ego reported ``Don't Know'' regarding their alter's preferences. As expected, network opacity is a strong negative predictor of tie persistence. A lack of mutual cultural knowledge signals a lack of conversational intimacy; as the number of ``unknown'' domains increases, the likelihood of tie survival sharply drops. 
+
+To contextualize these coefficients, Figure \ref{fig-combined} displays the average marginal effects of moving from the minimum to the maximum observed values for each of our core theoretical variables. Across the board, cultural matching serves as a robust protective mechanism against tie decay, whereas network opacity acts as a profound liability.
+
+\subsection{The Moderating Role of Subjective Closeness}
+
+While the main effects demonstrate that cultural alignment generally stabilizes ties, we next assess whether this ``social glue'' is uniformly necessary for all relationships. We estimated auxiliary interaction models (not shown in tables, but visualized via marginal effects) to test whether the protective effects of cultural matching and the detrimental effects of network opacity are moderated by baseline subjective closeness.
+
+Because interaction terms in logistic models can be opaque due to the non-linear link function, Figure \ref{fig-closeness-interactions} plots the predicted average marginal effect of our three cultural variables across ties rated as ``Not Close,'' ``Somewhat Close,'' and ``Close.''
+
+The results reveal a striking asymmetry: the role of cultural matching and opacity is highly dependent on tie strength. For weak ties (those rated ``Not Close''), the marginal effects are steepest. For these vulnerable relationships, an increase in shared cultural tastes---whether measured via closed-form domains or open-ended activities---dramatically increases the probability of tie persistence. Conversely, for strong ties (those rated ``Close''), the marginal effect slopes are essentially flat. 
+
+This interaction suggests that shared cultural tastes provide the critical \textit{scaffolding} necessary to help weak, budding ties survive their initial liability of newness. Strong ties, however, are deeply institutionalized and anchored by other relational mechanisms (such as deep emotional attachment or multiplex obligations), making them resilient to decay regardless of fluctuations in cultural matching. Similarly, network opacity exerts a severe negative toll on weak ties, but close friendships are robust enough to withstand a degree of ignorance regarding specific cultural domains.
+
+\section{Discussion and Conclusion}\label{discussion}
+
+\subsection{Summary of Key Findings}
+In this paper, we sought to address a central puzzle in the sociology of culture and social networks: how do cultural tastes shape the evolutionary dynamics of personal networks? Using longitudinal ego-network data from the NetSense study, we tested a cultural matching model of tie persistence. Our results provide robust evidence that shared cultural tastes are a vital mechanism for stabilizing social ties. Specifically, both broad, closed-form cultural matches and specific, open-ended activity matches independently reduce the hazard of tie dissolution. Furthermore, we identified network opacity---the lack of mutual cultural knowledge---as a powerful, independent liability that accelerates tie decay. Crucially, the protective effect of cultural matching and the detrimental effect of network opacity are heavily concentrated among weak ties. For subjectively close ties, the underlying cultural scaffolding becomes less relevant to tie survival.
+
+\subsection{Theoretical and Substantive Interpretations}
+These findings carry significant theoretical implications for how we understand the relationship between tastes and networks. The results challenge the assumption of the pure network transmission perspective, which treats cultural tastes merely as fluid by-products of existing social ties \citep{mark2003}. Instead, our findings align more closely with the cultural capital perspective \citep{bourdieu1984, vaisey2010}, suggesting that tastes function as durable, portable resources that individuals actively use to select, maintain, and discard social relationships. 
+
+We conceive of cultural matching as an essential form of ``social scaffolding.'' New and weak ties face a high liability of newness \citep{burt2000}. In the absence of deep emotional bonds, multiplex obligations, or institutional constraints, shared cultural tastes provide a low-friction baseline for interaction. Shared music, movies, or sports generate immediate conversational fodder and lower the cognitive costs of coordination. Over time, as a tie matures and institutionalizes into a close friendship, this scaffolding is no longer strictly necessary; the relationship becomes resilient on its own terms. This developmental view of networks helps reconcile the volatility of personal networks with the relative stability of individual cultural profiles: people are constantly churning through ties, but they use their stable cultural compass to determine which ties stick.
+
+\subsection{Limitations and Future Research}
+Despite these robust findings, several limitations point toward fruitful avenues for future research. First, our empirical focus on a sample of college students at a single university limits the generalizability of our claims. The college transition is a period of heightened network flux and identity formation. Future research should examine whether cultural matching operates similarly as a stabilizing force in adult populations, workplace settings, or among older adults where network dynamics and the salience of different cultural domains may differ.
+
+Second, our current operationalization treats all cultural matches as theoretically equivalent. Future research could disaggregate these domains to test whether high-status cultural matches (e.g., classical music, literature) confer different relational advantages compared to popular or low-status domains \citep{dimaggio1987}. Additionally, exploring the valence of cultural matching---such as shared \textit{dislikes} \citep{erickson1996}---could provide a more nuanced picture of relational boundary-drawing.
+
+Finally, while our discrete-time survival framework effectively models tie decay, future studies would benefit from deploying stochastic actor-oriented models (SAOMs) to simultaneously model tie creation, tie dissolution, and individual taste change. Such an approach could fully disentangle the reciprocal processes of network-based cultural influence and culture-based social selection.
 
 \section*{Figures}
 
