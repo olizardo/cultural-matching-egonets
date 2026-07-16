@@ -135,7 +135,7 @@ p <- ggplot(comp_combined, aes(y = Predictor, x = estimate, fill = Predictor, co
   theme_minimal(base_size = 14) +
   theme(legend.position = "none")
 
-ggsave(here::here("Plots", "marginal_effects.png"), plot = p, width = 8, height = 6)
+ggsave(here::here("Plots", "main_effects.png"), plot = p, width = 8, height = 6)
 p
 ```
 ## Subjective Closeness Interactions
@@ -192,7 +192,7 @@ p_int <- ggplot(comp_int_combined, aes(y = close_factor, x = estimate, fill = Cu
 ggsave(here::here("Plots", "interaction_closeness.png"), plot = p_int, width = 12, height = 4.5)
 p_int
 ```
-As the marginal effects plot clearly demonstrates, the role of cultural matching varies substantially by subjective closeness. For "Not Close" ties (the steepest slopes), an increase in shared cultural tastes—whether measured through closed-form domains or open-ended activities—dramatically increases the probability of tie persistence. Conversely, for ties that are already "Close," the slope is essentially flat. This suggests that shared cultural tastes provide critical scaffolding that helps weak ties survive, whereas strong ties are resilient to decay regardless of cultural matching. Similarly, network opacity exerts its most severe negative effect on ties that are not subjectively close.
+As the marginal effects plot demonstrates, the moderating role of subjective closeness varies by the type of cultural measure. For closed-form matches and network opacity, there is a strong interaction with tie strength: the marginal effects are steepest for "Not Close" ties, indicating that broad cultural alignment and mutual cultural knowledge provide critical scaffolding that helps weak ties survive. Conversely, for ties that are already "Close," the slopes for closed-form matches and opacity are much flatter, suggesting these strong ties are more resilient to decay regardless of these factors. In contrast, open-ended matches do not show as strong of an interaction; their protective effect remains relatively consistent across different levels of subjective closeness.
 \newpage
 
 ## Appendix: Descriptive Statistics
