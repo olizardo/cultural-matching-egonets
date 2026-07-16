@@ -1,233 +1,208 @@
-\begin{thebibliography}{40}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+\begin{thebibliography}{}
 
-\bibitem[Ahmad et~al.(2021)Ahmad, Porter, and Beguerisse-Díaz]{ahmad2021tie-decay-828}
-Walid Ahmad, Mason~A Porter, and Mariano Beguerisse-Díaz.
-\newblock Tie-decay networks in continuous time and eigenvector-based centralities.
-\newblock \emph{{IEEE} Transactions on Network Science and Engineering}, 8\penalty0 (2):\penalty0 1759--1771, 2021.
-\newblock ISSN 2327-4697.
-\newblock \doi{10.1109/tnse.2021.3071429}.
-\newblock URL \url{https://ieeexplore.ieee.org/iel7/6488902/6930788/09397347.pdf?casa_token=UAKVJQQAKOYAAAAA:YrKA4qU-WiTtLazcma4pwk3qltYbQHnRib-K9QvZoyxU_2aR1tv1RM_4TN0o9nd3q7lcRF4U7Q}.
-
-\bibitem[Bahulkar et~al.(2016)Bahulkar, Szymanski, Lizardo, Dong, Yang, and Chawla]{bahulkar2016analysis-d8b}
-A~Bahulkar, B~K Szymanski, O~Lizardo, Y~Dong, Y~Yang, and N~V Chawla.
-\newblock Analysis of link formation, persistence and dissolution in {NetSense} data.
-\newblock \emph{2016 {IEEE}/{ACM} International Conference on Advances in Social Networks Analysis and Mining ({ASONAM})}, pages 1197--1204, 2016.
-\newblock \doi{10.1109/asonam.2016.7752391}.
-\newblock URL \url{http://dx.doi.org/10.1109/asonam.2016.7752391}.
-
-\bibitem[Bahulkar et~al.(2017)Bahulkar, Szymanski, Chan, and Lizardo]{bahulkar2017co-evolution-d04}
-Ashwin Bahulkar, Boleslaw~K Szymanski, Kevin Chan, and Omar Lizardo.
+\bibitem[Bahulkar et~al., 2017]{bahulkar2017co-evolution-d04}
+Bahulkar, A., Szymanski, B.~K., Chan, K., and Lizardo, O. (2017).
 \newblock Co-evolution of two networks representing different social relations in {NetSense}.
-\newblock \emph{Complex Networks \& Their Applications V: Proceedings of the 5th International Workshop on Complex Networks and their Applications ({COMPLEX} {NETWORKS} 2016)}, 693:\penalty0 423--434, 2017.
-\newblock \doi{10.1007/978-3-319-50901-3_34}.
-\newblock URL \url{https://books.google.com/books?hl=en&lr=&id=fTugDQAAQBAJ&oi=fnd&pg=PA423&dq=lizardo+ashwin+boleslaw&ots=2aFiooPlDP&sig=QVMluxaTJFAAMShoV7g_H8thh_c}.
+\newblock {\em Complex Networks \& Their Applications V: Proceedings of the 5th International Workshop on Complex Networks and their Applications ({COMPLEX} {NETWORKS} 2016)}, 693:423--434.
 
-\bibitem[Borgatti(2005)]{borgatti2005}
-Stephen~P. Borgatti.
+\bibitem[Bahulkar et~al., 2016]{bahulkar2016analysis-d8b}
+Bahulkar, A., Szymanski, B.~K., Lizardo, O., Dong, Y., Yang, Y., and Chawla, N.~V. (2016).
+\newblock Analysis of link formation, persistence and dissolution in {NetSense} data.
+\newblock {\em 2016 {IEEE}/{ACM} International Conference on Advances in Social Networks Analysis and Mining ({ASONAM})}, pages 1197--1204.
+
+\bibitem[Borgatti, 2005]{borgatti2005}
+Borgatti, S.~P. (2005).
 \newblock Centrality and network flow.
-\newblock \emph{Social Networks}, 27\penalty0 (1):\penalty0 55--71, 2005.
+\newblock {\em Social Networks}, 27(1):55--71.
 
-\bibitem[Bourdieu(1984)]{bourdieu1984}
-Pierre Bourdieu.
-\newblock \emph{Distinction: A Social Critique of the Judgement of Taste}.
-\newblock Harvard University Press, Cambridge, 1984.
+\bibitem[Bourdieu, 1984]{bourdieu1984}
+Bourdieu, P. (1984).
+\newblock {\em Distinction: A Social Critique of the Judgement of Taste}.
+\newblock Harvard University Press, Cambridge.
 
-\bibitem[Bourdieu(1986)]{bourdieu1986}
-Pierre Bourdieu.
+\bibitem[Bourdieu, 1986]{bourdieu1986}
+Bourdieu, P. (1986).
 \newblock The forms of capital.
-\newblock In John~G. Richardson, editor, \emph{Handbook of Theory and Research for the Sociology of Education}, pages 241--258. Greenwood, New York, 1986.
+\newblock In Richardson, J.~G., editor, {\em Handbook of Theory and Research for the Sociology of Education}, pages 241--258. Greenwood, New York.
 
-\bibitem[Bourdieu(1990)]{bourdieu1990}
-Pierre Bourdieu.
-\newblock \emph{The Logic of Practice}.
-\newblock Polity Press, Cambridge, 1990.
+\bibitem[Bourdieu, 1990]{bourdieu1990}
+Bourdieu, P. (1990).
+\newblock {\em The Logic of Practice}.
+\newblock Polity Press, Cambridge.
 
-\bibitem[Burt(2000)]{burt2000}
-Ronald~S. Burt.
+\bibitem[Burt, 2000]{burt2000}
+Burt, R.~S. (2000).
 \newblock Decay functions.
-\newblock \emph{Social Networks}, 22\penalty0 (1):\penalty0 1--28, 2000.
+\newblock {\em Social Networks}, 22(1):1--28.
 
-\bibitem[Burt(2002)]{burt2002}
-Ronald~S. Burt.
+\bibitem[Burt, 2002]{burt2002}
+Burt, R.~S. (2002).
 \newblock Bridge decay.
-\newblock \emph{Social Networks}, 24\penalty0 (4):\penalty0 333--363, 2002.
+\newblock {\em Social Networks}, 24(4):333--363.
 
-\bibitem[Carley(1991)]{carley1991}
-Kathleen~M. Carley.
+\bibitem[Carley, 1991]{carley1991}
+Carley, K.~M. (1991).
 \newblock A theory of group stability.
-\newblock \emph{American Sociological Review}, 56\penalty0 (3):\penalty0 331--354, 1991.
+\newblock {\em American Sociological Review}, 56(3):331--354.
 
-\bibitem[Collins(2004)]{collins2004}
-Randall Collins.
-\newblock \emph{Interaction Ritual Chains}.
-\newblock Princeton University Press, Princeton, 2004.
+\bibitem[Collins, 2004]{collins2004}
+Collins, R. (2004).
+\newblock {\em Interaction Ritual Chains}.
+\newblock Princeton University Press, Princeton.
 
-\bibitem[Cornwell et~al.(2008)Cornwell, Laumann, and Schumm]{cornwell2008social-257}
-Benjamin Cornwell, Edward~O Laumann, and L~Philip Schumm.
+\bibitem[Cornwell et~al., 2008]{cornwell2008social-257}
+Cornwell, B., Laumann, E.~O., and Schumm, L.~P. (2008).
 \newblock The social connectedness of older adults: A national profile*.
-\newblock \emph{American sociological review}, 73\penalty0 (2):\penalty0 185--203, 2008.
-\newblock ISSN 0003-1224.
-\newblock URL \url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2583428}.
+\newblock {\em American sociological review}, 73(2):185--203.
 
-\bibitem[DiMaggio(1987)]{dimaggio1987}
-Paul DiMaggio.
+\bibitem[DiMaggio, 1987]{dimaggio1987}
+DiMaggio, P. (1987).
 \newblock Classification in art.
-\newblock \emph{American Sociological Review}, 52\penalty0 (4):\penalty0 440--455, 1987.
+\newblock {\em American Sociological Review}, 52(4):440--455.
 
-\bibitem[Edelmann and Vaisey(2014)]{edelmann2014cultural-a77}
-Achim Edelmann and Stephen Vaisey.
+\bibitem[Edelmann and Vaisey, 2014]{edelmann2014cultural-a77}
+Edelmann, A. and Vaisey, S. (2014).
 \newblock Cultural resources and cultural distinction in networks.
-\newblock \emph{Poetics}, 46:\penalty0 22--37, 10 2014.
-\newblock ISSN 0304-422X.
-\newblock \doi{10.1016/j.poetic.2014.08.001}.
-\newblock URL \url{https://www.sciencedirect.com/science/article/pii/S0304422X14000503?casa_token=jQ_u1wk6fJcAAAAA:AFGYrR1Mqn9vBYCiTen5efJ4EXNPRojal1SU4gz4Rwd90IRUWisuPM4Jcydpasppm8aQFnDZbQ}.
+\newblock {\em Poetics}, 46:22--37.
 
-\bibitem[Erickson(1988)]{erickson1988}
-Bonnie~H. Erickson.
+\bibitem[Erickson, 1988]{erickson1988}
+Erickson, B.~H. (1988).
 \newblock The relational basis of attitudes.
-\newblock In Barry Wellman and S.~D. Berkowitz, editors, \emph{Social Structures: A Network Approach}, pages 99--121. Cambridge University Press, Cambridge, 1988.
+\newblock In Wellman, B. and Berkowitz, S.~D., editors, {\em Social Structures: A Network Approach}, pages 99--121. Cambridge University Press, Cambridge.
 
-\bibitem[Erickson(1996)]{erickson1996}
-Bonnie~H. Erickson.
+\bibitem[Erickson, 1996]{erickson1996}
+Erickson, B.~H. (1996).
 \newblock Culture, class, and connections.
-\newblock \emph{American Journal of Sociology}, 102\penalty0 (1):\penalty0 217--252, 1996.
+\newblock {\em American Journal of Sociology}, 102(1):217--252.
 
-\bibitem[Feld and Grofman(2009)]{feld2009homophily-595}
-Scott Feld and Bernard Grofman.
+\bibitem[Feld and Grofman, 2009]{feld2009homophily-595}
+Feld, S. and Grofman, B. (2009).
 \newblock Homophily and the focused organization of ties.
-\newblock In ["Peter Hedstrom" and "Peter Bearman"], editors, \emph{Oxford Handbook of Analytical Sociology}, pages 521--543. Oxford University Press Oxford, Oxford, {UK}, 2009.
-\newblock URL \url{http://www.socsci.uci.edu/~bgrofman/159%20Feld%20and%20Grofman.%202009.%20Homophily%20and%20The%20Focused%20Organization..pdf}.
+\newblock In Hedstrom", P. and Bearman"], P., editors, {\em Oxford Handbook of Analytical Sociology}, pages 521--543. Oxford University Press Oxford, Oxford, {UK}.
 
-\bibitem[Granovetter(1973)]{granovetter1973strength-f5f}
-Mark~S Granovetter.
+\bibitem[Granovetter, 1973]{granovetter1973strength-f5f}
+Granovetter, M.~S. (1973).
 \newblock The strength of weak ties.
-\newblock \emph{The American journal of sociology}, 78\penalty0 (3):\penalty0 1360--1380, 1973.
-\newblock ISSN 0002-9602.
-\newblock URL \url{http://info.ils.indiana.edu/~katy/L597-F05/granovetter73.pdf}.
+\newblock {\em The American journal of sociology}, 78(3):1360--1380.
 
-\bibitem[Hachen et~al.(2022)Hachen, Wang, Sepulvado, and Lizardo]{hachen2022generators-923}
-David Hachen, Cheng Wang, Brandon Sepulvado, and Omar Lizardo.
+\bibitem[Hachen et~al., 2022]{hachen2022generators-923}
+Hachen, D., Wang, C., Sepulvado, B., and Lizardo, O. (2022).
 \newblock Generators or diffusers? examining differences in the dynamic coupling of context and social ties across multiple types of foci.
-\newblock \emph{Social networks}, 2 2022.
-\newblock ISSN 0378-8733.
-\newblock \doi{10.1016/j.socnet.2022.02.004}.
-\newblock URL \url{http://dx.doi.org/10.1016/j.socnet.2022.02.004}.
+\newblock {\em Social networks}.
 
-\bibitem[Holt(1997)]{holt1997}
-Douglas~B. Holt.
+\bibitem[Holt, 1997]{holt1997}
+Holt, D.~B. (1997).
 \newblock Distinction in america? recovering {Bourdieu}'s theory of tastes from its critics.
-\newblock \emph{Poetics}, 25\penalty0 (2):\penalty0 93--120, 1997.
+\newblock {\em Poetics}, 25(2):93--120.
 
-\bibitem[Holt(1998)]{holt1998}
-Douglas~B. Holt.
+\bibitem[Holt, 1998]{holt1998}
+Holt, D.~B. (1998).
 \newblock Does cultural capital structure american consumption?
-\newblock \emph{Journal of Consumer Research}, 25\penalty0 (1):\penalty0 1--25, 1998.
+\newblock {\em Journal of Consumer Research}, 25(1):1--25.
 
-\bibitem[Lazarsfeld and Merton(1954)]{lazarsfeld1954}
-Paul~F. Lazarsfeld and Robert~K. Merton.
+\bibitem[Kleinbaum, 2018]{kleinbaum2018reorganization-4a1}
+Kleinbaum, A.~M. (2018).
+\newblock Reorganization and tie decay choices.
+\newblock {\em Management science}, 64(5):2219--2237.
+
+\bibitem[Lazarsfeld and Merton, 1954]{lazarsfeld1954}
+Lazarsfeld, P.~F. and Merton, R.~K. (1954).
 \newblock Friendship as a social process: A substantive and methodological analysis.
-\newblock In Morroe Berger, Theodore Abel, and Charles Page, editors, \emph{Freedom and Control in Modern Society}, pages 18--66. Van Nostrand, New York, 1954.
+\newblock In Berger, M., Abel, T., and Page, C., editors, {\em Freedom and Control in Modern Society}, pages 18--66. Van Nostrand, New York.
 
-\bibitem[Lewis and Kaufman(2018)]{lewis2018}
-Kevin Lewis and Jason Kaufman.
+\bibitem[Lewis and Kaufman, 2018]{lewis2018}
+Lewis, K. and Kaufman, J. (2018).
 \newblock The conversion of cultural tastes into social network ties.
-\newblock \emph{American Journal of Sociology}, 123\penalty0 (6):\penalty0 1669--1715, 2018.
+\newblock {\em American Journal of Sociology}, 123(6):1669--1715.
 
-\bibitem[Lizardo(2006)]{lizardo2006}
-Omar Lizardo.
+\bibitem[Lizardo, 2006]{lizardo2006}
+Lizardo, O. (2006).
 \newblock How cultural tastes shape personal networks.
-\newblock \emph{American Sociological Review}, 71\penalty0 (5):\penalty0 778--807, 2006.
+\newblock {\em American Sociological Review}, 71(5):778--807.
 
-\bibitem[Mark(1998{\natexlab{a}})]{mark1998a}
-Noah~P. Mark.
+\bibitem[Mark, 1998a]{mark1998a}
+Mark, N.~P. (1998a).
 \newblock Beyond individual differences: Social differentiation from first principles.
-\newblock \emph{American Sociological Review}, 63\penalty0 (3):\penalty0 309--330, 1998{\natexlab{a}}.
+\newblock {\em American Sociological Review}, 63(3):309--330.
 
-\bibitem[Mark(1998{\natexlab{b}})]{mark1998b}
-Noah~P. Mark.
+\bibitem[Mark, 1998b]{mark1998b}
+Mark, N.~P. (1998b).
 \newblock Birds of a feather sing together.
-\newblock \emph{Social Forces}, 77\penalty0 (2):\penalty0 453--485, 1998{\natexlab{b}}.
+\newblock {\em Social Forces}, 77(2):453--485.
 
-\bibitem[Mark(2003)]{mark2003}
-Noah~P. Mark.
+\bibitem[Mark, 2003]{mark2003}
+Mark, N.~P. (2003).
 \newblock Culture and competition: Homophily and distancing explanations for cultural niches.
-\newblock \emph{American Sociological Review}, 68\penalty0 (3):\penalty0 319--345, 2003.
+\newblock {\em American Sociological Review}, 68(3):319--345.
 
-\bibitem[Marsden and Campbell(1984)]{marsden1984measuring-f62}
-Peter~V Marsden and Karen~E Campbell.
+\bibitem[Marsden and Campbell, 1984]{marsden1984measuring-f62}
+Marsden, P.~V. and Campbell, K.~E. (1984).
 \newblock Measuring tie strength.
-\newblock \emph{Social forces; a scientific medium of social study and interpretation}, 63\penalty0 (2):\penalty0 482, 1984.
-\newblock ISSN 0037-7732.
-\newblock \doi{10.2307/2579058}.
-\newblock URL \url{http://dx.doi.org/10.2307/2579058}.
+\newblock {\em Social forces; a scientific medium of social study and interpretation}, 63(2):482.
 
-\bibitem[Martin and Yeung(2006)]{martin2006}
-John~Levi Martin and King-To Yeung.
+\bibitem[Martin and Yeung, 2006]{martin2006}
+Martin, J.~L. and Yeung, K.-T. (2006).
 \newblock Persistence of close personal ties over a 12-year period.
-\newblock \emph{Social Networks}, 28\penalty0 (4):\penalty0 331--362, 2006.
+\newblock {\em Social Networks}, 28(4):331--362.
 
-\bibitem[{McPherson}(2004)]{mcpherson2004blau-9fe}
-J~Miller {McPherson}.
+\bibitem[{McPherson}, 2004]{mcpherson2004blau-9fe}
+{McPherson}, J.~M. (2004).
 \newblock A blau space primer: prolegomenon to an ecology of affiliation.
-\newblock \emph{Industrial and Corporate Change}, 13\penalty0 (1):\penalty0 263--280, 2 2004.
-\newblock ISSN 0960-6491.
-\newblock \doi{10.1093/icc/13.1.263}.
-\newblock URL \url{http://icc.oxfordjournals.org/content/13/1/263.short}.
+\newblock {\em Industrial and Corporate Change}, 13(1):263--280.
 
-\bibitem[McPherson et~al.(2001)McPherson, Smith-Lovin, and Cook]{mcpherson2001}
-Miller McPherson, Lynn Smith-Lovin, and James~M. Cook.
+\bibitem[McPherson et~al., 2001]{mcpherson2001}
+McPherson, M., Smith-Lovin, L., and Cook, J.~M. (2001).
 \newblock Birds of a feather: Homophily in social networks.
-\newblock \emph{Annual Review of Sociology}, 27\penalty0 (1):\penalty0 415--444, 2001.
+\newblock {\em Annual Review of Sociology}, 27(1):415--444.
 
-\bibitem[Mize(2019)]{mize2019best}
-Trenton~D Mize.
+\bibitem[Mize, 2019]{mize2019best}
+Mize, T.~D. (2019).
 \newblock Best practices for estimating, interpreting, and presenting nonlinear interaction effects.
-\newblock \emph{Sociological Science}, 6:\penalty0 81--117, 2019.
+\newblock {\em Sociological Science}, 6:81--117.
 
-\bibitem[Morgan et~al.(1997)Morgan, Neal, and Carder]{morgan1997}
-David~L. Morgan, Margaret~B. Neal, and Paula Carder.
+\bibitem[Morgan et~al., 1997]{morgan1997}
+Morgan, D.~L., Neal, M.~B., and Carder, P. (1997).
 \newblock The stability of core and peripheral networks over time.
-\newblock \emph{Social Networks}, 19\penalty0 (1):\penalty0 9--25, 1997.
+\newblock {\em Social Networks}, 19(1):9--25.
 
-\bibitem[Shalizi and Thomas(2011)]{shalizi2011}
-Cosma~Rohilla Shalizi and Andrew~C. Thomas.
+\bibitem[Shalizi and Thomas, 2011]{shalizi2011}
+Shalizi, C.~R. and Thomas, A.~C. (2011).
 \newblock Homophily and contagion are generically confounded in observational social network studies.
-\newblock \emph{Sociological Methods \& Research}, 40\penalty0 (2):\penalty0 211--239, 2011.
+\newblock {\em Sociological Methods \& Research}, 40(2):211--239.
 
-\bibitem[Stinchcombe(1965)]{stinchcombe1965}
-Arthur~L. Stinchcombe.
+\bibitem[Shipilov et~al., 2006]{shipilov2006when-01c}
+Shipilov, A.~V., Rowley, T.~J., and Aharonson, B.~S. (2006).
+\newblock When do networks matter? a study of tie formation and decay.
+\newblock In {\em Ecology and Strategy}, volume~39, page~88. Emerald Group Publishing Limited.
+
+\bibitem[Stinchcombe, 1965]{stinchcombe1965}
+Stinchcombe, A.~L. (1965).
 \newblock Social structure and organizations.
-\newblock In James~G. March, editor, \emph{Handbook of Organizations}, pages 142--193. Rand McNally, Chicago, 1965.
+\newblock In March, J.~G., editor, {\em Handbook of Organizations}, pages 142--193. Rand McNally, Chicago.
 
-\bibitem[Striegel et~al.(2013)Striegel, Liu, Meng, Poellabauer, et~al.]{striegel2013lessons-595}
-A~Striegel, S~Liu, L~Meng, C~Poellabauer, et~al.
+\bibitem[Striegel et~al., 2013]{striegel2013lessons-595}
+Striegel, A., Liu, S., Meng, L., Poellabauer, C., et~al. (2013).
 \newblock Lessons learned from the netsense smartphone study.
-\newblock \emph{{ACM} {SIGCOMM}}, 2013.
-\newblock URL \url{https://scholar.google.ca/scholar?cluster=15379319741157295520&hl=en&as_sdt=0,5&sciodt=0,5}.
+\newblock {\em {ACM} {SIGCOMM}}.
 
-\bibitem[Suitor et~al.(1997)Suitor, Wellman, and Morgan]{suitor1997}
-J.~Jill Suitor, Barry Wellman, and David~L. Morgan.
+\bibitem[Suitor et~al., 1997]{suitor1997}
+Suitor, J.~J., Wellman, B., and Morgan, D.~L. (1997).
 \newblock It's about time: How, why, and when networks change.
-\newblock \emph{Social Networks}, 19\penalty0 (1):\penalty0 1--7, 1997.
+\newblock {\em Social Networks}, 19(1):1--7.
 
-\bibitem[Vaisey and Lizardo(2010)]{vaisey2010}
-Stephen Vaisey and Omar Lizardo.
+\bibitem[Vaisey and Lizardo, 2010]{vaisey2010}
+Vaisey, S. and Lizardo, O. (2010).
 \newblock Can cultural worldviews influence network composition?
-\newblock \emph{Social Forces}, 88\penalty0 (4):\penalty0 1595--1618, 2010.
+\newblock {\em Social Forces}, 88(4):1595--1618.
 
-\bibitem[Wellman et~al.(1997)Wellman, Wong, Tindall, and Nazer]{wellman1997}
-Barry Wellman, Renita Yuk-Lin Wong, David Tindall, and Nancy Nazer.
+\bibitem[Wellman et~al., 1997]{wellman1997}
+Wellman, B., Wong, R. Y.-L., Tindall, D., and Nazer, N. (1997).
 \newblock A decade of network change: Turnover, persistence and stability in personal communities.
-\newblock \emph{Social Networks}, 19\penalty0 (1):\penalty0 27--50, 1997.
+\newblock {\em Social Networks}, 19(1):27--50.
 
-\bibitem[Werner and Parmelee(1979)]{werner1979}
-Carol Werner and Pat Parmelee.
+\bibitem[Werner and Parmelee, 1979]{werner1979}
+Werner, C. and Parmelee, P. (1979).
 \newblock Similarity of leisure activities and friendship selection.
-\newblock \emph{Personality and Social Psychology Bulletin}, 5\penalty0 (2):\penalty0 240--242, 1979.
+\newblock {\em Personality and Social Psychology Bulletin}, 5(2):240--242.
 
 \end{thebibliography}

@@ -18,10 +18,10 @@ The project uses two main data sources from the NetSense study, originally provi
     *   **Reporting**: Fully reproducible, unified Quarto architecture (`manuscript.qmd`) where models are fit natively and results (`modelsummary` tables, `marginaleffects` plots) are generated dynamically upon rendering.
 
 ## Project Structure
-*   `data/raw/`: Original `.dta` files.
-*   `data/processed/`: Cleaned R datasets (`adjacent_waves.rds`) ready for modeling.
-*   `analysis.qmd`: The single source of truth. Contains all data preparation, modeling logic, visualization, and manuscript text.
-*   `manuscript_citations.bib`: BibTeX citations for dynamic bibliography generation.
+*   `data/`: R datasets ready for modeling.
+*   `analysis.qmd`: The reproducible Quarto notebook containing data prep, modeling, and output generation (saving to `Plots/` and `Tabs/`).
+*   `manuscript.tex`: The main LaTeX manuscript file that inputs the generated plots and tables.
+*   `manuscript_citations.bib`: BibTeX citations for bibliography generation.
 
 ## Current Status and Progress (June 2026)
 *   **Unified Reproducible Architecture**: Ported all external R scripts (data prep, baseline models, domain models, opacity models, and model comparison) directly into `analysis.qmd` as executable R chunks. Enabled caching for faster re-renders. Deleted all obsolete external asset folders (`R/`, `reports/`, `Tabs/`, `Plots/`).
@@ -34,4 +34,6 @@ The project uses two main data sources from the NetSense study, originally provi
     *   *Opacity Models*: Network opacity (unknown preference domains) significantly increases the hazard of tie dissolution. Formal statistical tests of second differences in average marginal effects demonstrate that the interaction between network opacity and cultural matching is null.
     *   *Model Comparison*: Added a comprehensive model comparison showing that the Opacity Main Effects model has the best fit (lowest AIC/BIC), with a simplified table summarizing only GOF stats.
 *   **Literature and Theory Integration**: Successfully extracted rich theoretical background and classical citations (such as Bourdieu, Burt, Mark, McPherson, Lazarsfeld, and Holt) from old Word drafts using Quarto's pandoc utility. Integrated these concepts to write a comprehensive `Introduction` and `Theoretical Framework`, complete with a `.bib` bibliography.
-*   **Legacy Code Audit**: Analyzed the original Stata `.do` files to cross-reference coding decisions, validating our R strategy before permanently cleaning up the workspace.
+*   **Recent Updates (July 2026)**:
+    *   **Citation Formatting**: Switched citation style from `plainnat` to `apalike` in `manuscript.tex`. Cleaned up `manuscript_citations.bib` by systematically removing all `url` fields to maintain cleaner bibliography rendering.
+    *   **Manuscript Structural Edits**: Reorganized `manuscript.tex` to improve logic and flow. Moved the "Strength-Mediated Matching Hypothesis" from the Opacity subsection to its own dedicated subsection. Added a clearer "Roadmap" paragraph at the end of the Introduction. Added a dedicated "Summary of Hypotheses" section at the end of the Theoretical Framework. Created explicit signposting at the beginning of the Results section. Expanded the concluding discussion to include practical/real-world implications of cultural matching for university administrators and community building.

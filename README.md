@@ -56,7 +56,10 @@ The primary dependencies include `tidyverse`, `lme4`, `marginaleffects`, `models
 5. **Compile the Manuscript**:
    Compile the main LaTeX file using `latexmk` or your preferred LaTeX engine:
    ```bash
-   latexmk -pdf manuscript.tex
+   pdflatex manuscript.tex
+   bibtex manuscript.aux
+   pdflatex manuscript.tex
+   pdflatex manuscript.tex
    ```
 
 ---

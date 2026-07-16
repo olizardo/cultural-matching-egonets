@@ -45,6 +45,8 @@ A central issue in the study of culture and networks concerns the co-evolution o
 
 In this paper, we provide empirical evidence consistent with a \textbf{cultural matching model} of tie persistence. We propose that, rather than tastes merely adapting to match pre-existing networks, pre-existing cultural dispositions serve as an active ``social glue'' that determines which network ties survive and which dissolve \citep{burt2000}. Under this model, dyadic cultural matching (commonalities in tastes and activities) increases the over-time stability and cognitive salience of social ties, net of usual dyadic determinants such as subjective closeness and tie duration. Using rich longitudinal ego-network data from the \textit{NetSense} study over eight waves \citep{bahulkar2016analysis-d8b, bahulkar2017co-evolution-d04, hachen2022generators-923}, we track the persistence of social ties across multiple college-year transitions. To isolate peer dynamics, we focus on ties among non-kin, on-campus students. Empirically, we unpack the cultural matching mechanism in two ways. First, we establish the baseline protective effect of aggregate cultural matching on tie persistence. Second, we explore the role of ``cultural network opacity''---the degree to which an ego lacks knowledge of their alter’s preferences (indicated by ``Don't Know'' responses)---as an independent predictor of tie decay.
 
+The remainder of this article proceeds as follows. First, we outline the theoretical framework linking tastes, social networks, and tie persistence. Next, we describe the NetSense data and our person-period modeling strategy. Finally, we present the results and discuss their implications for the study of homophily and network evolution.
+
 \section{Theoretical Framework}\label{theoretical-framework}
 
 \subsection{Tastes and Social Networks: Two Perspectives}\label{tastes-and-social-networks-two-perspectives}
@@ -65,7 +67,18 @@ When ego and alter share cultural dispositions, they can engage in shared activi
 
 If shared cultural knowledge stabilizes ties, then a \textit{lack} of mutual cultural knowledge---\textit{cultural network opacity}---should act as a major, independent mechanism of tie decay. We define cultural network opacity as the degree to which an ego is ignorant of an alter's cultural preferences. It is theoretically crucial to differentiate opacity from mere ``taste dissimilarity.'' A taste mismatch implies that ego and alter know each other's preferences but do not share them. Opacity, in contrast, implies a relational void. When an ego reports ``Don't Know'' regarding an alter's preferences across multiple domains, it signals a profound lack of interactional investment. Furthermore, it creates a severe cognitive barrier to finding focal points for shared activities. Without a map of the alter's cultural landscape, the ego cannot easily initiate shared rituals or conversations, independently predicting a higher hazard of tie dissolution \citep{burt2002, wellman1997}. We test both the main effect of cultural network opacity on tie decay and the moderation of the protective effect of known cultural matches by opacity.
 
+\subsection{Tie Strength and the Limits of Cultural Matching}\label{tie-strength-limits}
+
 Furthermore, recent research highlights a critical extension to the cultural matching framework: \citet{edelmann2014cultural-a77} emphasize that cultural matching may not matter equally across all types of relationships, finding that tastes are primarily associated with the maintenance of strong ties rather than weak or incidental connections. To test this boundary condition, we estimate interaction models to assess whether the protective effect of cultural matching is amplified among ties with higher subjective closeness (\textbf{The Strength-Mediated Matching Hypothesis}).
+
+\subsection{Summary of Hypotheses}\label{summary-of-hypotheses}
+
+In sum, we test three core hypotheses regarding the role of culture in network evolution:
+\begin{enumerate}
+    \item \textbf{Baseline Matching Hypothesis}: Shared cultural tastes and activities significantly reduce the hazard of tie decay.
+    \item \textbf{Cultural Network Opacity Hypothesis}: A lack of mutual cultural knowledge independently increases the hazard of tie decay.
+    \item \textbf{Strength-Mediated Matching Hypothesis}: The protective effect of cultural matching against tie decay is amplified among subjectively close ties.
+\end{enumerate}
 
 \section{Data and Methods}\label{data-and-methods}
 
@@ -116,9 +129,9 @@ To verify the robustness of our core findings to modeling specification decision
 
 \section{Results}\label{results}
 
-Our analysis proceeds in two stages. First, we examine the main effects of cultural matching and cultural network opacity on the likelihood of tie persistence, holding dyadic and structural factors constant. Second, we explore how the role of cultural matching and cultural network opacity varies across different levels of baseline tie strength (subjective closeness).
+We present our findings in three stages. First, we examine the baseline main effects of cultural matching and opacity on tie persistence. Second, we test the Strength-Mediated Matching Hypothesis by interacting our matching variables with subjective closeness. Finally, we assess the robustness of our findings using ego fixed-effects models.
 
-\subsection{Main Effects: Cultural Matching and cultural network opacity}
+\subsection{Main Effects: Cultural Matching and Cultural Network Opacity}
 
 Table \ref{tbl-models} presents the odds ratios from a series of mixed-effects logistic regression models predicting tie survival. Model 1 establishes our baseline, demonstrating that \textbf{closed-form cultural matching} significantly increases the odds of tie persistence. For each additional broad cultural domain (e.g., music, movies, sports) in which an ego and alter share tastes, the tie is substantially more likely to survive into the subsequent wave, net of controls for subjective closeness, tie duration, frequency of interaction, and demographic homophily.
 
@@ -158,6 +171,8 @@ Furthermore, our findings speak directly to the classic distinction between choi
 
 In this paper, we conceptualize cultural matching as an essential structural core of close relationships. While early network theories emphasized structural constraints or multiplexity \citep{burt2000}, our findings suggest that shared tastes may be what gives close relationships their staying power. In the absence of mutual cultural knowledge (high opacity), even subjectively close ties face a high hazard of dissolution. This developmental view of networks helps reconcile the volatility of personal networks with the relative stability of individual cultural profiles.
 
+Beyond sociological theory, these findings carry practical implications for institutions aiming to foster social cohesion. For university administrators and community organizers seeking to reduce social isolation, our results underscore that mere proximity or shared structural affiliations are insufficient to sustain durable relationships. Facilitating environments where individuals can discover and activate shared cultural interests---from niche clubs to diverse recreational programs---may be essential for transforming fleeting initial encounters into resilient, long-term support networks.
+
 \subsection{Limitations and Future Research}
 Despite these promising findings, several limitations point toward fruitful avenues for future research. First, our empirical focus on a sample of college students at a single university limits the generalizability of our claims. The college transition is a period of heightened network flux and identity formation. Future research should examine whether cultural matching operates similarly as a stabilizing force in adult populations, workplace settings, or among older adults \citep{cornwell2008social-257} where network dynamics and the salience of different cultural domains may differ.
 
@@ -196,7 +211,7 @@ Descriptive statistics for all continuous and categorical variables used in the 
 \input{Tabs/desc_cat.tex}
 
 \newpage
-\bibliographystyle{plainnat}
+\bibliographystyle{apalike}
 \bibliography{manuscript_citations}
 
 \end{document}
