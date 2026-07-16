@@ -174,7 +174,7 @@
 
 \title{Cultural Matching Analysis}
 \author{Omar Lizardo et al.}
-\date{2026-06-29}
+\date{2026-07-16}
 \begin{document}
 \maketitle
 
@@ -207,71 +207,6 @@ items. Model 3 incorporates network opacity (the number of ``Don't
 know'' responses regarding an alter's preferences). The main effects
 model reveals that a lack of shared cultural knowledge signals a weaker
 tie.
-
-\begin{table}
-
-\caption{\label{tbl-models}Odds Ratios for Tie Persistence (Main Effects
-Models)}
-
-\centering{
-
-\centering
-\begin{talltblr}[         %% tabularray outer open
-entry=none,label=none,
-note{}={+ p \num{< 0.1}, * p \num{< 0.05}, ** p \num{< 0.01}, *** p \num{< 0.001}},
-]                     %% tabularray outer close
-{                     %% tabularray inner open
-colspec={Q[]Q[]Q[]Q[]},
-hline{2}={1-4}{solid, black, 0.05em},
-hline{36}={1-4}{solid, black, 0.05em},
-hline{1}={1-4}{solid, black, 0.08em},
-hline{39}={1-4}{solid, black, 0.08em},
-column{2-4}={}{halign=c},
-column{1}={}{halign=l},
-}                     %% tabularray inner close
-& Model 1: Closed & Model 2: + Open & Model 3: + Opacity \\
-Closed-Form Matches & \num{1.151}** & \num{1.122}* &  \\
-& (\num{0.057}) & (\num{0.056}) &  \\
-Open-Ended Matches &  & \num{1.154}** & \num{1.141}* \\
-&  & (\num{0.063}) & (\num{0.062}) \\
-Network Opacity &  &  & \num{0.813}*** \\
-&  &  & (\num{0.046}) \\
-Subjective Closeness: Somewhat & \num{1.641}* & \num{1.597}* & \num{1.495}+ \\
-& (\num{0.339}) & (\num{0.330}) & (\num{0.312}) \\
-Subjective Closeness: Close & \num{3.212}*** & \num{3.004}*** & \num{2.762}*** \\
-& (\num{0.750}) & (\num{0.706}) & (\num{0.654}) \\
-Tie Duration (Years) & \num{1.033} & \num{1.026} & \num{1.005} \\
-& (\num{0.050}) & (\num{0.050}) & (\num{0.049}) \\
-Tie Duration Squared & \num{0.997} & \num{0.997} & \num{0.998} \\
-& (\num{0.003}) & (\num{0.003}) & (\num{0.003}) \\
-Ego: Woman & \num{1.024} & \num{1.006} & \num{1.003} \\
-& (\num{0.284}) & (\num{0.280}) & (\num{0.284}) \\
-Alter: Woman & \num{1.497}* & \num{1.426}* & \num{1.394}+ \\
-& (\num{0.261}) & (\num{0.251}) & (\num{0.247}) \\
-Ego Woman × Alter Woman & \num{0.605}+ & \num{0.648} & \num{0.668} \\
-& (\num{0.165}) & (\num{0.178}) & (\num{0.184}) \\
-Roommate/Dormmate & \num{1.926} & \num{1.816} & \num{1.686} \\
-& (\num{0.857}) & (\num{0.811}) & (\num{0.758}) \\
-Friend & \num{1.402} & \num{1.334} & \num{1.300} \\
-& (\num{0.459}) & (\num{0.438}) & (\num{0.430}) \\
-Frequency: Weekly/Daily & \num{1.339} & \num{1.344} & \num{1.282} \\
-& (\num{0.267}) & (\num{0.268}) & (\num{0.258}) \\
-Race Homophily: Same Race & \num{1.120} & \num{1.092} & \num{1.047} \\
-& (\num{0.227}) & (\num{0.222}) & (\num{0.215}) \\
-Race Homophily: Unknown & \num{0.236}*** & \num{0.232}*** & \num{0.220}*** \\
-& (\num{0.045}) & (\num{0.045}) & (\num{0.043}) \\
-Time Period: Wave 2-5 & \num{0.560} & \num{0.573} & \num{0.528}+ \\
-& (\num{0.206}) & (\num{0.211}) & (\num{0.197}) \\
-Time Period: Wave 5-6 & \num{0.902} & \num{0.904} & \num{0.758} \\
-& (\num{0.342}) & (\num{0.343}) & (\num{0.289}) \\
-Num.Obs. & \num{2096} & \num{2096} & \num{2096} \\
-AIC & \num{2181.0} & \num{2175.7} & \num{2167.0} \\
-BIC & \num{2277.0} & \num{2277.3} & \num{2268.6} \\
-\end{talltblr}
-
-}
-
-\end{table}%
 
 \subsubsection{Marginal Effects}\label{marginal-effects}
 
@@ -317,89 +252,36 @@ of subjective closeness.
 
 }
 
-\caption{\label{fig-closeness-interactions}Predicted Probability of Tie
-Persistence by Cultural Matching, Network Opacity, and Subjective
-Closeness}
+\caption{\label{fig-closeness-interactions}Marginal Effects of Cultural
+Matching and Network Opacity by Subjective Closeness}
 
 \end{figure}%
 
-As the marginal effects plot clearly demonstrates, the role of cultural
-matching varies substantially by subjective closeness. For ``Not Close''
-ties (the steepest slopes), an increase in shared cultural
-tastes---whether measured through closed-form domains or open-ended
-activities---dramatically increases the probability of tie persistence.
-Conversely, for ties that are already ``Close,'' the slope is
-essentially flat. This suggests that shared cultural tastes provide
-critical scaffolding that helps weak ties survive, whereas strong ties
-are resilient to decay regardless of cultural matching. Similarly,
-network opacity exerts its most severe negative effect on ties that are
-not subjectively close. \newpage
+As the marginal effects plot demonstrates, the moderating role of
+subjective closeness varies by the type of cultural measure. For
+closed-form matches and network opacity, there is a strong interaction
+with tie strength: the marginal effects are steepest for ``Not Close''
+ties, indicating that broad cultural alignment and mutual cultural
+knowledge provide critical scaffolding that helps weak ties survive.
+Conversely, for ties that are already ``Close,'' the slopes for
+closed-form matches and opacity are much flatter, suggesting these
+strong ties are more resilient to decay regardless of these factors. In
+contrast, open-ended matches do not show as strong of an interaction;
+their protective effect remains relatively consistent across different
+levels of subjective closeness. \newpage
 
 \subsection{Appendix: Descriptive
 Statistics}\label{appendix-descriptive-statistics}
 
-{
+\subsection{Robustness Check: Ego Fixed
+Effects}\label{robustness-check-ego-fixed-effects}
 
-\begin{longtable}[]{@{}lrrrr@{}}
-
-\caption{\label{tbl-descriptives-cont}Descriptive Statistics for
-Continuous Variables}
-
-\tabularnewline
-
-\toprule\noalign{}
-Variable & Mean & SD & Min & Max \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Closed-Form Matches & 2.12 & 1.47 & 0.00 & 6 \\
-Open-Ended Matches & 2.44 & 1.32 & 0.00 & 5 \\
-Cultural Network Opacity & 0.81 & 1.51 & 0.00 & 6 \\
-Tie Duration (Years) & 3.01 & 4.19 & 0.08 & 20 \\
-
-\end{longtable}
-
-}
-
-{
-
-\begin{longtable}[]{@{}llrr@{}}
-
-\caption{\label{tbl-descriptives-cat}Descriptive Statistics for
-Categorical Variables}
-
-\tabularnewline
-
-\toprule\noalign{}
-Variable & Category & N & Percent \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Alter Gender & Men & 1160 & 53.5 \\
-Alter Gender & Women & 1007 & 46.5 \\
-Ego Gender & Men & 1127 & 52.7 \\
-Ego Gender & Women & 1010 & 47.3 \\
-Friend & No & 236 & 10.9 \\
-Friend & Yes & 1939 & 89.1 \\
-Race Homophily & Heterophilous & 217 & 10.0 \\
-Race Homophily & Homophilous & 500 & 23.0 \\
-Race Homophily & Unknown & 1458 & 67.0 \\
-Roommate/Dormmate & No & 2062 & 94.8 \\
-Roommate/Dormmate & Yes & 113 & 5.2 \\
-Subjective Closeness & Close & 302 & 14.1 \\
-Subjective Closeness & Not Close & 712 & 33.3 \\
-Subjective Closeness & Somewhat Close & 1127 & 52.6 \\
-Tie Persisted & No & 1489 & 68.5 \\
-Tie Persisted & Yes & 686 & 31.5 \\
-Time Period & Wave 1 to 2 & 104 & 4.8 \\
-Time Period & Wave 2 to 5 & 1365 & 62.8 \\
-Time Period & Wave 5 to 6 & 706 & 32.5 \\
-
-\end{longtable}
-
-}
+To ensure the robustness of our main findings, we estimated an
+\textbf{Ego Fixed-Effects} model using conditional logistic regression
+(\texttt{survival::clogit}). This stringent test completely controls for
+all unobserved, time-invariant ego characteristics by only leveraging
+within-ego variance (i.e., comparing alters retained vs.~dropped by the
+same ego).
 
 
 

@@ -45,6 +45,11 @@ Carley, K.~M. (1991).
 \newblock A theory of group stability.
 \newblock {\em American Sociological Review}, 56(3):331--354.
 
+\bibitem[Childress and Nault, 2019]{childress2019encultured-e58}
+Childress, C. and Nault, J.-F. (2019).
+\newblock Encultured biases: The role of products in pathways to inequality.
+\newblock {\em American sociological review}, 84(1):115--141.
+
 \bibitem[Collins, 2004]{collins2004}
 Collins, R. (2004).
 \newblock {\em Interaction Ritual Chains}.
@@ -54,6 +59,11 @@ Collins, R. (2004).
 Cornwell, B., Laumann, E.~O., and Schumm, L.~P. (2008).
 \newblock The social connectedness of older adults: A national profile*.
 \newblock {\em American sociological review}, 73(2):185--203.
+
+\bibitem[Cornwell et~al., 2021]{cornwell2021tracking}
+Cornwell, B., Schumm, L.~P., Laumann, E.~O., Goldman, A.~W., and Compernolle, E.~L. (2021).
+\newblock Tracking egocentric social network change across three rounds of national survey data.
+\newblock {\em The Journals of Gerontology: Series B}, 76(Supplement\_3):S266--S275.
 
 \bibitem[DiMaggio, 1987]{dimaggio1987}
 DiMaggio, P. (1987).
@@ -85,20 +95,25 @@ Granovetter, M.~S. (1973).
 \newblock The strength of weak ties.
 \newblock {\em The American journal of sociology}, 78(3):1360--1380.
 
+\bibitem[Graubard and Korn, 2011]{graubard2011conditional-502}
+Graubard, B.~I. and Korn, E.~L. (2011).
+\newblock Conditional logistic regression with survey data.
+\newblock {\em Statistics in Biopharmaceutical Research}, 3(2):398--408.
+
 \bibitem[Hachen et~al., 2022]{hachen2022generators-923}
 Hachen, D., Wang, C., Sepulvado, B., and Lizardo, O. (2022).
 \newblock Generators or diffusers? examining differences in the dynamic coupling of context and social ties across multiple types of foci.
 \newblock {\em Social networks}.
 
-\bibitem[Holt, 1997]{holt1997}
-Holt, D.~B. (1997).
-\newblock Distinction in america? recovering {Bourdieu}'s theory of tastes from its critics.
-\newblock {\em Poetics}, 25(2):93--120.
-
 \bibitem[Holt, 1998]{holt1998}
 Holt, D.~B. (1998).
 \newblock Does cultural capital structure american consumption?
 \newblock {\em Journal of Consumer Research}, 25(1):1--25.
+
+\bibitem[Kempnich et~al., 2024]{kempnich2024how}
+Kempnich, M., W{\"o}lfer, R., Hewstone, M., and Dunbar, R. I.~M. (2024).
+\newblock How the size and structure of egocentric networks change during a life transition.
+\newblock {\em Advances in Life Course Research}.
 
 \bibitem[Kleinbaum, 2018]{kleinbaum2018reorganization-4a1}
 Kleinbaum, A.~M. (2018).
@@ -165,6 +180,11 @@ Morgan, D.~L., Neal, M.~B., and Carder, P. (1997).
 \newblock The stability of core and peripheral networks over time.
 \newblock {\em Social Networks}, 19(1):9--25.
 
+\bibitem[Roy et~al., 2022]{roy2022turnover}
+Roy, C., Bhattacharya, K., Dunbar, R. I.~M., and Kaski, K. (2022).
+\newblock Turnover in close friendships.
+\newblock {\em Scientific Reports}, 12:11018.
+
 \bibitem[Shalizi and Thomas, 2011]{shalizi2011}
 Shalizi, C.~R. and Thomas, A.~C. (2011).
 \newblock Homophily and contagion are generically confounded in observational social network studies.
@@ -190,10 +210,20 @@ Suitor, J.~J., Wellman, B., and Morgan, D.~L. (1997).
 \newblock It's about time: How, why, and when networks change.
 \newblock {\em Social Networks}, 19(1):1--7.
 
+\bibitem[Vacchiano et~al., 2024]{vacchiano2024networked}
+Vacchiano, M., Hollstein, B., Settersten, R.~A., and Spini, D. (2024).
+\newblock Networked lives: Probing the influence of social networks on the life course.
+\newblock {\em Advances in Life Course Research}.
+
 \bibitem[Vaisey and Lizardo, 2010]{vaisey2010}
 Vaisey, S. and Lizardo, O. (2010).
 \newblock Can cultural worldviews influence network composition?
 \newblock {\em Social Forces}, 88(4):1595--1618.
+
+\bibitem[Weiss et~al., 2022]{weiss2022life}
+Weiss, J., Lawton, L.~E., and Fischer, C.~S. (2022).
+\newblock Life course transitions and changes in network ties among younger and older adults.
+\newblock {\em Advances in Life Course Research}, 52:100478.
 
 \bibitem[Wellman et~al., 1997]{wellman1997}
 Wellman, B., Wong, R. Y.-L., Tindall, D., and Nazer, N. (1997).

@@ -8,33 +8,37 @@ note{ }={Note: All models control for ego and alter gender, non-linear tie durat
 {                     %% tabularray inner open
 colspec={Q[]Q[]Q[]Q[]},
 hline{2}={1-4}{solid, black, 0.05em},
-hline{20}={1-4}{solid, black, 0.05em},
+hline{24}={1-4}{solid, black, 0.05em},
 hline{1}={1-4}{solid, black, 0.08em},
-hline{23}={1-4}{solid, black, 0.08em},
+hline{27}={1-4}{solid, black, 0.08em},
 column{2-4}={}{halign=c},
 column{1}={}{halign=l},
 }                     %% tabularray inner close
 & Model 1: Closed & Model 2: + Open & Model 3: + Opacity \\
-Closed-Form Matches & \num{1.091}** & \num{1.076}* & \num{1.063}+ \\
+Closed-Form Matches & \num{1.096}** & \num{1.083}* & \num{1.070}* \\
 & (\num{0.035}) & (\num{0.035}) & (\num{0.036}) \\
-Open-Ended Matches &  & \num{1.087}** & \num{1.084}** \\
+Open-Ended Matches &  & \num{1.080}* & \num{1.076}* \\
 &  & (\num{0.034}) & (\num{0.034}) \\
-Network Opacity &  &  & \num{0.951} \\
-&  &  & (\num{0.036}) \\
-Subjective Closeness: Somewhat & \num{1.419}** & \num{1.359}* & \num{1.332}* \\
-& (\num{0.189}) & (\num{0.183}) & (\num{0.180}) \\
-Subjective Closeness: Close & \num{2.454}*** & \num{2.285}*** & \num{2.215}*** \\
-& (\num{0.347}) & (\num{0.329}) & (\num{0.324}) \\
-Roommate/Dormmate & \num{0.794} & \num{0.802} & \num{0.800} \\
-& (\num{0.128}) & (\num{0.129}) & (\num{0.129}) \\
-Frequency: Weekly/Daily & \num{2.136}** & \num{2.146}** & \num{2.209}** \\
-& (\num{0.523}) & (\num{0.526}) & (\num{0.545}) \\
-Race Homophily: Same Race & \num{0.955} & \num{0.948} & \num{0.939} \\
-& (\num{0.121}) & (\num{0.121}) & (\num{0.120}) \\
-Tie Duration (Years) & \num{0.991} & \num{0.988} & \num{0.984} \\
-& (\num{0.044}) & (\num{0.043}) & (\num{0.043}) \\
-Num.Obs. & \num{5497} & \num{5497} & \num{5497} \\
-AIC & \num{5256.3} & \num{5250.7} & \num{5251.0} \\
-BIC & \num{5368.7} & \num{5369.7} & \num{5376.6} \\
+Network Opacity &  &  & \num{0.947} \\
+&  &  & (\num{0.038}) \\
+Subjective Closeness: Somewhat & \num{1.440}** & \num{1.388}* & \num{1.368}* \\
+& (\num{0.203}) & (\num{0.197}) & (\num{0.195}) \\
+Subjective Closeness: Close & \num{2.388}*** & \num{2.244}*** & \num{2.188}*** \\
+& (\num{0.359}) & (\num{0.342}) & (\num{0.336}) \\
+Roommate/Dormmate & \num{0.788} & \num{0.787} & \num{0.783} \\
+& (\num{0.195}) & (\num{0.194}) & (\num{0.194}) \\
+Friend & \num{0.714} & \num{0.705} & \num{0.706} \\
+& (\num{0.175}) & (\num{0.173}) & (\num{0.174}) \\
+Frequency: Daily (vs Weekly) & \num{1.119} & \num{1.107} & \num{1.085} \\
+& (\num{0.146}) & (\num{0.145}) & (\num{0.143}) \\
+Race Homophily: Same Race & \num{0.950} & \num{0.944} & \num{0.935} \\
+& (\num{0.122}) & (\num{0.122}) & (\num{0.121}) \\
+Tie Duration (Scaled) & \num{0.796} & \num{0.790} & \num{0.768} \\
+& (\num{0.183}) & (\num{0.182}) & (\num{0.178}) \\
+Tie Duration Sq (Scaled) & \num{1.238} & \num{1.262} & \num{1.288} \\
+& (\num{0.303}) & (\num{0.309}) & (\num{0.317}) \\
+Num.Obs. & \num{5349} & \num{5349} & \num{5349} \\
+AIC & \num{5147.9} & \num{5143.6} & \num{5143.7} \\
+BIC & \num{5273.0} & \num{5275.3} & \num{5282.0} \\
 \end{talltblr}
 \end{table}

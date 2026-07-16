@@ -14,27 +14,29 @@ df_alters <- nets %>%
     wave, 
     closeness, 
     duration_ = duration, 
-    reltype = notredamerelation,
+    reltype,
+    notredamerelation,
     socialcontextschool,
     socialcontextoffcampus = socialcontexthomeneighborhood,
     altermusic, altermovies, alterbooks, altersports, altergames, alteroutdoor,
     sameactivities1, sameactivities2, sameactivities3, sameactivities4, sameactivities5,
-    freqlastyear, freqlast3months,
+    freq_interaction, freqlastyear, freqlast3months,
     alter_gender = gender
   ) %>%
   filter(!is.na(alterid)) %>%
   mutate(
-    # Recode frequency as it was before
-    freq_interaction = coalesce(freqlastyear, freqlast3months),
+    # Keep original freq_interaction from wide data instead of coalescing which destroys it
+    # freq_interaction = coalesce(freqlastyear, freqlast3months),
     freq_factor = case_when(
       freq_interaction %in% 1:2 ~ "Daily",
       freq_interaction %in% 3:4 ~ "Weekly",
       freq_interaction %in% 5:6 ~ "Monthly",
-      TRUE ~ "Less often"
+      freq_interaction %in% 7:9 ~ "Less often",
+      TRUE ~ NA_character_
     ),
     close = closeness,
-    campustie = ifelse(reltype %in% c(1,2,3,4,6) & wave < 6, 1, 
-                ifelse(reltype %in% c(1,2,3,4,6) & wave >= 6, 1, 0)),
+    campustie = ifelse(notredamerelation %in% c(1,2,3,4,6) & wave < 6, 1, 
+                ifelse(notredamerelation %in% c(1,2,3,4,6) & wave >= 6, 1, 0)),
     kin = ifelse(reltype %in% c(7,8,9), 1, 0),
     alterfemale = ifelse(alter_gender == 2, 1, 0)
   ) %>%

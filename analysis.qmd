@@ -38,7 +38,8 @@ df_period <- readRDS(here("data", "processed", "adjacent_waves.rds")) %>%
     persisted = as.numeric(tie_persist > 0),
     female_factor = factor(female, levels = c(0, 1), labels = c("Men", "Women")),
     alterfemale_factor = factor(alterfemale, levels = c(0, 1), labels = c("Men", "Women")),
-    close_factor = factor(close, levels = c(3, 2, 1), labels = c("Not Close", "Somewhat Close", "Close")),
+    # We recode close=4 ("Don't know/Acquaintance") into 3 ("Not Close") to preserve valid ties
+    close_factor = factor(ifelse(close == 4, 3, close), levels = c(3, 2, 1), labels = c("Not Close", "Somewhat Close", "Close")),
     same_dorm = as.numeric(reltype == 3 | reltype == 4),
     is_friend = as.numeric(reltype == 6),
     race_homophily = case_when(
@@ -47,12 +48,14 @@ df_period <- readRDS(here("data", "processed", "adjacent_waves.rds")) %>%
       TRUE ~ "Heterophilous"
     ),
     race_homophily = factor(race_homophily, levels = c("Heterophilous", "Homophilous", "Unknown")),
-    freq_high = if_else(freq_factor %in% c("Weekly", "Daily"), 1, 0, missing = NA_real_),
-    duration_sq = duration_^2
+    freq_daily = if_else(is.na(freq_factor), NA_real_, if_else(freq_factor == "Daily", 1, 0)),
+    # Center and scale continuous duration variables to speed up optimizer convergence
+    duration_c = scale(duration_)[,1],
+    duration_sq_c = scale(duration_^2)[,1]
   ) %>%
-  filter(!is.na(same_dorm), !is.na(freq_high))
+  filter(!is.na(same_dorm), !is.na(freq_daily))
 glmer_ctrl <- glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 1e5))
-ctrl_vars <- "same_dorm + is_friend + race_homophily + freq_high + female_factor + alterfemale_factor + close_factor + duration_ + duration_sq + period"
+ctrl_vars <- "same_dorm + is_friend + race_homophily + freq_daily + female_factor + alterfemale_factor + close_factor + duration_c + duration_sq_c + period"
 mod_closed <- glmer(
   as.formula(paste("persisted ~ num_match_closed +", ctrl_vars, "+ (1 | egoid)")),
   data = df_period, family = binomial(link = "logit"), control = glmer_ctrl, nAGQ = 0
@@ -86,9 +89,10 @@ modelsummary(
     "close_factorClose" = "Subjective Closeness: Close",
     "same_dorm" = "Roommate/Dormmate",
     "is_friend" = "Friend",
-    "freq_high" = "Frequency: Weekly/Daily",
+    "freq_daily" = "Frequency: Daily (vs Weekly)",
     "race_homophilyHomophilous" = "Race Homophily: Same Race",
-    "duration_" = "Tie Duration (Years)"
+    "duration_c" = "Tie Duration (Scaled)",
+    "duration_sq_c" = "Tie Duration Sq (Scaled)"
   ),
   gof_map = c("nobs", "aic", "bic"),
   notes = "Note: All models control for ego and alter gender, non-linear tie duration, and baseline hazard variations across all 7 wave transitions (coefficients omitted for space). Random intercepts for egos are included."
@@ -144,7 +148,7 @@ To test whether the protective effects of cultural matching or the detrimental e
 ```{r}
 #| label: setup-closeness-interactions
 #| include: false
-ctrl_vars_int <- "same_dorm + is_friend + race_homophily + freq_high + female_factor * alterfemale_factor + duration_ + duration_sq + period"
+ctrl_vars_int <- "same_dorm + is_friend + race_homophily + freq_daily + female_factor * alterfemale_factor + duration_c + duration_sq_c + period"
 
 mod_close_int_closed <- glmer(
   as.formula(paste("persisted ~ num_match_closed * close_factor +", ctrl_vars_int, "+ (1 | egoid)")),
@@ -239,8 +243,9 @@ library(survival)
 # Ego Fixed-Effects (Conditional Logit)
 mod_fe <- clogit(
   persisted ~ num_match_closed + open_match_count + num_unknown + same_dorm + is_friend + 
-    race_homophily + freq_high + alterfemale_factor + close_factor + duration_ + duration_sq + period + strata(egoid),
-  data = df_period
+    race_homophily + freq_daily + alterfemale_factor + close_factor + duration_c + duration_sq_c + period + strata(egoid),
+  data = df_period,
+  method = "efron"
 )
 
 modelsummary(
@@ -258,9 +263,10 @@ modelsummary(
     "close_factorClose" = "Subjective Closeness: Close",
     "same_dorm" = "Roommate/Dormmate",
     "is_friend" = "Friend",
-    "freq_high" = "Frequency: Weekly/Daily",
+    "freq_daily" = "Frequency: Daily (vs Weekly)",
     "race_homophilyHomophilous" = "Race Homophily: Same Race",
-    "duration_" = "Tie Duration (Years)"
+    "duration_c" = "Tie Duration (Scaled)",
+    "duration_sq_c" = "Tie Duration Sq (Scaled)"
   ),
   gof_map = c("nobs", "aic", "bic"),
   notes = "Note: Controls for ego and alter gender, non-linear tie duration, and period fixed effects."
