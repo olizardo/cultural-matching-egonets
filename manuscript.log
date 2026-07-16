@@ -1,10 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.28)  15 JUL 2026 15:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.28)  15 JUL 2026 17:20
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/home/omarlizardo/NETWORKS PROJECTS/cultural-matching-egonets/manuscript.tex"
-(/home/omarlizardo/NETWORKS PROJECTS/cultural-matching-egonets/manuscript.tex
+**manuscript.tex
+(./manuscript.tex
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
 (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/koma-script/scrartcl.cls
@@ -411,82 +410,223 @@ File: microtype.cfg 2026/03/01 v3.2d microtype main configuration file (RS)
 LaTeX Info: Redefining \microtypesetup on input line 3065.
 ) (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/xurl/xurl.sty
 Package: xurl 2022/01/09 v 0.10 modify URL breaks
+) (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/tabularray/tabularray.sty
+Package: tabularray 2025-11-27 v2025C Typeset tabulars and arrays with LaTeX3
+ (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/ninecolors/ninecolors.sty
+Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
+ (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2026-06-18 L3 programming layer (loader) 
+)
+Package: xparse 2025-10-09 L3 Experimental document command parser
+))
+\g__tblr_nohyper_int=\count323
+\l__tblr_a_int=\count324
+\l__tblr_c_int=\count325
+\l__tblr_r_int=\count326
+\l__tblr_d_dim=\dimen183
+\l__tblr_h_dim=\dimen184
+\l__tblr_o_dim=\dimen185
+\l__tblr_p_dim=\dimen186
+\l__tblr_q_dim=\dimen187
+\l__tblr_r_dim=\dimen188
+\l__tblr_s_dim=\dimen189
+\l__tblr_t_dim=\dimen190
+\l__tblr_v_dim=\dimen191
+\l__tblr_w_dim=\dimen192
+\l__tblr_a_box=\box65
+\l__tblr_b_box=\box66
+\l__tblr_c_box=\box67
+\l__tblr_d_box=\box68
+\c@tblrcount=\count327
+\c@rownum=\count328
+\c@colnum=\count329
+\c@rowcount=\count330
+\c@colcount=\count331
+\abovesep=\dimen193
+\belowsep=\dimen194
+\leftsep=\dimen195
+\rightsep=\dimen196
+\gTblrLevelInt=\count332
+\g__tblr_data_row_key_count_int=\count333
+\g__tblr_data_column_key_count_int=\count334
+\g__tblr_data_cell_key_count_int=\count335
+\g__tblr_array_int=\count336
+\l__tblr_key_count_int=\count337
+\l__tblr_key_quotient_int=\count338
+\l__tblr_key_quotient_two_int=\count339
+\l__tblr_key_remainder_int=\count340
+\g__tblr_data_str_value_count_int=\count341
+\lTblrChildTotalInt=\count342
+\lTblrChildHtotalInt=\count343
+\lTblrChildVtotalInt=\count344
+\l__child_diff_h_int=\count345
+\l__child_diff_v_int=\count346
+\l__child_sign_h_int=\count347
+\l__child_sign_v_int=\count348
+\l__child_step_int=\count349
+\lTblrDefaultHruleWidthDim=\dimen197
+\lTblrDefaultVruleWidthDim=\dimen198
+\l__tblr_split_balance_int=\count350
+\l__tblr_strut_dp_dim=\dimen199
+\l__tblr_strut_ht_dim=\dimen256
+\g__tblr_cell_wd_dim=\dimen257
+\g__tblr_cell_ht_dim=\dimen258
+\g__tblr_cell_head_dim=\dimen259
+\g__tblr_cell_foot_dim=\dimen260
+\l__tblr_measured_cell_box=\box69
+\g__tblr_last_box=\box70
+\l__tblr_temp_box=\box71
+\l__tblr_column_target_dim=\dimen261
+\l__tblr_hfuzz_dim=\dimen262
+\l__tblr_caption_box=\box72
+\l__tblr_caption_left_box=\box73
+\lTblrRowHeadInt=\count351
+\lTblrRowFootInt=\count352
+\l__tblr_row_head_box=\box74
+\l__tblr_row_foot_box=\box75
+\l__tblr_row_head_foot_dim=\dimen263
+\lTblrTableWidthDim=\dimen264
+\l__tblr_table_firsthead_box=\box76
+\l__tblr_table_middlehead_box=\box77
+\l__tblr_table_lasthead_box=\box78
+\l__tblr_table_firstfoot_box=\box79
+\l__tblr_table_middlefoot_box=\box80
+\l__tblr_table_lastfoot_box=\box81
+\l__tblr_remain_height_dim=\dimen265
+\l__tblr_next_rows_dim=\dimen266
+\l__tblr_page_overfill_dim=\dimen267
+\l__tblr_long_from_int=\count353
+\l__tblr_long_to_int=\count354
+\l__tblr_curr_i_int=\count355
+\l__tblr_prev_i_int=\count356
+\lTblrTablePageInt=\count357
+\l__tblr_table_head_box=\box82
+\l__tblr_table_foot_box=\box83
+\l__tblr_table_head_foot_dim=\dimen268
+\l__tblr_table_head_body_foot_dim=\dimen269
+\l__tblr_table_box=\box84
+\lTblrRowFirstInt=\count358
+\lTblrRowLastInt=\count359
+\l__tblr_cover_box_a_dim=\dimen270
+\l__tblr_cover_box_b_dim=\dimen271
+\l__tblr_table_hlines_box=\box85
+\l__tblr_hline_box=\box86
+\l__tblr_row_box=\box87
+\l__tblr_col_o_wd_dim=\dimen272
+\l__tblr_col_b_wd_dim=\dimen273
+\l__tblr_hline_leftskip_dim=\dimen274
+\l__tblr_hline_rightskip_dim=\dimen275
+\l__tblr_row_ht_dim=\dimen276
+\l__tblr_row_dp_dim=\dimen277
+\l__tblr_row_abovesep_dim=\dimen278
+\l__tblr_row_belowsep_dim=\dimen279
+\l__tblr_row_vlines_box=\box88
+\l__tblr_vline_box=\box89
+\l__tblr_cell_box=\box90
+\l__tblr_row_upper_dim=\dimen280
+\l__tblr_row_lower_dim=\dimen281
+\l__tblr_row_vpace_dim=\dimen282
+\l__tblr_vline_aboveskip_dim=\dimen283
+\l__tblr_vline_belowskip_dim=\dimen284
+\lTblrCellRowSpanInt=\count360
+\lTblrCellColSpanInt=\count361
+\l__tblr_cell_wd_dim=\dimen285
+\l__tblr_cell_ht_dim=\dimen286
+\lTblrCellAboveBorderWidthDim=\dimen287
+\lTblrCellBelowBorderWidthDim=\dimen288
+\lTblrCellLeftBorderWidthDim=\dimen289
+\lTblrCellRightBorderWidthDim=\dimen290
+\l__tblr_diag_box=\box91
+\l__tblr_cell_inner_wd_dim=\dimen291
+\l__tblr_cell_inner_dp_dim=\dimen292
+\l__tblr_cell_hanchor_dim=\dimen293
+\l__tblr_last_cell_table_ht_dim=\dimen294
+\l__tblr_last_cell_table_dp_dim=\dimen295
+\l__tblr_last_vline_wd_dim=\dimen296
+\l__tblr_tikz_node_box=\box92
+) (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count362
+\float@exts=\toks27
+\float@box=\box93
+\@float@everytoks=\toks28
+\@floatcapt=\box94
 ) (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/siunitx/siunitx.sty
 Package: siunitx 2026-05-15 v3.5.5 A comprehensive (SI) units package
-\l__siunitx_number_uncert_offset_int=\count323
-\l__siunitx_number_exponent_fixed_int=\count324
-\l__siunitx_number_min_decimal_int=\count325
-\l__siunitx_number_min_integer_int=\count326
-\l__siunitx_number_round_precision_int=\count327
-\l__siunitx_number_lower_threshold_int=\count328
-\l__siunitx_number_upper_threshold_int=\count329
-\l__siunitx_number_group_first_int=\count330
-\l__siunitx_number_group_size_int=\count331
-\l__siunitx_number_group_min_int=\count332
-\l__siunitx_number_group_minimum_int=\count333
-\l__siunitx_compound_count_int=\count334
-\l__siunitx_table_tmp_box=\box65
-\l__siunitx_table_tmp_dim=\dimen183
-\l__siunitx_table_column_width_dim=\dimen184
-\l__siunitx_table_integer_box=\box66
-\l__siunitx_table_decimal_box=\box67
-\l__siunitx_table_uncert_box=\box68
-\l__siunitx_table_before_box=\box69
-\l__siunitx_table_after_box=\box70
-\l__siunitx_table_before_dim=\dimen185
-\l__siunitx_table_carry_dim=\dimen186
-\l__siunitx_unit_tmp_int=\count335
-\l__siunitx_unit_position_int=\count336
-\l__siunitx_unit_total_int=\count337
-\l__siunitx_sexagesimal_tmp_dim=\dimen187
-\l__siunitx_sexagesimal_marker_box=\box71
-\l__siunitx_sexagesimal_unit_box=\box72
+\l__siunitx_number_uncert_offset_int=\count363
+\l__siunitx_number_exponent_fixed_int=\count364
+\l__siunitx_number_min_decimal_int=\count365
+\l__siunitx_number_min_integer_int=\count366
+\l__siunitx_number_round_precision_int=\count367
+\l__siunitx_number_lower_threshold_int=\count368
+\l__siunitx_number_upper_threshold_int=\count369
+\l__siunitx_number_group_first_int=\count370
+\l__siunitx_number_group_size_int=\count371
+\l__siunitx_number_group_min_int=\count372
+\l__siunitx_number_group_minimum_int=\count373
+\l__siunitx_compound_count_int=\count374
+\l__siunitx_table_tmp_box=\box95
+\l__siunitx_table_tmp_dim=\dimen297
+\l__siunitx_table_column_width_dim=\dimen298
+\l__siunitx_table_integer_box=\box96
+\l__siunitx_table_decimal_box=\box97
+\l__siunitx_table_uncert_box=\box98
+\l__siunitx_table_before_box=\box99
+\l__siunitx_table_after_box=\box100
+\l__siunitx_table_before_dim=\dimen299
+\l__siunitx_table_carry_dim=\dimen300
+\l__siunitx_unit_tmp_int=\count375
+\l__siunitx_unit_position_int=\count376
+\l__siunitx_unit_total_int=\count377
+\l__siunitx_sexagesimal_tmp_dim=\dimen301
+\l__siunitx_sexagesimal_marker_box=\box101
+\l__siunitx_sexagesimal_unit_box=\box102
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 26.
+Package hyperref Info: Option `colorlinks' set `true' on input line 28.
  (./manuscript.aux)
 \openout1 = `manuscript.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-Package scrbase Info: activating english \abstractname on input line 32.
-Package scrbase Info: activating english \partname on input line 32.
-Package scrbase Info: activating english \figurename on input line 32.
-Package scrbase Info: activating english \tablename on input line 32.
-Package scrbase Info: activating english \contentsname on input line 32.
-Package scrbase Info: activating english \listfigurename on input line 32.
-Package scrbase Info: activating english \listtablename on input line 32.
-Package scrbase Info: activating english \refname on input line 32.
-Package scrbase Info: activating english \indexname on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+Package scrbase Info: activating english \abstractname on input line 34.
+Package scrbase Info: activating english \partname on input line 34.
+Package scrbase Info: activating english \figurename on input line 34.
+Package scrbase Info: activating english \tablename on input line 34.
+Package scrbase Info: activating english \contentsname on input line 34.
+Package scrbase Info: activating english \listfigurename on input line 34.
+Package scrbase Info: activating english \listtablename on input line 34.
+Package scrbase Info: activating english \refname on input line 34.
+Package scrbase Info: activating english \indexname on input line 34.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 32.
-LaTeX Info: Redefining \microtypecontext on input line 32.
-Package microtype Info: Applying patch `item' on input line 32.
-Package microtype Info: Applying patch `toc' on input line 32.
-Package microtype Info: Applying patch `eqnum' on input line 32.
-Package microtype Info: Applying patch `footnote' on input line 32.
-Package microtype Info: Applying patch `verbatim' on input line 32.
-LaTeX Info: Redefining \microtypesetup on input line 32.
+Package hyperref Info: Link coloring ON on input line 34.
+LaTeX Info: Redefining \microtypecontext on input line 34.
+Package microtype Info: Applying patch `item' on input line 34.
+Package microtype Info: Applying patch `toc' on input line 34.
+Package microtype Info: Applying patch `eqnum' on input line 34.
+Package microtype Info: Applying patch `footnote' on input line 34.
+Package microtype Info: Applying patch `verbatim' on input line 34.
+LaTeX Info: Redefining \microtypesetup on input line 34.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -508,62 +648,91 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 {/home/omarlizardo/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 67.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [3] [4] [5]
-
-LaTeX Warning: Reference `tbl-descriptives-cont' on page 6 undefined on input line 109.
-
-
-LaTeX Warning: Reference `tbl-descriptives-cat' on page 6 undefined on input line 109.
-
-
-LaTeX Warning: Reference `tbl-models' on page 6 undefined on input line 117.
-
-[6] [7]
-<analysis_files/figure-pdf/fig-combined-1.pdf, id=176, 397.485pt x 252.945pt>
+) [3] [4] [5] [6] [7] [8]
+<analysis_files/figure-pdf/fig-combined-1.pdf, id=189, 397.485pt x 252.945pt>
 File: analysis_files/figure-pdf/fig-combined-1.pdf Graphic file (type pdf)
 <use analysis_files/figure-pdf/fig-combined-1.pdf>
-Package pdftex.def Info: analysis_files/figure-pdf/fig-combined-1.pdf  used on input line 156.
+Package pdftex.def Info: analysis_files/figure-pdf/fig-combined-1.pdf  used on input line 170.
 (pdftex.def)             Requested size: 357.4094pt x 227.4477pt.
- [8]
-<analysis_files/figure-pdf/fig-closeness-interactions-1.pdf, id=182, 867.24pt x 361.35pt>
+ [9
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.174 \newpage
+               <./analysis_files/figure-pdf/fig-combined-1.pdf>]
+<analysis_files/figure-pdf/fig-closeness-interactions-1.pdf, id=203, 867.24pt x 361.35pt>
 File: analysis_files/figure-pdf/fig-closeness-interactions-1.pdf Graphic file (type pdf)
 <use analysis_files/figure-pdf/fig-closeness-interactions-1.pdf>
-Package pdftex.def Info: analysis_files/figure-pdf/fig-closeness-interactions-1.pdf  used on input line 163.
+Package pdftex.def Info: analysis_files/figure-pdf/fig-closeness-interactions-1.pdf  used on input line 177.
 (pdftex.def)             Requested size: 446.76004pt x 186.1497pt.
- [9 <./analysis_files/figure-pdf/fig-combined-1.pdf>] (./manuscript.bbl [10 <./analysis_files/figure-pdf/fig-closeness-interactions-1.pdf>]) [11] (./manuscript.aux)
+ [10
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.180 \newpage
+               <./analysis_files/figure-pdf/fig-closeness-interactions-1.pdf>] (./Tabs/main_models.tex
+Overfull \hbox (16.97542pt too wide) in paragraph at lines 58--59
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 165.5881pt on input line 59.
+
+) [11] [12
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.186 \newpage
+              ] (./Tabs/desc_cont.tex) (./Tabs/desc_cat.tex) [13
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.200 \subsection
+                 {Alternative Specifications}
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.200 \subsection
+                 {Alternative Specifications}] (./Tabs/robustness_models.tex) (./Tabs/dislike_models.tex) [14
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.210 \newpage
+              ] (./manuscript.bbl [15
+pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.62 
+     ]) [16] (./manuscript.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 19222 strings out of 469097
- 382035 string characters out of 5457857
- 925705 words of memory out of 5000000
- 47876 multiletter control sequences out of 15000+600000
- 640552 words of font info for 139 fonts, out of 8000000 for 9000
+ 23575 strings out of 469097
+ 487949 string characters out of 5457857
+ 1079070 words of memory out of 5000000
+ 52165 multiletter control sequences out of 15000+600000
+ 641146 words of font info for 146 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 108i,8n,107p,11277b,1193s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/omarlizardo/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on manuscript.pdf (11 pages, 183264 bytes).
+ 108i,9n,112p,11213b,2250s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/omarlizardo/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on manuscript.pdf (16 pages, 202999 bytes).
 PDF statistics:
- 332 PDF objects out of 1000 (max. 8388607)
- 291 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
- 25251 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 399 PDF objects out of 1000 (max. 8388607)
+ 349 compressed objects within 4 object streams
+ 76 named destinations out of 1000 (max. 500000)
+ 27339 words of extra memory for PDF output out of 29859 (max. 10000000)
 

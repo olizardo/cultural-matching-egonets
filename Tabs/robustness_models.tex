@@ -1,0 +1,29 @@
+\begin{table}[htbp]
+\centering
+\caption{Robustness Checks: Ego Fixed-Effects and Alternative Links}
+\label{tbl-robustness-models}
+\begin{talltblr}[         %% tabularray outer open
+entry=none,label=none,
+note{}={+ p \num{< 0.1}, * p \num{< 0.05}, ** p \num{< 0.01}, *** p \num{< 0.001}},
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]},
+hline{2}={1-4}{solid, black, 0.05em},
+hline{8}={1-4}{solid, black, 0.05em},
+hline{1}={1-4}{solid, black, 0.08em},
+hline{11}={1-4}{solid, black, 0.08em},
+column{2-4}={}{halign=c},
+column{1}={}{halign=l},
+}                     %% tabularray inner close
+& Ego FE (clogit) & Probit & Cloglog \\
+Closed-Form Matches & \num{1.065}+ & \num{0.033}+ & \num{0.054}* \\
+& (\num{0.037}) & (\num{0.019}) & (\num{0.026}) \\
+Open-Ended Matches & \num{1.112}*** & \num{0.047}** & \num{0.058}* \\
+& (\num{0.035}) & (\num{0.018}) & (\num{0.024}) \\
+Network Opacity & \num{0.909}* & \num{-0.030} & \num{-0.048} \\
+& (\num{0.034}) & (\num{0.022}) & (\num{0.030}) \\
+Num.Obs. & \num{6054} & \num{5497} & \num{5497} \\
+AIC & \num{5030.1} & \num{5262.8} & \num{5230.2} \\
+BIC & \num{5144.2} & \num{5395.1} & \num{5362.4} \\
+\end{talltblr}
+\end{table}
