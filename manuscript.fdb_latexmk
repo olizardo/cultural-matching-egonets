@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex manuscript"] 1784161224.61197 "manuscript.aux" "manuscript.bbl" "manuscript" 1784161243.53354 0
-  "./manuscript_citations.bib" 1782851297.57554 6759 f018dd79b8d271a2fc2678c988940a64 ""
+["bibtex manuscript"] 1784162735.94841 "manuscript.aux" "manuscript.bbl" "manuscript" 1784162756.43468 0
+  "./manuscript_citations.bib" 1784162670.33907 12648 5c9252c6906f804106649f35b0420cf4 ""
   "/home/omarlizardo/.TinyTeX/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1782672754.0794 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "manuscript.aux" 1784161242.51387 17799 ccca99579f5af11160ff2d11b53d65a3 "pdflatex"
+  "manuscript.aux" 1784162755.70734 18737 2c420cad9a66dddd0043a53bd1c782a7 "pdflatex"
   (generated)
   "manuscript.bbl"
   "manuscript.blg"
   (rewritten before read)
-["pdflatex"] 1784161224.73292 "manuscript.tex" "manuscript.pdf" "manuscript" 1784161243.53614 0
+["pdflatex"] 1784162736.07412 "manuscript.tex" "manuscript.pdf" "manuscript" 1784162756.43617 0
   "/home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1782672755.00441 1536 02c06700a42be0f5a28664c7273f82e7 ""
   "/home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1782672755.22441 1004 54797486969f23fa377b128694d548df ""
   "/home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1782672755.22341 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -131,9 +131,9 @@
   "Tabs/robustness_models.tex" 1784161147.28669 1235 91304a19509289bacda7ec0459a17a69 ""
   "analysis_files/figure-pdf/fig-closeness-interactions-1.pdf" 1782772018.23626 5632 a3a782c12bc56b07632aa3c067e9f02a ""
   "analysis_files/figure-pdf/fig-combined-1.pdf" 1782772016.06741 5003 629ff25520610f491f0b147cae67e866 ""
-  "manuscript.aux" 1784161242.51387 17799 ccca99579f5af11160ff2d11b53d65a3 "pdflatex"
-  "manuscript.bbl" 1784161224.70884 5535 761fbb6a6d56c155266e9f94c17b00ec "bibtex manuscript"
-  "manuscript.tex" 1784161027.11929 29366 88cd99bbe52109e4abc18bbd8544d2f0 ""
+  "manuscript.aux" 1784162755.70734 18737 2c420cad9a66dddd0043a53bd1c782a7 "pdflatex"
+  "manuscript.bbl" 1784162736.054 10113 1e0e79657b438a7f84334f12e59501f8 "bibtex manuscript"
+  "manuscript.tex" 1784162688.8887 31498 d300c1437745cde314b233142d6f61c1 ""
   (generated)
   "manuscript.aux"
   "manuscript.log"

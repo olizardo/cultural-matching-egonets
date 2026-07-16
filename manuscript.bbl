@@ -1,9 +1,31 @@
-\begin{thebibliography}{24}
+\begin{thebibliography}{35}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ahmad et~al.(2021)Ahmad, Porter, and Beguerisse-Díaz]{ahmad2021tie-decay-828}
+Walid Ahmad, Mason~A Porter, and Mariano Beguerisse-Díaz.
+\newblock Tie-decay networks in continuous time and eigenvector-based centralities.
+\newblock \emph{{IEEE} Transactions on Network Science and Engineering}, 8\penalty0 (2):\penalty0 1759--1771, 2021.
+\newblock ISSN 2327-4697.
+\newblock \doi{10.1109/tnse.2021.3071429}.
+\newblock URL \url{https://ieeexplore.ieee.org/iel7/6488902/6930788/09397347.pdf?casa_token=UAKVJQQAKOYAAAAA:YrKA4qU-WiTtLazcma4pwk3qltYbQHnRib-K9QvZoyxU_2aR1tv1RM_4TN0o9nd3q7lcRF4U7Q}.
+
+\bibitem[Bahulkar et~al.(2016)Bahulkar, Szymanski, Lizardo, Dong, Yang, and Chawla]{bahulkar2016analysis-d8b}
+A~Bahulkar, B~K Szymanski, O~Lizardo, Y~Dong, Y~Yang, and N~V Chawla.
+\newblock Analysis of link formation, persistence and dissolution in {NetSense} data.
+\newblock \emph{2016 {IEEE}/{ACM} International Conference on Advances in Social Networks Analysis and Mining ({ASONAM})}, pages 1197--1204, 2016.
+\newblock \doi{10.1109/asonam.2016.7752391}.
+\newblock URL \url{http://dx.doi.org/10.1109/asonam.2016.7752391}.
+
+\bibitem[Bahulkar et~al.(2017)Bahulkar, Szymanski, Chan, and Lizardo]{bahulkar2017co-evolution-d04}
+Ashwin Bahulkar, Boleslaw~K Szymanski, Kevin Chan, and Omar Lizardo.
+\newblock Co-evolution of two networks representing different social relations in {NetSense}.
+\newblock \emph{Complex Networks \& Their Applications V: Proceedings of the 5th International Workshop on Complex Networks and their Applications ({COMPLEX} {NETWORKS} 2016)}, 693:\penalty0 423--434, 2017.
+\newblock \doi{10.1007/978-3-319-50901-3_34}.
+\newblock URL \url{https://books.google.com/books?hl=en&lr=&id=fTugDQAAQBAJ&oi=fnd&pg=PA423&dq=lizardo+ashwin+boleslaw&ots=2aFiooPlDP&sig=QVMluxaTJFAAMShoV7g_H8thh_c}.
 
 \bibitem[Borgatti(2005)]{borgatti2005}
 Stephen~P. Borgatti.
@@ -50,6 +72,14 @@ Paul DiMaggio.
 \newblock Classification in art.
 \newblock \emph{American Sociological Review}, 52\penalty0 (4):\penalty0 440--455, 1987.
 
+\bibitem[Edelmann and Vaisey(2014)]{edelmann2014cultural-a77}
+Achim Edelmann and Stephen Vaisey.
+\newblock Cultural resources and cultural distinction in networks.
+\newblock \emph{Poetics}, 46:\penalty0 22--37, 10 2014.
+\newblock ISSN 0304-422X.
+\newblock \doi{10.1016/j.poetic.2014.08.001}.
+\newblock URL \url{https://www.sciencedirect.com/science/article/pii/S0304422X14000503?casa_token=jQ_u1wk6fJcAAAAA:AFGYrR1Mqn9vBYCiTen5efJ4EXNPRojal1SU4gz4Rwd90IRUWisuPM4Jcydpasppm8aQFnDZbQ}.
+
 \bibitem[Erickson(1988)]{erickson1988}
 Bonnie~H. Erickson.
 \newblock The relational basis of attitudes.
@@ -59,6 +89,20 @@ Bonnie~H. Erickson.
 Bonnie~H. Erickson.
 \newblock Culture, class, and connections.
 \newblock \emph{American Journal of Sociology}, 102\penalty0 (1):\penalty0 217--252, 1996.
+
+\bibitem[Feld and Grofman(2009)]{feld2009homophily-595}
+Scott Feld and Bernard Grofman.
+\newblock Homophily and the focused organization of ties.
+\newblock In ["Peter Hedstrom" and "Peter Bearman"], editors, \emph{Oxford Handbook of Analytical Sociology}, pages 521--543. Oxford University Press Oxford, Oxford, {UK}, 2009.
+\newblock URL \url{http://www.socsci.uci.edu/~bgrofman/159%20Feld%20and%20Grofman.%202009.%20Homophily%20and%20The%20Focused%20Organization..pdf}.
+
+\bibitem[Hachen et~al.(2022)Hachen, Wang, Sepulvado, and Lizardo]{hachen2022generators-923}
+David Hachen, Cheng Wang, Brandon Sepulvado, and Omar Lizardo.
+\newblock Generators or diffusers? examining differences in the dynamic coupling of context and social ties across multiple types of foci.
+\newblock \emph{Social networks}, 2 2022.
+\newblock ISSN 0378-8733.
+\newblock \doi{10.1016/j.socnet.2022.02.004}.
+\newblock URL \url{http://dx.doi.org/10.1016/j.socnet.2022.02.004}.
 
 \bibitem[Holt(1997)]{holt1997}
 Douglas~B. Holt.
@@ -75,6 +119,16 @@ Paul~F. Lazarsfeld and Robert~K. Merton.
 \newblock Friendship as a social process: A substantive and methodological analysis.
 \newblock In Morroe Berger, Theodore Abel, and Charles Page, editors, \emph{Freedom and Control in Modern Society}, pages 18--66. Van Nostrand, New York, 1954.
 
+\bibitem[Lewis and Kaufman(2018)]{lewis2018}
+Kevin Lewis and Jason Kaufman.
+\newblock The conversion of cultural tastes into social network ties.
+\newblock \emph{American Journal of Sociology}, 123\penalty0 (6):\penalty0 1669--1715, 2018.
+
+\bibitem[Lizardo(2006)]{lizardo2006}
+Omar Lizardo.
+\newblock How cultural tastes shape personal networks.
+\newblock \emph{American Sociological Review}, 71\penalty0 (5):\penalty0 778--807, 2006.
+
 \bibitem[Mark(1998{\natexlab{a}})]{mark1998a}
 Noah~P. Mark.
 \newblock Beyond individual differences: Social differentiation from first principles.
@@ -90,6 +144,19 @@ Noah~P. Mark.
 \newblock Culture and competition: Homophily and distancing explanations for cultural niches.
 \newblock \emph{American Sociological Review}, 68\penalty0 (3):\penalty0 319--345, 2003.
 
+\bibitem[Martin and Yeung(2006)]{martin2006}
+John~Levi Martin and King-To Yeung.
+\newblock Persistence of close personal ties over a 12-year period.
+\newblock \emph{Social Networks}, 28\penalty0 (4):\penalty0 331--362, 2006.
+
+\bibitem[{McPherson}(2004)]{mcpherson2004blau-9fe}
+J~Miller {McPherson}.
+\newblock A blau space primer: prolegomenon to an ecology of affiliation.
+\newblock \emph{Industrial and Corporate Change}, 13\penalty0 (1):\penalty0 263--280, 2 2004.
+\newblock ISSN 0960-6491.
+\newblock \doi{10.1093/icc/13.1.263}.
+\newblock URL \url{http://icc.oxfordjournals.org/content/13/1/263.short}.
+
 \bibitem[McPherson et~al.(2001)McPherson, Smith-Lovin, and Cook]{mcpherson2001}
 Miller McPherson, Lynn Smith-Lovin, and James~M. Cook.
 \newblock Birds of a feather: Homophily in social networks.
@@ -99,6 +166,11 @@ Miller McPherson, Lynn Smith-Lovin, and James~M. Cook.
 David~L. Morgan, Margaret~B. Neal, and Paula Carder.
 \newblock The stability of core and peripheral networks over time.
 \newblock \emph{Social Networks}, 19\penalty0 (1):\penalty0 9--25, 1997.
+
+\bibitem[Shalizi and Thomas(2011)]{shalizi2011}
+Cosma~Rohilla Shalizi and Andrew~C. Thomas.
+\newblock Homophily and contagion are generically confounded in observational social network studies.
+\newblock \emph{Sociological Methods \& Research}, 40\penalty0 (2):\penalty0 211--239, 2011.
 
 \bibitem[Stinchcombe(1965)]{stinchcombe1965}
 Arthur~L. Stinchcombe.
