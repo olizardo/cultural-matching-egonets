@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.28)  15 JUL 2026 20:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.28)  15 JUL 2026 20:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -661,14 +661,20 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [5] [6] [7]
 
+LaTeX Warning: Reference `tbl-descriptives-cont' on page 8 undefined on input line 134.
+
+
+LaTeX Warning: Reference `tbl-descriptives-cat' on page 8 undefined on input line 134.
+
+
 LaTeX Warning: Reference `tbl-models' on page 8 undefined on input line 142.
 
-[8]
+[8] [9]
 
-LaTeX Warning: Reference `tbl-robustness-models' on page 9 undefined on input line 164.
+LaTeX Warning: Reference `tbl-robustness-models' on page 10 undefined on input line 164.
 
-[9] (./Tabs/robustness_models.tex) [10] [11] [12]
-<Plots/main_effects.png, id=287, 578.16pt x 433.62pt>
+(./Tabs/robustness_models.tex) [10] [11] [12]
+<Plots/main_effects.png, id=282, 578.16pt x 433.62pt>
 File: Plots/main_effects.png Graphic file (type png)
 <use Plots/main_effects.png>
 Package pdftex.def Info: Plots/main_effects.png  used on input line 199.
@@ -679,7 +685,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has
                                                   \__shipout_drop_firstpage_...
 l.203 \newpage
                <./Plots/main_effects.png>]
-<Plots/interaction_closeness.png, id=299, 867.24pt x 325.215pt>
+<Plots/interaction_closeness.png, id=294, 867.24pt x 325.215pt>
 File: Plots/interaction_closeness.png Graphic file (type png)
 <use Plots/interaction_closeness.png>
 Package pdftex.def Info: Plots/interaction_closeness.png  used on input line 206.
@@ -694,17 +700,7 @@ Overfull \hbox (16.97542pt too wide) in paragraph at lines 39--40
  [][] 
  []
 
-) [16] [17] (./Tabs/desc_cont.tex) (./Tabs/desc_cat.tex) [18
-pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.225 \newpage
-              
-pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.225 \newpage
-              ] (./manuscript.bbl [19]
+) [16] [17] (./Tabs/desc_cont.tex) (./Tabs/desc_cat.tex) [18] (./manuscript.bbl [19]
 Overfull \hbox (2.10028pt too wide) in paragraph at lines 104--107
 []\OT1/cmr/m/n/10.95 (-20) Kleinbaum, A. M. (2018).  Reorganization and tie decay choices.  \OT1/cmr/m/it/10.95 (-20) Management science\OT1/cmr/m/n/10.95 (-20) , 64(5):2219--
  []
@@ -720,18 +716,18 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 22990 strings out of 469097
- 474029 string characters out of 5457857
- 1030543 words of memory out of 5000000
- 51523 multiletter control sequences out of 15000+600000
- 644473 words of font info for 170 fonts, out of 8000000 for 9000
+ 22996 strings out of 469097
+ 474093 string characters out of 5457857
+ 1030430 words of memory out of 5000000
+ 51524 multiletter control sequences out of 15000+600000
+ 645011 words of font info for 174 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  108i,9n,111p,11213b,2032s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/omarlizardo/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on manuscript.pdf (21 pages, 476739 bytes).
+ </home/omarlizardo/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on manuscript.pdf (21 pages, 484334 bytes).
 PDF statistics:
- 486 PDF objects out of 1000 (max. 8388607)
- 429 compressed objects within 5 object streams
- 101 named destinations out of 1000 (max. 500000)
- 31939 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 485 PDF objects out of 1000 (max. 8388607)
+ 426 compressed objects within 5 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 33987 words of extra memory for PDF output out of 35830 (max. 10000000)
 
