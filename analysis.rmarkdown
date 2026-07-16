@@ -62,7 +62,7 @@ mod_open <- glmer(
   data = df_period, family = binomial(link = "logit"), control = glmer_ctrl, nAGQ = 0
 )
 mod_opac_base <- glmer(
-  as.formula(paste("persisted ~ open_match_count + num_unknown +", ctrl_vars, "+ (1 | egoid)")),
+  as.formula(paste("persisted ~ num_match_closed + open_match_count + num_unknown +", ctrl_vars, "+ (1 | egoid)")),
   data = df_period, family = binomial(link = "logit"), control = glmer_ctrl, nAGQ = 0
 )
 ```

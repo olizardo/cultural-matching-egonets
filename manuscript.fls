@@ -2,7 +2,7 @@ PWD /home/omarlizardo/NETWORKS PROJECTS/cultural-matching-egonets
 INPUT /home/omarlizardo/.TinyTeX/texmf.cnf
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/web2c/texmf.cnf
 INPUT /home/omarlizardo/.TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT manuscript.tex
+INPUT /home/omarlizardo/NETWORKS PROJECTS/cultural-matching-egonets/manuscript.tex
 OUTPUT manuscript.log
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/koma-script/scrartcl.cls
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/koma-script/scrartcl.cls
@@ -175,7 +175,6 @@ INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
-INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
@@ -205,7 +204,6 @@ INPUT /home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
@@ -215,6 +213,9 @@ INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/ms
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm
+INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
+INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT ./Tabs/robustness_models.tex
 INPUT ./Tabs/robustness_models.tex
 INPUT Tabs/robustness_models.tex
@@ -255,3 +256,4 @@ INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss1
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
+INPUT /home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb
