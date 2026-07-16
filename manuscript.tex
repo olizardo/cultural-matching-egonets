@@ -65,7 +65,7 @@ When ego and alter share cultural dispositions, they can engage in shared activi
 
 If shared cultural knowledge stabilizes ties, then a \textit{lack} of mutual cultural knowledge---\textit{cultural network opacity}---should act as a major, independent mechanism of tie decay. We define cultural network opacity as the degree to which an ego is ignorant of an alter's cultural preferences. It is theoretically crucial to differentiate opacity from mere ``taste dissimilarity.'' A taste mismatch implies that ego and alter know each other's preferences but do not share them. Opacity, in contrast, implies a relational void. When an ego reports ``Don't Know'' regarding an alter's preferences across multiple domains, it signals a profound lack of interactional investment. Furthermore, it creates a severe cognitive barrier to finding focal points for shared activities. Without a map of the alter's cultural landscape, the ego cannot easily initiate shared rituals or conversations, independently predicting a higher hazard of tie dissolution \citep{burt2002, wellman1997}. We test both the main effect of cultural network opacity on tie decay and whether opacity moderates the protective effect of known cultural matches.
 
-Furthermore, recent research highlights two critical extensions to the cultural matching framework. First, building on the insight that tastes function as a ``system of distinctions,'' \citet{edelmann2014cultural-a77} demonstrate that shared dislikes---the mutual non-consumption or rejection of cultural goods---are just as crucial for relationship development as shared likes. Accordingly, we distinguish between positive matches (shared likes) and negative matches (shared dislikes) to examine whether shared aversion similarly stabilizes ties. Second, \citet{edelmann2014cultural-a77} emphasize that cultural matching may not matter equally across all types of relationships, finding that tastes are primarily associated with the maintenance of strong ties rather than weak or incidental connections. To test this boundary condition, we estimate interaction models to assess whether the protective effect of cultural matching is amplified among ties with higher subjective closeness (\textbf{The Strength-Mediated Matching Hypothesis}).
+Furthermore, recent research highlights a critical extension to the cultural matching framework: \citet{edelmann2014cultural-a77} emphasize that cultural matching may not matter equally across all types of relationships, finding that tastes are primarily associated with the maintenance of strong ties rather than weak or incidental connections. To test this boundary condition, we estimate interaction models to assess whether the protective effect of cultural matching is amplified among ties with higher subjective closeness (\textbf{The Strength-Mediated Matching Hypothesis}).
 
 \section{Data and Methods}\label{data-and-methods}
 
@@ -112,9 +112,9 @@ The models take the following general form:
 
 where $Y_{ijt}$ is the indicator of tie persistence for ego $i$ and alter $j$ at time $t$, $X_{ijt}$ represents the vector of our core theoretical predictors (cultural matching and cultural network opacity), $C_{ijt}$ is a vector of dyadic and structural control variables (including time period indicators to allow the baseline hazard to vary non-parametrically over waves), and $u_i$ is the ego-specific random intercept, assumed to be normally distributed with mean zero and variance estimated from the data.
 
-All models are estimated via maximum likelihood using the \texttt{glmer} function from the \texttt{lme4} package in \textsf{R}. In models that interact subjective closeness with our cultural variables, we calculate and plot average marginal effects to facilitate the interpretation of the non-linear interaction terms \citep{mize2019best}.
+All models are estimated via maximum likelihood using the \texttt{glmer} function from the \texttt{lme4} package in \textsf{R}. In models that interact subjective closeness with our cultural variables, we calculate and plot predicted probabilities to facilitate the interpretation of the non-linear interaction terms \citep{mize2019best}.
 
-To ensure the robustness of our core findings, we conduct several supplementary analyses. First, we substitute our mixed-effects modeling framework for an ego fixed-effects framework using conditional logistic regression, which adjusts for all unobserved, time-invariant ego-level characteristics. We also test alternative link functions (probit and complementary log-log) to verify our results are not an artifact of the logistic functional form. Finally, following \citet{edelmann2014cultural-a77}, we reconstruct our closed-form matching variable to differentiate between shared ``likes'' and shared ``dislikes'' to test whether cultural boundary-drawing operates symmetrically.\footnote{For a full summary of descriptive statistics, see Tables \ref{tbl-descriptives-cont} and \ref{tbl-descriptives-cat} in the Appendix.}
+To ensure the robustness of our core findings, we conduct a supplementary analysis substituting our mixed-effects modeling framework for an ego fixed-effects framework using conditional logistic regression. This adjusts for all unobserved, time-invariant ego-level characteristics.\footnote{For a full summary of descriptive statistics, see Tables \ref{tbl-descriptives-cont} and \ref{tbl-descriptives-cat} in the Appendix.}
 
 \section{Results}\label{results}
 
@@ -128,27 +128,23 @@ In Model 2, we introduce \textbf{open-ended activity matches}. The inclusion of 
 
 Model 3 tests the independent effect of \textbf{cultural network opacity}---measured as the number of domains in which the ego reported ``Don't Know'' regarding their alter's preferences. As expected, cultural network opacity is a strong negative predictor of tie persistence. A lack of mutual cultural knowledge signals a lack of conversational intimacy; as the number of ``unknown'' domains increases, the likelihood of tie survival sharply drops. 
 
-To contextualize these coefficients, Figure \ref{fig-combined} displays the average marginal effects of moving from the minimum to the maximum observed values for each of our core theoretical variables. Across the board, cultural matching serves as a robust protective mechanism against tie decay, whereas cultural network opacity acts as a profound liability.
+To contextualize these coefficients, Figure \ref{fig-combined} plots the predicted probability of tie persistence across the observed ranges of each core theoretical variable. Across the board, cultural matching serves as a robust protective mechanism against tie decay (positive slopes), whereas cultural network opacity acts as a profound liability (steep negative slope).
 
 \subsection{The Moderating Role of Subjective Closeness}
 
-While the main effects demonstrate that cultural alignment generally stabilizes ties, we next assess whether this ``social glue'' is uniformly necessary for all relationships. We estimated auxiliary interaction models (not shown in tables, but visualized via marginal effects) to test whether the protective effects of cultural matching and the detrimental effects of cultural network opacity are moderated by baseline subjective closeness.
+While the main effects demonstrate that cultural alignment generally stabilizes ties, we next assess whether this ``social glue'' is uniformly necessary for all relationships. We estimated auxiliary interaction models (not shown in tables, but visualized via predicted probabilities) to test whether the protective effects of cultural matching and the detrimental effects of cultural network opacity are moderated by baseline subjective closeness.
 
 Because interaction terms in logistic models can be opaque due to the non-linear link function, we visualize this critical interaction to make the core finding instantly digestible. Figure \ref{fig-closeness-interactions} plots the predicted probability of tie persistence (a survival curve equivalent) across ties rated as ``Not Close,'' ``Somewhat Close,'' and ``Close'' at varying levels of our three cultural variables.
 
-The results reveal a striking asymmetry: the role of cultural matching and opacity is highly dependent on tie strength. Counter to a ``liability of newness'' scaffolding hypothesis, we find that the marginal effects are steepest and most significant for \textit{strong} ties (those rated ``Close''). For these relationships, an increase in shared cultural tastes dramatically increases the predicted probability of tie persistence. Conversely, for weak ties (those rated ``Not Close''), the slopes are essentially flat. 
+The results reveal a striking asymmetry: the role of cultural matching and opacity is highly dependent on tie strength. Counter to a ``liability of newness'' scaffolding hypothesis, we find that the predictive slopes are steepest and most significant for \textit{strong} ties (those rated ``Close''). For these relationships, an increase in shared cultural tastes dramatically increases the predicted probability of tie persistence. Conversely, for weak ties (those rated ``Not Close''), the slopes are essentially flat. 
 
 This interaction suggests that shared cultural tastes are less about providing superficial scaffolding for fragile new ties, and more about serving as the substantive ``core'' of deep, institutionalized friendships. Close friendships require ongoing, intensive cultural alignment to be maintained, rendering them highly sensitive to both matching and opacity. Weak ties, on the other hand, are fleeting and superficial; their baseline hazard of decay is so high that cultural matching does little to save them.
 
-\subsection{Robustness Checks and Supplementary Analyses}
+\subsection{Robustness Check: Ego Fixed-Effects}
 
-To confirm that our findings are not artifacts of our primary model specifications, we estimated a series of robustness checks (detailed in Appendix B). 
+To confirm that our findings are not artifacts of our primary model specifications, we estimated an \textbf{Ego Fixed-Effects model} via conditional logistic regression (shown below). By stratifying the likelihood function by ego, this approach leverages only within-ego variance—comparing the alters a single ego retains versus the alters that same ego drops. This stringent test perfectly isolates dyadic tie characteristics from unobserved individual baseline differences (such as an ego's baseline sociability, introversion, or general propensity to drop ties). Across these fixed-effects models, closed-form matches, open-ended matches, and cultural network opacity all retained their significance and directional effects, confirming that the cultural matching dynamic operates primarily at the dyadic level.
 
-First, we estimated an \textbf{Ego Fixed-Effects model} via conditional logistic regression. By stratifying the likelihood function by ego, this approach leverages only within-ego variance—comparing the alters a single ego retains versus the alters that same ego drops. This stringent test perfectly isolates dyadic tie characteristics from unobserved individual baseline differences (such as an ego's baseline sociability, introversion, or general propensity to drop ties). Across these fixed-effects models, closed-form matches, open-ended matches, and cultural network opacity all retained their significance and directional effects, confirming that the cultural matching dynamic operates primarily at the dyadic level.
-
-Second, we tested alternative functional forms, re-estimating the baseline models using \textbf{probit} and \textbf{complementary log-log (cloglog)} link functions. The cloglog link is particularly well-suited for discrete-time survival analysis of asymmetric, rare events. The results were functionally identical to the standard logistic estimates.
-
-Finally, we explored the valence of cultural matching by disaggregating closed-form matches into \textbf{shared likes} (both ego and alter express interest in a domain) versus \textbf{shared dislikes} (both ego and alter indicate they are ``Not at all interested''). Consistent with theories of cultural boundary-drawing \citep{erickson1996}, we found that shared dislikes are just as protective against tie decay as shared likes. This demonstrates that bonding over a mutual aversion to a cultural domain provides equivalent structural scaffolding for a social relationship as shared consumption.
+\input{Tabs/robustness_models.tex}
 
 \section{Discussion and Conclusion}\label{discussion}
 
@@ -167,7 +163,7 @@ We conceive of cultural matching as an essential structural core of close relati
 \subsection{Limitations and Future Research}
 Despite these robust findings, several limitations point toward fruitful avenues for future research. First, our empirical focus on a sample of college students at a single university limits the generalizability of our claims. The college transition is a period of heightened network flux and identity formation. Future research should examine whether cultural matching operates similarly as a stabilizing force in adult populations, workplace settings, or among older adults where network dynamics and the salience of different cultural domains may differ.
 
-Second, our current operationalization treats most cultural matches as theoretically equivalent. While our robustness checks demonstrated that shared dislikes operate similarly to shared likes, future research could further disaggregate these domains to test whether high-status cultural matches (e.g., classical music, literature) confer different relational advantages compared to popular or low-status domains \citep{dimaggio1987}.
+Second, our current operationalization treats most cultural matches as theoretically equivalent. Future research could further disaggregate these domains to test whether high-status cultural matches (e.g., classical music, literature) confer different relational advantages compared to popular or low-status domains \citep{dimaggio1987}. Additionally, researchers could explore whether shared dislikes function as a separate dimension of boundary-drawing.
 
 Finally, while our discrete-time survival framework effectively models tie decay, future studies would benefit from deploying stochastic actor-oriented models (SAOMs) to simultaneously model tie creation, tie dissolution, and individual taste change. Such an approach could fully disentangle the reciprocal processes of network-based cultural influence and culture-based social selection.
 
@@ -175,15 +171,15 @@ Finally, while our discrete-time survival framework effectively models tie decay
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\linewidth,keepaspectratio]{analysis_files/figure-pdf/fig-combined-1.pdf}
-\caption{\label{fig-combined}Marginal Effects of Cultural Matching and cultural network opacity on Tie Persistence. Note: Estimates represent the average marginal effect on the probability of tie persistence.}
+\includegraphics[width=\linewidth,keepaspectratio]{Plots/main_effects.png}
+\caption{\label{fig-combined}Predicted Probability of Tie Persistence by Cultural Matching and Cultural Network Opacity.}
 \end{figure}
 
 \newpage
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\linewidth,keepaspectratio]{analysis_files/figure-pdf/fig-closeness-interactions-1.pdf}
-\caption{\label{fig-closeness-interactions}Marginal Effects of Cultural Matching and cultural network opacity on Tie Persistence by Subjective Closeness. Note: Estimates represent the average marginal effect on the probability of tie persistence.}
+\includegraphics[width=\linewidth,keepaspectratio]{Plots/interaction_closeness.png}
+\caption{\label{fig-closeness-interactions}Predicted Probability of Tie Persistence by Cultural Matching, Cultural Network Opacity, and Subjective Closeness.}
 \end{figure}
 \newpage
 
@@ -200,20 +196,6 @@ Descriptive statistics for all continuous and categorical variables used in the 
 \input{Tabs/desc_cont.tex}
 
 \input{Tabs/desc_cat.tex}
-
-\section{Appendix: Robustness Checks}
-\label{app:robustness}
-To ensure the robustness of our core findings, we estimated several alternative model specifications, the results of which are dynamically rendered in the supplementary tables.
-
-\subsection{Alternative Specifications}
-We test an \textbf{Ego Fixed-Effects} model (conditional logistic regression via \texttt{survival::clogit}), which perfectly controls for unobserved time-invariant ego characteristics. We also test alternative link functions (\textbf{Probit} and \textbf{Cloglog}) to verify our results are not artifacts of the logistic functional form (see Table \ref{tbl-robustness-models}).
-
-\input{Tabs/robustness_models.tex}
-
-\subsection{Shared Likes vs. Shared Dislikes}
-We reconstruct the closed-form matching variable to differentiate between positive matches (both ego and alter express interest) and negative matches (both ego and alter indicate they are "Not at all interested"). Results (Table \ref{tbl-dislikes}) indicate that shared dislikes are just as protective against tie decay as shared likes, supporting a boundary-drawing mechanism.
-
-\input{Tabs/dislike_models.tex}
 
 \newpage
 \bibliographystyle{plainnat}

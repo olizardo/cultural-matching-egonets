@@ -24,7 +24,6 @@ We estimate the probability of tie persistence as a function of cultural matchin
 #| include: false
 library(tidyverse)
 library(lme4)
-library(marginaleffects)
 library(modelsummary)
 library(here)
 library(broom.mixed)
@@ -103,42 +102,41 @@ modelsummary(
   gof_map = c("nobs", "aic", "bic")
 )
 ```
-### Marginal Effects
-**Figure @fig-combined** visualizes the marginal effect (calculated as the change from the minimum to the maximum value) of closed-form matches, open-ended matches, and network opacity on the predicted probability of tie persistence.
+### Predicted Probabilities
+**Figure @fig-combined** visualizes the predicted probability of tie persistence across the observed range of closed-form matches, open-ended matches, and network opacity.
 ```{r}
 #| label: fig-combined
-#| fig-cap: "Marginal Effects of Cultural Matches and Network Opacity (Min to Max)"
-comp_closed <- comparisons(
-  mod_open,
-  variables = list(num_match_closed = range(df_period$num_match_closed, na.rm = TRUE)),
-  newdata = datagrid(),
-  re.form = NA
-) %>% as_tibble() %>% mutate(Predictor = "Closed-Form Matches")
-comp_open <- comparisons(
-  mod_open,
-  variables = list(open_match_count = range(df_period$open_match_count, na.rm = TRUE)),
-  newdata = datagrid(),
-  re.form = NA
-) %>% as_tibble() %>% mutate(Predictor = "Open-Ended Matches")
-comp_opacity <- comparisons(
-  mod_opac_base,
-  variables = list(num_unknown = range(df_period$num_unknown, na.rm = TRUE)),
-  newdata = datagrid(),
-  re.form = NA
-) %>% as_tibble() %>% mutate(Predictor = "Network Opacity (Unknowns)")
-comp_combined <- bind_rows(comp_closed, comp_open, comp_opacity) %>%
-  mutate(Predictor = factor(Predictor, levels = rev(c("Closed-Form Matches", "Open-Ended Matches", "Network Opacity (Unknowns)")), ordered = TRUE))
-p <- ggplot(comp_combined, aes(y = Predictor, x = estimate, fill = Predictor, color = Predictor)) +
-  geom_col(width = 0.3, alpha = 0.8) +
-  geom_errorbar(aes(xmin = conf.low, xmax = conf.high), width = 0.1, linewidth = 1) +
-  scale_x_continuous(labels = scales::percent_format()) +
+#| fig-cap: "Predicted Probability of Tie Persistence by Cultural Matches and Network Opacity"
+library(ggeffects)
+library(patchwork)
+
+pred_main_closed <- ggpredict(mod_open, terms = "num_match_closed") %>% 
+  as_tibble() %>% 
+  mutate(Predictor_Value = x, Predictor = "Closed-Form Matches")
+
+pred_main_open <- ggpredict(mod_open, terms = "open_match_count") %>% 
+  as_tibble() %>% 
+  mutate(Predictor_Value = x, Predictor = "Open-Ended Matches")
+
+pred_main_opacity <- ggpredict(mod_opac_base, terms = "num_unknown") %>% 
+  as_tibble() %>% 
+  mutate(Predictor_Value = x, Predictor = "Network Opacity (Unknowns)")
+
+pred_main_combined <- bind_rows(pred_main_closed, pred_main_open, pred_main_opacity) %>%
+  mutate(Predictor = factor(Predictor, levels = c("Closed-Form Matches", "Open-Ended Matches", "Network Opacity (Unknowns)"), ordered = TRUE))
+
+p <- ggplot(pred_main_combined, aes(x = Predictor_Value, y = predicted, color = Predictor, fill = Predictor)) +
+  geom_line(linewidth = 1.2) +
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = 0.2, color = NA) +
+  facet_wrap(~Predictor, scales = "free_x") +
+  scale_y_continuous(labels = scales::percent_format(), limits = c(0, 0.4)) +
+  scale_color_manual(values = c("Closed-Form Matches" = "#1f78b4", "Open-Ended Matches" = "#33a02c", "Network Opacity (Unknowns)" = "#e31a1c")) +
   scale_fill_manual(values = c("Closed-Form Matches" = "#1f78b4", "Open-Ended Matches" = "#33a02c", "Network Opacity (Unknowns)" = "#e31a1c")) +
-  scale_color_manual(values = c("Closed-Form Matches" = "#12476b", "Open-Ended Matches" = "#1e5e1a", "Network Opacity (Unknowns)" = "#941113")) +
-  geom_vline(xintercept = 0, linetype = "dashed", color = "gray50") +
-  labs(y = NULL, x = "Average Marginal Effect\n(Prob. of Persistence)") +
+  labs(y = "Predicted Probability of Tie Persistence", x = "Count of Cultural Domains / Activities") +
   theme_minimal(base_size = 14) +
-  theme(legend.position = "none")
-ggsave(here::here("Plots", "marginal_effects.png"), plot = p, width = 8, height = 6)
+  theme(legend.position = "none", strip.text = element_text(face = "bold"))
+
+ggsave(here::here("Plots", "main_effects.png"), plot = p, width = 10, height = 4.5)
 p
 ```
 ## Subjective Closeness Interactions
@@ -163,7 +161,7 @@ mod_close_int_unknown <- glmer(
   data = df_period, family = binomial(link = "logit"), control = glmer_ctrl, nAGQ = 0
 )
 ```
-**Figure @fig-closeness-interactions** plots the marginal effects of the three cultural variables across the three levels of subjective closeness.
+**Figure @fig-closeness-interactions** plots the predicted probability of tie persistence across the range of the three cultural variables for the three levels of subjective closeness.
 ```{r}
 #| label: fig-closeness-interactions
 #| fig-cap: "Predicted Probability of Tie Persistence by Cultural Matching, Network Opacity, and Subjective Closeness"
@@ -171,27 +169,39 @@ mod_close_int_unknown <- glmer(
 #| fig-height: 5
 #| warning: false
 library(patchwork)
-comp_int_closed <- comparisons(mod_close_int_closed, variables = list(num_match_closed = c(0, 6)), newdata = datagrid(close_factor = c("Not Close", "Somewhat Close", "Close")), re.form = NA) %>% as_tibble() %>% mutate(Cultural_Variable = "Closed-Form Matches")
-comp_int_open <- comparisons(mod_close_int_open, variables = list(open_match_count = c(0, 5)), newdata = datagrid(close_factor = c("Not Close", "Somewhat Close", "Close")), re.form = NA) %>% as_tibble() %>% mutate(Cultural_Variable = "Open-Ended Matches")
-comp_int_opacity <- comparisons(mod_close_int_unknown, variables = list(num_unknown = c(0, 6)), newdata = datagrid(close_factor = c("Not Close", "Somewhat Close", "Close")), re.form = NA) %>% as_tibble() %>% mutate(Cultural_Variable = "Network Opacity (Unknowns)")
-comp_int_combined <- bind_rows(comp_int_closed, comp_int_open, comp_int_opacity) %>%
+library(ggeffects)
+
+pred_closed <- ggpredict(mod_close_int_closed, terms = c("num_match_closed", "close_factor")) %>% 
+  as_tibble() %>% 
+  mutate(Predictor_Value = x, close_factor = group, Cultural_Variable = "Closed-Form Matches")
+
+pred_open <- ggpredict(mod_close_int_open, terms = c("open_match_count", "close_factor")) %>% 
+  as_tibble() %>% 
+  mutate(Predictor_Value = x, close_factor = group, Cultural_Variable = "Open-Ended Matches")
+
+pred_opacity <- ggpredict(mod_close_int_unknown, terms = c("num_unknown", "close_factor")) %>% 
+  as_tibble() %>% 
+  mutate(Predictor_Value = x, close_factor = group, Cultural_Variable = "Network Opacity (Unknowns)")
+
+pred_combined <- bind_rows(pred_closed, pred_open, pred_opacity) %>%
   mutate(Cultural_Variable = factor(Cultural_Variable, levels = c("Closed-Form Matches", "Open-Ended Matches", "Network Opacity (Unknowns)"), ordered = TRUE),
-         close_factor = factor(close_factor, levels = rev(c("Not Close", "Somewhat Close", "Close")), ordered = TRUE))
-p_int <- ggplot(comp_int_combined, aes(y = close_factor, x = estimate, fill = Cultural_Variable, color = Cultural_Variable)) +
-  geom_col(width = 0.4, alpha = 0.8) +
-  geom_errorbar(aes(xmin = conf.low, xmax = conf.high), width = 0.15, linewidth = 1) +
-  scale_x_continuous(labels = scales::percent_format()) +
-  geom_vline(xintercept = 0, linetype = "dashed", color = "gray50") +
-  facet_wrap(~Cultural_Variable) +
-  labs(y = "Subjective Closeness", x = "Average Marginal Effect\n(Prob. of Persistence)") +
-  scale_fill_manual(values = c("Closed-Form Matches" = "#1f78b4", "Open-Ended Matches" = "#33a02c", "Network Opacity (Unknowns)" = "#e31a1c")) +
-  scale_color_manual(values = c("Closed-Form Matches" = "#12476b", "Open-Ended Matches" = "#1e5e1a", "Network Opacity (Unknowns)" = "#941113")) +
+         close_factor = factor(close_factor, levels = c("Not Close", "Somewhat Close", "Close"), ordered = TRUE))
+
+p_int <- ggplot(pred_combined, aes(x = Predictor_Value, y = predicted, color = close_factor, fill = close_factor)) +
+  geom_line(linewidth = 1.2) +
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = 0.2, color = NA) +
+  facet_wrap(~Cultural_Variable, scales = "free_x") +
+  labs(y = "Predicted Probability of Tie Persistence", x = "Count of Cultural Domains / Activities", color = "Subjective Closeness", fill = "Subjective Closeness") +
+  scale_y_continuous(labels = scales::percent_format(), limits = c(0, 1)) +
+  scale_color_viridis_d(option = "plasma", end = 0.8) +
+  scale_fill_viridis_d(option = "plasma", end = 0.8) +
   theme_minimal(base_size = 14) +
-  theme(legend.position = "none", strip.text = element_text(face = "bold"))
-ggsave(here::here("Plots", "interaction_closeness.png"), plot = p_int, width = 12, height = 4.5)
+  theme(legend.position = "bottom", strip.text = element_text(face = "bold"))
+
+ggsave(here::here("Plots", "interaction_closeness.png"), plot = p_int, width = 12, height = 5)
 p_int
 ```
-As the marginal effects plot clearly demonstrates, the role of cultural matching varies substantially by subjective closeness. For "Not Close" ties (the steepest slopes), an increase in shared cultural tastes—whether measured through closed-form domains or open-ended activities—dramatically increases the probability of tie persistence. Conversely, for ties that are already "Close," the slope is essentially flat. This suggests that shared cultural tastes provide critical scaffolding that helps weak ties survive, whereas strong ties are resilient to decay regardless of cultural matching. Similarly, network opacity exerts its most severe negative effect on ties that are not subjectively close.
+As the predicted probability plot clearly demonstrates, the role of cultural matching varies substantially by subjective closeness. For "Close" ties (the steepest slopes), an increase in shared cultural tastes—whether measured through closed-form domains or open-ended activities—dramatically increases the probability of tie persistence. Conversely, for ties that are "Not Close," the slope is essentially flat, and their baseline probability of persistence remains low regardless of matching. This suggests that shared cultural tastes provide the substantive core that allows strong ties to endure, whereas weak ties are too fleeting to be rescued by matching alone. Similarly, network opacity exerts its most severe negative effect on ties that are subjectively close.
 \newpage
 
 ## Appendix: Descriptive Statistics
@@ -220,17 +230,14 @@ datasummary(
 )
 ```
 
-## Appendix B: Robustness Checks
 
-### Alternative Model Specifications
-To ensure the robustness of our main findings, we estimated several alternative specifications of our baseline model. 
-First, we estimated an **Ego Fixed-Effects** model using conditional logistic regression (`survival::clogit`). This stringent test completely controls for all unobserved, time-invariant ego characteristics by only leveraging within-ego variance (i.e., comparing alters retained vs. dropped by the same ego). 
-Second, we estimated a model with a **Tie-Level Random Effect** (a crossed random effect for `alterid`) to account for the unobserved heterogeneity of specific ties appearing across multiple periods.
-Third, we tested alternative link functions (`probit` and `cloglog`) to ensure our results are not an artifact of the logistic functional form. The `cloglog` link is particularly appropriate for discrete-time survival analysis of rare events.
+## Robustness Check: Ego Fixed Effects
+
+To ensure the robustness of our main findings, we estimated an **Ego Fixed-Effects** model using conditional logistic regression (`survival::clogit`). This stringent test completely controls for all unobserved, time-invariant ego characteristics by only leveraging within-ego variance (i.e., comparing alters retained vs. dropped by the same ego).
 
 ```{r}
 #| label: tbl-robustness-models
-#| tbl-cap: "Robustness Checks: Ego Fixed-Effects, Tie Random-Effects, and Alternative Links"
+#| tbl-cap: "Odds Ratios for Tie Persistence (Ego Fixed-Effects Model)"
 library(survival)
 
 # Ego Fixed-Effects (Conditional Logit)
@@ -240,73 +247,17 @@ mod_fe <- clogit(
   data = df_period
 )
 
-# Probit Link
-mod_probit <- glmer(
-  as.formula(paste("persisted ~ num_match_closed + open_match_count + num_unknown +", ctrl_vars, "+ (1 | egoid)")),
-  data = df_period, family = binomial(link = "probit"), control = glmer_ctrl, nAGQ = 0
-)
-
-# Complementary Log-Log Link
-mod_cloglog <- glmer(
-  as.formula(paste("persisted ~ num_match_closed + open_match_count + num_unknown +", ctrl_vars, "+ (1 | egoid)")),
-  data = df_period, family = binomial(link = "cloglog"), control = glmer_ctrl, nAGQ = 0
-)
-
 modelsummary(
-  list("Ego FE (clogit)" = mod_fe, "Probit" = mod_probit, "Cloglog" = mod_cloglog),
+  list("Ego FE (clogit)" = mod_fe),
   stars = TRUE,
-  exponentiate = c(TRUE, FALSE, FALSE),
+  exponentiate = TRUE,
   output = here::here("Tabs", "robustness_models.tex"),
   coef_map = c(
     "num_match_closed" = "Closed-Form Matches",
     "open_match_count" = "Open-Ended Matches",
-    "num_unknown" = "Network Opacity"
-  ),
-  gof_map = c("nobs", "aic", "bic")
-)
-```
-
-### Exploring Dislike Matching
-In our primary analysis, a "match" is defined as both ego and alter being identically interested in a domain. To test whether "shared dislikes" (both ego and alter indicating they are "Not at all interested") function differently from "shared likes," we reconstructed the closed-form match variable to separate positive matches from negative matches. As shown in the supplementary analysis, both shared likes and shared dislikes exert protective effects on tie persistence, supporting the boundary-drawing mechanism.
-
-```{r}
-#| label: setup-dislikes
-#| include: false
-df_period_dislikes <- df_period %>%
-  mutate(
-    match_pos = as.numeric(egomusic_ == 1 & altermusic_ == 1) +
-                as.numeric(egomovies_ == 1 & altermovies_ == 1) +
-                as.numeric(egobooks_ == 1 & alterbooks_ == 1) +
-                as.numeric(egosports_ == 1 & altersports_ == 1) +
-                as.numeric(egogames_ == 1 & altergames_ == 1) +
-                as.numeric(egooutdoor_ == 1 & alteroutdoor_ == 1),
-    match_neg = as.numeric(egomusic_ == 3 & altermusic_ == 3) +
-                as.numeric(egomovies_ == 3 & altermovies_ == 3) +
-                as.numeric(egobooks_ == 3 & alterbooks_ == 3) +
-                as.numeric(egosports_ == 3 & altersports_ == 3) +
-                as.numeric(egogames_ == 3 & altergames_ == 3) +
-                as.numeric(egooutdoor_ == 3 & alteroutdoor_ == 3)
-  )
-
-mod_dislikes <- glmer(
-  as.formula(paste("persisted ~ match_pos + match_neg + open_match_count + num_unknown +", ctrl_vars, "+ (1 | egoid)")),
-  data = df_period_dislikes, family = binomial(link = "logit"), control = glmer_ctrl, nAGQ = 0
-)
-```
-
-```{r}
-#| label: tbl-dislikes
-#| tbl-cap: "Robustness Check: Shared Likes vs. Shared Dislikes"
-modelsummary(
-  list("Shared Likes & Dislikes" = mod_dislikes),
-  stars = TRUE,
-  exponentiate = TRUE,
-  output = here::here("Tabs", "dislike_models.tex"),
-  coef_map = c(
-    "match_pos" = "Shared Likes",
-    "match_neg" = "Shared Dislikes",
-    "open_match_count" = "Open-Ended Matches",
-    "num_unknown" = "Network Opacity"
+    "num_unknown" = "Network Opacity",
+    "close_factorSomewhat Close" = "Subjective Closeness: Somewhat",
+    "close_factorClose" = "Subjective Closeness: Close"
   ),
   gof_map = c("nobs", "aic", "bic")
 )

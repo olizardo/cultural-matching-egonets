@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.28)  15 JUL 2026 17:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.28)  15 JUL 2026 19:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -647,31 +647,41 @@ Package microtype Info: Loading generic protrusion settings for font family
  [1
 
 
-{/home/omarlizardo/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 69.
+{/home/omarlizardo/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 69.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
  (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [3] [4] [5] [6] [7] [8]
-<analysis_files/figure-pdf/fig-combined-1.pdf, id=225, 397.485pt x 252.945pt>
-File: analysis_files/figure-pdf/fig-combined-1.pdf Graphic file (type pdf)
-<use analysis_files/figure-pdf/fig-combined-1.pdf>
-Package pdftex.def Info: analysis_files/figure-pdf/fig-combined-1.pdf  used on input line 172.
-(pdftex.def)             Requested size: 357.4094pt x 227.4477pt.
- [9]
-<analysis_files/figure-pdf/fig-closeness-interactions-1.pdf, id=232, 867.24pt x 361.35pt>
-File: analysis_files/figure-pdf/fig-closeness-interactions-1.pdf Graphic file (type pdf)
-<use analysis_files/figure-pdf/fig-closeness-interactions-1.pdf>
-Package pdftex.def Info: analysis_files/figure-pdf/fig-closeness-interactions-1.pdf  used on input line 179.
+) [4] [5] [6] [7] [8] (./Tabs/robustness_models.tex) [9] [10]
+<Plots/main_effects.png, id=256, 722.7pt x 325.215pt>
+File: Plots/main_effects.png Graphic file (type png)
+<use Plots/main_effects.png>
+Package pdftex.def Info: Plots/main_effects.png  used on input line 174.
+(pdftex.def)             Requested size: 446.76004pt x 201.0407pt.
+ [11
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.178 \newpage
+               <./Plots/main_effects.png>]
+<Plots/interaction_closeness.png, id=261, 867.24pt x 361.35pt>
+File: Plots/interaction_closeness.png Graphic file (type png)
+<use Plots/interaction_closeness.png>
+Package pdftex.def Info: Plots/interaction_closeness.png  used on input line 181.
 (pdftex.def)             Requested size: 446.76004pt x 186.1497pt.
- (./Tabs/main_models.tex
+ [12
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.184 \newpage
+               <./Plots/interaction_closeness.png>] (./Tabs/main_models.tex
 Overfull \hbox (16.97542pt too wide) in paragraph at lines 58--59
  [][] 
  []
@@ -679,60 +689,40 @@ Overfull \hbox (16.97542pt too wide) in paragraph at lines 58--59
 
 LaTeX Warning: Float too large for page by 165.5881pt on input line 59.
 
-) [10
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.188 \newpage
-               <./analysis_files/figure-pdf/fig-combined-1.pdf>] [11
+) [13] [14
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.188 \newpage
-              ] (./Tabs/desc_cont.tex) (./Tabs/desc_cat.tex) [12
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.204 
-      
+l.190 \newpage
+              ] (./Tabs/desc_cont.tex) (./Tabs/desc_cat.tex) [15
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.204 
-       <./analysis_files/figure-pdf/fig-closeness-interactions-1.pdf>] [13
+l.200 \newpage
+              
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.204 
-      ] (./Tabs/robustness_models.tex) (./Tabs/dislike_models.tex) [14
-pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.212 \newpage
-              ] (./manuscript.bbl [15
-pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.39 
-     ] [16]) [17] (./manuscript.aux)
+l.200 \newpage
+              ] (./manuscript.bbl [16] [17]) [18] (./manuscript.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 23629 strings out of 469097
- 489173 string characters out of 5457857
- 1081121 words of memory out of 5000000
- 52200 multiletter control sequences out of 15000+600000
- 641674 words of font info for 150 fonts, out of 8000000 for 9000
+ 23655 strings out of 469097
+ 489159 string characters out of 5457857
+ 1079054 words of memory out of 5000000
+ 52210 multiletter control sequences out of 15000+600000
+ 644390 words of font info for 165 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 108i,9n,112p,11213b,2250s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/omarlizardo/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on manuscript.pdf (17 pages, 220745 bytes).
+ 108i,9n,111p,11213b,2592s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/omarlizardo/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on manuscript.pdf (18 pages, 665780 bytes).
 PDF statistics:
- 456 PDF objects out of 1000 (max. 8388607)
- 404 compressed objects within 5 object streams
- 87 named destinations out of 1000 (max. 500000)
- 27331 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 459 PDF objects out of 1000 (max. 8388607)
+ 406 compressed objects within 5 object streams
+ 88 named destinations out of 1000 (max. 500000)
+ 31411 words of extra memory for PDF output out of 35830 (max. 10000000)
 
