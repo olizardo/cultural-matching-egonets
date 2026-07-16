@@ -75,7 +75,8 @@ modelsummary(
   list("Model 1: Closed" = mod_closed, "Model 2: + Open" = mod_open, "Model 3: + Opacity" = mod_opac_base),
   stars = TRUE,
   exponentiate = TRUE,
-  title = "Odds Ratios for Tie Persistence (Main Effects Models)",
+  title = "Odds Ratios for Tie Persistence (Main Effects Models)\\label{tbl-models}",
+  escape = FALSE,
   output = here::here("Tabs", "main_models.tex"),
   coef_map = c(
     "num_match_closed" = "Closed-Form Matches",
@@ -206,6 +207,8 @@ datasummary(
   (`Cultural Network Opacity` = num_unknown) + 
   (`Tie Duration (Years)` = duration_) ~ Mean + SD + Min + Max,
   data = df_period,
+  title = "Descriptive Statistics (Continuous Variables)\\label{tbl-descriptives-cont}",
+  escape = FALSE,
   output = here::here("Tabs", "desc_cont.tex")
 )
 
@@ -217,6 +220,8 @@ datasummary(
   (`Interaction Frequency` = factor(freq_factor)) +
   (`Race Homophily` = race_homophily) ~ N + Percent(),
   data = df_period,
+  title = "Descriptive Statistics (Categorical Variables)\\label{tbl-descriptives-cat}",
+  escape = FALSE,
   output = here::here("Tabs", "desc_cat.tex")
 )
 ```
@@ -242,6 +247,8 @@ modelsummary(
   list("Ego FE (clogit)" = mod_fe),
   stars = TRUE,
   exponentiate = TRUE,
+  title = "Robustness Models (Ego Fixed-Effects)\\label{tbl-robustness-models}",
+  escape = FALSE,
   output = here::here("Tabs", "robustness_models.tex"),
   coef_map = c(
     "num_match_closed" = "Closed-Form Matches",

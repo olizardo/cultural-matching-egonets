@@ -1,0 +1,30 @@
+\begin{table}
+\centering
+\begin{talltblr}[         %% tabularray outer open
+caption={My Title},
+note{}={\label{my-label}},
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]},
+hline{2}={1-2}{solid, black, 0.05em},
+hline{6}={1-2}{solid, black, 0.05em},
+hline{1}={1-2}{solid, black, 0.08em},
+hline{14}={1-2}{solid, black, 0.08em},
+column{2}={}{halign=c},
+column{1}={}{halign=l},
+}                     %% tabularray inner close
+& (1) \\
+(Intercept) & \num{37.885} \\
+& (\num{2.074}) \\
+cyl & \num{-2.876} \\
+& (\num{0.322}) \\
+Num.Obs. & \num{32} \\
+R2 & \num{0.726} \\
+R2 Adj. & \num{0.717} \\
+AIC & \num{169.3} \\
+BIC & \num{173.7} \\
+Log.Lik. & \num{-81.653} \\
+F & \num{79.561} \\
+RMSE & \num{3.10} \\
+\end{talltblr}
+\end{table}
