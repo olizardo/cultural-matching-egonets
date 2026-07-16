@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex manuscript"] 1784213556.21671 "manuscript.aux" "manuscript.bbl" "manuscript" 1784213578.88437 0
+["bibtex manuscript"] 1784215501.99515 "manuscript.aux" "manuscript.bbl" "manuscript" 1784215526.95363 0
   "./manuscript_citations.bib" 1784213325.04163 17054 214e5f12da983c5b4e91ebf9fefb0a2e ""
   "/home/omarlizardo/.TinyTeX/texmf-dist/bibtex/bst/base/apalike.bst" 1782672754.0784 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "manuscript.aux" 1784213578.22582 18918 0525662816750a256731f156a083534f "pdflatex"
+  "manuscript.aux" 1784215525.96101 18918 796b82c1784ba63a44b043492c285091 "pdflatex"
   (generated)
   "manuscript.bbl"
   "manuscript.blg"
   (rewritten before read)
-["pdflatex"] 1784213556.35951 "/home/omarlizardo/NETWORKS PROJECTS/cultural-matching-egonets/manuscript.tex" "manuscript.pdf" "manuscript" 1784213578.88585 0
+["pdflatex"] 1784215502.14061 "manuscript.tex" "manuscript.pdf" "manuscript" 1784215526.95657 0
   "/home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1782672755.00441 1536 02c06700a42be0f5a28664c7273f82e7 ""
   "/home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1782672755.22441 1004 54797486969f23fa377b128694d548df ""
   "/home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1782672755.22341 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -133,16 +133,15 @@
   "/home/omarlizardo/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk" 1782767168.77018 12644 0c053b707c57e529fb5d11ff87204d8d ""
   "/home/omarlizardo/.TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1782673841 2306334 2ab474859f481f82b81b7a3ab8e9a5be ""
   "/home/omarlizardo/.TinyTeX/texmf.cnf" 1782672756.56742 637 edd806fb06a89761a6034e1968af9017 ""
-  "/home/omarlizardo/NETWORKS PROJECTS/cultural-matching-egonets/manuscript.tex" 1784213384.25587 38966 0b9b3091362fc393f2c9ca4222a39cc3 ""
-  "Plots/interaction_closeness.png" 1784211856.84952 101537 80f3685cfbbbbf9bd0ca45c6cb54f6a7 ""
-  "Plots/main_effects.png" 1784212118.6896 72434 7980057d2dc85c61951da787bfcdd5a2 ""
-  "Tabs/desc_cat.tex" 1784211874.45374 1105 93eb04f8f598df7530a4f1e8e855dbaa ""
-  "Tabs/desc_cont.tex" 1784211873.13272 856 b671cef3b261b79b90e312e29d9977a5 ""
-  "Tabs/main_models.tex" 1784212093.0885 2217 b5136e04e6e3bc03362130714506d518 ""
-  "Tabs/robustness_models.tex" 1784211897.49403 1360 498620e90309782b3f792997d16dfc8d ""
-  "manuscript.aux" 1784213578.22582 18918 0525662816750a256731f156a083534f "pdflatex"
-  "manuscript.bbl" 1784213556.3237 10536 614779f29da102737c1cf42f6e58cceb "bibtex manuscript"
-  "manuscript.tex" 1784213384.25587 38966 0b9b3091362fc393f2c9ca4222a39cc3 ""
+  "Plots/interaction_closeness.png" 1784214600.25685 101414 c3bb607ffbaaa2a9d1e5b725219ae251 ""
+  "Plots/main_effects.png" 1784214572.99184 72210 38bfb30795689a7180f569f3651a4965 ""
+  "Tabs/desc_cat.tex" 1784214607.4336 1103 f2b3fb109ffb5b94dd1cfbc5f34282d6 ""
+  "Tabs/desc_cont.tex" 1784214606.62563 856 6115794593d292d154cd531e2404ea2d ""
+  "Tabs/main_models.tex" 1784214546.70884 2323 2e6c471ec357865751e049778cf0fa51 ""
+  "Tabs/robustness_models.tex" 1784214610.13351 1469 85445ae34f67ed172425ce22797073ed ""
+  "manuscript.aux" 1784215525.96101 18918 796b82c1784ba63a44b043492c285091 "pdflatex"
+  "manuscript.bbl" 1784215502.10723 10536 614779f29da102737c1cf42f6e58cceb "bibtex manuscript"
+  "manuscript.tex" 1784215387.16033 39044 85ce0a4e3a56ce5c7576fb3d181e518e ""
   (generated)
   "manuscript.aux"
   "manuscript.log"

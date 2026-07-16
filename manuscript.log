@@ -1,10 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.28)  16 JUL 2026 07:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.28)  16 JUL 2026 08:25
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/home/omarlizardo/NETWORKS PROJECTS/cultural-matching-egonets/manuscript.tex"
-(/home/omarlizardo/NETWORKS PROJECTS/cultural-matching-egonets/manuscript.tex
+**manuscript.tex
+(./manuscript.tex
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
 (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/koma-script/scrartcl.cls
@@ -661,7 +660,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/home/omarlizardo/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [5] [6] [7] [8] (./Tabs/main_models.tex
-Overfull \hbox (16.97542pt too wide) in paragraph at lines 41--42
+Overfull \hbox (16.97542pt too wide) in paragraph at lines 43--44
  [][] 
  []
 
@@ -687,30 +686,32 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.214 \newpage
-               <./Plots/interaction_closeness.png>] (./Tabs/desc_cont.tex) (./Tabs/desc_cat.tex) (./manuscript.bbl [17] [18]
+               <./Plots/interaction_closeness.png>] (./Tabs/desc_cont.tex) (./Tabs/desc_cat.tex) [17] [18] (./manuscript.bbl [19
+
+]
 Overfull \hbox (2.10028pt too wide) in paragraph at lines 119--122
 []\OT1/cmr/m/n/10.95 (-20) Kleinbaum, A. M. (2018).  Reorganization and tie decay choices.  \OT1/cmr/m/it/10.95 (-20) Management science\OT1/cmr/m/n/10.95 (-20) , 64(5):2219--
  []
 
-[19]) [20] (./manuscript.aux)
+[20] [21]) [22] (./manuscript.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 23093 strings out of 469097
- 476779 string characters out of 5457857
- 1039303 words of memory out of 5000000
- 51624 multiletter control sequences out of 15000+600000
+ 23156 strings out of 469097
+ 477977 string characters out of 5457857
+ 1044739 words of memory out of 5000000
+ 51686 multiletter control sequences out of 15000+600000
  644602 words of font info for 168 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 108i,9n,111p,11277b,1813s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,9n,111p,11213b,1900s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/omarlizardo/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on manuscript.pdf (20 pages, 479212 bytes).
+Output written on manuscript.pdf (22 pages, 500145 bytes).
 PDF statistics:
- 524 PDF objects out of 1000 (max. 8388607)
- 468 compressed objects within 5 object streams
- 106 named destinations out of 1000 (max. 500000)
+ 532 PDF objects out of 1000 (max. 8388607)
+ 474 compressed objects within 5 object streams
+ 108 named destinations out of 1000 (max. 500000)
  31931 words of extra memory for PDF output out of 35830 (max. 10000000)
 
