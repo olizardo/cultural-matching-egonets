@@ -1,59 +1,41 @@
-\begin{table}[htbp]
+\begin{table}
 \centering
-\caption{Odds Ratios for Tie Persistence (Main Effects Models)}
-\label{tbl-models}
 \begin{talltblr}[         %% tabularray outer open
-entry=none,label=none,
+label={tbl-models},
+caption={Odds Ratios for Tie Persistence (Main Effects Models)},
 note{}={+ p \num{< 0.1}, * p \num{< 0.05}, ** p \num{< 0.01}, *** p \num{< 0.001}},
+note{ }={Note: All models control for ego and alter gender, non-linear tie duration, and baseline hazard variations across all 7 wave transitions (coefficients omitted for space). Random intercepts for egos are included.},
 ]                     %% tabularray outer close
 {                     %% tabularray inner open
 colspec={Q[]Q[]Q[]Q[]},
 hline{2}={1-4}{solid, black, 0.05em},
-hline{38}={1-4}{solid, black, 0.05em},
+hline{20}={1-4}{solid, black, 0.05em},
 hline{1}={1-4}{solid, black, 0.08em},
-hline{41}={1-4}{solid, black, 0.08em},
+hline{23}={1-4}{solid, black, 0.08em},
 column{2-4}={}{halign=c},
 column{1}={}{halign=l},
 }                     %% tabularray inner close
 & Model 1: Closed & Model 2: + Open & Model 3: + Opacity \\
-Closed-Form Matches & \num{1.089}** & \num{1.076}* &  \\
+Closed-Form Matches & \num{1.091}** & \num{1.076}* &  \\
 & (\num{0.035}) & (\num{0.035}) &  \\
-Open-Ended Matches &  & \num{1.084}** & \num{1.088}** \\
+Open-Ended Matches &  & \num{1.087}** & \num{1.091}** \\
 &  & (\num{0.034}) & (\num{0.034}) \\
 Network Opacity &  &  & \num{0.933}+ \\
 &  &  & (\num{0.034}) \\
-Subjective Closeness: Somewhat & \num{1.406}* & \num{1.351}* & \num{1.324}* \\
-& (\num{0.188}) & (\num{0.182}) & (\num{0.179}) \\
-Subjective Closeness: Close & \num{2.426}*** & \num{2.271}*** & \num{2.211}*** \\
-& (\num{0.344}) & (\num{0.327}) & (\num{0.323}) \\
+Subjective Closeness: Somewhat & \num{1.419}** & \num{1.359}* & \num{1.333}* \\
+& (\num{0.189}) & (\num{0.183}) & (\num{0.180}) \\
+Subjective Closeness: Close & \num{2.454}*** & \num{2.285}*** & \num{2.225}*** \\
+& (\num{0.347}) & (\num{0.329}) & (\num{0.325}) \\
+Roommate/Dormmate & \num{0.794} & \num{0.802} & \num{0.800} \\
+& (\num{0.128}) & (\num{0.129}) & (\num{0.129}) \\
+Frequency: Weekly/Daily & \num{2.136}** & \num{2.146}** & \num{2.279}*** \\
+& (\num{0.523}) & (\num{0.526}) & (\num{0.559}) \\
+Race Homophily: Same Race & \num{0.955} & \num{0.948} & \num{0.938} \\
+& (\num{0.121}) & (\num{0.121}) & (\num{0.120}) \\
 Tie Duration (Years) & \num{0.991} & \num{0.988} & \num{0.987} \\
 & (\num{0.044}) & (\num{0.043}) & (\num{0.043}) \\
-Tie Duration Squared & \num{1.002} & \num{1.002} & \num{1.002} \\
-& (\num{0.002}) & (\num{0.002}) & (\num{0.002}) \\
-Ego: Woman & \num{1.079} & \num{1.050} & \num{1.052} \\
-& (\num{0.157}) & (\num{0.154}) & (\num{0.155}) \\
-Alter: Woman & \num{1.102} & \num{1.062} & \num{1.066} \\
-& (\num{0.114}) & (\num{0.111}) & (\num{0.112}) \\
-Ego Woman × Alter Woman & \num{0.815} & \num{0.849} & \num{0.847} \\
-& (\num{0.130}) & (\num{0.136}) & (\num{0.135}) \\
-Roommate/Dormmate & \num{0.797} & \num{0.804} & \num{0.802} \\
-& (\num{0.129}) & (\num{0.130}) & (\num{0.129}) \\
-Frequency: Weekly/Daily & \num{2.131}** & \num{2.142}** & \num{2.273}*** \\
-& (\num{0.522}) & (\num{0.525}) & (\num{0.558}) \\
-Race Homophily: Same Race & \num{0.951} & \num{0.945} & \num{0.936} \\
-& (\num{0.121}) & (\num{0.120}) & (\num{0.119}) \\
-Race Homophily: Unknown & \num{0.232}*** & \num{0.230}*** & \num{0.227}*** \\
-& (\num{0.029}) & (\num{0.029}) & (\num{0.029}) \\
-Time Period: Wave 2-3 & \num{0.456}*** & \num{0.463}*** & \num{0.486}*** \\
-& (\num{0.057}) & (\num{0.058}) & (\num{0.061}) \\
-Time Period: Wave 3-4 & \num{0.536}*** & \num{0.525}*** & \num{0.441}*** \\
-& (\num{0.082}) & (\num{0.081}) & (\num{0.063}) \\
-Time Period: Wave 4-5 & \num{2.806}*** & \num{2.824}*** & \num{2.800}*** \\
-& (\num{0.363}) & (\num{0.366}) & (\num{0.362}) \\
-Time Period: Wave 5-6 & \num{2.022}*** & \num{2.019}*** & \num{2.003}*** \\
-& (\num{0.240}) & (\num{0.240}) & (\num{0.238}) \\
 Num.Obs. & \num{5497} & \num{5497} & \num{5497} \\
-AIC & \num{5256.6} & \num{5251.7} & \num{5253.3} \\
-BIC & \num{5375.6} & \num{5377.3} & \num{5378.9} \\
+AIC & \num{5256.3} & \num{5250.7} & \num{5252.3} \\
+BIC & \num{5368.7} & \num{5369.7} & \num{5371.4} \\
 \end{talltblr}
 \end{table}

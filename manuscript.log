@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.28)  15 JUL 2026 19:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.28)  15 JUL 2026 19:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -665,41 +665,33 @@ File: Plots/main_effects.png Graphic file (type png)
 <use Plots/main_effects.png>
 Package pdftex.def Info: Plots/main_effects.png  used on input line 174.
 (pdftex.def)             Requested size: 446.76004pt x 201.0407pt.
- [11
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.178 \newpage
-               <./Plots/main_effects.png>]
-<Plots/interaction_closeness.png, id=261, 867.24pt x 361.35pt>
+ [11]
+<Plots/interaction_closeness.png, id=262, 867.24pt x 325.215pt>
 File: Plots/interaction_closeness.png Graphic file (type png)
 <use Plots/interaction_closeness.png>
 Package pdftex.def Info: Plots/interaction_closeness.png  used on input line 181.
-(pdftex.def)             Requested size: 446.76004pt x 186.1497pt.
- [12
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.184 \newpage
-               <./Plots/interaction_closeness.png>] (./Tabs/main_models.tex
-Overfull \hbox (16.97542pt too wide) in paragraph at lines 58--59
+(pdftex.def)             Requested size: 446.76004pt x 167.53473pt.
+ (./Tabs/main_models.tex
+Overfull \hbox (16.97542pt too wide) in paragraph at lines 40--41
  [][] 
  []
 
-
-LaTeX Warning: Float too large for page by 165.5881pt on input line 59.
-
-) [13] [14
-pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+) [12
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.190 \newpage
-              ] (./Tabs/desc_cont.tex) (./Tabs/desc_cat.tex) [15
-pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+               <./Plots/main_effects.png>] [13] (./Tabs/desc_cont.tex) (./Tabs/desc_cat.tex) [14
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.200 \newpage
               
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.200 \newpage
+               <./Plots/interaction_closeness.png>] [15
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -711,18 +703,18 @@ L3 programming layer <2026-06-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 23655 strings out of 469097
- 489159 string characters out of 5457857
- 1079054 words of memory out of 5000000
- 52210 multiletter control sequences out of 15000+600000
+ 22960 strings out of 469097
+ 473504 string characters out of 5457857
+ 1031577 words of memory out of 5000000
+ 51513 multiletter control sequences out of 15000+600000
  644390 words of font info for 165 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 108i,9n,111p,11213b,2592s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,9n,111p,11213b,2034s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/omarlizardo/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></home/omarlizardo/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on manuscript.pdf (18 pages, 665780 bytes).
+Output written on manuscript.pdf (18 pages, 548297 bytes).
 PDF statistics:
- 459 PDF objects out of 1000 (max. 8388607)
- 406 compressed objects within 5 object streams
- 88 named destinations out of 1000 (max. 500000)
+ 460 PDF objects out of 1000 (max. 8388607)
+ 408 compressed objects within 5 object streams
+ 90 named destinations out of 1000 (max. 500000)
  31411 words of extra memory for PDF output out of 35830 (max. 10000000)
 

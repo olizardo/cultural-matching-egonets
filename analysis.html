@@ -83,11 +83,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#subjective-closeness-interactions" id="toc-subjective-closeness-interactions">Subjective Closeness Interactions</a></li>
   <li><a href="#appendix-descriptive-statistics" id="toc-appendix-descriptive-statistics">Appendix: Descriptive Statistics</a></li>
-  <li><a href="#appendix-b-robustness-checks" id="toc-appendix-b-robustness-checks">Appendix B: Robustness Checks</a>
-  <ul>
-  <li><a href="#alternative-model-specifications" id="toc-alternative-model-specifications">Alternative Model Specifications</a></li>
-  <li><a href="#exploring-dislike-matching" id="toc-exploring-dislike-matching">Exploring Dislike Matching</a></li>
-  </ul></li>
+  <li><a href="#robustness-check-ego-fixed-effects" id="toc-robustness-check-ego-fixed-effects">Robustness Check: Ego Fixed Effects</a></li>
   </ul>
 </nav>
 <section id="overview" class="level2">
@@ -140,7 +136,7 @@ Figure 1: Marginal Effects of Cultural Matches and Network Opacity (Min to Max)
 <img src="analysis_files/figure-html/fig-closeness-interactions-1.png" class="img-fluid" width="1152" />
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-closeness-interactions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure 2: Predicted Probability of Tie Persistence by Cultural Matching, Network Opacity, and Subjective Closeness
+Figure 2: Marginal Effects of Cultural Matching and Network Opacity by Subjective Closeness
 </figcaption>
 </figure>
 </div>
@@ -163,15 +159,13 @@ Table 2: Descriptive Statistics
 </figure>
 </div>
 </section>
-<section id="appendix-b-robustness-checks" class="level2">
-<h2>Appendix B: Robustness Checks</h2>
-<section id="alternative-model-specifications" class="level3">
-<h3>Alternative Model Specifications</h3>
-<p>To ensure the robustness of our main findings, we estimated several alternative specifications of our baseline model. First, we estimated an <strong>Ego Fixed-Effects</strong> model using conditional logistic regression (<code>survival::clogit</code>). This stringent test completely controls for all unobserved, time-invariant ego characteristics by only leveraging within-ego variance (i.e., comparing alters retained vs. dropped by the same ego). Second, we estimated a model with a <strong>Tie-Level Random Effect</strong> (a crossed random effect for <code>alterid</code>) to account for the unobserved heterogeneity of specific ties appearing across multiple periods. Third, we tested alternative link functions (<code>probit</code> and <code>cloglog</code>) to ensure our results are not an artifact of the logistic functional form. The <code>cloglog</code> link is particularly appropriate for discrete-time survival analysis of rare events.</p>
+<section id="robustness-check-ego-fixed-effects" class="level2">
+<h2>Robustness Check: Ego Fixed Effects</h2>
+<p>To ensure the robustness of our main findings, we estimated an <strong>Ego Fixed-Effects</strong> model using conditional logistic regression (<code>survival::clogit</code>). This stringent test completely controls for all unobserved, time-invariant ego characteristics by only leveraging within-ego variance (i.e., comparing alters retained vs. dropped by the same ego).</p>
 <div id="tbl-robustness-models" class="cell quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-robustness-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table 3: Robustness Checks: Ego Fixed-Effects, Tie Random-Effects, and Alternative Links
+Table 3: Odds Ratios for Tie Persistence (Ego Fixed-Effects Model)
 </figcaption>
 <div aria-describedby="tbl-robustness-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -180,23 +174,6 @@ Table 3: Robustness Checks: Ego Fixed-Effects, Tie Random-Effects, and Alternat
 </div>
 </figure>
 </div>
-</section>
-<section id="exploring-dislike-matching" class="level3">
-<h3>Exploring Dislike Matching</h3>
-<p>In our primary analysis, a “match” is defined as both ego and alter being identically interested in a domain. To test whether “shared dislikes” (both ego and alter indicating they are “Not at all interested”) function differently from “shared likes,” we reconstructed the closed-form match variable to separate positive matches from negative matches. As shown in the supplementary analysis, both shared likes and shared dislikes exert protective effects on tie persistence, supporting the boundary-drawing mechanism.</p>
-<div id="tbl-dislikes" class="cell quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-tbl">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-dislikes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table 4: Robustness Check: Shared Likes vs. Shared Dislikes
-</figcaption>
-<div aria-describedby="tbl-dislikes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-
-</div>
-</div>
-</figure>
-</div>
-</section>
 </section>
 
 </main>

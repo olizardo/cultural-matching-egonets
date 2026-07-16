@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex manuscript"] 1784167940.11296 "manuscript.aux" "manuscript.bbl" "manuscript" 1784167968.71972 0
+["bibtex manuscript"] 1784169310.26948 "manuscript.aux" "manuscript.bbl" "manuscript" 1784169334.40664 0
   "./manuscript_citations.bib" 1784166909.55382 13748 829d248d18fa96e8270b66a428c2ab90 ""
   "/home/omarlizardo/.TinyTeX/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1782672754.0794 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "manuscript.aux" 1784167967.68467 17221 15a0a9a6640cdb42d80754071642fe3e "pdflatex"
+  "manuscript.aux" 1784169333.58789 17184 0e511732524c2f4fbc1440ab51a8bd73 "pdflatex"
   (generated)
   "manuscript.bbl"
   "manuscript.blg"
   (rewritten before read)
-["pdflatex"] 1784167940.23437 "manuscript.tex" "manuscript.pdf" "manuscript" 1784167968.72123 0
+["pdflatex"] 1784169310.40588 "manuscript.tex" "manuscript.pdf" "manuscript" 1784169334.40939 0
   "/home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1782672755.00441 1536 02c06700a42be0f5a28664c7273f82e7 ""
   "/home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1782672755.22441 1004 54797486969f23fa377b128694d548df ""
   "/home/omarlizardo/.TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1782672755.22341 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -131,14 +131,14 @@
   "/home/omarlizardo/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk" 1782767168.77018 12644 0c053b707c57e529fb5d11ff87204d8d ""
   "/home/omarlizardo/.TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1782673841 2306334 2ab474859f481f82b81b7a3ab8e9a5be ""
   "/home/omarlizardo/.TinyTeX/texmf.cnf" 1782672756.56742 637 edd806fb06a89761a6034e1968af9017 ""
-  "Plots/interaction_closeness.png" 1784167644.9469 214507 75943d478f7ec120bbb710928d837143 ""
+  "Plots/interaction_closeness.png" 1784168771.88743 101634 37002ab9c646462d8bd586c31c3f1c21 ""
   "Plots/main_effects.png" 1784167610.17344 143474 1a184c7cb08b1f05e5a81de05a8387ce ""
   "Tabs/desc_cat.tex" 1784161175.38875 1125 92693f968273fd6a587cf0fa36247a5e ""
   "Tabs/desc_cont.tex" 1784161166.16673 844 c8d1ca43515eb2ed0f5941c47652d67b ""
-  "Tabs/main_models.tex" 1784161114.91762 2974 a47ca2210c0dba49b5e46f3986af92ad ""
-  "Tabs/robustness_models.tex" 1784167681.29835 968 fb73458211e60988b045773025e95265 ""
-  "manuscript.aux" 1784167967.68467 17221 15a0a9a6640cdb42d80754071642fe3e "pdflatex"
-  "manuscript.bbl" 1784167940.2156 11387 41bbbe247aa1cb4cadddfd1567fd2f96 "bibtex manuscript"
+  "Tabs/main_models.tex" 1784169252.26416 2080 fa9ce57497361f5e269301063947a740 ""
+  "Tabs/robustness_models.tex" 1784169061.42699 1306 e37a4d9a6a380db20f0d253551ac0f61 ""
+  "manuscript.aux" 1784169333.58789 17184 0e511732524c2f4fbc1440ab51a8bd73 "pdflatex"
+  "manuscript.bbl" 1784169310.36844 11387 41bbbe247aa1cb4cadddfd1567fd2f96 "bibtex manuscript"
   "manuscript.tex" 1784167875.51485 32180 6228a1358ba329c368a46621d25d354b ""
   (generated)
   "manuscript.aux"
