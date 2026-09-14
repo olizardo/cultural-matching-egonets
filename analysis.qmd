@@ -51,7 +51,10 @@ df_period <- readRDS(here("data", "processed", "adjacent_waves.rds")) %>%
     freq_daily = if_else(is.na(freq_factor), NA_real_, if_else(freq_factor == "Daily", 1, 0)),
     # Center and scale continuous duration variables to speed up optimizer convergence
     duration_c = scale(duration_)[,1],
-    duration_sq_c = scale(duration_^2)[,1]
+    duration_sq_c = scale(duration_^2)[,1],
+    # Structural embeddedness (common neighbors in ego network, standardized with period FE absorbing unmeasured wave 6)
+    common_alters_std = if_else(wave == 6 | is.na(common_alters), 0, 
+                                (common_alters - mean(common_alters[wave != 6], na.rm = TRUE)) / sd(common_alters[wave != 6], na.rm = TRUE))
   ) %>%
   filter(!is.na(same_dorm), !is.na(freq_daily))
 glmer_ctrl <- glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 1e5))
@@ -68,14 +71,18 @@ mod_opac_base <- glmer(
   as.formula(paste("persisted ~ num_match_closed + open_match_count + num_unknown +", ctrl_vars, "+ (1 | egoid)")),
   data = df_period, family = binomial(link = "logit"), control = glmer_ctrl, nAGQ = 0
 )
+mod_embed <- glmer(
+  as.formula(paste("persisted ~ num_match_closed + open_match_count + num_unknown + common_alters_std +", ctrl_vars, "+ (1 | egoid)")),
+  data = df_period, family = binomial(link = "logit"), control = glmer_ctrl, nAGQ = 0
+)
 ```
 ## Main Effects Models
-The following models assess the main effects of closed-form cultural matching, open-ended cultural matching, and network opacity on the odds of tie persistence. Model 1 shows that closed-form matches independently predict persistence. Model 2 introduces open-ended matches, demonstrating the value of incorporating both open and closed-form items. Model 3 incorporates network opacity (the number of "Don't know" responses regarding an alter's preferences). The main effects model reveals that a lack of shared cultural knowledge signals a weaker tie.
+The following models assess the main effects of closed-form cultural matching, open-ended cultural matching, network opacity, and structural embeddedness on the odds of tie persistence. Model 1 shows that closed-form matches independently predict persistence. Model 2 introduces open-ended matches, demonstrating the value of incorporating both open and closed-form items. Model 3 incorporates network opacity (the number of "Don't know" responses regarding an alter's preferences). Finally, Model 4 introduces structural embeddedness (the number of common neighbors/alter-alter ties shared within ego's network). Model 4 reveals that while structural embeddedness substantially increases the odds of tie survival, cultural matching remains an independent, robust predictor.
 ```{r}
 #| label: tbl-models
 #| tbl-cap: "Odds Ratios for Tie Persistence (Main Effects Models)"
 modelsummary(
-  list("Model 1: Closed" = mod_closed, "Model 2: + Open" = mod_open, "Model 3: + Opacity" = mod_opac_base),
+  list("Model 1: Closed" = mod_closed, "Model 2: + Open" = mod_open, "Model 3: + Opacity" = mod_opac_base, "Model 4: + Embeddedness" = mod_embed),
   stars = TRUE,
   exponentiate = TRUE,
   title = "Odds Ratios for Tie Persistence (Main Effects Models)\\label{tbl-models}",
@@ -85,6 +92,7 @@ modelsummary(
     "num_match_closed" = "Closed-Form Matches",
     "open_match_count" = "Open-Ended Matches",
     "num_unknown" = "Network Opacity",
+    "common_alters_std" = "Structural Embeddedness (Common Alters)",
     "close_factorSomewhat Close" = "Subjective Closeness: Somewhat",
     "close_factorClose" = "Subjective Closeness: Close",
     "same_dorm" = "Roommate/Dormmate",
@@ -209,6 +217,7 @@ datasummary(
   (`Closed-Form Matches` = num_match_closed) +
   (`Open-Ended Matches` = open_match_count) + 
   (`Cultural Network Opacity` = num_unknown) + 
+  (`Structural Embeddedness (Common Alters)` = common_alters) +
   (`Tie Duration (Years)` = duration_) ~ Mean + SD + Min + Max,
   data = df_period,
   title = "Descriptive Statistics (Continuous Variables)\\label{tbl-descriptives-cont}",
@@ -242,7 +251,7 @@ library(survival)
 
 # Ego Fixed-Effects (Conditional Logit)
 mod_fe <- clogit(
-  persisted ~ num_match_closed + open_match_count + num_unknown + same_dorm + is_friend + 
+  persisted ~ num_match_closed + open_match_count + num_unknown + common_alters_std + same_dorm + is_friend + 
     race_homophily + freq_daily + alterfemale_factor + close_factor + duration_c + duration_sq_c + period + strata(egoid),
   data = df_period,
   method = "efron"
@@ -259,6 +268,7 @@ modelsummary(
     "num_match_closed" = "Closed-Form Matches",
     "open_match_count" = "Open-Ended Matches",
     "num_unknown" = "Network Opacity",
+    "common_alters_std" = "Structural Embeddedness (Common Alters)",
     "close_factorSomewhat Close" = "Subjective Closeness: Somewhat",
     "close_factorClose" = "Subjective Closeness: Close",
     "same_dorm" = "Roommate/Dormmate",
