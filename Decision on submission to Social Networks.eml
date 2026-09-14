@@ -1,0 +1,487 @@
+Delivered-To: omarlizardo@gmail.com
+Received: by 2002:ac8:4414:0:b0:51c:26c2:3e84 with SMTP id j20csp3633072qtn;
+        Mon, 14 Sep 2026 01:22:51 -0700 (PDT)
+X-Forwarded-Encrypted: i=3; AKwUvBzakqjI1sobh5XV44lGOXuc9B1YVs64Mkx64m8JpWx2hEExITtCkIHqwx1p6pEUhtejxMcydTAw1c5sEQ==@gmail.com
+X-Received: by 2002:a05:6a00:2410:b0:862:10be:209c with SMTP id d2e1a72fcca58-86f8314b850mr3217070b3a.3.1789374171075;
+        Mon, 14 Sep 2026 01:22:51 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1789374171; cv=pass;
+        d=google.com; s=arc-20260327;
+        b=f5JxhW2Z1IyRHTLt+sBk6JWK5AkBfQuUJmzXrEhJm7l8CGHtjo/V22coW1Wjrm/FDe
+         EHAUGCaZBWpYJEpSncrzfm8TSTbo+6fJ4s9sj2dc5pUqZmc2q+PzbZ4XF3ewj2vez6IQ
+         jt4MX9oSG5UXFoMQMHsiTHTRtby8Us1UFo04+8pcHi/SOPjQ7O0JgIg7Ltk9GrnwYMuQ
+         t21aBLKqPV6fM9tmRW9pfvi0N3OxoKI+W8rgrIMrKNSDuXstyudbIp/5I3pUuhK0JDzK
+         saQFSUObsEJg34Y4vT/c+8C0nFyRlV6Ue6Se/GKvOPOzhzvmGWdJ1hpEfiEquZwKz0ro
+         z7pQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=importance:feedback-id:message-id:content-transfer-encoding
+         :mime-version:date:subject:to:reply-to:from:sender:dkim-signature
+         :dkim-signature:resent-from:dkim-signature;
+        bh=pSvqnLrtE1UrB8x96t9s3cl89z1wnQ3TJkz3PjgJPTM=;
+        fh=qJLCWrD51wDR+SDuKdNgWRnB8Umtq9UJ20u17G5u3y4=;
+        b=J0VSb7VgaK95tJbXyQ41mLb4bRBuzCVIIRCgbx3CrvXerpIWTNTbcUc+8yj+v0ZqMN
+         6LCCNM5B68v9h3Dn3MZVNiCZ6X9Vz8PNdT2Z80rBUJ8mCGuTXQBzpAahGZuTvjPRWWIv
+         4mesRtP8hMrk5fUohUGWpyTeoEO1PWvP2Xeffc+4/JFcsZIrbVQY4dyfq1oYVw9C5LU/
+         g3Ei2+WuXJFKA7SKDllWVBmPnXi2TwQ33NPpLmj0eSYo6DnvSeY+NNkSTav32OeA2IYy
+         MmcDKwB2pc2QafFRbOBvchD5KktUPaBqoW8z7CyNmIEkCcgiYAyIDGZ4VUUOzlbAg940
+         DDPA==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@sscucla.onmicrosoft.com header.s=selector2-sscucla-onmicrosoft-com header.b=2R7V0E+f;
+       dkim=pass header.i=@editorialmanager.com header.s=tvdfymwwvsvl5knqfes5kclzda4ayx6m header.b=jZtMX0+O;
+       dkim=pass header.i=@amazonses.com header.s=kra23psoka5qyyh6gdejiiuof3nluwuz header.b=dzs5Y1Wj;
+       arc=pass (i=1 dkim=pass dkdomain=editorialmanager.com dkim=pass dkdomain=amazonses.com dmarc=pass fromdomain=editorialmanager.com);
+       spf=pass (google.com: domain of bounces+srs=iqvea=hg@o365.ssc.ucla.edu designates 2a01:111:f403:c10d::1 as permitted sender) smtp.mailfrom="bounces+SRS=iqVeA=HG@o365.ssc.ucla.edu";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=editorialmanager.com
+Return-Path: <bounces+SRS=iqVeA=HG@o365.ssc.ucla.edu>
+Received: from SN4PR2101CU001.outbound.protection.outlook.com (mail-southcentralusazlp170120001.outbound.protection.outlook.com. [2a01:111:f403:c10d::1])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-86b2adeb611si18597745b3a.149.2026.09.14.01.22.49
+        for <omarlizardo@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 14 Sep 2026 01:22:50 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+srs=iqvea=hg@o365.ssc.ucla.edu designates 2a01:111:f403:c10d::1 as permitted sender) client-ip=2a01:111:f403:c10d::1;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@sscucla.onmicrosoft.com header.s=selector2-sscucla-onmicrosoft-com header.b=2R7V0E+f;
+       dkim=pass header.i=@editorialmanager.com header.s=tvdfymwwvsvl5knqfes5kclzda4ayx6m header.b=jZtMX0+O;
+       dkim=pass header.i=@amazonses.com header.s=kra23psoka5qyyh6gdejiiuof3nluwuz header.b=dzs5Y1Wj;
+       arc=pass (i=1 dkim=pass dkdomain=editorialmanager.com dkim=pass dkdomain=amazonses.com dmarc=pass fromdomain=editorialmanager.com);
+       spf=pass (google.com: domain of bounces+srs=iqvea=hg@o365.ssc.ucla.edu designates 2a01:111:f403:c10d::1 as permitted sender) smtp.mailfrom="bounces+SRS=iqVeA=HG@o365.ssc.ucla.edu";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=editorialmanager.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=cjX7rOBFi8aaq+1AVNSP+EM/QuPTV2vq6HflPrjAl9/5x7g58O50SPy5BwRwC7zojSixTcVFDb145/sRVI+815Q6HtotFcL/czlaWvi0ClZlDzhy/zlJZP/LZG0hwJ1FaGRG3AwSPFLF5uMijwc/AU1jZFnguL1jlj02xM+sLPTFyoI2J/UI67jXvsi3hPt4MTUubYg7o4l3ajJMd3WSQZTOSaglEkhlJWESIHz61hg58Iy6ABt6Ujw3uIyNITI2JXBZHPs38j4IlfdujxbYd6RZOccleyb4dPfg/SitHoH4m5MyIqfRIO9SB20GbJPwTYvkxFb8th12NCrk9PUZAA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=pSvqnLrtE1UrB8x96t9s3cl89z1wnQ3TJkz3PjgJPTM=;
+ b=vgK4kvuOiMjgXgq5lYvrCFmvb/3Q5UTHLfmUPks6ytnvdXc9Gs5FUrGNBEKEjNgvZZXzTIy/IkAEb8F0sJg60tCTu/IcKZgcJGb0sfeAch/NGuiAu9KuWOmjKAlRKghxngJheMP0eyMJgwNNpDnbeBiiuZ7YGGvArgPMZkh5KWbk7eCC1n4r6StXNFdgUQw1EONL55jhkcJOQB1ZamGYVYDP5od8nVakVETn0r5hJ2BpPnna2oAdd/lKmjWsDiwFwQZtcVrMC8bVzlWYHQylPU/EliHzdsS2TRloygrXjIF6nTAflKWAcfRarF+z4u4HZNOiag7ImrzFGR/YtVOq0A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=softfail (sender ip
+ is 128.97.42.49) smtp.rcpttodomain=soc.ucla.edu
+ smtp.mailfrom=mail.editorialmanager.com; dmarc=pass (p=reject sp=reject
+ pct=100) action=none header.from=editorialmanager.com; dkim=pass (signature
+ was verified) header.d=editorialmanager.com; dkim=pass (signature was
+ verified) header.d=amazonses.com; arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=sscucla.onmicrosoft.com; s=selector2-sscucla-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=pSvqnLrtE1UrB8x96t9s3cl89z1wnQ3TJkz3PjgJPTM=;
+ b=2R7V0E+fTcRhncuHlYg5h11EJCGGPtja7wXMHyBcKDzjpgem9PR5rhnKuQBz1I2nc4A1cw7Mw5cFXLj6NSI7HyuccDE9iAziMQzLoHsn5RhvmTIzsTpRGrpz6OQ5hD/AQ9c8fvjb1wX2B3DW1T6LwmuVdTZXBaPVCNhqtve1WCI=
+Resent-From: <olizardo@soc.ucla.edu>
+Received: from SJ0PR05CA0076.namprd05.prod.outlook.com (2603:10b6:a03:332::21)
+ by IA1PR14MB6174.namprd14.prod.outlook.com (2603:10b6:208:41a::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.406.12; Mon, 14 Sep
+ 2026 08:22:44 +0000
+Received: from CO1PEPF000075F2.namprd03.prod.outlook.com
+ (2603:10b6:a03:332:cafe::30) by SJ0PR05CA0076.outlook.office365.com
+ (2603:10b6:a03:332::21) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.428.6 via Frontend Transport; Mon, 14
+ Sep 2026 08:22:43 +0000
+X-MS-Exchange-Authentication-Results: spf=softfail (sender IP is 128.97.42.49)
+ smtp.mailfrom=mail.editorialmanager.com; dkim=pass (signature was verified)
+ header.d=editorialmanager.com;dkim=pass (signature was verified)
+ header.d=amazonses.com;dmarc=pass action=none
+ header.from=editorialmanager.com;
+Received-SPF: SoftFail (protection.outlook.com: domain of transitioning
+ mail.editorialmanager.com discourages use of 128.97.42.49 as permitted
+ sender)
+Received: from barracuda2.sscnet.ucla.edu (128.97.42.49) by
+ CO1PEPF000075F2.mail.protection.outlook.com (10.167.249.41) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.21.428.7
+ via Frontend Transport; Mon, 14 Sep 2026 08:22:42 +0000
+X-ASG-Debug-ID: 1789374161-26203d0b912d0e70001-k2OqWd
+Received: from barracuda1.sscnet.ucla.edu (barracuda1.sscnet.ucla.edu [128.97.42.48]) by barracuda2.sscnet.ucla.edu with ESMTP id mXT3bDAVJmuiGMnx (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO) for <olizardo@soc.ucla.edu>; Mon, 14 Sep 2026 01:22:41 -0700 (PDT)
+X-Barracuda-Envelope-From: 010f01a09f02d937-6e42eeec-7fce-4848-8c4a-a9299fb9cd8d-000000@mail.editorialmanager.com
+X-Barracuda-RBL-Trusted-Forwarder: 128.97.42.48
+Received: from outbound-ip167a.ess.barracuda.com (outbound-ip167a.ess.barracuda.com [209.222.82.35]) by barracuda1.sscnet.ucla.edu with ESMTP id hNhbJLGmmWyKYEhh (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO) for <olizardo@soc.ucla.edu>; Mon, 14 Sep 2026 01:22:40 -0700 (PDT)
+X-Barracuda-RBL-Trusted-Forwarder: 209.222.82.35
+X-Barracuda-BBL-Trusted-Forwarder: 209.222.82.35
+Received: from a115-15.smtp-out.us-east-2.amazonses.com (a115-15.smtp-out.us-east-2.amazonses.com [54.240.115.15]) by mx-inbound14-164.us-east-2a.ess.aws.cudaops.com (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO); Mon, 14 Sep 2026 08:22:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=tvdfymwwvsvl5knqfes5kclzda4ayx6m; d=editorialmanager.com;
+	t=1789374159;
+	h=Sender:From:Reply-To:To:Subject:Date:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID;
+	bh=ZQIrgmWpEotoVnauclc93gFXlyX4o5kuOBvLTYLG1e0=;
+	b=jZtMX0+OwuXtnEiiw8Zou/Mm65Y7KekGFqwPVzcKpngvif71pMAIxwcs4KMxWWz8
+	QqWrxm8yxyi7w5izorcN2I8JbcAghSe28fEy/Bmvw9CoqyUGLCsAbsCFKFSMWbbwHKg
+	nILxoC2+6Ryjtq40TLwC+kfw6PUF3q+8xjJiK0XbFAC6qCRT8t0Rwskwk8fY/mhmQ2A
+	dR0zo0XpTlRbG9//Pb5JFT8Oz/rwfiuhtZ3rXbhL4I3iwhvNt6tUQwyDczylWKcAd4u
+	ZABxT1/QQir50REAlJMlRjZ5XdD/EdYylcmEnj0emF0VoVoHVvdnyzdm0kioBEvBoW+
+	4K7nxp7tPA==
+X-Barracuda-RBL-IP: 54.240.115.15
+X-Barracuda-Effective-Source-IP: a115-15.smtp-out.us-east-2.amazonses.com[54.240.115.15]
+X-Barracuda-Apparent-Source-IP: 54.240.115.15
+X-Barracuda-BBL-IP: 54.240.115.15
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=kra23psoka5qyyh6gdejiiuof3nluwuz; d=amazonses.com; t=1789374159;
+	h=Sender:From:Reply-To:To:Subject:Date:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Feedback-ID;
+	bh=ZQIrgmWpEotoVnauclc93gFXlyX4o5kuOBvLTYLG1e0=;
+	b=dzs5Y1WjhqoCgTjGQe4DWzpA5BcCX7xuia1PfuxHwRjAVUmdxtk+Gay98XWhHeLu
+	EF/DOPAVHDuDEvNSQasOMx9OXy2rVloYNYaIYlK9ZdaAou73jNuVFzqJgtrMMKYHXf4
+	M1IS7gMQ28B3FzgCdHDpptXh6aIJIGPg0zWG43P4=
+Sender: em.son.0.9e1c4c.279beaab@editorialmanager.com
+From: Social Networks <em@editorialmanager.com>
+Reply-To: Social Networks <noreply_emsupport@elsevier.com>
+To: Omar Lizardo <olizardo@soc.ucla.edu>
+Subject: Decision on submission to Social Networks
+Date: Mon, 14 Sep 2026 08:22:39 +0000
+X-ASG-Orig-Subj: Decision on submission to Social Networks
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+Message-ID: <010f01a09f02d937-6e42eeec-7fce-4848-8c4a-a9299fb9cd8d-000000@us-east-2.amazonses.com>
+Feedback-ID: ::1.us-east-2.cfEymE50DmvakymQX9ZrPi9nu6QsNLbJaZEYfDsv68A=:AmazonSES
+X-SES-Outgoing: 2026.09.14-54.240.115.15
+X-BESS-ID: 1789374159-103748-7703-45802-1
+X-BESS-VER: 2019.1_20260910.2244
+X-BESS-Apparent-Source-IP: 54.240.115.15
+X-BESS-Parts: H4sIAAAAAAACA4uuVkqtKFGyUsooyVXSUcovVrIyMrAwNwEyM4Ci5ubmSWmGBs
+	YmqSZJyckpKYlpZpbmiaapSWkWZsnmaalKtbEA9ZXVnEIAAAA=
+X-BESS-Info: H4sIAAAAAAACA6tWSslMUbIyNLSwMDDWUUrJU7JSKs5P1itNzknUS00pVaoFANJ
+	bcqMiAAAA
+X-Virus-Scanned: by bsmtpd at sscnet.ucla.edu
+X-Barracuda-Connect: barracuda1.sscnet.ucla.edu[128.97.42.48]
+X-Barracuda-Start-Time: 1789374161
+X-Barracuda-Encrypted: TLS_AES_256_GCM_SHA384
+X-Barracuda-URL: https://barracuda2.sscnet.ucla.edu:443/cgi-mod/mark.cgi
+X-Barracuda-BRTS-Status: 1
+X-Virus-Scanned: by bsmtpd at sscnet.ucla.edu
+X-Barracuda-Scan-Msg-Size: 20896
+X-Barracuda-Bayes: SPAM GLOBAL 1.0000 1.0000 4.3430
+X-Barracuda-Spam-Score: 6.84
+X-Barracuda-Spam-Status: Yes, SCORE=6.84 using per-user scores of TAG_LEVEL=1000.0 QUARANTINE_LEVEL=6.0 KILL_LEVEL=1000.0 tests=BSF_SC0_MV1126, HTML_MESSAGE, MIME_HTML_ONLY
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.3.164442
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------------------------
+	0.00 MIME_HTML_ONLY         BODY: Message only has text/html MIME parts
+	0.00 HTML_MESSAGE           BODY: HTML included in message
+	2.50 BSF_SC0_MV1126         Custom rule MV1126
+X-Priority: 5 (Lowest)
+X-MSMail-Priority: Low
+Importance: Low
+Return-Path:
+ 010f01a09f02d937-6e42eeec-7fce-4848-8c4a-a9299fb9cd8d-000000@mail.editorialmanager.com
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: CO1PEPF000075F2:EE_|IA1PR14MB6174:EE_
+X-MS-Office365-Filtering-Correlation-Id: 9c25f28a-ffd8-40a7-f4dd-08df12395938
+X-LD-Processed: 67caa88b-b0c6-4a9b-bad5-48132838dcc4,ExtFwd
+X-MS-Exchange-SenderADCheck: 0
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|376014|61400799027|7049299003|3109299003|48200799018|35950700016|69100299015|32142699015|82310400026|786006|13003099007|4113699003|6133799003|3023799007|10067099003|56012099006|5023799004|11063799006|8096899003|18002099003|16102099003;
+X-Microsoft-Antispam-Message-Info:
+	Rdcx4xgc4U7bQt3ToNlWY0TSzPkURNDsJ0PkK+K90oyusFCG4vfj9TYfSXaPG9FT+1WGKIpiGuzeypVXY2fdp0Q0cvbtVCnu/GzKsXH764Y//SViOXF8ujBtnsLC8cvfiVzvZ5OvASD60DI+KTu9K30auQAqHF8birZrJvb4m9VURWDp+GnnP/2p7W9xvqoREYXNo9w+vDLDALMHJ2UC8ugXSqy4x0D9V0a/OB6AiOr0JCcEiDXLiGosnB67zqZllMiBngKoY+uPnq82Mt9edyr3W4MMZspVa8kOSYUE1eD9hq1pq+8PFR7qddtDzuHd7k8ytSZTyiLsversHBER/9a4zCW3I+8a9Nh+t1kCN6A2LcIWW87RVWJd7iH9fq+uaFfzOVJFbGtIjKBZu4TdQkUZlWAcKbvlTQBLV9aRigDKnRkUgn873F6E5TCRpUNSKwx0ltsse1jxG6LwNwIZ4f2gs/r2GQeHi7j4Q1Kgzivk9dphoZ86m+rTDGoMeLifYWvtN4ZLIFTfoiK4TTM9lpRPUWcQUZTrq+u2iKWX/tYsDW4JW7LEdWR1+5RS2XOv+Ud/tV2XtAyPH4PtJGw/KJq/YKCntp9P7T56Zwvl85LzTY7bJb/IJEH6zbKWEHThBm5PcsqheySPjziKm8B51Q==
+X-Forefront-Antispam-Report:
+	CIP:128.97.42.49;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:barracuda2.sscnet.ucla.edu;PTR:barracuda2.sscnet.ucla.edu;CAT:NONE;SFS:(13230040)(376014)(61400799027)(7049299003)(3109299003)(48200799018)(35950700016)(69100299015)(32142699015)(82310400026)(786006)(13003099007)(4113699003)(6133799003)(3023799007)(10067099003)(56012099006)(5023799004)(11063799006)(8096899003)(18002099003)(16102099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:
+	3bW2fqJBXKVsgrUQHesvH2mOhGKRNzE+NxLb8tZ5sMex4fq6fqXzJMu4R0WYCMU2ghG1UBfNGLIZAxwdRbuWd1rEzD/5xmQYzD+PXv7l0kLuHwPZR3k3ELM2gu7pBIrpTn8TJZQHZBQuVI16Q6B2DpvE+Id6kUuS3yYkzfv4EzlP32esiiqK1w9PMkS/JH/LHTWdSVCS52YuRO9nynih/XkZJadJ/J7q6YhPBpqUciVdLr9LJxVdVSNig2enC4qH/OWFGDqBHtdjUoiqCn9JNI+VMG8sffRDrkLnEd/yi0D8fl6+Ue853sN5HwsoDDxynmM5zTjSsvCXBhOPnw85fJ9uaGTMGFNzozjOHQc21BurEnIPTR0Z7C6pFWBrhrWeJyEeaUgi4kNL06E8+TXl3hpTANoKYV3LVmlDAf7PJupAlzM9+jtJNaENmQXPkETy
+X-MS-Exchange-ForwardingLoop:
+	olizardo@soc.ucla.edu;67caa88b-b0c6-4a9b-bad5-48132838dcc4
+X-OriginatorOrg: O365.ssc.ucla.edu
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Sep 2026 08:22:42.8207
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9c25f28a-ffd8-40a7-f4dd-08df12395938
+X-MS-Exchange-CrossTenant-Id: 67caa88b-b0c6-4a9b-bad5-48132838dcc4
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=67caa88b-b0c6-4a9b-bad5-48132838dcc4;Ip=[128.97.42.49];Helo=[barracuda2.sscnet.ucla.edu]
+X-MS-Exchange-CrossTenant-AuthSource: CO1PEPF000075F2.namprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA1PR14MB6174
+
+<html><body><p>Manuscript Number: <strong>SON-D-26-00511</strong> =E2=80=AF=
+<br /><br />Cultural Matching and the Persistence of Social Ties<br /><br /=
+>Dear Prof. Lizardo,<br /><br />Thank you for submitting your manuscript to=
+ Social Networks.<br /><br />I have completed my evaluation of your manuscr=
+ipt. The reviewers have some serious reservations, but I am willing to cons=
+ider a major revision if you think you can address their comments appropria=
+tely.&nbsp;<br /><br />Please resubmit your revised manuscript by <strong>N=
+ov 20, 2026</strong>.</p><div><p>To view your reviewer feedback, please log=
+ in as an author at https://www.editorialmanager.com/son/ and navigate to y=
+our manuscript in the &quot; Submissions Needing Revision &quot; folder und=
+er the Author Main Menu.=E2=80=AF=E2=80=AF&nbsp;</p></div><div><p>When revi=
+sing your manuscript, please consider all issues mentioned in the reviewers=
+&#39; comments carefully. Please note that your revised submission may need=
+ to be
+re-reviewed.=E2=80=AF=E2=80=AF&nbsp;</p></div><p><br />Research Elements (o=
+ptional)<br>This journal encourages you to share research objects - includi=
+ng your raw data, methods, protocols, software, hardware and more &#8211; w=
+hich support your original research article in a Research Elements journal.=
+ Research Elements are open access, multidisciplinary, peer-reviewed journa=
+ls which make the objects associated with your research more discoverable, =
+trustworthy and promote replicability and reproducibility. As open access j=
+ournals, there may be an Article Publishing Charge if your paper is accepte=
+d for publication. Find out more about the Research Elements journals at ht=
+tps://www.elsevier.com/authors/tools-and-resources/research-elements-journa=
+ls?dgcid=3Dec_em_research_elements_email.<br><br /><br />Social Networks va=
+lues your contribution and I look forward to receiving your revised manuscr=
+ipt.<br /><br />Kind regards,&nbsp;=E2=80=AF<br />Ulrik Brandes =E2=80=AF<b=
+r />Co-Editor =E2=80=AF<br /><br />Social Networks<br
+/><br />Editor and Reviewer comments:<br /><br /><br /><br />Reviewer&#39;s=
+ Responses to Questions</p><p>Note: In order to effectively convey your rec=
+ommendations for improvement to the author(s), and help editors make well-i=
+nformed and efficient decisions, we ask you to answer the following specifi=
+c questions about the manuscript and provide additional suggestions where a=
+ppropriate.<br /><br />1. Are the objectives and the rationale of the study=
+ clearly stated?<br /><br />Please provide suggestions to the author(s) on =
+how to improve the clarity of the objectives and rationale of the study. Pl=
+ease number each suggestion so that author(s) can more easily respond.</p><=
+p>Reviewer #1:&nbsp;The objective is clearly stated, but the rationale of t=
+he study is debatable. The authors state in the first sentence of the paper=
+ that &ldquo;the central issue in the study of culture and networks concern=
+s the co-evolution of social ties and cultural tastes&rdquo;. Previous work=
+s in the
+network literature that the authors cite (e.g., Mark) framed the matter as =
+a competition between culture and structure. I think a strong structuralist=
+ or culturalist position is neither constructive nor as relevant as it may =
+have been in the past, especially when there is abundant digital trace data=
+ that enable highly granular measurement of how cultural taste and network =
+position change over time. We also have the methods (e.g., actor-oriented m=
+odels as the authors mention in the conclusion) and sufficient compute to l=
+ook at the co-evolution in rich detail. Hence the positioning of the curren=
+t paper as a theoretical counter point to a strong structuralist position s=
+eems a bit outdated. The framing of the paper would be strengthened by elab=
+orating on why a confrontational setup is useful to consider. That being sa=
+id, my critique of the theoretical framing of this paper is itself strongly=
+ influenced by personal &quot;taste&quot;, hence should not be used to dete=
+rmine
+accepting/rejecting the paper.</p><p>Reviewer #2:&nbsp;See comments to the =
+authors.</p><hr /><p>2. If applicable, is the application/theory/method/stu=
+dy reported in sufficient detail to allow for its replicability and/or repr=
+oducibility?<br /><br />Please provide suggestions to the author(s) on how =
+to improve the replicability/reproducibility of their study. Please number =
+each suggestion so that the author(s) can more easily respond.</p><p>Review=
+er #1:&nbsp;Mark as appropriate with an X:<br />Yes [] No [X] N/A []<br />P=
+rovide further comments here:<br /><br />1. Cultural matching and tie persi=
+stence: By tracking the dyad-level overlap in cultural interests, the autho=
+rs, in my opinion, are severely limiting the collective nature of how cultu=
+ral tastes and preferences form and evolve. Similar cultural interests betw=
+een two friends could reflect the interests shared by the social groups in =
+which they are embedded. Without considering the collective nature of cultu=
+ral interests
+(e.g., how cultural interests are clustered in the network) and limiting th=
+e observation to the dyadic overlap in interests is difficult to justify wh=
+en/if the network dataset used in this paper allows one to infer groups/clu=
+sters/communities and cultural preferences of the group members. Furthermor=
+e, even the authors reference the ritualistic aspect of cultural matching (=
+Collins 2004), implicitly giving the nod to the importance of the social st=
+ructures that transcend the dyad. At the very least, one would expect to in=
+clude some triangle term (e.g., # common neighbors, Jaccard similarity, etc=
+.) in the models to capture the group aspect in tie dynamics.<br /><br />2.=
+ Assuming the stability of cultural tastes: Does a high overlap in cultural=
+ interests between two connected students occur when they have relatively s=
+table cultural preferences or when their cultural preferences rapidly shift=
+ together (e.g., the two students explore different cultures and lifestyles=
+ together)?
+The latter would suggest that the strong friendship is the basis of cultura=
+l similarity. Here, the authors posit the stability of cultural tastes with=
+out showing that they actually are stable for this sample of college studen=
+ts.<br /><br />3. Time horizon: The authors clearly state generalizability =
+as one of the limitations of the study (i.e., students in university). I ra=
+ise a slightly different limitation to consider &ndash; tie decay/persisten=
+ce of these students beyond college. Assuming that people develop new cultu=
+ral tastes over time, one question is whether cultural matching is still im=
+portant. If these students no longer share the school context after graduat=
+ion, can cultural matching continue to protect the strong ties for years an=
+d decades? Alternatively, could a strong tie in college with little cultura=
+l matching persist in the long term with higher probability than a similarl=
+y strong tie with high cultural matching in the absence of shared social co=
+ntext (i.e.,
+university life)?</p><p>Reviewer #2:&nbsp;Mark as appropriate with an X:<br=
+ />Yes [] No [X] N/A []<br />Provide further comments here:<br />See commen=
+ts to the authors.</p><hr /><p>3. If applicable, are statistical analyses, =
+controls, sampling mechanism, and statistical reporting (e.g., P-values, CI=
+s, effect sizes) appropriate and well described?<br /><br />Please clearly =
+indicate if the manuscript requires additional peer review by a statisticia=
+n. Kindly provide suggestions to the author(s) on how to improve the statis=
+tical analyses, controls, sampling mechanism, or statistical reporting. Ple=
+ase number each suggestion so that the author(s) can more easily respond.</=
+p><p>Reviewer #1:&nbsp;Mark as appropriate with an X:<br />Yes [] No [X] N/=
+A []<br />Provide further comments here:<br /><br />The modeling strategy r=
+aises several questions.<br />4. Measurement of tie decay: Eacy dyad can ex=
+hibit 256 possible sequences presence and absence of ties across the 8 wave=
+s (2^8=3D256).
+This means that a tie that forms in wave 1 decays in wave 2, but rekindles =
+in wave 3, and so on. How are these different possibilities accounted for? =
+Does rekindling count as persistence? The paper needs to give these details=
+ of how the dependent variable is constructed.<br /><br />5. Measurement of=
+ cultural matching: If A and B are both &ldquo;not at all interested&rdquo;=
+ in music, is that treated as cultural matching, just as when both are &ldq=
+uo;very interested&rdquo; in music? Does cultural taste rest on what one li=
+kes or on what one both likes and does not like? If the latter, then should=
+n&rsquo;t the agreement on dislikes and disinterest also factor into measur=
+ing cultural matching?<br /><br />6. Ego-specific random intercept models a=
+re less problematic when alters are unlikely to be egos. In this college co=
+hort, however, if the sample constitutes a sizable portion of the cohort, t=
+hen some alters will also be egos. This violates the random intercept model=
+ assumption.
+In this multilevel modeling setup, an alter or ego-alter tie is the level-1=
+ unit and the ego is the level-2 unit, just like students (level-1) nested =
+in classes (level-2). If alter of student A is also an ego in the sample, t=
+hen this is akin to a class being treated as a student. How do the authors =
+address this potential issue?<br /><br />7. Node persistence: The paper foc=
+uses on tie persistence, but the reliability of the results heavily rests o=
+n node persistence &ndash; sample retention. There needs to be robustness c=
+hecks to guard against survivorship (selection) bias.<br /><br />8. Directi=
+onality of the tie: The tie information obtained from the students reveals =
+only half of the picture, since the alter&rsquo;s perception about the rela=
+tionship is unknown. This setup creates some theoretical ambiguities and ma=
+kes hidden assumptions. The ambiguity is on what counts as a tie. If A cons=
+iders B as a close friend while B does not, is that still a tie whose persi=
+stence is to
+be modeled? We know from the literature that these unidirected / unreciproc=
+ated ties contain a status (difference) dimension, which the paper does not=
+ include in the model. Hence, the paper is effectively assuming that A&rsqu=
+o;s and B&rsquo;s status are similar such that it does not matter for estim=
+ating the cultural matching &ndash; tie persistence relation.</p><p>Reviewe=
+r #2:&nbsp;Mark as appropriate with an X:<br />Yes [] No [X] N/A []<br />Pr=
+ovide further comments here:<br />See comments to the authors.</p><hr /><p>=
+4. Could the manuscript benefit from additional tables or figures, or from =
+improving or removing (some of the) existing ones?<br /><br />Please provid=
+e specific suggestions for improvements, removals, or additions of figures =
+or tables. Please number each suggestion so that author(s) can more easily =
+respond.</p><p>Reviewer #1:&nbsp;Descriptive statistics of the key variable=
+s would be useful.</p><p>Reviewer #2:&nbsp;Yes. Missing effects. See commen=
+ts to the
+authors.</p><hr /><p>5. If applicable, are the interpretation of results an=
+d study conclusions supported by the data?<br /><br />Please provide sugges=
+tions (if needed) to the author(s) on how to improve, tone down, or expand =
+the study interpretations/conclusions. Please number each suggestion so tha=
+t the author(s) can more easily respond.</p><p>Reviewer #1:&nbsp;Mark as ap=
+propriate with an X:<br />Yes [] No [X] N/A []<br />Provide further comment=
+s here:<br /><br />See comments above for details. If the paper is framed a=
+s adjudicating between culture and networks, then the most serious omission=
+ is the lack of some tie embeddedness measure.</p><p>Reviewer #2:&nbsp;Mark=
+ as appropriate with an X:<br />Yes [] No [X] N/A []<br />Provide further c=
+omments here:<br />See comments to the authors.</p><hr /><p>6. Have the aut=
+hors clearly emphasized the strengths of their study/theory/methods/argumen=
+t?<br /><br />Please provide suggestions to the author(s) on how to better =
+emphasize the
+strengths of their study. Please number each suggestion so that the author(=
+s) can more easily respond.</p><p>Reviewer #1:&nbsp;See above.</p><p>Review=
+er #2:&nbsp;No. See comments to the authors.</p><hr /><p>7. Have the author=
+s clearly stated the limitations of their study/theory/methods/argument?<br=
+ /><br />Please list the limitations that the author(s) need to add or emph=
+asize. Please number each limitation so that author(s) can more easily resp=
+ond.</p><p>Reviewer #1:&nbsp;See above.</p><p>Reviewer #2:&nbsp;No. See com=
+ments to the authors.</p><hr /><p>8. Does the manuscript structure, flow or=
+ writing need improving (e.g., the addition of subheadings, shortening of t=
+ext, reorganization of sections, or moving details from one section to anot=
+her)?<br /><br />Please provide suggestions to the author(s) on how to impr=
+ove the manuscript structure and flow. Please number each suggestion so tha=
+t author(s) can more easily respond.</p><p>Reviewer #1:&nbsp;No, the manusc=
+ript structure
+and exposition are generally clear.</p><p>Reviewer #2:&nbsp;No. It is very =
+well written.</p><hr /><p>9. Could the manuscript benefit from language edi=
+ting?</p><p>Reviewer #1:&nbsp;No</p><p>Reviewer #2:&nbsp;No</p><p>&nbsp;</p=
+><p><br />Reviewer #1: This field is optional. If you have any additional s=
+uggestions beyond those relevant to the questions above, please number and =
+list them here.<br /><br /><br />Reviewer #2: The focus of this paper is to=
+ explore lessons learned from a two-year study of two hundred smartphone us=
+ers at the University of Notre Dame. The study collected panel data on stud=
+ents&#39; ego-networks and cultural preferences. The study design lets the =
+authors observe ego-network churn, particularly on-campus tie persistence, =
+at the dyadic level across different stages of students&#39; academic caree=
+rs, &quot;capturing both the initial churn of freshman year and the consoli=
+dation of networks as students approach graduation&quot;. The broader persp=
+ective
+examines the relationship between culture and personal network evolution. I=
+t provides &quot;empirical evidence consistent with a cultural matching mod=
+el of tie persistence&quot;. &quot;Pre-existing cultural dispositions serve=
+ as an active &quot;social glue&quot; that determines which network ties su=
+rvive and which dissolve (Burt, 2000).&quot; The authors also argue that &q=
+uot;cultural network opacity&quot; acts as a &quot;major, independent mecha=
+nism of tie decay&quot;. This opacity is measured by the &quot;Don&#39;t Kn=
+ow&quot; reported by the ego regarding an alter&#39;s preferences across mu=
+ltiple domains of practice and taste: &quot;Without a map of the alter&#39;=
+s cultural landscape, the ego cannot easily initiate shared rituals or conv=
+ersations&quot;.<br /><br />Shared cultural dispositions mean minimal frict=
+ion. &quot;Over time, this cultural alignment increases the cognitive salie=
+nce of the alter, rendering the tie resistant to decay and facilitating its=
+ retention in
+the ego&#39;s active network (Burt, 2000).&quot; &quot;If tastes are durabl=
+e and personal networks are volatile, it is highly likely that tastes serve=
+ as drivers of network connections rather than being determined exclusively=
+ by them.&quot; Cultural tastes function as durable resources that individu=
+als actively use to maintain their most important social connections. Moreo=
+ver, the Authors also suggest that actors maintain durable, resilient cultu=
+ral profiles over time (Bourdieu, 1984; Holt, 1998) because these profiles =
+help them trigger the cultural matching mechanism, at least with strong tie=
+s, and convert cultural capital into different forms of capital.<br /><br /=
+>The authors test three core hypotheses about the role of cultural matching=
+ in stabilizing social bonds by examining tie persistence and, by extension=
+, culture&#39;s role in network evolution. They argue that shared cultural =
+tastes and activities significantly reduce the hazard of tie decay, that a =
+lack of mutual
+cultural knowledge independently increases the hazard of tie decay, that th=
+e protective effect of cultural matching is amplified among subjectively cl=
+ose ties, and that the protective effect of cultural matching is amplified =
+among weak ties to overcome the liability of newness. &quot;We test both th=
+e main effect of cultural network opacity on tie decay and the moderation o=
+f the protective effect of known cultural matches by opacity.&quot; (6). Th=
+eir conclusions include that pre-existing cultural tastes actively shape th=
+e survival of social ties. By this they mean that shared cultural interests=
+ and activities reliably stabilize social bonds, that ignorance of a peer&#=
+39;s cultural preferences independently accelerates tie decay, and that sha=
+red tastes protect strong ties, but weak ties decay despite cultural matche=
+s.<br /><br />This paper deals with an important and traditional topic (the=
+ effect of culture on ego-network evolution). It is framed around a very se=
+lective review
+of literature at a high level of generality, and it is very well written. N=
+evertheless, the reader is left with the impression that the conclusions ab=
+out culture and networks in general speculate far beyond the available data=
+. One particular issue requires additional attention. The issue of cultural=
+ effects on networks seems essentialized here. The problem is instead the r=
+elative effect of culture compared with, or in interaction with, positional=
+ differences between actors in a social system, including, for example, act=
+ors&#39; identity criteria. But we don&#39;t know anything about alters and=
+ the campus&#39;s social structure as an institution with heterogeneous mem=
+bers, variety of positions, and norms. In terms of attributes, only Race ho=
+mophily features in the models. Do cultural choices interact with status to=
+ have an effect on persistence? The theorization of culture&#39;s effect on=
+ ego-networks omits basic social dimensions of agency (perhaps because they=
+ are absent
+from the Qualtrics dataset used here?). If position in the structure matter=
+s, how do you incorporate it here? If culture matters for specific relation=
+al choices by social actors, does the conversion of cultural capital into s=
+ocial capital work in the same way in different corners of the structure, t=
+o use Bourdieu&#39;s terms? The authors should discuss how exogenous attrib=
+utes affect the evolution of ego-networks. Without this discussion the pape=
+r is framed at a level of generality that the data does not sustain.<br /><=
+br /><br /><br /><br />More information and support=E2=80=AF<br /><br />FAQ=
+: How do I revise my submission in Editorial Manager?<br />https://service.=
+elsevier.com/app/answers/detail/a_id/28463/supporthub/publishing/<br /><br =
+/>FAQ: How can I reset a forgotten password? <br>https://service.elsevier.c=
+om/app/answers/detail/a_id/28452/supporthub/publishing/ <br>For further ass=
+istance, please visit our customer service site:
+https://service.elsevier.com/app/home/supporthub/publishing/<br>Here you ca=
+n search for solutions on a range of topics, find answers to frequently ask=
+ed questions, and learn more about Editorial Manager via interactive tutori=
+als. You can also talk 24/7 to our customer support team by phone and 24/7 =
+by live chat and email<br /><br />At Elsevier, we want to help all our auth=
+ors to stay safe when publishing. Please be aware of fraudulent messages re=
+questing money in return for the publication of your paper. If you are publ=
+ishing open access with Elsevier, bear in mind that we will never request p=
+ayment before the paper has been accepted. We have prepared some guidelines=
+ (https://www.elsevier.com/connect/authors-update/seven-top-tips-on-stoppin=
+g-apc-scams ) that you may find helpful, including a short video on Identif=
+ying fake acceptance letters (https://www.youtube.com/watch?v=3Do5l8thD9XtE=
+ ). Please remember that you can contact Elsevier s Researcher Support team
+(https://service.elsevier.com/app/home/supporthub/publishing/) at any time =
+if you have questions about your manuscript, and you can log into Editorial=
+ Manager to check the status of your manuscript (https://service.elsevier.c=
+om/app/answers/detail/a_id/29155/c/10530/supporthub/publishing/kw/status/).=
+<br /><br />#AU_SON#<br /><br />To ensure this email reaches the intended r=
+ecipient, please do not delete the above code</p><p>&nbsp;</p><p>&nbsp;</p>=
+<br/><br/><hr/><span style=3D"font-style: italic; font-size: 90%;">In compl=
+iance with data protection regulations, you may request that we remove your=
+ personal registration details at any time.  <a href=3D"https://track.edito=
+rialmanager.com/CL0/https:%2F%2Fwww.editorialmanager.com%2Fson%2Flogin.asp%=
+3Fa=3Dr/1/010f01a09f02d937-6e42eeec-7fce-4848-8c4a-a9299fb9cd8d-000000/LmYk=
+unoHG9l5DxmTT17mq35V4bRZ-YBsyGjfn8Dv8Jg=3D258">(Remove my information/detai=
+ls)</a>. Please contact the publication office if you have any questions.</=
+span><img alt=3D"" src=3D"http://track.editorialmanager.com/CI0/010f01a09f0=
+2d937-6e42eeec-7fce-4848-8c4a-a9299fb9cd8d-000000/YdkFIWksF8NOfWtA8fkMvV09D=
+cqbfYSANuNjewO0bkA=3D258" style=3D"display: none; width: 1px; height: 1px;"=
+>
+</body></html>
