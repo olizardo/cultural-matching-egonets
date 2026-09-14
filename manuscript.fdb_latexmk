@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex manuscript"] 1789423248 "manuscript.aux" "manuscript.bbl" "manuscript" 1789423254 0
-  "./manuscript_citations.bib" 1789422838 18212 b7022430ec11e1f2c105878a2e1f0a66 ""
+["bibtex manuscript"] 1789424037 "manuscript.aux" "manuscript.bbl" "manuscript" 1789424043 0
+  "./manuscript_citations.bib" 1789423972 18216 7f67f052debc8f6ca062682240ebce02 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "manuscript.aux" 1789423254 20169 5c01464a399cb7c7d4ca85c6ae79c82d "pdflatex"
+  "manuscript.aux" 1789424043 20171 18751171dbd7515ee6352f55cfed021d "pdflatex"
   (generated)
   "manuscript.bbl"
   "manuscript.blg"
   (rewritten before read)
-["pdflatex"] 1789423248 "manuscript.tex" "manuscript.pdf" "manuscript" 1789423254 0
+["pdflatex"] 1789424037 "manuscript.tex" "manuscript.pdf" "manuscript" 1789424043 0
   "/etc/texmf/web2c/texmf.cnf" 1788206240 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/omarlizardo/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk" 1789412382 12644 13843a47e3c9c1caacef18f28500d951 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -148,9 +148,9 @@
   "Tabs/desc_cont.tex" 1789421909 952 2fed98df9b7b4682b44aa78c1176f882 ""
   "Tabs/main_models.tex" 1789423169 2889 c699422a00e28beee4f059749472dba8 ""
   "Tabs/robustness_models.tex" 1789421909 1588 17e33061db479def208665a82d986216 ""
-  "manuscript.aux" 1789423254 20169 5c01464a399cb7c7d4ca85c6ae79c82d "pdflatex"
-  "manuscript.bbl" 1789423248 11114 72fe3c938d5734b296a05e840e1280dd "bibtex manuscript"
-  "manuscript.tex" 1789423233 46158 5069eec32f274f47b8ac2e0dae2db822 ""
+  "manuscript.aux" 1789424043 20171 18751171dbd7515ee6352f55cfed021d "pdflatex"
+  "manuscript.bbl" 1789424037 11118 d16c8c0af2dcf530d10970d28235349a "bibtex manuscript"
+  "manuscript.tex" 1789423915 46238 b48991f35532162e0689f9d8d6e7f394 ""
   (generated)
   "manuscript.aux"
   "manuscript.log"

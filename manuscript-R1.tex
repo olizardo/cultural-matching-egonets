@@ -12,13 +12,19 @@
 \usepackage{float}
 \usepackage[round]{natbib}
 \usepackage{microtype}
+\usepackage{etoolbox}
+\apptocmd{\thebibliography}{\sloppy}{}{}
 \usepackage{xurl}
 \usepackage{tabularray}
 \usepackage{bookmark}
-\providecommand{\num}[1]{#1}
-\providecommand{\SI}[2]{#1~#2}
-\providecommand{\percent}{\%}
-\IfFileExists{siunitx.sty}{\usepackage{siunitx}}{} 
+\IfFileExists{siunitx.sty}{%
+  \usepackage{siunitx}%
+}{%
+  \def\num##1{##1}%
+  \def\SI##1##2{##1~##2}%
+  \def\percent{\%}%
+} 
+\emergencystretch=1.5em 
 
 \hypersetup{
   pdftitle={Cultural Matching and the Persistence of Social Ties},
@@ -234,6 +240,7 @@ Finally, while our discrete-time event history framework provides a rigorous fou
 
 \section*{References}
 \bibliographystyle{apalike}
+\sloppy
 \bibliography{manuscript_citations}
 
 \end{document}
