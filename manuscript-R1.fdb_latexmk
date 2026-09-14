@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex manuscript-R1"] 1789412473 "manuscript-R1.aux" "manuscript-R1.bbl" "manuscript-R1" 1789412480 0
-  "./manuscript_citations.bib" 1789412447 17273 423288bfe7d310d14b90f33236fa4e33 ""
+["bibtex manuscript-R1"] 1789423199 "manuscript-R1.aux" "manuscript-R1.bbl" "manuscript-R1" 1789423205 0
+  "./manuscript_citations.bib" 1789422838 18212 b7022430ec11e1f2c105878a2e1f0a66 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "manuscript-R1.aux" 1789412480 19956 36406265f2ffdb0522c2eda63ce8b8a0 "pdflatex"
+  "manuscript-R1.aux" 1789423205 20169 5c01464a399cb7c7d4ca85c6ae79c82d "pdflatex"
   (generated)
   "manuscript-R1.bbl"
   "manuscript-R1.blg"
   (rewritten before read)
-["pdflatex"] 1789412473 "manuscript-R1.tex" "manuscript-R1.pdf" "manuscript-R1" 1789412480 0
+["pdflatex"] 1789423199 "manuscript-R1.tex" "manuscript-R1.pdf" "manuscript-R1" 1789423205 0
   "/etc/texmf/web2c/texmf.cnf" 1788206240 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/omarlizardo/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk" 1789412382 12644 13843a47e3c9c1caacef18f28500d951 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -145,12 +145,12 @@
   "Plots/interaction_closeness.png" 1789400521 101414 c3bb607ffbaaa2a9d1e5b725219ae251 ""
   "Plots/main_effects.png" 1789400521 72210 38bfb30795689a7180f569f3651a4965 ""
   "Tabs/desc_cat.tex" 1789400521 1103 f2b3fb109ffb5b94dd1cfbc5f34282d6 ""
-  "Tabs/desc_cont.tex" 1789412091 952 2fed98df9b7b4682b44aa78c1176f882 ""
-  "Tabs/main_models.tex" 1789412054 2839 c2dae38210ea1e318a044cd9cc6d8ec2 ""
-  "Tabs/robustness_models.tex" 1789412091 1588 17e33061db479def208665a82d986216 ""
-  "manuscript-R1.aux" 1789412480 19956 36406265f2ffdb0522c2eda63ce8b8a0 "pdflatex"
-  "manuscript-R1.bbl" 1789412473 10487 e161201b74e673c16e3bfd6dd8ba06a1 "bibtex manuscript-R1"
-  "manuscript-R1.tex" 1789412362 45610 ae4b760e7699092433eac7bb4914a107 ""
+  "Tabs/desc_cont.tex" 1789421909 952 2fed98df9b7b4682b44aa78c1176f882 ""
+  "Tabs/main_models.tex" 1789423169 2889 c699422a00e28beee4f059749472dba8 ""
+  "Tabs/robustness_models.tex" 1789421909 1588 17e33061db479def208665a82d986216 ""
+  "manuscript-R1.aux" 1789423205 20169 5c01464a399cb7c7d4ca85c6ae79c82d "pdflatex"
+  "manuscript-R1.bbl" 1789423199 11114 72fe3c938d5734b296a05e840e1280dd "bibtex manuscript-R1"
+  "manuscript-R1.tex" 1789423147 46158 5069eec32f274f47b8ac2e0dae2db822 ""
   (generated)
   "manuscript-R1.aux"
   "manuscript-R1.log"

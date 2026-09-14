@@ -1,4 +1,4 @@
-\begin{table}
+\begin{table}[htbp]
 \centering
 \begin{talltblr}[         %% tabularray outer open
 caption={Odds Ratios for Tie Persistence (Main Effects Models)\label{tbl-models}},
@@ -6,15 +6,16 @@ note{}={+ p \num{< 0.1}, * p \num{< 0.05}, ** p \num{< 0.01}, *** p \num{< 0.001
 note{ }={Note: All models control for ego and alter gender, non-linear tie duration, and baseline hazard variations across all 7 wave transitions (coefficients omitted for space). Random intercepts for egos are included.},
 ]                     %% tabularray outer close
 {                     %% tabularray inner open
-colspec={Q[]Q[]Q[]Q[]Q[]},
+width=\linewidth,
+colspec={X[2.5,l] X[1,c] X[1,c] X[1,c] X[1.1,c]},
+row{odd}={rowsep=0.5pt},
+row{even}={rowsep=0.5pt},
 hline{2}={1-5}{solid, black, 0.05em},
 hline{26}={1-5}{solid, black, 0.05em},
 hline{1}={1-5}{solid, black, 0.08em},
 hline{29}={1-5}{solid, black, 0.08em},
-column{2-5}={}{halign=c},
-column{1}={}{halign=l},
 }                     %% tabularray inner close
- & Model 1: Closed & Model 2: + Open & Model 3: + Opacity & Model 4: + Embeddedness \\
+ & {Model 1\\Closed} & {Model 2\\+ Open} & {Model 3\\+ Opacity} & {Model 4\\+ Embed.} \\
 Closed-Form Matches & \num{1.096}** & \num{1.083}* & \num{1.070}* & \num{1.067}+ \\
  & (\num{0.035}) & (\num{0.035}) & (\num{0.036}) & (\num{0.036}) \\
 Open-Ended Matches &  & \num{1.080}* & \num{1.076}* & \num{1.071}* \\

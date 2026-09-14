@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.8.31)  14 SEP 2026 12:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.8.31)  14 SEP 2026 15:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -301,6 +301,158 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \backup@length=\skip72
 \ar@cellbox=\box61
 )
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count281
+\float@exts=\toks24
+\float@box=\box62
+\@float@everytoks=\toks25
+\@floatcapt=\box63
+)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip73
+\bibsep=\skip74
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count282
+)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2022/06/23 v3.0f Micro-typographical refinements (RS)
+
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count283
+)
+\MT@toks=\toks26
+\MT@tempbox=\box64
+\MT@count=\count284
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1045.
+LaTeX Info: Redefining \leftprotrusion on input line 1046.
+LaTeX Info: Redefining \rightprotrusion on input line 1056.
+LaTeX Info: Redefining \textls on input line 1234.
+\MT@outer@kern=\dimen168
+LaTeX Info: Redefining \textmicrotypecontext on input line 1858.
+\MT@listname@count=\count285
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2022/06/23 v3.0f Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 900.
+LaTeX Info: Redefining \lslig on input line 900.
+\MT@outer@space=\skip75
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2022/06/23 v3.0f microtype main configuration file (RS)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/tabularray/tabularray.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2023-01-16 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count286
+\l__pdf_internal_box=\box65
+))
+Package: tabularray 2022-11-01 v2022D Typeset tabulars and arrays with LaTeX3
+\l__tblr_a_int=\count287
+\l__tblr_c_int=\count288
+\l__tblr_r_int=\count289
+\l__tblr_d_dim=\dimen169
+\l__tblr_h_dim=\dimen170
+\l__tblr_o_dim=\dimen171
+\l__tblr_p_dim=\dimen172
+\l__tblr_q_dim=\dimen173
+\l__tblr_r_dim=\dimen174
+\l__tblr_s_dim=\dimen175
+\l__tblr_t_dim=\dimen176
+\l__tblr_v_dim=\dimen177
+\l__tblr_w_dim=\dimen178
+\l__tblr_a_box=\box66
+\l__tblr_b_box=\box67
+\l__tblr_c_box=\box68
+\l__tblr_d_box=\box69
+\g__tblr_table_count_int=\count290
+\c@rownum=\count291
+\c@colnum=\count292
+\c@rowcount=\count293
+\c@colcount=\count294
+\abovesep=\dimen179
+\belowsep=\dimen180
+\leftsep=\dimen181
+\rightsep=\dimen182
+\g_tblr_level_int=\count295
+\g__tblr_data_row_key_count_int=\count296
+\g__tblr_data_column_key_count_int=\count297
+\g__tblr_data_cell_key_count_int=\count298
+\g__tblr_array_int=\count299
+\l__tblr_key_count_int=\count300
+\l__tblr_key_quotient_int=\count301
+\l__tblr_key_quotient_two_int=\count302
+\l__tblr_key_remainder_int=\count303
+\g__tblr_data_str_value_count_int=\count304
+\rulewidth=\dimen183
+\l__tblr_strut_dp_dim=\dimen184
+\l__tblr_strut_ht_dim=\dimen185
+\g__tblr_cell_wd_dim=\dimen186
+\g__tblr_cell_ht_dim=\dimen187
+\g__tblr_cell_head_dim=\dimen188
+\g__tblr_cell_foot_dim=\dimen189
+\l__column_target_dim=\dimen190
+\l__tblr_caption_box=\box70
+\l__tblr_caption_left_box=\box71
+\l__tblr_row_head_box=\box72
+\l__tblr_row_foot_box=\box73
+\l__tblr_row_head_foot_dim=\dimen191
+\tablewidth=\dimen192
+\l__tblr_table_firsthead_box=\box74
+\l__tblr_table_middlehead_box=\box75
+\l__tblr_table_lasthead_box=\box76
+\l__tblr_table_firstfoot_box=\box77
+\l__tblr_table_middlefoot_box=\box78
+\l__tblr_table_lastfoot_box=\box79
+\l__tblr_remain_height_dim=\dimen193
+\l__tblr_long_from_int=\count305
+\l__tblr_long_to_int=\count306
+\l__tblr_curr_i_int=\count307
+\l__tblr_prev_i_int=\count308
+\l__tblr_table_page_int=\count309
+\l__tblr_table_head_box=\box80
+\l__tblr_table_foot_box=\box81
+\l__tblr_table_head_foot_dim=\dimen194
+\l__tblr_table_head_body_foot_dim=\dimen195
+\l__tblr_table_box=\box82
+\l__tblr_table_hlines_box=\box83
+\l__tblr_hline_box=\box84
+\l__tblr_row_box=\box85
+\l__tblr_col_o_wd_dim=\dimen196
+\l__tblr_col_b_wd_dim=\dimen197
+\l__tblr_hline_leftskip_dim=\dimen198
+\l__tblr_hline_rightskip_dim=\dimen199
+\l__tblr_row_ht_dim=\dimen256
+\l__tblr_row_dp_dim=\dimen257
+\l__tblr_row_abovesep_dim=\dimen258
+\l__tblr_row_belowsep_dim=\dimen259
+\l__tblr_row_vlines_box=\box86
+\l__tblr_vline_box=\box87
+\l__tblr_cell_box=\box88
+\l__row_upper_dim=\dimen260
+\l__row_lower_dim=\dimen261
+\l__row_vpace_dim=\dimen262
+\l__tblr_vline_aboveskip_dim=\dimen263
+\l__tblr_vline_belowskip_dim=\dimen264
+\l__tblr_cell_wd_dim=\dimen265
+\l__tblr_cell_ht_dim=\dimen266
+\l__tblr_diag_box=\box89
+)
 (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
@@ -354,11 +506,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count281
+\c@section@level=\count310
 )
-\@linkdim=\dimen168
-\Hy@linkcounter=\count282
-\Hy@pagecounter=\count283
+\@linkdim=\dimen267
+\Hy@linkcounter=\count311
+\Hy@pagecounter=\count312
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2022-11-13 v7.00u Hyperref: PDFDocEncoding definition (HO)
@@ -371,7 +523,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count284
+\Hy@SavedSpaceFactor=\count313
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2022-11-13 v7.00u Hyperref: PDF Unicode definition (HO)
@@ -385,14 +537,9 @@ Package hyperref Info: Plain pages OFF on input line 4177.
 Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4410.
-\c@Hy@tempcnt=\count285
-
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip17
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
+\c@Hy@tempcnt=\count314
 LaTeX Info: Redefining \url on input line 4748.
-\XeTeXLinkMargin=\dimen169
+\XeTeXLinkMargin=\dimen268
 
 (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -401,9 +548,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count286
-\Field@Width=\dimen170
-\Fld@charsize=\dimen171
+\Fld@menulength=\count315
+\Field@Width=\dimen269
+\Fld@charsize=\dimen270
 Package hyperref Info: Hyper figures OFF on input line 6027.
 Package hyperref Info: Link nesting OFF on input line 6032.
 Package hyperref Info: Hyper index ON on input line 6035.
@@ -416,9 +563,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6057.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count287
-\c@Item=\count288
-\c@Hfootnote=\count289
+\Hy@abspage=\count316
+\c@Item=\count317
+\c@Hfootnote=\count318
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -430,8 +577,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count290
-\c@bookmark@seq@number=\count291
+\Fld@listcount=\count319
+\c@bookmark@seq@number=\count320
 
 (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
@@ -442,162 +589,15 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip73
+\Hy@SectionHShift=\skip76
 )
 (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count292
+\BKM@id=\count321
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
-Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip74
-\bibsep=\skip75
-LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count293
-)
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
-Package: microtype 2022/06/23 v3.0f Micro-typographical refinements (RS)
-
-(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count294
-)
-\MT@toks=\toks24
-\MT@tempbox=\box62
-\MT@count=\count295
-LaTeX Info: Redefining \noprotrusionifhmode on input line 1045.
-LaTeX Info: Redefining \leftprotrusion on input line 1046.
-LaTeX Info: Redefining \rightprotrusion on input line 1056.
-LaTeX Info: Redefining \textls on input line 1234.
-\MT@outer@kern=\dimen172
-LaTeX Info: Redefining \textmicrotypecontext on input line 1858.
-\MT@listname@count=\count296
-
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
-File: microtype-pdftex.def 2022/06/23 v3.0f Definitions specific to pdftex (RS)
-
-LaTeX Info: Redefining \lsstyle on input line 900.
-LaTeX Info: Redefining \lslig on input line 900.
-\MT@outer@space=\skip76
-)
-Package microtype Info: Loading configuration file microtype.cfg.
-
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
-File: microtype.cfg 2022/06/23 v3.0f microtype main configuration file (RS)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/xurl/xurl.sty
-Package: xurl 2022/01/09 v 0.10 modify URL breaks
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tabularray/tabularray.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2023-01-16 L3 programming layer (loader) 
-
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count297
-\l__pdf_internal_box=\box63
-))
-Package: tabularray 2022-11-01 v2022D Typeset tabulars and arrays with LaTeX3
-\l__tblr_a_int=\count298
-\l__tblr_c_int=\count299
-\l__tblr_r_int=\count300
-\l__tblr_d_dim=\dimen173
-\l__tblr_h_dim=\dimen174
-\l__tblr_o_dim=\dimen175
-\l__tblr_p_dim=\dimen176
-\l__tblr_q_dim=\dimen177
-\l__tblr_r_dim=\dimen178
-\l__tblr_s_dim=\dimen179
-\l__tblr_t_dim=\dimen180
-\l__tblr_v_dim=\dimen181
-\l__tblr_w_dim=\dimen182
-\l__tblr_a_box=\box64
-\l__tblr_b_box=\box65
-\l__tblr_c_box=\box66
-\l__tblr_d_box=\box67
-\g__tblr_table_count_int=\count301
-\c@rownum=\count302
-\c@colnum=\count303
-\c@rowcount=\count304
-\c@colcount=\count305
-\abovesep=\dimen183
-\belowsep=\dimen184
-\leftsep=\dimen185
-\rightsep=\dimen186
-\g_tblr_level_int=\count306
-\g__tblr_data_row_key_count_int=\count307
-\g__tblr_data_column_key_count_int=\count308
-\g__tblr_data_cell_key_count_int=\count309
-\g__tblr_array_int=\count310
-\l__tblr_key_count_int=\count311
-\l__tblr_key_quotient_int=\count312
-\l__tblr_key_quotient_two_int=\count313
-\l__tblr_key_remainder_int=\count314
-\g__tblr_data_str_value_count_int=\count315
-\rulewidth=\dimen187
-\l__tblr_strut_dp_dim=\dimen188
-\l__tblr_strut_ht_dim=\dimen189
-\g__tblr_cell_wd_dim=\dimen190
-\g__tblr_cell_ht_dim=\dimen191
-\g__tblr_cell_head_dim=\dimen192
-\g__tblr_cell_foot_dim=\dimen193
-\l__column_target_dim=\dimen194
-\l__tblr_caption_box=\box68
-\l__tblr_caption_left_box=\box69
-\l__tblr_row_head_box=\box70
-\l__tblr_row_foot_box=\box71
-\l__tblr_row_head_foot_dim=\dimen195
-\tablewidth=\dimen196
-\l__tblr_table_firsthead_box=\box72
-\l__tblr_table_middlehead_box=\box73
-\l__tblr_table_lasthead_box=\box74
-\l__tblr_table_firstfoot_box=\box75
-\l__tblr_table_middlefoot_box=\box76
-\l__tblr_table_lastfoot_box=\box77
-\l__tblr_remain_height_dim=\dimen197
-\l__tblr_long_from_int=\count316
-\l__tblr_long_to_int=\count317
-\l__tblr_curr_i_int=\count318
-\l__tblr_prev_i_int=\count319
-\l__tblr_table_page_int=\count320
-\l__tblr_table_head_box=\box78
-\l__tblr_table_foot_box=\box79
-\l__tblr_table_head_foot_dim=\dimen198
-\l__tblr_table_head_body_foot_dim=\dimen199
-\l__tblr_table_box=\box80
-\l__tblr_table_hlines_box=\box81
-\l__tblr_hline_box=\box82
-\l__tblr_row_box=\box83
-\l__tblr_col_o_wd_dim=\dimen256
-\l__tblr_col_b_wd_dim=\dimen257
-\l__tblr_hline_leftskip_dim=\dimen258
-\l__tblr_hline_rightskip_dim=\dimen259
-\l__tblr_row_ht_dim=\dimen260
-\l__tblr_row_dp_dim=\dimen261
-\l__tblr_row_abovesep_dim=\dimen262
-\l__tblr_row_belowsep_dim=\dimen263
-\l__tblr_row_vlines_box=\box84
-\l__tblr_vline_box=\box85
-\l__tblr_cell_box=\box86
-\l__row_upper_dim=\dimen264
-\l__row_lower_dim=\dimen265
-\l__row_vpace_dim=\dimen266
-\l__tblr_vline_aboveskip_dim=\dimen267
-\l__tblr_vline_belowskip_dim=\dimen268
-\l__tblr_cell_wd_dim=\dimen269
-\l__tblr_cell_ht_dim=\dimen270
-\l__tblr_diag_box=\box87
-)
-(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count321
-\float@exts=\toks25
-\float@box=\box88
-\@float@everytoks=\toks26
-\@floatcapt=\box89
-)
 Package hyperref Info: Option `colorlinks' set `true' on input line 31.
- (./manuscript-R1.aux)
+
+(./manuscript-R1.aux)
 \openout1 = `manuscript-R1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
@@ -627,6 +627,7 @@ Package scrbase Info: activating english \listfigurename on input line 37.
 Package scrbase Info: activating english \listtablename on input line 37.
 Package scrbase Info: activating english \refname on input line 37.
 Package scrbase Info: activating english \indexname on input line 37.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count322
@@ -649,7 +650,6 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 37.
 LaTeX Info: Redefining \microtypecontext on input line 37.
 Package microtype Info: Applying patch `item' on input line 37.
 Package microtype Info: Applying patch `toc' on input line 37.
@@ -677,6 +677,7 @@ Package: ninecolors 2022-02-13 vv2022D Select colors with proper color contrast
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2023-01-16 L3 Experimental document command parser
 ))
+Package hyperref Info: Link coloring ON on input line 37.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -698,11 +699,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-
-LaTeX Warning: No \author given.
-
-[1
+) [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
@@ -710,8 +707,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [5]
-(./Tabs/desc_cont.tex
+ [5] (./Tabs/desc_cont.tex
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -720,7 +716,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-) (./Tabs/desc_cat.tex
+)
+(./Tabs/desc_cat.tex
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -729,26 +726,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-) [6] [7] [8] [9]
-(./Tabs/main_models.tex
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-
-
-Package tabularray Warning: Table width is too small, need 213.2094pt more!
-
-> Step: build the whole table.
-
-Overfull \hbox (213.2094pt too wide) in paragraph at lines 45--46
- [][] 
- []
-
-) [10] [11] [12] (./Tabs/robustness_models.tex
+) [6] [7] [8] [9] [10] (./Tabs/main_models.tex
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -757,33 +735,31 @@ Overfull \hbox (213.2094pt too wide) in paragraph at lines 45--46
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-) [13] [14] [15] [16]
-<Plots/main_effects.png, id=350, 578.16pt x 433.62pt>
+) [11]
+[12] (./Tabs/robustness_models.tex
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+) [13] [14] [15] [16] [17]
+<Plots/main_effects.png, id=359, 578.16pt x 433.62pt>
 File: Plots/main_effects.png Graphic file (type png)
 <use Plots/main_effects.png>
 Package pdftex.def Info: Plots/main_effects.png  used on input line 221.
 (pdftex.def)             Requested size: 446.76004pt x 335.06616pt.
- [17
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.225 \newpage
-               <./Plots/main_effects.png>]
-<Plots/interaction_closeness.png, id=355, 867.24pt x 325.215pt>
+ [18 <./Plots/main_effects.png>]
+<Plots/interaction_closeness.png, id=364, 867.24pt x 325.215pt>
 File: Plots/interaction_closeness.png Graphic file (type png)
 <use Plots/interaction_closeness.png>
 Package pdftex.def Info: Plots/interaction_closeness.png  used on input line 22
 8.
 (pdftex.def)             Requested size: 446.76004pt x 167.53473pt.
- [18
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.233 \clearpage
-                 <./Plots/interaction_closeness.png>] (./manuscript-R1.bbl
-[19
+ [19 <./Plots/interaction_closeness.png>] (./manuscript-R1.bbl
+[20
 
 ]
 Overfull \hbox (2.10028pt too wide) in paragraph at lines 139--142
@@ -792,34 +768,34 @@ ay choices.  \OT1/cmr/m/it/10.95 (-20) Management science\OT1/cmr/m/n/10.95 (-2
 0) , 64(5):2219--
  []
 
-[20]) [21] (./manuscript-R1.aux) ) 
+[21] [22]) [23] (./manuscript-R1.aux) ) 
 Here is how much of TeX's memory you used:
- 18864 strings out of 478051
- 348235 string characters out of 5840943
- 1911330 words of memory out of 5000000
- 38461 multiletter control sequences out of 15000+600000
- 539245 words of font info for 188 fonts, out of 8000000 for 9000
+ 18878 strings out of 478051
+ 348522 string characters out of 5840943
+ 1908330 words of memory out of 5000000
+ 38465 multiletter control sequences out of 15000+600000
+ 539569 words of font info for 191 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,10n,106p,10608b,1149s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/omarlizardo/.texlive2022/texmf-var/fo
-nts/pk/ljfour/jknappen/ec/tcrm1095.600pk></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmtt9.pfb>
-Output written on manuscript-R1.pdf (21 pages, 512403 bytes).
+ 108i,10n,106p,10608b,1147s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/omarlizardo/.texlive2022/texmf-v
+ar/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmtt9.pfb>
+Output written on manuscript-R1.pdf (23 pages, 514965 bytes).
 PDF statistics:
- 530 PDF objects out of 1000 (max. 8388607)
- 471 compressed objects within 5 object streams
- 108 named destinations out of 1000 (max. 500000)
+ 545 PDF objects out of 1000 (max. 8388607)
+ 484 compressed objects within 5 object streams
+ 112 named destinations out of 1000 (max. 500000)
  36027 words of extra memory for PDF output out of 42996 (max. 10000000)
 
