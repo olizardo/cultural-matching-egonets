@@ -16,22 +16,29 @@ This project examines how cultural matching (shared tastes in music, movies, boo
 ---
 
 ## Data Sources
-The project uses two main data sources from the NetSense study, originally provided as Stata `.dta` files.
-*Note: The raw files were deleted from the local workspace. They can be found in the global path:* `/home/omarlizardo/ACADEMIC AND COURSE MATERIALS/NetSense`
-1. **Ego Data**: `demographics_longitudinal_clean.dta` (or `demsurveyMergedCodedDisID.dta`) - Contains ego demographics (including race) and cultural taste items. Located in `/home/omarlizardo/ACADEMIC AND COURSE MATERIALS/NetSense/Surveys/`
-2. **Alter/Network Data**: `network_surveys_longitudinal_clean.dta` (or `netsurveysMergedWideCodedFDAC-with-DatesPosition.dta`) - Contains alter attributes (including alter race), tie characteristics, and alter cultural taste items across multiple waves in a wide format. Located in `/home/omarlizardo/ACADEMIC AND COURSE MATERIALS/NetSense/Data/`
+The project uses longitudinal survey and network data from the NetSense study.
+*Data Location:* `/home/omarlizardo/projects/NETWORKS/NetSense`
+1. **Ego Data**: `demographics_longitudinal_clean.csv` / `.dta` - Contains ego demographics (including race, gender) and cultural taste items across waves. Located in `/home/omarlizardo/projects/NETWORKS/NetSense/Surveys/`
+2. **Alter/Network Data**: `network_surveys_longitudinal_clean.csv` / `.rds` / `.dta` - Contains alter attributes (including alter race, gender), tie characteristics, contact frequency, subjective closeness, and alter cultural taste items across waves. Located in `/home/omarlizardo/projects/NETWORKS/NetSense/Data/`
+3. **Perceived Alter-to-Alter Networks**: `alter_alter_ties_longitudinal.rds` / `.csv` / `.dta` ($N = 29,473$ perceived ties) - Dyadic edge list connecting alters nominated within each respondent's ego network across Waves 1–5, 7, and 8. Located in `/home/omarlizardo/projects/NETWORKS/NetSense/Data/`
+4. **Ego-Network Structural Metrics**: `ego_network_metrics_longitudinal.rds` / `.csv` / `.dta` ($N = 804$ ego-waves) - Tracks personal network size ($k$), potential pairs, reported ties, and network density. Located in `/home/omarlizardo/projects/NETWORKS/NetSense/Data/`
 
 ---
 
 ## Analytical Approach
-* **Discrete-Time Survival Analysis**: Event history modeling using `lme4::glmer()` to model the hazard of tie dissolution across all waves simultaneously.
+* **Discrete-Time Survival Analysis**: Event history modeling using `lme4::glmer()` to model the hazard of tie dissolution across all wave transition intervals ($N = 5,349$ complete dyad-period cases).
 * **Core Measures**:
   * Closed-form cultural matching (broad domain count, 0–6).
   * Open-ended activity matching (favorite leisure activities count, 0–5).
   * Cultural network opacity (unknown preference count / "Don't Know", 0–6).
+  * Structural embeddedness / triadic closure (`common_alters`, count of shared contacts in ego's network, 0–19; standardized in models).
   * Subjective closeness (Tie strength: Close, Somewhat Close, Not Close).
-  * Controls: `same_dorm`, `is_friend`, `race_homophily`, `freq_daily`, ego/alter gender, tie duration (linear and squared), and period fixed effects.
-* **Reporting & Reproducibility**: Unified Quarto architecture (`analysis.qmd`) exporting generated tables (`Tabs/`) and plots (`Plots/`) to LaTeX (`manuscript-R1.tex`).
+  * Controls: `same_dorm`, `is_friend`, `race_homophily`, `freq_daily`, ego/alter gender, tie duration (linear and squared), and wave transition fixed effects.
+* **Reporting & Reproducibility**: Unified Quarto notebook (`analysis.qmd`) exporting generated tables (`Tabs/`) and figures (`Plots/`) directly to LaTeX (`manuscript-R1.tex` and `manuscript.tex`).
+* **Overleaf Integration**:
+  * Connected to Overleaf Git remote: `https://git.overleaf.com/6a42d5015a4bdf4b1804e7c8` (remote name: `overleaf`).
+  * Push command to sync with Overleaf: `git push overleaf HEAD:main`.
+  * Preamble configuration: Uses `silence` package to suppress kernel `\showhyphens` warnings on TeX Live 2024/2025, robust conditional loading for `siunitx`, and `\apptocmd{\thebibliography}{\sloppy}{}{}` to prevent bibliography overfull margins.
 
 ---
 
