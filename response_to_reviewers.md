@@ -75,10 +75,37 @@ Below, we provide a detailed, point-by-point response to each of the comments an
 > **Reviewer Comment (Point 4):**  
 > *Measurement of tie decay: Each dyad can exhibit 256 possible sequences presence and absence of ties across the 8 waves (2^8=256). This means that a tie that forms in wave 1 decays in wave 2, but rekindles in wave 3, and so on. How are these different possibilities accounted for? Does rekindling count as persistence? The paper needs to give these details of how the dependent variable is constructed.*
 
-* **Status:** `[Pending]`
-* **Location in Manuscript:** Section 3.2 (Variables and Operationalization), Section 3.3 (Analytical Strategy)
+* **Status:** `[Addressed]`
+* **Location in Manuscript:** Section 3.1 (Discrete-Time Event History Setup, Risk Set, and Tie Sequences), Section 3.3 (Analytical Strategy), Section 4.3 (Sensitivity Analyses), and Table 4 (`Tabs/robustness_models.tex`)
 * **Response / Actions Taken:**
-  - *[Draft response formalizing the discrete-time event history setup, definition of the risk set, handling of first dissolution / spells, and empirical distribution of tie histories]*
+  - We thank the reviewer for raising this essential methodological question regarding the combinatorial nature of tie sequences across waves, the definition of the risk set, and the handling of intermittent (rekindled) ties.
+  - In response, we have substantially expanded and formalized our description of the discrete-time event history framework across Section 3.1, Section 3.3, Section 4.3, and Table 4 of the revised manuscript (`manuscript-R1.tex`). Specifically, we address each dimension of the reviewer's query as follows:
+
+  1. **Does Rekindling Count as Persistence? (Unequivocally, No)**:
+     - Under our discrete-time event history framework, **rekindling does not count as persistence**.
+     - In any wave transition interval $t \to t+1$, the dependent variable $Y_{ijt}$ is a binary indicator evaluated strictly at $t+1$:
+       $$Y_{ijt} = \begin{cases} 1 & \text{if alter } j \text{ is nominated by ego } i \text{ at wave } t+1 \text{ (protected from tie decay)} \\ 0 & \text{if alter } j \text{ is not nominated by ego } i \text{ at wave } t+1 \text{ (tie decay)} \end{cases}$$
+     - If an alter is nominated at wave $t$ but omitted from the ego's nomination roster at wave $t+1$, that dyad-period is strictly and irrevocably coded as an event of **tie decay** ($Y_{ijt} = 0$).
+     - If that same alter is subsequently re-nominated at wave $t+2$, standard discrete-time repeated-events event history methodology treats this re-appearance as the inception of a **new, distinct risk episode** (spell 2) covering the transition from $t+2 \to t+3$ (Allison 1982, 2014; Box-Steffensmeier and Jones 2004; Singer and Willett 1993). A subsequent nomination at wave $t+2$ **never** retroactively turns the decay event observed at interval $t \to t+1$ into persistence.
+     - Crucially, during this second spell ($t+2 \to t+3$), all time-varying predictors—including subjective closeness, contact frequency, cultural matching, and structural embeddedness—are dynamically re-measured using the contemporaneous wave $t+2$ survey items rather than carried over from baseline.
+
+  2. **Empirical Distribution of Tie Sequences Across the 8 Waves**:
+     - The reviewer is entirely correct that across 8 survey waves, a dyad's nomination trajectory could theoretically assume any of $2^8 = 256$ binary presence/absence combinations ($2^7 = 128$ combinations across the 7-wave measurement span where ego cultural items are tracked).
+     - In Section 3.1 of the revised manuscript, we now document the empirical distribution of these combinatorial trajectories in the NetSense data:
+       - Out of the 256 mathematically possible configurations, **only 151 distinct sequence patterns actually occur** in the data.
+       - The vast majority of dyads—**79.8%** ($4,716$ of $5,908$ unique dyads)—exhibit **strictly contiguous relational histories**: they are either nominated in a single wave or persist across consecutive waves until permanent decay or study conclusion.
+       - Only **20.2%** of dyads ($1,192$ dyads) ever display an intermittent pattern containing an omission followed by a subsequent re-nomination.
+       - Within our complete-case analytic sample ($N = 5,349$ dyad-periods across 3,770 dyads), **84.5%** ($N = 4,522$) belong to the dyad's **initial continuous spell** (from first observation until first decay or panel censoring). Only **15.5%** ($N = 827$) represent recurrent spells following a temporary lapse.
+
+  3. **Sensitivity Analysis: Absorbing First Dissolution vs. Repeated Spells (Table 4)**:
+     - To verify that our findings do not depend on the inclusion of recurrent spells or intermittent ties, we estimated an **absorbing first-decay** mixed-effects logistic regression model ($N = 4,522$ complete dyad-periods).
+     - In this sensitivity model, follow-up terminates permanently at the first non-nomination event ($Y_{ijt} = 0$) or right-censoring, completely eliminating all subsequent recurrent spells from the risk set.
+     - We have added these results directly to **Table 4** (Column 1) alongside our within-ego fixed-effects model (Column 2).
+     - As shown in Table 4, the results under the strict absorbing first-dissolution specification are substantively equivalent to our primary multi-spell models:
+       - **Closed-form cultural matching**: $\text{OR} = 1.086$ ($p = 0.0294$) in the absorbing first-decay model vs. $\text{OR} = 1.068$ ($p = 0.0541$) in the full repeated-spell Model 4. Restricting to the first continuous spell slightly *strengthens* the protective effect of closed-form cultural matching.
+       - **Structural embeddedness (common alters)**: $\text{OR} = 1.120$ ($p = 0.0212$) in the absorbing model vs. $\text{OR} = 1.126$ ($p = 0.0089$) in the full model.
+       - **Subjective closeness (Close vs. Not Close)**: $\text{OR} = 2.002$ ($p < 0.001$) in the absorbing model vs. $\text{OR} = 2.123$ ($p < 0.001$) in the full model.
+     - These checks demonstrate that whether tie decay is treated as an absorbing single-spell process or as a multi-spell repeated-event process, our empirical and substantive conclusions remain completely intact.
 
 ---
 

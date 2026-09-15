@@ -413,10 +413,36 @@ p_int <- ggplot(comp_int_combined, aes(y = close_factor, x = estimate, fill = Cu
 ggsave(here("Plots", "interaction_closeness.png"), plot = p_int, width = 6.5, height = 3.6, dpi = 300)
 
 # ==============================================================================
-# SECTION 4: EGO FIXED-EFFECTS MODEL (TABLE 4) & FIGURE 3 (FE PREDICTIONS)
+# SECTION 4: SENSITIVITY MODELS (TABLE 4) & FIGURE 3 (FE PREDICTIONS)
 # ==============================================================================
-message("[5/5] Estimating ego fixed-effects model, Table 4, and Figure 3...")
+message("[5/5] Estimating sensitivity models (first dissolution & ego FE), Table 4, and Figure 3...")
 
+# Sensitivity Model 1: Absorbing First Dissolution (First continuous spell only)
+df_period_spells <- df_period %>%
+  arrange(egoid, alterid, wave) %>%
+  group_by(egoid, alterid) %>%
+  mutate(
+    lag_wave = lag(wave),
+    lag_persisted = lag(persisted),
+    is_new_spell = row_number() == 1 | (!is.na(lag_persisted) & lag_persisted == 0) | (!is.na(lag_wave) & wave > lag_wave + 1),
+    spell_id = cumsum(is_new_spell),
+    is_first_spell = (spell_id == 1)
+  ) %>%
+  ungroup()
+
+df_first <- df_period_spells %>% filter(is_first_spell)
+
+mod_first <- glmer(
+  persisted ~ num_match_closed + open_match_count + num_unknown +
+    close_factor + female_factor + alterfemale_factor + same_dorm +
+    is_friend + race_homophily + freq_daily + duration_c +
+    duration_sq_c + period + common_alters_std + (1 | egoid),
+  data = df_first,
+  family = binomial,
+  control = glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e5))
+)
+
+# Sensitivity Model 2: Ego Fixed-Effects (Conditional Logit)
 mod_fe <- clogit(
   persisted ~ num_match_closed + open_match_count + num_unknown + common_alters_std + same_dorm + is_friend + 
     race_homophily + freq_daily + alterfemale_factor + close_factor + duration_c + duration_sq_c + period + strata(egoid),
@@ -424,8 +450,10 @@ mod_fe <- clogit(
   method = "efron"
 )
 
-# Table 4: Sensitivity Models (Ego Fixed-Effects)
+# Table 4: Sensitivity Models (Absorbing First Dissolution and Ego Fixed-Effects)
+s_first <- summary(mod_first)$coefficients
 s_fe <- summary(mod_fe)$coefficients
+
 terms_fe <- c(
   "num_match_closed" = "Closed-Form Matches",
   "open_match_count" = "Open-Ended Matches",
@@ -445,45 +473,75 @@ rob_lines <- c(
   "\\begin{table}[htbp]",
   "\\centering",
   "\\begin{talltblr}[         %% tabularray outer open",
-  "caption={Sensitivity Models: Ego Fixed-Effects (Conditional Logit)\\label{tbl-robustness-models}},",
+  "caption={Sensitivity Models: Absorbing First Dissolution and Ego Fixed-Effects\\label{tbl-robustness-models}},",
   "note{}={+ p \\num{< 0.1}, * p \\num{< 0.05}, ** p \\num{< 0.01}, *** p \\num{< 0.001}},",
-  "note{ }={Note: Controls for alter gender and period fixed effects. Strata for egos are included.},",
+  "note{ }={Note: Model 1 restricts follow-up strictly to the initial continuous tie spell until first tie decay or censoring, excluding all subsequent recurrent/rekindled spells. Model 2 stratifies the likelihood by ego (conditional logit), isolating within-ego variation. Both models adjust for alter gender and wave transition fixed effects; Model 1 also includes ego gender and an ego random intercept.},",
   "]                     %% tabularray outer close",
   "{                     %% tabularray inner open",
-  "colspec={Q[]Q[]},",
-  "hline{2}={1-2}{solid, black, 0.05em},",
-  paste0("hline{", 2 * length(terms_fe) + 2, "}={1-2}{solid, black, 0.05em},"),
-  "hline{1}={1-2}{solid, black, 0.08em},",
-  paste0("hline{", 2 * length(terms_fe) + 5, "}={1-2}{solid, black, 0.08em},"),
-  "column{2}={}{halign=c},",
+  "width=\\linewidth,",
+  "colspec={X[2.5,l] X[1.2,c] X[1.2,c]},",
+  "row{odd}={rowsep=0.5pt},",
+  "row{even}={rowsep=0.5pt},",
+  "hline{2}={1-3}{solid, black, 0.05em},",
+  paste0("hline{", 2 * length(terms_fe) + 2, "}={1-3}{solid, black, 0.05em},"),
+  "hline{1}={1-3}{solid, black, 0.08em},",
+  paste0("hline{", 2 * length(terms_fe) + 5, "}={1-3}{solid, black, 0.08em},"),
+  "column{2-3}={}{halign=c},",
   "column{1}={}{halign=l},",
   "}                     %% tabularray inner close",
-  " & Ego FE (clogit) \\\\"
+  " & Absorbing First Decay & Ego FE (clogit) \\\\"
 )
 
 for (t_name in names(terms_fe)) {
   label <- terms_fe[t_name]
-  if (t_name %in% rownames(s_fe)) {
-    est_val <- s_fe[t_name, "exp(coef)"]
-    se_val <- est_val * s_fe[t_name, "se(coef)"]
-    p_val <- s_fe[t_name, "Pr(>|z|)"]
-    star <- case_when(
-      p_val < 0.001 ~ "***",
-      p_val < 0.01  ~ "**",
-      p_val < 0.05  ~ "*",
-      p_val < 0.1   ~ "+",
-      TRUE          ~ ""
+  
+  # Model 1 (First Dissolution)
+  if (t_name %in% rownames(s_first)) {
+    est1 <- exp(s_first[t_name, 1])
+    se1  <- est1 * s_first[t_name, 2]
+    p1   <- s_first[t_name, 4]
+    star1 <- case_when(
+      p1 < 0.001 ~ "***",
+      p1 < 0.01  ~ "**",
+      p1 < 0.05  ~ "*",
+      p1 < 0.1   ~ "+",
+      TRUE       ~ ""
     )
-    rob_lines <- c(rob_lines, sprintf("%s & \\num{%.3f}%s \\\\", label, est_val, star))
-    rob_lines <- c(rob_lines, sprintf(" & (\\num{%.3f}) \\\\", se_val))
+    col1_est <- sprintf("\\num{%.3f}%s", est1, star1)
+    col1_se  <- sprintf("(\\num{%.3f})", se1)
+  } else {
+    col1_est <- ""
+    col1_se  <- ""
   }
+  
+  # Model 2 (Ego FE)
+  if (t_name %in% rownames(s_fe)) {
+    est2 <- s_fe[t_name, "exp(coef)"]
+    se2  <- est2 * s_fe[t_name, "se(coef)"]
+    p2   <- s_fe[t_name, "Pr(>|z|)"]
+    star2 <- case_when(
+      p2 < 0.001 ~ "***",
+      p2 < 0.01  ~ "**",
+      p2 < 0.05  ~ "*",
+      p2 < 0.1   ~ "+",
+      TRUE       ~ ""
+    )
+    col2_est <- sprintf("\\num{%.3f}%s", est2, star2)
+    col2_se  <- sprintf("(\\num{%.3f})", se2)
+  } else {
+    col2_est <- ""
+    col2_se  <- ""
+  }
+  
+  rob_lines <- c(rob_lines, sprintf("%s & %s & %s \\\\", label, col1_est, col2_est))
+  rob_lines <- c(rob_lines, sprintf(" & %s & %s \\\\", col1_se, col2_se))
 }
 
 rob_lines <- c(
   rob_lines,
-  sprintf("Num.Obs. & \\num{%d} \\\\", mod_fe$nevent),
-  sprintf("AIC & \\num{%.1f} \\\\", AIC(mod_fe)),
-  sprintf("BIC & \\num{%.1f} \\\\", BIC(mod_fe)),
+  sprintf("Num.Obs. & \\num{%d} & \\num{%d} \\\\", nobs(mod_first), mod_fe$nevent),
+  sprintf("AIC & \\num{%.1f} & \\num{%.1f} \\\\", AIC(mod_first), AIC(mod_fe)),
+  sprintf("BIC & \\num{%.1f} & \\num{%.1f} \\\\", BIC(mod_first), BIC(mod_fe)),
   "\\end{talltblr}",
   "\\end{table}"
 )

@@ -47,12 +47,15 @@ The revision points are organized below in descending order of priority, grouped
   4. Findings: Structural embeddedness strongly predicts tie survival ($\text{OR} = 1.122, p = 0.0106$). Net of embeddedness, open-ended activity matching remains statistically significant ($\text{OR} = 1.071, p = 0.0286$) and closed-form matching remains positive and marginally significant ($\text{OR} = 1.067, p = 0.0574$). Moderation tests showed no interaction ($p = 0.65$), confirming culture and structure are complementary parallel anchors.
   5. Updated narrative in Section 3.2 (Measures), Section 4.1 (Main Models), Section 5.1–5.2 (Discussion) of `manuscript-R1.tex`, compiled to PDF, and drafted detailed response in `response_to_reviewers.md`.
 
-#### 2. Clarify & Justify the Dependent Variable Construction (Tie Dissolution & Rekindling)
+#### 2. Clarify & Justify the Dependent Variable Construction (Tie Dissolution & Rekindling) `[COMPLETED]`
 * **Reviewer Concern (R1 #4):** Across 8 panel waves, dyads can theoretically exhibit up to $2^8 = 256$ presence/absence sequences. How does the model treat intermittent ties (ties that disappear and rekindle)? Does rekindling count as persistence?
-* **Actionable Steps:**
-  1. Provide a rigorous, formal mathematical and verbal description of the discrete-time survival analysis (event history) setup in the Methods section.
-  2. Explicitly specify the risk set: whether ties are tracked until first dissolution (absorbing event), whether subsequent re-formation spells are treated as separate episodes or right-censored, and the exact count of tie-period transitions ($N = 5,336$).
-  3. Conduct sensitivity checks comparing first-dissolution survival vs. repeated-event / multi-state persistence specifications.
+* **Actions Completed:**
+  1. Provided a rigorous mathematical and conceptual formalization of the discrete-time event history framework in Section 3.1 and Section 3.3 of `manuscript-R1.tex`, defining the conditional hazard of tie decay $h_{ijt} = P(Y_{ijt} = 0 \mid \text{active at } t)$ and protection from tie decay $1 - h_{ijt} = P(Y_{ijt} = 1 \mid \text{active at } t)$.
+  2. Analyzed and documented the empirical sequence distribution: across 8 waves, only 151 of the 256 theoretical sequences appear. 79.8% of unique dyads (4,716 of 5,908) have strictly contiguous relational histories; only 20.2% (1,192 dyads) ever exhibit intermittent rekindling. In our complete-case analytic sample ($N = 5,349$), 84.5% ($N = 4,522$) belong to the first continuous spell, and 15.5% ($N = 827$) belong to recurrent spells.
+  3. Explicitly clarified that **rekindling does NOT count as persistence**: if an alter is omitted at wave $t+1$, it is strictly coded as tie decay ($Y = 0$). Any subsequent re-nomination at $t+2$ begins a distinct new risk episode ($t+2 \to t+3$) with contemporaneous time-varying covariates.
+  4. Estimated an **absorbing first-dissolution** sensitivity model in `Code/generate_deliverables.R` that terminates observation upon first decay ($N = 4,522$).
+  5. Added the absorbing first-decay model alongside the Ego FE model in Table 4 (`Tabs/robustness_models.tex`) and discussed in Section 4.3: closed-form matching ($\text{OR} = 1.086, p = 0.0294$), structural embeddedness ($\text{OR} = 1.120, p = 0.0212$), and closeness ($\text{OR} = 2.002, p < 0.001$) remain completely consistent and robust.
+  6. Drafted detailed point-by-point response in `response_to_reviewers.md` (Point 5).
 
 #### 3. Empirically Test and Document the Stability of Cultural Tastes
 * **Reviewer Concern (R1 #2):** The manuscript posits pre-existing, durable cultural dispositions as the engine of tie persistence, but does not provide empirical evidence that college students' tastes are actually stable over the panel period. Rapidly co-evolving tastes would imply ties driving taste rather than taste driving ties.
@@ -138,8 +141,8 @@ The revision points are organized below in descending order of priority, grouped
 
 | # | Reviewer & Comment | Priority | Task / Output Required |
 |---|---|---|---|
-| 1 | **R1:** Triadic closure & structural embeddedness | **High** | Add common neighbors / embeddedness controls to `analysis.qmd` models; report in main tables. |
-| 2 | **R1:** Tie decay sequences & rekindling (256 paths) | **High** | Formalize discrete-time event history setup in Methods; clarify risk set and episode handling. |
+| 1 | **R1:** Triadic closure & structural embeddedness | **High** | `[COMPLETED]` Add common neighbors / embeddedness controls; report in main tables. |
+| 2 | **R1:** Tie decay sequences & rekindling (256 paths) | **High** | `[COMPLETED]` Formalize discrete-time event history setup in Methods; clarify risk set and episode handling; add absorbing first-decay model to Table 4. |
 | 3 | **R1:** Empirical stability of cultural tastes | **High** | Compute taste consistency across waves; report correlation/stability table in Appendix/text. |
 | 4 | **R1:** Alters as egos / multilevel assumption | **High** | Test cross-classified `(1|egoid) + (1|alterid)` or dyadic clustered SEs; add robustness note. |
 | 5 | **R1:** Matching metric (positive vs. shared disinterest) | **High** | Clarify scoring rule; run sensitivity check isolating positive interest matches vs. disinterest. |
