@@ -458,7 +458,7 @@ comp_combined <- bind_rows(comp_closed, comp_open, comp_opacity, comp_embed_comp
 
 p1 <- ggplot(comp_combined, aes(y = Predictor, x = estimate, fill = Predictor, color = Predictor)) +
   geom_col(width = 0.35, alpha = 0.85) +
-  geom_errorbar(aes(xmin = conf.low, xmax = conf.high), width = 0.12, linewidth = 0.8, alpha = 0.15) +
+  geom_errorbar(aes(xmin = conf.low, xmax = conf.high), width = 0.12, linewidth = 0.8, alpha = 0.25) +
   scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
   scale_fill_manual(values = c(
     "Closed-Form Cultural Matching (0–6)" = "#1f78b4", 
@@ -478,6 +478,7 @@ p1 <- ggplot(comp_combined, aes(y = Predictor, x = estimate, fill = Predictor, c
   theme(
     legend.position = "none",
     axis.text.y = element_text(face = "bold", color = "black"),
+    panel.grid.major.y = element_blank(),
     panel.grid.minor = element_blank()
   )
 
@@ -538,7 +539,7 @@ comp_int_combined <- bind_rows(comp_int_closed, comp_int_open, comp_int_opacity)
 
 p_int <- ggplot(comp_int_combined, aes(y = close_factor, x = estimate, fill = Cultural_Variable, color = Cultural_Variable)) +
   geom_col(width = 0.55, alpha = 0.85) +
-  geom_errorbar(aes(xmin = conf.low, xmax = conf.high), width = 0.2, linewidth = 0.75, alpha = 0.15) +
+  geom_errorbar(aes(xmin = conf.low, xmax = conf.high), width = 0.2, linewidth = 0.75, alpha = 0.25) +
   scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "gray50") +
   facet_wrap(~Cultural_Variable, ncol = 1) +
@@ -562,6 +563,7 @@ p_int <- ggplot(comp_int_combined, aes(y = close_factor, x = estimate, fill = Cu
     axis.title.y = element_text(margin = margin(r = 6)),
     axis.title.x = element_text(margin = margin(t = 6)),
     panel.spacing = unit(1.0, "lines"),
+    panel.grid.major.y = element_blank(),
     panel.grid.minor = element_blank()
   )
 
@@ -774,7 +776,7 @@ df_fe_me <- bind_rows(curve_closed, curve_open, curve_opac) %>%
 
 p_fe <- ggplot(df_fe_me, aes(y = factor(x), x = marginal_effect, fill = Predictor, color = Predictor)) +
   geom_col(width = 0.65, alpha = 0.85) +
-  geom_errorbar(aes(xmin = conf_low, xmax = conf_high), width = 0.25, linewidth = 0.7, alpha = 0.15) +
+  geom_errorbar(aes(xmin = conf_low, xmax = conf_high), width = 0.25, linewidth = 0.7, alpha = 0.25) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "gray50") +
   facet_wrap(~Predictor, scales = "free_y", ncol = 1) +
   scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
@@ -801,6 +803,7 @@ p_fe <- ggplot(df_fe_me, aes(y = factor(x), x = marginal_effect, fill = Predicto
     axis.title.y = element_text(margin = margin(r = 6)),
     axis.title.x = element_text(margin = margin(t = 6)),
     panel.spacing = unit(1.0, "lines"),
+    panel.grid.major.y = element_blank(),
     panel.grid.minor = element_blank()
   )
 
