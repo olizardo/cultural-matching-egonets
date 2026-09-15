@@ -53,14 +53,24 @@ To ensure strict conceptual and empirical clarity across the manuscript, tables,
 
 ---
 
-## Project Structure
+## Project Structure & Deliverables Taxonomy
 * `data/`: R datasets ready for modeling (`data/processed/adjacent_waves.rds`, `ego_race.rds`, `alter_race.rds`).
-* `Code/generate_deliverables.R`: Standalone reproducible R script for model estimation, table generation (`Tabs/`), and figure rendering (`Plots/`).
-* `manuscript-R1.tex`: Revision 1 manuscript LaTeX source.
+* `Code/`:
+  * `Code/generate_deliverables.R`: Primary standalone script producing all tables and plots.
+  * `Code/prep_all_waves.R`: Data ingestion and structural embeddedness pipeline.
+  * `Code/prep_race.R`: Race harmonizer.
+* `manuscript-R1.tex`: Revision 1 working LaTeX manuscript (synced with Overleaf).
 * `manuscript.tex`: Original submission LaTeX source.
 * `manuscript_citations.bib`: BibTeX citations for bibliography generation.
-* `Tabs/`: Generated LaTeX table inputs (`desc_cont.tex`, `desc_cat.tex`, `main_models.tex`, `robustness_models.tex`, `dislike_models.tex`).
-* `Plots/`: Generated figure outputs (`main_effects.png`, `interaction_closeness.png`, `fe_predicted_probabilities.png`).
+* `Tabs/` (Manuscript Tables):
+  * Table 1: `Tabs/desc_cont.tex` — Continuous Descriptive Statistics
+  * Table 2: `Tabs/desc_cat.tex` — Categorical Descriptive Statistics
+  * Table 3: `Tabs/main_models.tex` — Odds Ratios for Protection from Tie Decay (Models 1–4)
+  * Table 4: `Tabs/robustness_models.tex` — Sensitivity Models: Ego Fixed-Effects (Conditional Logit)
+* `Plots/` (Manuscript Figures, 6.5 in, 300 DPI):
+  * Figure 1: `Plots/main_effects.png` — Average Marginal Effects on Protection from Tie Decay (Model 4 with Structural Embeddedness)
+  * Figure 2: `Plots/interaction_closeness.png` — Average Marginal Effects by Subjective Closeness (adjusting for Structural Embeddedness)
+  * Figure 3: `Plots/fe_predicted_probabilities.png` — Counterfactual Within-Ego Predicted Probabilities from Ego Fixed-Effects Model
 * `response_to_reviewers.md`: Point-by-point response to editor and reviewers.
 * `REVISION_PLAN_SOCIAL_NETWORKS.md`: Detailed prioritized revision roadmap.
 
@@ -69,28 +79,40 @@ To ensure strict conceptual and empirical clarity across the manuscript, tables,
 ## Revision Progress & Tasks
 
 ### Completed Tasks
-1. **Revision Setup**:
+1. **Revision Setup & Overleaf Git Remote**:
    - Created `manuscript-R1.tex` as the dedicated working file for the revision.
+   - Connected and synchronized with Overleaf Git remote (`https://git.overleaf.com/6a42d5015a4bdf4b1804e7c8`).
    - Created `REVISION_PLAN_SOCIAL_NETWORKS.md` and `response_to_reviewers.md`.
 2. **Tier 3 (Discussion & Scope Revisions)**:
-   - **Time Horizon & Post-Collegiate Tie Dynamics (R1 #3)**: Expanded Section 5.3 to discuss the decay/persistence of ties after college graduation when institutional scaffolding is removed.
-   - **Directionality, Perceptions, and Status Asymmetry (R1 #8)**: Added explicit discussion in Section 5.3 clarifying egocentric cognitive network boundaries, unreciprocated nominations, and status differences.
+   - **Time Horizon & Post-Collegiate Tie Dynamics (R1 #3)**: Expanded Section 5.2 to discuss the decay/persistence of ties after college graduation when institutional scaffolding is removed.
+   - **Directionality, Perceptions, and Status Asymmetry (R1 #8)**: Added explicit discussion in Section 5.2 clarifying egocentric cognitive network boundaries, unreciprocated nominations, and status differences.
 3. **Tier 2.10 (Calibrating Claims / Avoiding Over-Generalization)**:
    - Calibrated theoretical language in the Abstract, Introduction, and Section 5.1–5.3 to ground conclusions in emerging adulthood and collegiate transitions rather than invariant universal laws (R2 #1).
-4. **Tier 1.7 (Descriptive Statistics Table)**:
-   - Embedded Table 1 (`Tabs/desc_cont.tex`) and Table 2 (`Tabs/desc_cat.tex`) directly into Section 3.2 (*Measures and Descriptive Statistics*) in `manuscript-R1.tex` with thorough descriptive narrative (R1 #4, R2). Removed the duplicate appendix.
+4. **Tier 1.7 (Descriptive Statistics Tables)**:
+   - Embedded Table 1 (`Tabs/desc_cont.tex`) and Table 2 (`Tabs/desc_cat.tex`) directly into Section 3.2 (*Measures and Descriptive Statistics*) in `manuscript-R1.tex` with thorough descriptive narrative (R1 #4, R2). Removed duplicate appendix.
 5. **Tier 1.1 (Structural Embeddedness Controls - R1 #1, #5)**:
    - Extracted perceived alter-to-alter contacts from `alter_alter_ties_longitudinal.rds` and computed dyadic common neighbors / triadic closure counts ($0\text{--}19$) and normalized triadic closure ratios ($0\text{--}1$).
-   - Integrated structural embeddedness into `Code/prep_all_waves.R`, `data/processed/adjacent_waves.rds`, and estimated Model 4 in `analysis.qmd`.
-   - Structural embeddedness strongly predicts persistence ($\text{OR} = 1.122, p = 0.0106$); open-ended matches ($\text{OR} = 1.071, p = 0.0286$) and closed-form matches ($\text{OR} = 1.067, p = 0.0574$) remain positive and robust.
-   - Updated Table 1 (`desc_cont.tex`), Table 3 (`main_models.tex`), Table 4 (`robustness_models.tex`), Section 3.2, 4.1, 5.1–5.2 in `manuscript-R1.tex`, compiled to PDF, and drafted response in `response_to_reviewers.md`. Connected Overleaf remote repository.
+   - Integrated structural embeddedness into `Code/prep_all_waves.R`, `data/processed/adjacent_waves.rds`, and estimated Model 4 in `Code/generate_deliverables.R`.
+   - Structural embeddedness strongly predicts protection from tie decay ($\text{OR} = 1.122, p = 0.0106$); open-ended activity matching ($\text{OR} = 1.071, p = 0.0286$) and closed-form cultural matching ($\text{OR} = 1.067, p = 0.0574$) remain positive and robust.
+   - Updated Table 1 (`desc_cont.tex`), Table 3 (`main_models.tex`), Table 4 (`robustness_models.tex`), Section 3.2, 4.1, 5.1–5.2 in `manuscript-R1.tex`.
+6. **Global Style Guidelines & Terminological Standardization**:
+   - Enforced strict prohibition on "demonstrate" (replaced with "show"), "utilize", generic "robust", "percentage points", and Latinisms.
+   - Standardized outcome terminology strictly to **"tie decay"** (e.g. *protection from tie decay*, *hazard of tie decay*) and predictor strictly to **"cultural matching"** across the entire manuscript and tables.
+   - Added formal software citations for R (`Rmanual`) and `lme4` (`bates2015`) in text and `manuscript_citations.bib`.
+   - Restructured Discussion into the CUA Tripartite architecture (`Summary of Key Results`, `Limitations and Suggestions for Future Work` covering 5 analytical dimensions in full paragraphs, `Implications: Cultural Capital and Relational Maintenance`).
+7. **Decoupled Asset Pipeline (`Code/generate_deliverables.R`)**:
+   - Ported data preparation, modeling, table formatting, and figure plotting from `analysis.qmd` into `Code/generate_deliverables.R`, removing runtime Quarto document overhead.
+8. **Updated Figures 1 & 2 and Added Figure 3 (Ego Fixed-Effects)**:
+   - Re-computed Figure 1 (`Plots/main_effects.png`) adjusting for structural embeddedness (`common_alters_std`).
+   - Re-computed Figure 2 (`Plots/interaction_closeness.png`) adjusting for structural embeddedness.
+   - Added Figure 3 (`Plots/fe_predicted_probabilities.png`), computing within-ego counterfactual predicted probabilities from conditional logit (`mod_fe`) via uniroot-solved individual fixed effects $\hat{\alpha}_i$. Integrated Figure 3 into Section 4.3 of `manuscript-R1.tex`.
 
 ---
 
 ### Remaining Revision Tasks
 
-#### High Priority (Tier 1: Methodological & Modeling Tasks in `analysis.qmd`)
-- [x] **Tier 1.1: Structural Embeddedness Controls (R1 #1, #5)**: Compute triadic closure / shared neighbors / embeddedness metrics in NetSense; add to models in `analysis.qmd` and report in main tables. (Completed)
+#### High Priority (Tier 1: Methodological & Modeling Tasks in `Code/generate_deliverables.R`)
+- [x] **Tier 1.1: Structural Embeddedness Controls (R1 #1, #5)**: Compute triadic closure / shared neighbors / embeddedness metrics in NetSense; add to models and report in main tables. (Completed)
 - [ ] **Tier 1.2: Tie Rekindling & Discrete-Time Event History Formalization (R1 #4)**: Formally document the discrete-time risk set, absorbing first dissolution vs. repeated spell handling, and tie sequence distribution across 8 waves in Section 3.
 - [ ] **Tier 1.3: Empirical Stability of Cultural Tastes (R1 #2)**: Compute test-retest reliability / correlation / Jaccard similarity of taste items across waves to empirically validate the durability assumption.
 - [ ] **Tier 1.4: Alters as Egos / Two-Way Dyadic Clustering (R1 #6)**: Estimate cross-classified random effects models (`(1 | egoid) + (1 | alterid)`) or dyadic clustered SEs; present robustness results.
