@@ -150,7 +150,7 @@ The revision points are organized below in descending order of priority, grouped
 | 7 | **R1 & R2:** Descriptive statistics table | **High** | Generate and insert comprehensive descriptive statistics table into manuscript. |
 | 8 | **R1:** Tone down "culture vs. structure" fight | **Medium** | Rewrite Intro/Discussion to frame as co-evolutionary and complementary structural-cultural mechanisms. |
 | 9 | **R2:** Positional differences & status asymmetry | **Medium** | Incorporate controls (gender homophily, same dorm, campus tie); discuss status & capital conversion. |
-| 10 | **R2:** Over-generalization / scope calibration | **Medium** | Qualify claims to collegiate/emerging adulthood transition; remove hyperbolic generalizations. |
+| 10 | **R2:** Over-generalization / scope calibration | **Medium** | Qualify claims to college/emerging adulthood transition; remove hyperbolic generalizations. |
 | 11 | **R1:** Post-college tie persistence & horizon | **Low** | Expand Discussion on institutional departure, boundary conditions, and life course transitions. |
 | 12 | **R1:** Directionality & unreciprocated ties | **Low** | Discuss perceptual ego-network bounds, status asymmetry, and unmeasured alter perceptions. |
 

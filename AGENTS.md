@@ -53,6 +53,9 @@ To ensure strict conceptual and empirical clarity across the manuscript, tables,
 3. **In-Text Emphasis (Italics vs. Boldface)**:
    - Strictly use **italics** (`\textit{...}` or `\emph{...}`) instead of boldface (`\textbf{...}`) for emphasizing terms, concepts, hypothesis labels (e.g., *\textit{Hypothesis 1}*), and statistical variables in running manuscript prose.
    - Reserve boldface strictly for section headings, table captions, and table header rows.
+4. **Plain Language for Educational Stage & Setting**:
+   - Strictly use **"college"** or **"undergraduate"** (e.g., *"college careers"*, *"college peer networks"*, *"undergraduate trajectory"*, *"college students"*, *"post-college"*) rather than Latinate/inflated adjectives.
+   - **Prohibited Variants**: Do **NOT** use *"collegiate"* (e.g., *"collegiate careers"*, *"collegiate trajectory"*, *"collegiate setting"*) or *"post-collegiate"*.
 
 ---
 
@@ -87,10 +90,10 @@ To ensure strict conceptual and empirical clarity across the manuscript, tables,
    - Connected and synchronized with Overleaf Git remote (`https://git.overleaf.com/6a42d5015a4bdf4b1804e7c8`).
    - Created `REVISION_PLAN_SOCIAL_NETWORKS.md` and `response_to_reviewers.md`.
 2. **Tier 3 (Discussion & Scope Revisions)**:
-   - **Time Horizon & Post-Collegiate Tie Dynamics (R1 #3)**: Expanded Section 5.2 to discuss the decay/persistence of ties after college graduation when institutional scaffolding is removed.
+   - **Time Horizon & Post-College Tie Dynamics (R1 #3)**: Expanded Section 5.2 to discuss the decay/persistence of ties after college graduation when institutional scaffolding is removed.
    - **Directionality, Perceptions, and Status Asymmetry (R1 #8)**: Added explicit discussion in Section 5.2 clarifying egocentric cognitive network boundaries, unreciprocated nominations, and status differences.
 3. **Tier 2.10 (Calibrating Claims / Avoiding Over-Generalization)**:
-   - Calibrated theoretical language in the Abstract, Introduction, and Section 5.1–5.3 to ground conclusions in emerging adulthood and collegiate transitions rather than invariant universal laws (R2 #1).
+   - Calibrated theoretical language in the Abstract, Introduction, and Section 5.1–5.3 to ground conclusions in emerging adulthood and college transitions rather than invariant universal laws (R2 #1).
 4. **Tier 1.7 (Descriptive Statistics Tables)**:
    - Embedded Table 1 (`Tabs/desc_cont.tex`) and Table 2 (`Tabs/desc_cat.tex`) directly into Section 3.2 (*Measures and Descriptive Statistics*) in `manuscript-R1.tex` with thorough descriptive narrative (R1 #4, R2). Removed duplicate appendix.
 5. **Tier 1.1 (Structural Embeddedness Controls - R1 #1, #5)**:

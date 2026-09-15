@@ -66,7 +66,7 @@ Below, we provide a detailed, point-by-point response to each of the comments an
        - **Video Games**: $\text{ICC} = 0.54$
        - **Music**: $\text{ICC} = 0.43$ (the lower variance in music reflects ceiling effects, where over \SI{75}{\percent} of respondents consistently select ``Very much'' across waves).
      - **Adjacent Wave-to-Wave Test-Retest Reliability ($r_{\text{adj}}$)**: Across consecutive waves, Pearson correlations range from $r = 0.50$ to $0.80$ ($p < 0.001$). Exact response agreement averages between \SI{61.4}{\percent} and \SI{78.5}{\percent}, while agreement within $\pm 1$ category on the Likert scale exceeds **\SI{96.6}{\percent} to \SI{99.7}{\percent}** across all domains.
-     - **Multi-Year Test-Retest Stability (Wave 1 to Wave 3 / 1.5 Years)**: Spanning 1.5 years of collegiate development, correlations remain high ($r = 0.81$ for sports, $r = 0.65$ for books, $r = 0.62$ for movies, $r = 0.62$ for outdoor activities, $r = 0.51$ for games), with **\SI{95.8}{\percent} to \SI{98.8}{\percent}** of responses remaining within $\pm 1$ scale step.
+     - **Multi-Year Test-Retest Stability (Wave 1 to Wave 3 / 1.5 Years)**: Spanning 1.5 years of undergraduate development, correlations remain high ($r = 0.81$ for sports, $r = 0.65$ for books, $r = 0.62$ for movies, $r = 0.62$ for outdoor activities, $r = 0.51$ for games), with **\SI{95.8}{\percent} to \SI{98.8}{\percent}** of responses remaining within $\pm 1$ scale step.
 
   2. **Stability of Alter Perceived Tastes for Persisting Ties**:
      - For dyads that persist across consecutive waves ($N = 2,546$ persisting dyad-wave pairs), egos' perceptions of their alters' tastes also display strong longitudinal reliability:
@@ -78,13 +78,13 @@ Below, we provide a detailed, point-by-point response to each of the comments an
        - **Video Games**: $r = 0.54$ (\SI{58.1}{\percent} exact agreement; \SI{94.6}{\percent} within $\pm 1$)
 
   3. **Theoretical & Analytical Implications**:
-     - These metrics directly refute the possibility that cultural matching is an ephemeral artifact of synchronized lifestyle exploration or erratic fads. Rather, cultural tastes function as stable personal anchors throughout the collegiate life stage.
+     - These metrics directly refute the possibility that cultural matching is an ephemeral artifact of synchronized lifestyle exploration or erratic fads. Rather, cultural tastes function as stable personal anchors throughout the college life stage.
      - Furthermore, our **discrete-time event history setup** does not require an unrealistic assumption of static lifetime tastes: because cultural matching is dynamically measured contemporaneously at wave $t$ to predict the hazard of tie decay into wave $t+1$, the model explicitly captures the state of cultural matching at the inception of each specific risk interval.
      - We have added **Table \ref{tbl-taste-stability}** and a full explanatory discussion in Section 3.2 of the revised manuscript.
 
 ---
 
-### 4. Time Horizon and Post-Collegiate Tie Decay
+### 4. Time Horizon and Post-College Tie Decay
 > **Reviewer Comment (Point 3):**  
 > *Time horizon: The authors clearly state generalizability as one of the limitations of the study (i.e., students in university). I raise a slightly different limitation to consider – tie decay/persistence of these students beyond college. Assuming that people develop new cultural tastes over time, one question is whether cultural matching is still important. If these students no longer share the school context after graduation, can cultural matching continue to protect the strong ties for years and decades? Alternatively, could a strong tie in college with little cultural matching persist in the long term with higher probability than a similarly strong tie with high cultural matching in the absence of shared social context (i.e., university life)?*
 
@@ -92,8 +92,8 @@ Below, we provide a detailed, point-by-point response to each of the comments an
 * **Location in Manuscript:** Section 5.3 (Limitations and Future Research)
 * **Response / Actions Taken:**
   - We thank the reviewer for raising this thoughtful point regarding the long-term temporal horizon of cultural matching across life-course transitions.
-  - In Section 5.3 of the revised manuscript (`manuscript-R1.tex`), we have expanded the discussion on the boundaries of cultural matching across post-collegiate life transitions. We explicitly discuss how the removal of shared institutional scaffolding (such as college life, dorms, and campus routines) presents an empirical boundary condition:
-    > *"Second, an important question concerns the temporal horizon of cultural matching beyond the collegiate context. Our panel follows students through their undergraduate trajectory, capturing the critical period when campus ties are actively formed and pruned. However, a compelling open question is whether cultural matching continues to sustain social ties across major post-collegiate life transitions---such as graduation, geographic dispersal, labor market entry, and family formation. When individuals no longer share the daily scaffolding of an institutional campus environment, does deep cultural alignment provide the necessary conversational and ritual currency to keep distant ties alive across decades? Alternatively, do enduring collegiate ties persist primarily through accumulated relational history and institutional memory, rendering cultural matching less decisive once physical co-presence ends? Future long-term multi-decade panel studies will be vital for determining the life-course boundaries of cultural matching."*
+  - In Section 5.3 of the revised manuscript (`manuscript-R1.tex`), we have expanded the discussion on the boundaries of cultural matching across post-college life transitions. We explicitly discuss how the removal of shared institutional scaffolding (such as college life, dorms, and campus routines) presents an empirical boundary condition:
+    > *"Fourth, an important question concerns the temporal horizon of cultural matching beyond the college context. Our panel follows students through their undergraduate trajectory across semester intervals, capturing the critical period when campus ties are actively formed and pruned. However, a compelling open question is whether cultural matching continues to sustain social ties across major post-college life transitions---such as graduation, geographic dispersal, labor market entry, and family formation. When individuals no longer share the daily scaffolding of an institutional campus environment, does deep cultural matching provide the necessary conversational and ritual currency to protect distant ties from decay across decades? Alternatively, do enduring college ties persist primarily through accumulated relational history and institutional memory, rendering cultural matching less decisive once physical co-presence ends? Future long-term multi-decade panel studies will be vital for determining the life-course boundaries of cultural matching."*
 
 ---
 
@@ -153,7 +153,7 @@ Below, we provide a detailed, point-by-point response to each of the comments an
 * **Status:** `[Addressed]`
 * **Location in Manuscript:** Section 3.3 (Analytical Strategy), Section 4.3 (Sensitivity Analyses), and Table \ref{tbl-cross-classified} (`Tabs/cross_classified_models.tex`)
 * **Response / Actions Taken:**
-  - We thank the reviewer for raising this incisive methodological point regarding the structure of multilevel clustering in cohort-based network studies. The reviewer is correct that when survey respondents (egos) nominate peers from the same collegiate cohort, a subset of nominated alters may also participate as egos in the study, introducing potential non-hierarchical cross-clustering across dyads.
+  - We thank the reviewer for raising this incisive methodological point regarding the structure of multilevel clustering in cohort-based network studies. The reviewer is correct that when survey respondents (egos) nominate peers from the same college cohort, a subset of nominated alters may also participate as egos in the study, introducing potential non-hierarchical cross-clustering across dyads.
   - In response, we have conducted a thorough empirical diagnostic of ego-alter overlap in our dataset and estimated three complementary sensitivity specifications: (1) **Cross-Classified Multilevel Models** with crossed random effects for both egos and alters, (2) **Dyadic Clustering Models** with random effects for undirected dyads, and (3) **Subsample Models** completely excluding ties where alter is also a study ego. 
   - We have added **Table \ref{tbl-cross-classified}** to the revised manuscript (`manuscript-R1.tex`), alongside detailed formalizations in Section 3.3 and narrative in Section 4.3.
 
@@ -195,7 +195,7 @@ Below, we provide a detailed, point-by-point response to each of the comments an
 
   1. **Empirical Distribution of Panel Retention in NetSense**:
      - Across the study, panel retention was high: respondents completed an average of **\num{5.12} survey waves** (median $5$ waves).
-     - **\SI{80.3}{\percent} of respondents** ($151$ of $189$ unique egos) completed $4$ or more survey waves, and **\SI{48.9}{\percent}** ($92$ egos) completed $6$ or more survey waves across their collegiate careers.
+     - **\SI{80.3}{\percent} of respondents** ($151$ of $189$ unique egos) completed $4$ or more survey waves, and **\SI{48.9}{\percent}** ($92$ egos) completed $6$ or more survey waves across their college careers.
 
   2. **Attrition Prediction Models: Cultural Matching Does Not Predict Dropout**:
      - We estimated both OLS models (predicting total waves completed) and logistic regression models (predicting early study dropout before wave 4) as a function of baseline average cultural matching, baseline network size, ego gender, and ego race.
@@ -212,7 +212,7 @@ Below, we provide a detailed, point-by-point response to each of the comments an
        - **Structural embeddedness** preserves tie durability ($\text{OR} = 1.087, z = 1.76, p = 0.0778$).
        - **Subjective closeness (Close vs. Not Close)**: $\text{OR} = 2.670, z = 5.96, p < 0.001$.
      - **High-Retention Egos ($\ge 4$ Waves Completed, $N = 4,605$)**: Re-estimating the full Model 4 on egos who participated in 4 or more waves yields: open-ended matching $\text{OR} = 1.079$ ($p = 0.0275$), cultural opacity $\text{OR} = 0.914$ ($p = 0.0364$), structural embeddedness $\text{OR} = 1.088$ ($p = 0.0802$), and closeness $\text{OR} = 2.719$ ($p < 0.001$).
-     - **Very High-Retention Egos ($\ge 6$ Waves Completed, $N = 3,253$)**: Restricting to students present for nearly the entire collegiate trajectory confirms identical patterns (open-ended matching $\text{OR} = 1.075, p = 0.0757$; closeness $\text{OR} = 3.388, p < 0.001$).
+     - **Very High-Retention Egos ($\ge 6$ Waves Completed, $N = 3,253$)**: Restricting to students present for nearly the entire undergraduate trajectory confirms identical patterns (open-ended matching $\text{OR} = 1.075, p = 0.0757$; closeness $\text{OR} = 3.388, p < 0.001$).
 
   4. **Purging Ego Selection via Within-Ego Fixed Effects**:
      - Finally, our **within-ego conditional logit models** (Table \ref{tbl-robustness-models}, Column 2 and Figure \ref{fig-fe-predictions}) compare alters *within the same ego*, perfectly conditioning out all time-invariant ego characteristics (including survey compliance, overall persistence traits, and individual attrition propensities). Open-ended matching ($\text{OR} = 1.056, p < 0.05$) and opacity ($\text{OR} = 0.920, p < 0.01$) remain highly significant in this strict within-ego test.
@@ -258,9 +258,9 @@ Below, we provide a detailed, point-by-point response to each of the comments an
 * **Location in Manuscript:** Abstract, Section 1 (Introduction), Section 5.1–5.3 (Discussion & Limitations)
 * **Response / Actions Taken:**
   - We appreciate Reviewer 2's essential critique regarding theoretical scope and over-generalization. In the revised manuscript, we have systematically recalibrated our claims throughout the Abstract, Introduction, and Discussion sections.
-  - Specifically, rather than claiming invariant universal laws governing all human networks across every life stage, we explicitly ground our arguments and findings within the ecological and developmental dynamics of **emerging adulthood and collegiate transitions**—an institutional setting characterized by high baseline churn, geographic concentration, and active identity/network renegotiation.
+  - Specifically, rather than claiming invariant universal laws governing all human networks across every life stage, we explicitly ground our arguments and findings within the ecological and developmental dynamics of **emerging adulthood and college transitions**—an institutional setting characterized by high baseline churn, geographic concentration, and active identity/network renegotiation.
   - In the Introduction, we now situate cultural matching as a micro-interactional selection and retention mechanism that operates during critical life transitions amidst high baseline turnover.
-  - In the Discussion and Section 5.3 (Limitations and Future Research), we clearly delineate the boundary conditions of the study, pointing out how cultural matching operates within high-flux transition ecologies and highlighting the need for future studies in older adult, workplace, and post-collegiate settings.
+  - In the Discussion and Section 5.3 (Limitations and Future Research), we clearly delineate the boundary conditions of the study, pointing out how cultural matching operates within high-flux transition ecologies and highlighting the need for future studies in older adult, workplace, and post-college settings.
 
 ---
 
