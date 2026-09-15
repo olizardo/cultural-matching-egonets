@@ -580,62 +580,66 @@ alpha_map <- df_varying %>%
 
 df_varying <- df_varying %>% left_join(alpha_map %>% select(egoid, alpha), by = "egoid")
 
-get_counterfactual_curve <- function(var_name, x_vals, beta_val, se_val) {
+get_counterfactual_me <- function(var_name, x_vals, beta_val, se_val) {
   x_actual <- df_varying[[var_name]]
   eta_other <- df_varying$alpha + df_varying$eta_no_alpha - beta_val * x_actual
+  p0 <- mean(plogis(eta_other + beta_val * 0))
   
   map_dfr(x_vals, function(x) {
     eta_x <- eta_other + beta_val * x
     probs <- plogis(eta_x)
     avg_p <- mean(probs)
-    grad <- mean(probs * (1 - probs) * (x - x_actual))
-    se_p <- abs(grad) * se_val
+    me <- avg_p - p0
+    grad <- mean(probs * (1 - probs) * x)
+    se_me <- abs(grad) * se_val
     tibble(
       x = x,
-      predicted_prob = avg_p,
-      conf_low = max(0, avg_p - 1.96 * se_p),
-      conf_high = min(1, avg_p + 1.96 * se_p)
+      marginal_effect = me,
+      conf_low = me - 1.96 * se_me,
+      conf_high = me + 1.96 * se_me
     )
   })
 }
 
-curve_closed <- get_counterfactual_curve("num_match_closed", 0:6, beta_fe["num_match_closed"], sqrt(vcov(mod_fe)["num_match_closed", "num_match_closed"])) %>%
-  mutate(Predictor = "Closed-Form Cultural Matching")
+curve_closed <- get_counterfactual_me("num_match_closed", 0:6, beta_fe["num_match_closed"], sqrt(vcov(mod_fe)["num_match_closed", "num_match_closed"])) %>%
+  mutate(Predictor = "Closed-Form\nCultural Matching")
 
-curve_open <- get_counterfactual_curve("open_match_count", 0:5, beta_fe["open_match_count"], sqrt(vcov(mod_fe)["open_match_count", "open_match_count"])) %>%
-  mutate(Predictor = "Open-Ended Activity Matching")
+curve_open <- get_counterfactual_me("open_match_count", 0:5, beta_fe["open_match_count"], sqrt(vcov(mod_fe)["open_match_count", "open_match_count"])) %>%
+  mutate(Predictor = "Open-Ended\nActivity Matching")
 
-curve_opac <- get_counterfactual_curve("num_unknown", 0:6, beta_fe["num_unknown"], sqrt(vcov(mod_fe)["num_unknown", "num_unknown"])) %>%
-  mutate(Predictor = "Cultural Network Opacity")
+curve_opac <- get_counterfactual_me("num_unknown", 0:6, beta_fe["num_unknown"], sqrt(vcov(mod_fe)["num_unknown", "num_unknown"])) %>%
+  mutate(Predictor = "Cultural Network\nOpacity")
 
-df_fe_curves <- bind_rows(curve_closed, curve_open, curve_opac) %>%
-  mutate(Predictor = factor(Predictor, levels = c("Closed-Form Cultural Matching", "Open-Ended Activity Matching", "Cultural Network Opacity")))
+df_fe_me <- bind_rows(curve_closed, curve_open, curve_opac) %>%
+  mutate(Predictor = factor(Predictor, levels = c("Closed-Form\nCultural Matching", "Open-Ended\nActivity Matching", "Cultural Network\nOpacity")))
 
-p_fe <- ggplot(df_fe_curves, aes(x = factor(x), y = predicted_prob, fill = Predictor, color = Predictor)) +
+p_fe <- ggplot(df_fe_me, aes(y = factor(x), x = marginal_effect, fill = Predictor, color = Predictor)) +
   geom_col(width = 0.65, alpha = 0.85) +
-  geom_errorbar(aes(ymin = conf_low, ymax = conf_high), width = 0.25, linewidth = 0.7) +
-  facet_wrap(~Predictor, scales = "free_x", ncol = 3) +
-  scale_y_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0, 0.42), expand = expansion(mult = c(0, 0.05))) +
+  geom_errorbar(aes(xmin = conf_low, xmax = conf_high), width = 0.25, linewidth = 0.7) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "gray50") +
+  facet_wrap(~Predictor, scales = "free_y", ncol = 3) +
+  scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
   scale_fill_manual(values = c(
-    "Closed-Form Cultural Matching" = "#1f78b4", 
-    "Open-Ended Activity Matching" = "#33a02c", 
-    "Cultural Network Opacity" = "#e31a1c"
+    "Closed-Form\nCultural Matching" = "#1f78b4", 
+    "Open-Ended\nActivity Matching" = "#33a02c", 
+    "Cultural Network\nOpacity" = "#e31a1c"
   )) +
   scale_color_manual(values = c(
-    "Closed-Form Cultural Matching" = "#12476b", 
-    "Open-Ended Activity Matching" = "#1e5e1a", 
-    "Cultural Network Opacity" = "#941113"
+    "Closed-Form\nCultural Matching" = "#12476b", 
+    "Open-Ended\nActivity Matching" = "#1e5e1a", 
+    "Cultural Network\nOpacity" = "#941113"
   )) +
   labs(
-    x = "Predictor Value (Count)",
-    y = "Prob. of Protection\nfrom Tie Decay"
+    y = "Predictor Value (Count)",
+    x = "Marginal Effect on Probability of Protection from Tie Decay (vs. 0)"
   ) +
   theme_minimal(base_size = 11) +
   theme(
     legend.position = "none",
     strip.text = element_text(face = "bold", size = 10),
-    axis.title.y = element_text(size = 10, margin = margin(r = 6)),
-    axis.title.x = element_text(size = 10, margin = margin(t = 6)),
+    axis.text.y = element_text(face = "bold", color = "black"),
+    axis.title.y = element_text(margin = margin(r = 6)),
+    axis.title.x = element_text(margin = margin(t = 6)),
     panel.spacing = unit(1.2, "lines"),
     panel.grid.minor = element_blank()
   )
