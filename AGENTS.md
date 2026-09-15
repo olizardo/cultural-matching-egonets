@@ -26,7 +26,7 @@ The project uses longitudinal survey and network data from the NetSense study.
 ---
 
 ## Analytical Approach
-* **Discrete-Time Survival Analysis**: Event history modeling using `lme4::glmer()` to model the hazard of tie dissolution across all wave transition intervals ($N = 5,349$ complete dyad-period cases).
+* **Discrete-Time Survival Analysis**: Event history modeling using `lme4::glmer()` to model the hazard of tie decay across all wave transition intervals ($N = 5,349$ complete dyad-period cases).
 * **Core Measures**:
   * Closed-form cultural matching (broad domain count, 0–6).
   * Open-ended activity matching (favorite leisure activities count, 0–5).
@@ -39,6 +39,17 @@ The project uses longitudinal survey and network data from the NetSense study.
   * Connected to Overleaf Git remote: `https://git.overleaf.com/6a42d5015a4bdf4b1804e7c8` (remote name: `overleaf`).
   * Push command to sync with Overleaf: `git push overleaf HEAD:main`.
   * Preamble configuration: Uses `silence` package to suppress kernel `\showhyphens` warnings on TeX Live 2024/2025, robust conditional loading for `siunitx`, and `\apptocmd{\thebibliography}{\sloppy}{}{}` to prevent bibliography overfull margins.
+
+---
+
+## Terminological Consistency Standards (MANDATORY FOR ALL EDITS)
+To ensure strict conceptual and empirical clarity across the manuscript, tables, figures, and response documents:
+1. **Outcome Terminology**:
+   - Strictly refer to the relational outcome as **"tie decay"** (or **"protection from tie decay"**, **"protecting ties from decay"**, **"hazard of tie decay"**).
+   - **Prohibited Outcome Variants**: Do **NOT** use *"tie dissolution"*, *"tie survival"*, or *"tie retention"* to describe the dependent variable or relational outcome.
+2. **Predictor Terminology**:
+   - Strictly and exclusively use the theoretical term **"cultural matching"** (e.g., *"closed-form cultural matching"*, *"open-ended activity matching"*, *"protection from tie decay through cultural matching"*).
+   - **Prohibited Predictor Variants**: Do **NOT** use *"cultural alignment"*, *"cultural affinity"*, *"cultural resonance"*, *"cultural compatibility"*, *"shared tastes"*, or *"shared cultural tastes"*.
 
 ---
 
