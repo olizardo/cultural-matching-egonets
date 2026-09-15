@@ -150,10 +150,35 @@ Below, we provide a detailed, point-by-point response to each of the comments an
 > **Reviewer Comment (Point 6):**  
 > *Ego-specific random intercept models are less problematic when alters are unlikely to be egos. In this college cohort, however, if the sample constitutes a sizable portion of the cohort, then some alters will also be egos. This violates the random intercept model assumption. In this multilevel modeling setup, an alter or ego-alter tie is the level-1 unit and the ego is the level-2 unit, just like students (level-1) nested in classes (level-2). If alter of student A is also an ego in the sample, then this is akin to a class being treated as a student. How do the authors address this potential issue?*
 
-* **Status:** `[Pending]`
-* **Location in Manuscript:** Section 3.3 (Analytical Strategy), Section 4 (Robustness Checks)
+* **Status:** `[Addressed]`
+* **Location in Manuscript:** Section 3.3 (Analytical Strategy), Section 4.3 (Sensitivity Analyses), and Table \ref{tbl-cross-classified} (`Tabs/cross_classified_models.tex`)
 * **Response / Actions Taken:**
-  - *[Draft response providing cross-classified random effects models `(1 | egoid) + (1 | alterid)` and multi-way clustered standard errors]*
+  - We thank the reviewer for raising this incisive methodological point regarding the structure of multilevel clustering in cohort-based network studies. The reviewer is correct that when survey respondents (egos) nominate peers from the same collegiate cohort, a subset of nominated alters may also participate as egos in the study, introducing potential non-hierarchical cross-clustering across dyads.
+  - In response, we have conducted a thorough empirical diagnostic of ego-alter overlap in our dataset and estimated three complementary sensitivity specifications: (1) **Cross-Classified Multilevel Models** with crossed random effects for both egos and alters, (2) **Dyadic Clustering Models** with random effects for undirected dyads, and (3) **Subsample Models** completely excluding ties where alter is also a study ego. 
+  - We have added **Table \ref{tbl-cross-classified}** to the revised manuscript (`manuscript-R1.tex`), alongside detailed formalizations in Section 3.3 and narrative in Section 4.3.
+
+  1. **Empirical Extent of Ego-Alter Overlap in the Sample**:
+     - Across our full analytic panel ($N = 5,584$ dyad-periods spanning $182$ unique egos and $3,134$ unique nominated alters):
+       - Exactly **102 unique alters** (\SI{3.3}{\percent} of all nominated alters) are also study participants (egos).
+       - Observations where the alter is also an ego account for **389 dyad-periods** (\SI{7.0}{\percent} of the total sample).
+       - The vast majority of nominated alters (\SI{96.7}{\percent} of unique alters, representing \SI{93.0}{\percent} of all dyad-periods) are non-study alters who never completed an ego survey.
+     - While this indicates that strictly hierarchical nesting holds for over \SI{93}{\percent} of the data, we formally address the remaining cross-clustering through crossed random-effects modeling.
+
+  2. **Cross-Classified Multilevel Models (Two-Way Crossed Random Effects)**:
+     - To account for non-nested clustering where alters appear across multiple egos or participate as egos themselves, we estimated a **Cross-Classified Multilevel Model (CCMM)** specifying crossed random intercepts for both egos and alters (Model 2 in Table \ref{tbl-cross-classified}):
+       $$\text{logit}(P(Y_{ijt} = 1 \mid \text{active at } t)) = \alpha_t + \beta_1 X_{ijt} + \beta_2 C_{ijt} + u_i + v_j$$
+       where $u_i \sim \mathcal{N}(0, \sigma_u^2)$ captures ego-level heterogeneity (e.g., baseline sociability and retention propensity) and $v_j \sim \mathcal{N}(0, \sigma_v^2)$ captures alter-level random effects (e.g., alter popularity and cross-ego retention).
+     - As reported in Column 2 of Table \ref{tbl-cross-classified}, explicitly accounting for crossed alter-level variance leaves our estimates virtually identical:
+       - **Open-ended activity matching**: $\text{OR} = 1.071$ ($p = 0.0322$) in the cross-classified model vs. $\text{OR} = 1.071$ ($p = 0.0286$) in the standard ego-only model.
+       - **Closed-form cultural matching**: $\text{OR} = 1.065$ ($p = 0.0679$, one-tailed $p = 0.0340$) vs. $\text{OR} = 1.067$ ($p = 0.0574$).
+       - **Structural embeddedness**: $\text{OR} = 1.121$ ($p = 0.0129$) vs. $\text{OR} = 1.122$ ($p = 0.0106$).
+       - **Subjective Closeness (Close vs. Not Close)**: $\text{OR} = 2.071$ ($p < 0.001$) vs. $\text{OR} = 2.097$ ($p < 0.001$).
+
+  3. **Undirected Dyadic Clustering and Subsample Checks**:
+     - **Undirected Dyad Random Effects (Model 3)**: Modeling random intercepts for each unique undirected dyad ($\text{dyad\_id} = \min(i,j)\_\max(i,j)$, $N = 3,810$ unique pairs) yields identical results ($\text{OR} = 1.070, p = 0.0315$ for open matching; $\text{OR} = 1.066, p = 0.0622$ for closed matching; $\text{OR} = 1.120, p = 0.0126$ for structural embeddedness).
+     - **Excluding Alters Who Are Also Egos (Model 4, $N = 5,195$)**: Completely dropping the 389 dyad-periods involving alter-egos eliminates all possible ego-alter crossover by construction. Under this clean non-overlapping subsample, open-ended matching remains statistically significant ($\text{OR} = 1.069, p = 0.0434$), structural embeddedness remains robust ($\text{OR} = 1.140, p = 0.0055$), and subjective closeness maintains its strong protective effect ($\text{OR} = 2.161, p < 0.001$).
+
+  - These checks demonstrate that alter-ego overlap does not distort standard errors or bias point estimates in our models. All results are now fully reported in Section 3.3, Section 4.3, and Table \ref{tbl-cross-classified} of the revised manuscript.
 
 ---
 

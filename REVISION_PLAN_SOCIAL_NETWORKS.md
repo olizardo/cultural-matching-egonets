@@ -144,7 +144,7 @@ The revision points are organized below in descending order of priority, grouped
 | 1 | **R1:** Triadic closure & structural embeddedness | **High** | `[COMPLETED]` Add common neighbors / embeddedness controls; report in main tables. |
 | 2 | **R1:** Tie decay sequences & rekindling (256 paths) | **High** | `[COMPLETED]` Formalize discrete-time event history setup in Methods; clarify risk set and episode handling; add absorbing first-decay model to Table 4. |
 | 3 | **R1:** Empirical stability of cultural tastes | **High** | `[COMPLETED]` Compute taste consistency across waves; report correlation/stability table in Appendix/text. |
-| 4 | **R1:** Alters as egos / multilevel assumption | **High** | Test cross-classified `(1|egoid) + (1|alterid)` or dyadic clustered SEs; add robustness note. |
+| 4 | **R1:** Alters as egos / multilevel assumption | **High** | `[COMPLETED]` Test cross-classified `(1|egoid) + (1|alterid)` and dyadic models; report Table 5 in manuscript and methods text. |
 | 5 | **R1:** Matching metric (positive vs. shared disinterest) | **High** | Clarify scoring rule; run sensitivity check isolating positive interest matches vs. disinterest. |
 | 6 | **R1:** Node attrition & selection bias | **High** | Run retention sensitivity model; document attrition patterns in supplementary materials. |
 | 7 | **R1 & R2:** Descriptive statistics table | **High** | Generate and insert comprehensive descriptive statistics table into manuscript. |

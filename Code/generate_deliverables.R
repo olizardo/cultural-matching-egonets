@@ -797,4 +797,124 @@ p_fe <- ggplot(df_fe_me, aes(y = factor(x), x = marginal_effect, fill = Predicto
 
 ggsave(here("Plots", "fe_predicted_probabilities.png"), plot = p_fe, width = 6.5, height = 3.6, dpi = 300)
 
+# ==============================================================================
+# SECTION 5: CROSS-CLASSIFIED & DYADIC CLUSTERING MODELS (TABLE 5 / APPENDIX)
+# ==============================================================================
+message("      Estimating cross-classified & dyadic clustering models (Tabs/cross_classified_models.tex)...")
+
+df_period_cc <- df_period %>%
+  mutate(
+    dyad_id = if_else(egoid < alterid, paste(egoid, alterid, sep = "_"), paste(alterid, egoid, sep = "_")),
+    alter_is_ego = alterid %in% unique(df_period$egoid)
+  )
+
+form_crossed <- as.formula(paste("persisted ~ num_match_closed + open_match_count + num_unknown +", ctrl_vars, "+ (1 | egoid) + (1 | alterid)"))
+fit_crossed <- glmer(form_crossed, data = df_period_cc, family = binomial, control = glmer_ctrl, nAGQ = 0)
+
+form_dyad <- as.formula(paste("persisted ~ num_match_closed + open_match_count + num_unknown +", ctrl_vars, "+ (1 | egoid) + (1 | dyad_id)"))
+fit_dyad <- glmer(form_dyad, data = df_period_cc, family = binomial, control = glmer_ctrl, nAGQ = 0)
+
+df_no_alter_ego <- df_period_cc %>% filter(!alter_is_ego)
+form_no_ae <- as.formula(paste("persisted ~ num_match_closed + open_match_count + num_unknown +", ctrl_vars, "+ (1 | egoid)"))
+fit_no_alter_ego <- glmer(form_no_ae, data = df_no_alter_ego, family = binomial, control = glmer_ctrl, nAGQ = 0)
+
+get_full_coefs <- function(mod, name) {
+  co <- summary(mod)$coefficients
+  var_names <- rownames(co)
+  tibble(
+    Model = name,
+    term = var_names,
+    estimate = co[, "Estimate"],
+    std_error = co[, "Std. Error"],
+    p_value = co[, "Pr(>|z|)"],
+    or = exp(co[, "Estimate"])
+  )
+}
+
+all_mod_coefs <- bind_rows(
+  get_full_coefs(mod_embed, "M1_Ego"),
+  get_full_coefs(fit_crossed, "M2_Crossed"),
+  get_full_coefs(fit_dyad, "M3_Dyad"),
+  get_full_coefs(fit_no_alter_ego, "M4_Excl")
+)
+
+display_terms_cc <- c(
+  "num_match_closed" = "Closed-Form Cultural Matching",
+  "open_match_count" = "Open-Ended Activity Matching",
+  "num_unknown" = "Cultural Network Opacity",
+  "common_alters_std" = "Structural Embeddedness (Common Alters)",
+  "close_factorSomewhat Close" = "Subjective Closeness: Somewhat",
+  "close_factorClose" = "Subjective Closeness: Close",
+  "same_dorm" = "Roommate/Dormmate",
+  "is_friend" = "Friend",
+  "freq_daily" = "Frequency: Daily (vs Weekly)",
+  "duration_c" = "Tie Duration (Scaled)",
+  "duration_sq_c" = "Tie Duration Sq (Scaled)"
+)
+
+cc_lines <- c(
+  "\\begin{table}[htbp]",
+  "\\centering",
+  "\\small",
+  "\\begin{talltblr}[         %% tabularray outer open",
+  "caption={Sensitivity Analysis: Cross-Classified Random Effects and Dyadic Clustering Models\\label{tbl-cross-classified}},",
+  "note{}={+ p \\num{< 0.1}, * p \\num{< 0.05}, ** p \\num{< 0.01}, *** p \\num{< 0.001}},",
+  "note{ }={Note: All models control for ego and alter gender identity, gender interaction, race homophily, and wave transition fixed effects. Model 1 is the primary hierarchical random-intercept model. Model 2 estimates crossed random intercepts for both egos and alters. Model 3 specifies random intercepts for egos and unique undirected dyads. Model 4 excludes the 389 dyad-periods where alter is also a survey ego.},",
+  "]                     %% tabularray outer close",
+  "{                     %% tabularray inner open",
+  "width=\\linewidth,",
+  "colspec={X[2.5,l] X[1,c] X[1,c] X[1,c] X[1.1,c]},",
+  "row{odd}={rowsep=0.2pt},",
+  "row{even}={rowsep=0.2pt},",
+  "hline{2}={1-5}{solid, black, 0.05em},",
+  paste0("hline{", 2 * length(display_terms_cc) + 2, "}={1-5}{solid, black, 0.05em},"),
+  "hline{1}={1-5}{solid, black, 0.08em},",
+  paste0("hline{", 2 * length(display_terms_cc) + 6, "}={1-5}{solid, black, 0.08em},"),
+  "column{1}={}{halign=l},",
+  "column{2-5}={}{halign=c},",
+  "}                     %% tabularray inner close",
+  "& {Model 1\\\\Standard} & {Model 2\\\\Crossed} & {Model 3\\\\Dyad} & {Model 4\\\\Excl. Ego-Alters} \\\\"
+)
+
+for (t in names(display_terms_cc)) {
+  label <- display_terms_cc[t]
+  row_ors <- c()
+  row_ses <- c()
+  for (m in c("M1_Ego", "M2_Crossed", "M3_Dyad", "M4_Excl")) {
+    sub <- all_mod_coefs %>% filter(Model == m, term == t)
+    if (nrow(sub) == 0) {
+      row_ors <- c(row_ors, "")
+      row_ses <- c(row_ses, "")
+    } else {
+      p_val <- sub$p_value
+      star <- if (p_val < 0.001) "***" else if (p_val < 0.01) "**" else if (p_val < 0.05) "*" else if (p_val < 0.10) "+" else ""
+      row_ors <- c(row_ors, sprintf("\\num{%.3f}%s", sub$or, star))
+      row_ses <- c(row_ses, sprintf("(\\num{%.3f})", sub$std_error))
+    }
+  }
+  cc_lines <- c(cc_lines, sprintf("%s & %s \\\\", label, paste(row_ors, collapse = " & ")))
+  cc_lines <- c(cc_lines, sprintf(" & %s \\\\", paste(row_ses, collapse = " & ")))
+}
+
+n_obs <- c(nrow(df_period_cc), nrow(df_period_cc), nrow(df_period_cc), nrow(df_no_alter_ego))
+n_egos <- c(length(unique(df_period_cc$egoid)), length(unique(df_period_cc$egoid)), length(unique(df_period_cc$egoid)), length(unique(df_no_alter_ego$egoid)))
+var_ego_str <- sapply(list(mod_embed, fit_crossed, fit_dyad, fit_no_alter_ego), function(mod) {
+  vc <- as.data.frame(VarCorr(mod))
+  sprintf("%.3f", vc$sdcor[vc$grp == "egoid"])
+})
+var_alter_str <- c("", sprintf("\\num{%.3f}", as.data.frame(VarCorr(fit_crossed))$sdcor[as.data.frame(VarCorr(fit_crossed))$grp == "alterid"]),
+                   sprintf("\\num{%.3f}", as.data.frame(VarCorr(fit_dyad))$sdcor[as.data.frame(VarCorr(fit_dyad))$grp == "dyad_id"]), "")
+
+cc_lines <- c(
+  cc_lines,
+  sprintf("Ego Random Intercept SD ($\\sigma_u$) & \\num{%s} & \\num{%s} & \\num{%s} & \\num{%s} \\\\", var_ego_str[1], var_ego_str[2], var_ego_str[3], var_ego_str[4]),
+  sprintf("Alter/Dyad Random Intercept SD & %s & %s & %s & %s \\\\", var_alter_str[1], var_alter_str[2], var_alter_str[3], var_alter_str[4]),
+  sprintf("Dyad-Periods ($N$) & \\num{%d} & \\num{%d} & \\num{%d} & \\num{%d} \\\\", n_obs[1], n_obs[2], n_obs[3], n_obs[4]),
+  sprintf("Unique Egos & \\num{%d} & \\num{%d} & \\num{%d} & \\num{%d} \\\\", n_egos[1], n_egos[2], n_egos[3], n_egos[4]),
+  "\\end{talltblr}",
+  "\\end{table}"
+)
+
+writeLines(cc_lines, here("Tabs", "cross_classified_models.tex"))
+
 message("All manuscript deliverables (Tabs/ and Plots/) generated successfully!")
