@@ -146,7 +146,7 @@ The revision points are organized below in descending order of priority, grouped
 | 3 | **R1:** Empirical stability of cultural tastes | **High** | `[COMPLETED]` Compute taste consistency across waves; report correlation/stability table in Appendix/text. |
 | 4 | **R1:** Alters as egos / multilevel assumption | **High** | `[COMPLETED]` Test cross-classified `(1|egoid) + (1|alterid)` and dyadic models; report Table 5 in manuscript and methods text. |
 | 5 | **R1:** Matching metric (positive vs. shared disinterest) | **High** | Clarify scoring rule; run sensitivity check isolating positive interest matches vs. disinterest. |
-| 6 | **R1:** Node attrition & selection bias | **High** | Run retention sensitivity model; document attrition patterns in supplementary materials. |
+| 6 | **R1:** Node attrition & selection bias | **High** | `[COMPLETED]` Run retention sensitivity models; document attrition patterns in response and manuscript text. |
 | 7 | **R1 & R2:** Descriptive statistics table | **High** | Generate and insert comprehensive descriptive statistics table into manuscript. |
 | 8 | **R1:** Tone down "culture vs. structure" fight | **Medium** | Rewrite Intro/Discussion to frame as co-evolutionary and complementary structural-cultural mechanisms. |
 | 9 | **R2:** Positional differences & status asymmetry | **Medium** | Incorporate controls (gender homophily, same dorm, campus tie); discuss status & capital conversion. |
