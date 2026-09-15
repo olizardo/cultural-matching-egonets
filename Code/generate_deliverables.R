@@ -929,4 +929,128 @@ cc_lines <- c(
 
 writeLines(cc_lines, here("Tabs", "cross_classified_models.tex"))
 
+# ==============================================================================
+# SECTION 6: POSITIVE LIKES VS. SHARED DISLIKES (TABLE: Tabs/dislike_models.tex)
+# ==============================================================================
+message("      Estimating shared likes vs. dislikes models (Tabs/dislike_models.tex)...")
+
+df_decomposed <- df_period %>%
+  mutate(
+    # Exact positive likes (both 1 or both 2)
+    pos_like_music = as.numeric(!is.na(egomusic_) & !is.na(altermusic_) & ((egomusic_ == 1 & altermusic_ == 1) | (egomusic_ == 2 & altermusic_ == 2))),
+    pos_like_movies = as.numeric(!is.na(egomovies_) & !is.na(altermovies_) & ((egomovies_ == 1 & altermovies_ == 1) | (egomovies_ == 2 & altermovies_ == 2))),
+    pos_like_books = as.numeric(!is.na(egobooks_) & !is.na(alterbooks_) & ((egobooks_ == 1 & alterbooks_ == 1) | (egobooks_ == 2 & alterbooks_ == 2))),
+    pos_like_sports = as.numeric(!is.na(egosports_) & !is.na(altersports_) & ((egosports_ == 1 & altersports_ == 1) | (egosports_ == 2 & altersports_ == 2))),
+    pos_like_games = as.numeric(!is.na(egogames_) & !is.na(altergames_) & ((egogames_ == 1 & altergames_ == 1) | (egogames_ == 2 & altergames_ == 2))),
+    pos_like_outdoor = as.numeric(!is.na(egooutdoor_) & !is.na(alteroutdoor_) & ((egooutdoor_ == 1 & alteroutdoor_ == 1) | (egooutdoor_ == 2 & alteroutdoor_ == 2))),
+    shared_pos_likes_exact = pos_like_music + pos_like_movies + pos_like_books + pos_like_sports + pos_like_games + pos_like_outdoor,
+    
+    # Strong high likes (both 1: Very interested)
+    high_like_music = as.numeric(!is.na(egomusic_) & !is.na(altermusic_) & egomusic_ == 1 & altermusic_ == 1),
+    high_like_movies = as.numeric(!is.na(egomovies_) & !is.na(altermovies_) & egomovies_ == 1 & altermovies_ == 1),
+    high_like_books = as.numeric(!is.na(egobooks_) & !is.na(alterbooks_) & egobooks_ == 1 & alterbooks_ == 1),
+    high_like_sports = as.numeric(!is.na(egosports_) & !is.na(altersports_) & egosports_ == 1 & altersports_ == 1),
+    high_like_games = as.numeric(!is.na(egogames_) & !is.na(altergames_) & egogames_ == 1 & altergames_ == 1),
+    high_like_outdoor = as.numeric(!is.na(egooutdoor_) & !is.na(alteroutdoor_) & egooutdoor_ == 1 & alteroutdoor_ == 1),
+    shared_high_likes = high_like_music + high_like_movies + high_like_books + high_like_sports + high_like_games + high_like_outdoor,
+    
+    # Shared dislikes / disinterest (ego 3 and alter 3 or 4)
+    dislike_music = as.numeric(!is.na(egomusic_) & !is.na(altermusic_) & egomusic_ == 3 & altermusic_ %in% 3:4),
+    dislike_movies = as.numeric(!is.na(egomovies_) & !is.na(altermovies_) & egomovies_ == 3 & altermovies_ %in% 3:4),
+    dislike_books = as.numeric(!is.na(egobooks_) & !is.na(alterbooks_) & egobooks_ == 3 & alterbooks_ %in% 3:4),
+    dislike_sports = as.numeric(!is.na(egosports_) & !is.na(altersports_) & egosports_ == 3 & altersports_ %in% 3:4),
+    dislike_games = as.numeric(!is.na(egogames_) & !is.na(altergames_) & egogames_ == 3 & altergames_ %in% 3:4),
+    dislike_outdoor = as.numeric(!is.na(egooutdoor_) & !is.na(alteroutdoor_) & egooutdoor_ == 3 & alteroutdoor_ %in% 3:4),
+    shared_dislikes = dislike_music + dislike_movies + dislike_books + dislike_sports + dislike_games + dislike_outdoor
+  )
+
+mod_decomp1 <- glmer(
+  as.formula(paste("persisted ~ shared_pos_likes_exact + shared_dislikes + open_match_count + num_unknown +", ctrl_vars_full, "+ (1 | egoid)")),
+  data = df_decomposed, family = binomial(link = "logit"), control = glmer_ctrl, nAGQ = 0
+)
+
+mod_decomp2 <- glmer(
+  as.formula(paste("persisted ~ shared_high_likes + shared_dislikes + open_match_count + num_unknown +", ctrl_vars_full, "+ (1 | egoid)")),
+  data = df_decomposed, family = binomial(link = "logit"), control = glmer_ctrl, nAGQ = 0
+)
+
+s_agg <- summary(mod_embed)$coefficients
+s_d1 <- summary(mod_decomp1)$coefficients
+s_d2 <- summary(mod_decomp2)$coefficients
+
+dislike_terms <- c(
+  "num_match_closed" = "Closed-Form Cultural Matching (Aggregated)",
+  "shared_pos_likes_exact" = "Shared Positive Interests (Exact)",
+  "shared_high_likes" = "Shared Strong Interests (High)",
+  "shared_dislikes" = "Shared Disinterest / Dislikes",
+  "open_match_count" = "Open-Ended Activity Matching",
+  "num_unknown" = "Cultural Network Opacity",
+  "common_alters_std" = "Structural Embeddedness (Common Alters)",
+  "close_factorSomewhat Close" = "Subjective Closeness: Somewhat",
+  "close_factorClose" = "Subjective Closeness: Close",
+  "same_dorm" = "Roommate/Dormmate",
+  "is_friend" = "Friend",
+  "freq_daily" = "Frequency: Daily (vs Weekly)",
+  "duration_c" = "Tie Duration (Scaled)",
+  "duration_sq_c" = "Tie Duration Sq (Scaled)"
+)
+
+dislike_lines <- c(
+  "\\begin{table}[htbp]",
+  "\\centering",
+  "\\small",
+  "\\begin{talltblr}[         %% tabularray outer open",
+  "caption={Sensitivity Analysis: Decomposing Shared Positive Interests versus Shared Disinterest\\label{tbl-dislikes}},",
+  "note{}={+ p \\num{< 0.1}, * p \\num{< 0.05}, ** p \\num{< 0.01}, *** p \\num{< 0.001}},",
+  "note{ }={Note: All models include controls for ego and alter gender identity, gender interaction, race homophily, wave transition fixed effects, and ego random intercepts ($N = 5,584$ dyad-periods across $182$ egos). Model 1 is the primary aggregated matching model. Model 2 decomposes closed-form matching into exact positive interest matches and shared disinterest. Model 3 isolates strong positive matches (both rating interest as ``Very much'').},",
+  "]                     %% tabularray outer close",
+  "{                     %% tabularray inner open",
+  "width=\\linewidth,",
+  "colspec={X[2.5,l] X[1.2,c] X[1.2,c] X[1.2,c]},",
+  "row{odd}={rowsep=0.2pt},",
+  "row{even}={rowsep=0.2pt},",
+  "hline{2}={1-4}{solid, black, 0.05em},",
+  paste0("hline{", 2 * length(dislike_terms) + 2, "}={1-4}{solid, black, 0.05em},"),
+  "hline{1}={1-4}{solid, black, 0.08em},",
+  paste0("hline{", 2 * length(dislike_terms) + 5, "}={1-4}{solid, black, 0.08em},"),
+  "column{1}={}{halign=l},",
+  "column{2-4}={}{halign=c},",
+  "}                     %% tabularray inner close",
+  "& {Model 1\\\\Aggregated} & {Model 2\\\\Exact Likes} & {Model 3\\\\High Likes} \\\\"
+)
+
+for (t in names(dislike_terms)) {
+  label <- dislike_terms[t]
+  row_ors <- c()
+  row_ses <- c()
+  for (s_mat in list(s_agg, s_d1, s_d2)) {
+    if (t %in% rownames(s_mat)) {
+      est <- s_mat[t, "Estimate"]
+      se <- s_mat[t, "Std. Error"]
+      p_val <- s_mat[t, "Pr(>|z|)"]
+      or <- exp(est)
+      star <- if (p_val < 0.001) "***" else if (p_val < 0.01) "**" else if (p_val < 0.05) "*" else if (p_val < 0.10) "+" else ""
+      row_ors <- c(row_ors, sprintf("\\num{%.3f}%s", or, star))
+      row_ses <- c(row_ses, sprintf("(\\num{%.3f})", se))
+    } else {
+      row_ors <- c(row_ors, "")
+      row_ses <- c(row_ses, "")
+    }
+  }
+  dislike_lines <- c(dislike_lines, sprintf("%s & %s \\\\", label, paste(row_ors, collapse = " & ")))
+  dislike_lines <- c(dislike_lines, sprintf(" & %s \\\\", paste(row_ses, collapse = " & ")))
+}
+
+dislike_lines <- c(
+  dislike_lines,
+  sprintf("Ego Random Intercept SD ($\\sigma_u$) & \\num{%.3f} & \\num{%.3f} & \\num{%.3f} \\\\", 
+          as.data.frame(VarCorr(mod_embed))$sdcor[1], as.data.frame(VarCorr(mod_decomp1))$sdcor[1], as.data.frame(VarCorr(mod_decomp2))$sdcor[1]),
+  sprintf("Dyad-Periods ($N$) & \\num{%d} & \\num{%d} & \\num{%d} \\\\", nrow(df_decomposed), nrow(df_decomposed), nrow(df_decomposed)),
+  sprintf("Unique Egos & \\num{%d} & \\num{%d} & \\num{%d} \\\\", length(unique(df_decomposed$egoid)), length(unique(df_decomposed$egoid)), length(unique(df_decomposed$egoid))),
+  "\\end{talltblr}",
+  "\\end{table}"
+)
+
+writeLines(dislike_lines, here("Tabs", "dislike_models.tex"))
+
 message("All manuscript deliverables (Tabs/ and Plots/) generated successfully!")

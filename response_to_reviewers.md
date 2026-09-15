@@ -139,10 +139,28 @@ Below, we provide a detailed, point-by-point response to each of the comments an
 > **Reviewer Comment (Point 5):**  
 > *Measurement of cultural matching: If A and B are both “not at all interested” in music, is that treated as cultural matching, just as when both are “very interested” in music? Does cultural taste rest on what one likes or on what one both likes and does not like? If the latter, then shouldn’t the agreement on dislikes and disinterest also factor into measuring cultural matching?*
 
-* **Status:** `[Pending]`
-* **Location in Manuscript:** Section 3.2 (Independent Variables), Section 4 (Robustness Checks)
+* **Status:** `[Addressed]`
+* **Location in Manuscript:** Section 3.2 (Cultural Predictors), Section 4.3 (Sensitivity Analyses), Table \ref{tbl-dislikes} (`Tabs/dislike_models.tex`), Section 5.2 (Limitations and Future Work)
 * **Response / Actions Taken:**
-  - *[Draft response explaining scoring rules and reporting sensitivity tests decomposing positive shared interest vs. shared disinterest/indifference]*
+  - We thank the reviewer for raising this profound theoretical and methodological question regarding how cultural matching is measured. The reviewer asks whether cultural matching is driven by **shared positive passions** (positive homophily) versus **shared disinterest or mutual distastes** (negative homophily), and whether agreement on dislikes should be distinguished from agreement on likes.
+  - In response, we clarify our operationalization and present a comprehensive sensitivity analysis decomposing closed-form cultural matching into distinct components of shared positive interest versus shared disinterest (**Table \ref{tbl-dislikes}**).
+
+  1. **Clarification of Primary Measure and Empirical Prevalence**:
+     - In our baseline closed-form measure, a domain was scored as a match if ego and alter shared identical interest ratings (both "Very interested", both "Somewhat interested", or both "Not at all interested").
+     - However, in our empirical data, **positive interest alignment accounts for \SI{92.0}{\percent} of all closed-form matches** (Mean $= 1.54$ positive matches vs. Mean $= 0.20$ dislike matches). Fully \SI{83.3}{\percent} of dyad-periods exhibit zero shared dislikes across all six broad domains.
+     - Furthermore, our second core predictor---**open-ended activity matching** ($0$ to $5$ activities, Mean $= 2.52$)---is by design a pure measure of **positive shared passion**: respondents nominate their favorite leisure activities and check which specific activities their alter actively enjoys.
+
+  2. **Sensitivity Analysis: Decomposing Positive Likes vs. Shared Disinterest (Table \ref{tbl-dislikes})**:
+     - To test whether positive likes and shared dislikes operate differently in protecting ties from decay, we estimated sensitivity models decomposing broad matching into: (1) **Shared Positive Interests** (exact match on "Very interested" or "Somewhat interested"), (2) **Shared Strong Interests** (both rating "Very interested"), and (3) **Shared Disinterest** (both rating "Not at all interested").
+     - As reported in **Table \ref{tbl-dislikes}**:
+       - **Shared Positive Interests (Exact)**: Positively and significantly protects ties from decay ($\text{OR} = 1.072, z = 1.99, p = 0.0466$).
+       - **Shared Strong Interests (High)**: Yields an even stronger protective association ($\text{OR} = 1.087, z = 2.10, p = 0.0358$). Each shared strong passion increases the odds of protection from tie decay by \SI{8.7}{\percent}.
+       - **Shared Disinterest / Dislikes**: Exhibits a positive point estimate but is **not statistically significant** ($\text{OR} = 1.075, z = 0.87, p = 0.3855$ in Model 2; $\text{OR} = 1.069, z = 0.80, p = 0.4258$ in Model 3).
+       - **Open-Ended Activity Matching**: Consistently maintains its positive and statistically significant protective effect ($\text{OR} = 1.070, z = 2.17, p = 0.0300$).
+
+  3. **Theoretical Implications: Positive Passions as Relational Currency**:
+     - These empirical tests demonstrate that **active, positive shared enthusiasm** is the primary micro-interactional engine protecting social ties from decay. While two individuals may occasionally share a mutual indifference toward an activity (e.g., neither following sports or neither playing video games), shared disinterest does not provide the active conversational topics, joint participation opportunities, or interaction ritual energy (Collins 2004) needed to prevent relational decay.
+     - We have added **Table \ref{tbl-dislikes}** to Section 4.3, updated the measurement narrative in Section 3.2, and expanded the discussion of positive passions versus symbolic negative distastes in Section 5.2 of the revised manuscript.
 
 ---
 
