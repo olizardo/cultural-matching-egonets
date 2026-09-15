@@ -50,6 +50,9 @@ To ensure strict conceptual and empirical clarity across the manuscript, tables,
 2. **Predictor Terminology**:
    - Strictly and exclusively use the theoretical term **"cultural matching"** (e.g., *"closed-form cultural matching"*, *"open-ended activity matching"*, *"protection from tie decay through cultural matching"*).
    - **Prohibited Predictor Variants**: Do **NOT** use *"cultural alignment"*, *"cultural affinity"*, *"cultural resonance"*, *"cultural compatibility"*, *"shared tastes"*, or *"shared cultural tastes"*.
+3. **In-Text Emphasis (Italics vs. Boldface)**:
+   - Strictly use **italics** (`\textit{...}` or `\emph{...}`) instead of boldface (`\textbf{...}`) for emphasizing terms, concepts, hypothesis labels (e.g., *\textit{Hypothesis 1}*), and statistical variables in running manuscript prose.
+   - Reserve boldface strictly for section headings, table captions, and table header rows.
 
 ---
 

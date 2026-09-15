@@ -322,7 +322,7 @@ p1 <- ggplot(comp_combined, aes(y = Predictor, x = estimate, fill = Predictor, c
     "Structural Embeddedness (+1 SD)" = "#a65200"
   )) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "gray50") +
-  labs(y = NULL, x = "Average Marginal Effect on Probability of Protection from Tie Decay") +
+  labs(y = NULL, x = "Average Marginal Effect on\nProbability of Protection from Tie Decay") +
   theme_minimal(base_size = 12) +
   theme(
     legend.position = "none",
@@ -391,7 +391,7 @@ p_int <- ggplot(comp_int_combined, aes(y = close_factor, x = estimate, fill = Cu
   scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "gray50") +
   facet_wrap(~Cultural_Variable, ncol = 3) +
-  labs(y = "Subjective Closeness", x = "Average Marginal Effect on Probability of Protection from Tie Decay") +
+  labs(y = "Subjective Closeness", x = "Average Marginal Effect on\nProbability of Protection from Tie Decay") +
   scale_fill_manual(values = c(
     "Closed-Form Cultural Matching (0–6)" = "#1f78b4", 
     "Open-Ended Activity Matching (0–5)" = "#33a02c", 
@@ -553,13 +553,11 @@ curve_opac <- get_counterfactual_curve("num_unknown", 0:6, beta_fe["num_unknown"
 df_fe_curves <- bind_rows(curve_closed, curve_open, curve_opac) %>%
   mutate(Predictor = factor(Predictor, levels = c("Closed-Form Cultural Matching", "Open-Ended Activity Matching", "Cultural Network Opacity")))
 
-p_fe <- ggplot(df_fe_curves, aes(x = x, y = predicted_prob, color = Predictor, fill = Predictor)) +
-  geom_ribbon(aes(ymin = conf_low, ymax = conf_high), alpha = 0.25, color = NA) +
-  geom_line(linewidth = 1.1) +
-  geom_point(size = 2.4) +
+p_fe <- ggplot(df_fe_curves, aes(x = factor(x), y = predicted_prob, fill = Predictor, color = Predictor)) +
+  geom_col(width = 0.65, alpha = 0.85) +
+  geom_errorbar(aes(ymin = conf_low, ymax = conf_high), width = 0.25, linewidth = 0.7) +
   facet_wrap(~Predictor, scales = "free_x", ncol = 3) +
-  scale_y_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0.15, 0.42)) +
-  scale_x_continuous(breaks = 0:6) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0, 0.42), expand = expansion(mult = c(0, 0.05))) +
   scale_fill_manual(values = c(
     "Closed-Form Cultural Matching" = "#1f78b4", 
     "Open-Ended Activity Matching" = "#33a02c", 
@@ -572,14 +570,16 @@ p_fe <- ggplot(df_fe_curves, aes(x = x, y = predicted_prob, color = Predictor, f
   )) +
   labs(
     x = "Predictor Value (Count)",
-    y = "Predicted Probability of Protection from Tie Decay"
+    y = "Prob. of Protection\nfrom Tie Decay"
   ) +
-  theme_minimal(base_size = 12) +
+  theme_minimal(base_size = 11) +
   theme(
     legend.position = "none",
-    strip.text = element_text(face = "bold", size = 10.5),
-    axis.title.y = element_text(margin = margin(r = 8)),
-    panel.spacing = unit(1.2, "lines")
+    strip.text = element_text(face = "bold", size = 10),
+    axis.title.y = element_text(size = 10, margin = margin(r = 6)),
+    axis.title.x = element_text(size = 10, margin = margin(t = 6)),
+    panel.spacing = unit(1.2, "lines"),
+    panel.grid.minor = element_blank()
   )
 
 ggsave(here("Plots", "fe_predicted_probabilities.png"), plot = p_fe, width = 6.5, height = 3.6, dpi = 300)
