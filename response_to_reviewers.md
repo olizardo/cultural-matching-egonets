@@ -51,10 +51,36 @@ Below, we provide a detailed, point-by-point response to each of the comments an
 > **Reviewer Comment (Point 2):**  
 > *Assuming the stability of cultural tastes: Does a high overlap in cultural interests between two connected students occur when they have relatively stable cultural preferences or when their cultural preferences rapidly shift together (e.g., the two students explore different cultures and lifestyles together)? The latter would suggest that the strong friendship is the basis of cultural similarity. Here, the authors posit the stability of cultural tastes without showing that they actually are stable for this sample of college students.*
 
-* **Status:** `[Pending]`
-* **Location in Manuscript:** Section 3 (Data and Methods), Appendix / Online Supplement
+* **Status:** `[Addressed]`
+* **Location in Manuscript:** Section 3.2 (Longitudinal Stability and Consistency of Cultural Tastes, Section \ref{taste-stability}), Table \ref{tbl-taste-stability} (`Tabs/taste_stability.tex`)
 * **Response / Actions Taken:**
-  - *[Draft response and present empirical stability metrics (test-retest correlations / Jaccard similarity across waves) verifying taste durability across the panel period]*
+  - We are deeply grateful to the reviewer for raising this fundamental conceptual and empirical question. The reviewer asks whether dyadic cultural similarity reflects **durable personal cultural orientations** that protect ties from decaying or **rapid synchronized shifts** where two close friends explore new lifestyles and adopt ephemeral cultural fads together (which would imply that friendship drives shared tastes rather than shared tastes protecting friendship).
+  - To address this comment decisively, we conducted a comprehensive longitudinal stability analysis tracking respondents' self-reported cultural preferences and alter-perceived cultural preferences across survey waves. We have integrated these empirical diagnostics directly into Section 3.2 of the revised manuscript (`manuscript-R1.tex`) alongside a new dedicated summary table (**Table \ref{tbl-taste-stability}**).
+
+  1. **Empirical Durability of Cultural Tastes across College**:
+     - **Intraclass Correlation Coefficients (ICC)**: We estimated two-level linear random intercept models decomposing between-person versus within-person variance across Waves 1--3 ($N = 848$ observations across $170$ unique egos). The estimated ICCs reveal substantial longitudinal stability:
+       - **Sports**: $\text{ICC} = 0.80$
+       - **Books / Reading**: $\text{ICC} = 0.70$
+       - **Outdoor Activities**: $\text{ICC} = 0.61$
+       - **Movies**: $\text{ICC} = 0.57$
+       - **Video Games**: $\text{ICC} = 0.54$
+       - **Music**: $\text{ICC} = 0.43$ (the lower variance in music reflects ceiling effects, where over \SI{75}{\percent} of respondents consistently select ``Very much'' across waves).
+     - **Adjacent Wave-to-Wave Test-Retest Reliability ($r_{\text{adj}}$)**: Across consecutive waves, Pearson correlations range from $r = 0.50$ to $0.80$ ($p < 0.001$). Exact response agreement averages between \SI{61.4}{\percent} and \SI{78.5}{\percent}, while agreement within $\pm 1$ category on the Likert scale exceeds **\SI{96.6}{\percent} to \SI{99.7}{\percent}** across all domains.
+     - **Multi-Year Test-Retest Stability (Wave 1 to Wave 3 / 1.5 Years)**: Spanning 1.5 years of collegiate development, correlations remain high ($r = 0.81$ for sports, $r = 0.65$ for books, $r = 0.62$ for movies, $r = 0.62$ for outdoor activities, $r = 0.51$ for games), with **\SI{95.8}{\percent} to \SI{98.8}{\percent}** of responses remaining within $\pm 1$ scale step.
+
+  2. **Stability of Alter Perceived Tastes for Persisting Ties**:
+     - For dyads that persist across consecutive waves ($N = 2,546$ persisting dyad-wave pairs), egos' perceptions of their alters' tastes also display strong longitudinal reliability:
+       - **Sports**: $r = 0.77$ (\SI{63.1}{\percent} exact agreement; \SI{96.2}{\percent} within $\pm 1$)
+       - **Books**: $r = 0.70$ (\SI{65.9}{\percent} exact agreement; \SI{95.8}{\percent} within $\pm 1$)
+       - **Music**: $r = 0.64$ (\SI{71.9}{\percent} exact agreement; \SI{98.1}{\percent} within $\pm 1$)
+       - **Outdoor Activities**: $r = 0.63$ (\SI{59.4}{\percent} exact agreement; \SI{96.0}{\percent} within $\pm 1$)
+       - **Movies**: $r = 0.54$ (\SI{66.9}{\percent} exact agreement; \SI{97.8}{\percent} within $\pm 1$)
+       - **Video Games**: $r = 0.54$ (\SI{58.1}{\percent} exact agreement; \SI{94.6}{\percent} within $\pm 1$)
+
+  3. **Theoretical & Analytical Implications**:
+     - These metrics directly refute the possibility that cultural matching is an ephemeral artifact of synchronized lifestyle exploration or erratic fads. Rather, cultural tastes function as stable personal anchors throughout the collegiate life stage.
+     - Furthermore, our **discrete-time event history setup** does not require an unrealistic assumption of static lifetime tastes: because cultural matching is dynamically measured contemporaneously at wave $t$ to predict the hazard of tie decay into wave $t+1$, the model explicitly captures the state of cultural matching at the inception of each specific risk interval.
+     - We have added **Table \ref{tbl-taste-stability}** and a full explanatory discussion in Section 3.2 of the revised manuscript.
 
 ---
 

@@ -148,6 +148,157 @@ for (i in seq_len(nrow(cat_rows))) {
 desc_cat_lines <- c(desc_cat_lines, "\\end{talltblr}", "\\end{table}")
 writeLines(desc_cat_lines, here("Tabs", "desc_cat.tex"))
 
+# ------------------------------------------------------------------------------
+# Table: Longitudinal Taste Stability & Consistency (Tabs/taste_stability.tex)
+# ------------------------------------------------------------------------------
+message("      Generating taste stability table (Tabs/taste_stability.tex)...")
+
+demo_rds_path <- "/home/omarlizardo/projects/NETWORKS/NetSense/Surveys/demographics_longitudinal_clean.rds"
+if (file.exists(demo_rds_path)) {
+  demo_rds <- readRDS(demo_rds_path)
+  
+  ego_taste_long <- demo_rds %>%
+    mutate(egoid = sub("\\.0+$", "", as.character(sender))) %>%
+    filter(!is.na(sender)) %>%
+    select(egoid, matches("^interestitems[1-6]_[1-3]$")) %>%
+    pivot_longer(
+      cols = matches("^interestitems[1-6]_[1-3]$"),
+      names_to = c("domain_num", "wave"),
+      names_pattern = "interestitems([1-6])_([1-3])",
+      values_to = "interest"
+    ) %>%
+    mutate(
+      wave = as.numeric(wave),
+      domain = case_when(
+        domain_num == "1" ~ "Music",
+        domain_num == "2" ~ "Movies",
+        domain_num == "3" ~ "Books",
+        domain_num == "4" ~ "Sports",
+        domain_num == "5" ~ "Games",
+        domain_num == "6" ~ "Outdoor"
+      ),
+      interest_num = case_when(
+        interest == "Very much" ~ 3,
+        interest == "Somewhat" ~ 2,
+        interest %in% c("Not that much", "Not at all") ~ 1,
+        TRUE ~ NA_real_
+      )
+    )
+  
+  icc_df <- ego_taste_long %>%
+    filter(!is.na(interest_num)) %>%
+    group_by(domain) %>%
+    group_modify(~ {
+      fit <- lmer(interest_num ~ 1 + (1 | egoid), data = .x)
+      vc <- as.data.frame(VarCorr(fit))
+      var_ego <- vc$vcov[vc$grp == "egoid"]
+      var_res <- vc$vcov[vc$grp == "Residual"]
+      icc <- var_ego / (var_ego + var_res)
+      tibble(ICC = icc)
+    })
+  
+  stability_list <- list()
+  for (d in c("Sports", "Books", "Outdoor", "Movies", "Games", "Music")) {
+    d_data <- ego_taste_long %>% filter(domain == d) %>% select(egoid, wave, interest_num) %>%
+      pivot_wider(names_from = wave, values_from = interest_num, names_prefix = "W")
+    
+    sub_12 <- d_data %>% select(W1, W2) %>% drop_na()
+    r_12 <- cor(sub_12$W1, sub_12$W2)
+    ex_12 <- mean(sub_12$W1 == sub_12$W2) * 100
+    w1_12 <- mean(abs(sub_12$W1 - sub_12$W2) <= 1) * 100
+    
+    sub_23 <- d_data %>% select(W2, W3) %>% drop_na()
+    r_23 <- cor(sub_23$W2, sub_23$W3)
+    ex_23 <- mean(sub_23$W2 == sub_23$W3) * 100
+    w1_23 <- mean(abs(sub_23$W2 - sub_23$W3) <= 1) * 100
+    
+    sub_13 <- d_data %>% select(W1, W3) %>% drop_na()
+    r_13 <- cor(sub_13$W1, sub_13$W3)
+    ex_13 <- mean(sub_13$W1 == sub_13$W3) * 100
+    w1_13 <- mean(abs(sub_13$W1 - sub_13$W3) <= 1) * 100
+    
+    avg_r_adj <- mean(c(r_12, r_23))
+    avg_ex_adj <- mean(c(ex_12, ex_23))
+    avg_w1_adj <- mean(c(w1_12, w1_23))
+    
+    stability_list[[d]] <- tibble(
+      domain = d,
+      r_adj = avg_r_adj,
+      exact_adj = avg_ex_adj,
+      within1_adj = avg_w1_adj,
+      r_w1w3 = r_13,
+      exact_w1w3 = ex_13,
+      within1_w1w3 = w1_13
+    )
+  }
+  ego_stab <- bind_rows(stability_list) %>% left_join(icc_df, by = "domain")
+  
+  alter_t_t1 <- readRDS(here("data", "processed", "adjacent_waves.rds")) %>%
+    distinct(egoid, alterid, wave, .keep_all = TRUE) %>%
+    filter(tie_persist == 1) %>%
+    select(egoid, alterid, wave, altermusic_, altermovies_, alterbooks_, altersports_, altergames_, alteroutdoor_) %>%
+    inner_join(
+      readRDS(here("data", "processed", "adjacent_waves.rds")) %>%
+        distinct(egoid, alterid, wave, .keep_all = TRUE) %>%
+        select(egoid, alterid, wave, 
+               t1_altermusic = altermusic_,
+               t1_altermovies = altermovies_,
+               t1_alterbooks = alterbooks_,
+               t1_altersports = altersports_,
+               t1_altergames = altergames_,
+               t1_alteroutdoor = alteroutdoor_) %>%
+        mutate(wave = wave - 1),
+      by = c("egoid", "alterid", "wave")
+    )
+  
+  alter_stab_list <- list()
+  for (domain_name in c("Sports", "Books", "Outdoor", "Movies", "Games", "Music")) {
+    d_lower <- tolower(domain_name)
+    v_t <- alter_t_t1[[paste0("alter", d_lower, "_")]]
+    v_t1 <- alter_t_t1[[paste0("t1_alter", d_lower)]]
+    valid <- !is.na(v_t) & !is.na(v_t1) & v_t < 5 & v_t1 < 5
+    r_alt <- cor(v_t[valid], v_t1[valid])
+    exact_alt <- mean(v_t[valid] == v_t1[valid]) * 100
+    within1_alt <- mean(abs(v_t[valid] - v_t1[valid]) <= 1) * 100
+    alter_stab_list[[domain_name]] <- tibble(
+      domain = domain_name,
+      r_alter = r_alt,
+      exact_alter = exact_alt,
+      within1_alter = within1_alt
+    )
+  }
+  alter_stab <- bind_rows(alter_stab_list)
+  full_stab_table <- ego_stab %>% left_join(alter_stab, by = "domain")
+  
+  stab_table_lines <- c(
+    "\\begin{table}[htbp]",
+    "\\centering",
+    "\\begin{talltblr}[         %% tabularray outer open",
+    "caption={Longitudinal Stability and Test-Retest Consistency of Cultural Tastes across Waves\\label{tbl-taste-stability}},",
+    "note{a}={ICC (Intraclass Correlation Coefficient) estimated from two-level random intercept models decomposing between-ego versus within-ego variance across Waves 1--3. $r_{\\text{adj}}$, Exact, and $\\pm 1$ report mean adjacent wave-to-wave test-retest correlations and agreement percentages. $r_{\\text{W1}\\to\\text{W3}}$ reports multi-year stability across a 1.5-year span. Alter stability metrics are computed across consecutive waves for persisting dyads ($N = 2,546$).}",
+    "]                     %% tabularray outer close",
+    "{                     %% tabularray inner open",
+    "colspec={Q[l,1.8cm]Q[r,1.1cm]Q[r,1.2cm]Q[r,1.2cm]Q[r,1.2cm]Q[r,1.4cm]Q[r,1.2cm]Q[r,1.2cm]},",
+    "hline{2}={1-8}{solid, black, 0.05em},",
+    "hline{1}={1-8}{solid, black, 0.08em},",
+    "hline{8}={1-8}{solid, black, 0.08em},",
+    "column{1}={}{halign=l},",
+    "column{2-8}={}{halign=r},",
+    "}                     %% tabularray inner close",
+    "& \\SetCell[c=5]{c} Ego Self-Reported Tastes & & & & & \\SetCell[c=2]{c} Alter Perceived Tastes & \\\\",
+    "Domain & ICC & $r_{\\text{adj}}$ & Exact (\\%) & $\\pm 1$ (\\%) & $r_{\\text{W1}\\to\\text{W3}}$ & $r_{\\text{alter}}$ & $\\pm 1$ (\\%) \\\\"
+  )
+  for (i in seq_len(nrow(full_stab_table))) {
+    r <- full_stab_table[i, ]
+    stab_table_lines <- c(stab_table_lines, sprintf(
+      "%s & \\num{%.2f} & \\num{%.2f} & \\num{%.1f} & \\num{%.1f} & \\num{%.2f} & \\num{%.2f} & \\num{%.1f} \\\\",
+      r$domain, r$ICC, r$r_adj, r$exact_adj, r$within1_adj, r$r_w1w3, r$r_alter, r$within1_alter
+    ))
+  }
+  stab_table_lines <- c(stab_table_lines, "\\end{talltblr}", "\\end{table}")
+  writeLines(stab_table_lines, here("Tabs", "taste_stability.tex"))
+}
+
 # ==============================================================================
 # SECTION 2: MAIN EFFECTS MODELS (TABLE 3) & FIGURE 1 (MAIN EFFECTS PLOT)
 # ==============================================================================
