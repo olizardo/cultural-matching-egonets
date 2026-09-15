@@ -458,7 +458,7 @@ comp_combined <- bind_rows(comp_closed, comp_open, comp_opacity, comp_embed_comp
 
 p1 <- ggplot(comp_combined, aes(y = Predictor, x = estimate, fill = Predictor, color = Predictor)) +
   geom_col(width = 0.35, alpha = 0.85) +
-  geom_errorbar(aes(xmin = conf.low, xmax = conf.high), width = 0.12, linewidth = 0.8) +
+  geom_errorbar(aes(xmin = conf.low, xmax = conf.high), width = 0.12, linewidth = 0.8, alpha = 0.15) +
   scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
   scale_fill_manual(values = c(
     "Closed-Form Cultural Matching (0–6)" = "#1f78b4", 
@@ -510,58 +510,62 @@ comp_int_closed <- comparisons(
   variables = list(num_match_closed = c(0, 6)), 
   newdata = datagrid(close_factor = c("Not Close", "Somewhat Close", "Close")), 
   re.form = NA
-) %>% as_tibble() %>% mutate(Cultural_Variable = "Closed-Form Cultural Matching (0–6)")
+) %>% as_tibble() %>% mutate(Cultural_Variable = "Closed-Form Cultural Matching (0–6 Domains)")
 
 comp_int_open <- comparisons(
   mod_close_int_open, 
   variables = list(open_match_count = c(0, 5)), 
   newdata = datagrid(close_factor = c("Not Close", "Somewhat Close", "Close")), 
   re.form = NA
-) %>% as_tibble() %>% mutate(Cultural_Variable = "Open-Ended Activity Matching (0–5)")
+) %>% as_tibble() %>% mutate(Cultural_Variable = "Open-Ended Activity Matching (0–5 Activities)")
 
 comp_int_opacity <- comparisons(
   mod_close_int_unknown, 
   variables = list(num_unknown = c(0, 6)), 
   newdata = datagrid(close_factor = c("Not Close", "Somewhat Close", "Close")), 
   re.form = NA
-) %>% as_tibble() %>% mutate(Cultural_Variable = "Cultural Network Opacity (0–6)")
+) %>% as_tibble() %>% mutate(Cultural_Variable = "Cultural Network Opacity (0–6 Domains)")
 
 comp_int_combined <- bind_rows(comp_int_closed, comp_int_open, comp_int_opacity) %>%
   mutate(
     Cultural_Variable = factor(Cultural_Variable, 
-                                levels = c("Closed-Form Cultural Matching (0–6)", 
-                                           "Open-Ended Activity Matching (0–5)", 
-                                           "Cultural Network Opacity (0–6)"), 
+                                levels = c("Closed-Form Cultural Matching (0–6 Domains)", 
+                                           "Open-Ended Activity Matching (0–5 Activities)", 
+                                           "Cultural Network Opacity (0–6 Domains)"), 
                                 ordered = TRUE),
-    close_factor = factor(close_factor, levels = c("Close", "Somewhat Close", "Not Close"), ordered = TRUE)
+    close_factor = factor(close_factor, levels = c("Not Close", "Somewhat Close", "Close"), ordered = TRUE)
   )
 
 p_int <- ggplot(comp_int_combined, aes(y = close_factor, x = estimate, fill = Cultural_Variable, color = Cultural_Variable)) +
-  geom_col(width = 0.4, alpha = 0.85) +
-  geom_errorbar(aes(xmin = conf.low, xmax = conf.high), width = 0.15, linewidth = 0.8) +
+  geom_col(width = 0.55, alpha = 0.85) +
+  geom_errorbar(aes(xmin = conf.low, xmax = conf.high), width = 0.2, linewidth = 0.75, alpha = 0.15) +
   scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "gray50") +
-  facet_wrap(~Cultural_Variable, ncol = 3) +
-  labs(y = "Subjective Closeness", x = "Average Marginal Effect on\nProbability of Protection from Tie Decay") +
+  facet_wrap(~Cultural_Variable, ncol = 1) +
+  labs(y = "Subjective Closeness", x = "Average Marginal Effect on Probability of Protection from Tie Decay") +
   scale_fill_manual(values = c(
-    "Closed-Form Cultural Matching (0–6)" = "#1f78b4", 
-    "Open-Ended Activity Matching (0–5)" = "#33a02c", 
-    "Cultural Network Opacity (0–6)" = "#e31a1c"
+    "Closed-Form Cultural Matching (0–6 Domains)" = "#1f78b4", 
+    "Open-Ended Activity Matching (0–5 Activities)" = "#33a02c", 
+    "Cultural Network Opacity (0–6 Domains)" = "#e31a1c"
   )) +
   scale_color_manual(values = c(
-    "Closed-Form Cultural Matching (0–6)" = "#12476b", 
-    "Open-Ended Activity Matching (0–5)" = "#1e5e1a", 
-    "Cultural Network Opacity (0–6)" = "#941113"
+    "Closed-Form Cultural Matching (0–6 Domains)" = "#12476b", 
+    "Open-Ended Activity Matching (0–5 Activities)" = "#1e5e1a", 
+    "Cultural Network Opacity (0–6 Domains)" = "#941113"
   )) +
-  theme_minimal(base_size = 12) +
+  theme_minimal(base_size = 11) +
   theme(
     legend.position = "none", 
-    strip.text = element_text(face = "bold", size = 10.5),
+    strip.text = element_text(face = "bold", size = 11, hjust = 0),
+    strip.background = element_rect(fill = "gray95", color = NA),
     axis.text.y = element_text(face = "bold", color = "black"),
-    panel.spacing = unit(1.2, "lines")
+    axis.title.y = element_text(margin = margin(r = 6)),
+    axis.title.x = element_text(margin = margin(t = 6)),
+    panel.spacing = unit(1.0, "lines"),
+    panel.grid.minor = element_blank()
   )
 
-ggsave(here("Plots", "interaction_closeness.png"), plot = p_int, width = 6.5, height = 3.6, dpi = 300)
+ggsave(here("Plots", "interaction_closeness.png"), plot = p_int, width = 6.5, height = 6.0, dpi = 300)
 
 # ==============================================================================
 # SECTION 4: SENSITIVITY MODELS (TABLE 4) & FIGURE 3 (FE PREDICTIONS)
@@ -753,32 +757,36 @@ get_counterfactual_me <- function(var_name, x_vals, beta_val, se_val) {
 }
 
 curve_closed <- get_counterfactual_me("num_match_closed", 0:6, beta_fe["num_match_closed"], sqrt(vcov(mod_fe)["num_match_closed", "num_match_closed"])) %>%
-  mutate(Predictor = "Closed-Form\nCultural Matching")
+  mutate(Predictor = "Closed-Form Cultural Matching (0–6 Domains)")
 
 curve_open <- get_counterfactual_me("open_match_count", 0:5, beta_fe["open_match_count"], sqrt(vcov(mod_fe)["open_match_count", "open_match_count"])) %>%
-  mutate(Predictor = "Open-Ended\nActivity Matching")
+  mutate(Predictor = "Open-Ended Activity Matching (0–5 Activities)")
 
 curve_opac <- get_counterfactual_me("num_unknown", 0:6, beta_fe["num_unknown"], sqrt(vcov(mod_fe)["num_unknown", "num_unknown"])) %>%
-  mutate(Predictor = "Cultural Network\nOpacity")
+  mutate(Predictor = "Cultural Network Opacity (0–6 Domains)")
 
 df_fe_me <- bind_rows(curve_closed, curve_open, curve_opac) %>%
-  mutate(Predictor = factor(Predictor, levels = c("Closed-Form\nCultural Matching", "Open-Ended\nActivity Matching", "Cultural Network\nOpacity")))
+  mutate(Predictor = factor(Predictor, levels = c(
+    "Closed-Form Cultural Matching (0–6 Domains)",
+    "Open-Ended Activity Matching (0–5 Activities)",
+    "Cultural Network Opacity (0–6 Domains)"
+  )))
 
 p_fe <- ggplot(df_fe_me, aes(y = factor(x), x = marginal_effect, fill = Predictor, color = Predictor)) +
   geom_col(width = 0.65, alpha = 0.85) +
-  geom_errorbar(aes(xmin = conf_low, xmax = conf_high), width = 0.25, linewidth = 0.7) +
+  geom_errorbar(aes(xmin = conf_low, xmax = conf_high), width = 0.25, linewidth = 0.7, alpha = 0.15) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "gray50") +
-  facet_wrap(~Predictor, scales = "free_y", ncol = 3) +
+  facet_wrap(~Predictor, scales = "free_y", ncol = 1) +
   scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
   scale_fill_manual(values = c(
-    "Closed-Form\nCultural Matching" = "#1f78b4", 
-    "Open-Ended\nActivity Matching" = "#33a02c", 
-    "Cultural Network\nOpacity" = "#e31a1c"
+    "Closed-Form Cultural Matching (0–6 Domains)" = "#1f78b4", 
+    "Open-Ended Activity Matching (0–5 Activities)" = "#33a02c", 
+    "Cultural Network Opacity (0–6 Domains)" = "#e31a1c"
   )) +
   scale_color_manual(values = c(
-    "Closed-Form\nCultural Matching" = "#12476b", 
-    "Open-Ended\nActivity Matching" = "#1e5e1a", 
-    "Cultural Network\nOpacity" = "#941113"
+    "Closed-Form Cultural Matching (0–6 Domains)" = "#12476b", 
+    "Open-Ended Activity Matching (0–5 Activities)" = "#1e5e1a", 
+    "Cultural Network Opacity (0–6 Domains)" = "#941113"
   )) +
   labs(
     y = "Predictor Value (Count)",
@@ -787,15 +795,16 @@ p_fe <- ggplot(df_fe_me, aes(y = factor(x), x = marginal_effect, fill = Predicto
   theme_minimal(base_size = 11) +
   theme(
     legend.position = "none",
-    strip.text = element_text(face = "bold", size = 10),
+    strip.text = element_text(face = "bold", size = 11, hjust = 0),
+    strip.background = element_rect(fill = "gray95", color = NA),
     axis.text.y = element_text(face = "bold", color = "black"),
     axis.title.y = element_text(margin = margin(r = 6)),
     axis.title.x = element_text(margin = margin(t = 6)),
-    panel.spacing = unit(1.2, "lines"),
+    panel.spacing = unit(1.0, "lines"),
     panel.grid.minor = element_blank()
   )
 
-ggsave(here("Plots", "fe_predicted_probabilities.png"), plot = p_fe, width = 6.5, height = 3.6, dpi = 300)
+ggsave(here("Plots", "fe_predicted_probabilities.png"), plot = p_fe, width = 6.5, height = 7.0, dpi = 300)
 
 # ==============================================================================
 # SECTION 5: CROSS-CLASSIFIED & DYADIC CLUSTERING MODELS (TABLE 5 / APPENDIX)
