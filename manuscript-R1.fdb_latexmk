@@ -1,17 +1,15 @@
 # Fdb version 4
-["bibtex manuscript-R1"] 1789426233 "manuscript-R1.aux" "manuscript-R1.bbl" "manuscript-R1" 1789426241 0
-  "./manuscript_citations.bib" 1789426201 18512 ea469aa6590bf83a2154971eecfde5ec ""
+["bibtex manuscript-R1"] 1789488145 "manuscript-R1.aux" "manuscript-R1.bbl" "manuscript-R1" 1789488150 0
+  "./manuscript_citations.bib" 1789486561 21283 dfab942c4fbc9462b221657cf0c766df ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "manuscript-R1.aux" 1789426241 20254 c5fdc503afec2f144e49498891d38674 "pdflatex"
+  "manuscript-R1.aux" 1789488149 21985 86d087000e6ee3db320e6cdcc6889c26 "pdflatex"
   (generated)
   "manuscript-R1.bbl"
   "manuscript-R1.blg"
   (rewritten before read)
-["pdflatex"] 1789426233 "manuscript-R1.tex" "manuscript-R1.pdf" "manuscript-R1" 1789426241 0
+["pdflatex"] 1789488145 "manuscript-R1.tex" "manuscript-R1.pdf" "manuscript-R1" 1789488150 0
   "/etc/texmf/web2c/texmf.cnf" 1788206240 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/omarlizardo/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk" 1789412382 12644 13843a47e3c9c1caacef18f28500d951 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm" 1246382020 996 a18840b13b499c08ac2de96a99eda4bc ""
@@ -21,7 +19,6 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1246382020 908 2921f8a10601f252058503cc6570e581 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1246382020 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1136768653 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -43,7 +40,6 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm" 1136768653 764 c98a2af25c99b73a368cf7336e255190 ""
-  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
@@ -143,15 +139,16 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1681034085 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1788206246 128028 f533b797fba58d231669ea19e894e23e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788206257 6475499 fb4e6b2646b507c942999532e4f51627 ""
-  "Plots/interaction_closeness.png" 1789400521 101414 c3bb607ffbaaa2a9d1e5b725219ae251 ""
-  "Plots/main_effects.png" 1789400521 72210 38bfb30795689a7180f569f3651a4965 ""
-  "Tabs/desc_cat.tex" 1789400521 1103 f2b3fb109ffb5b94dd1cfbc5f34282d6 ""
-  "Tabs/desc_cont.tex" 1789421909 952 2fed98df9b7b4682b44aa78c1176f882 ""
-  "Tabs/main_models.tex" 1789423169 2889 c699422a00e28beee4f059749472dba8 ""
-  "Tabs/robustness_models.tex" 1789421909 1588 17e33061db479def208665a82d986216 ""
-  "manuscript-R1.aux" 1789426241 20254 c5fdc503afec2f144e49498891d38674 "pdflatex"
-  "manuscript-R1.bbl" 1789426233 11388 a22e56e2d162162375fb7c9fb9a7fd5f "bibtex manuscript-R1"
-  "manuscript-R1.tex" 1789426201 46395 cb796a7f78e2ddda6a4fb6d6f176a900 ""
+  "Plots/fe_predicted_probabilities.png" 1789487991 82167 529f0080d17042c75de749b9c40f95fc ""
+  "Plots/interaction_closeness.png" 1789487981 82892 361dfa3bd4517c7e520a1635b5595135 ""
+  "Plots/main_effects.png" 1789487978 79888 4d155acec69211e474e127decd75a282 ""
+  "Tabs/desc_cat.tex" 1789487975 1298 f4216f48849261a2044f109c3e3dee02 ""
+  "Tabs/desc_cont.tex" 1789487975 978 97976365a9dfc9c0a90ba5b7077576e6 ""
+  "Tabs/main_models.tex" 1789487976 2899 948bb648c9c505fd88b2f416adba4d7f ""
+  "Tabs/robustness_models.tex" 1789487991 2422 14c9ec9cb1846b9e99dc0b83d3f9fb8c ""
+  "manuscript-R1.aux" 1789488149 21985 86d087000e6ee3db320e6cdcc6889c26 "pdflatex"
+  "manuscript-R1.bbl" 1789488145 13048 c4ee4e48ab773023772230da22759128 "bibtex manuscript-R1"
+  "manuscript-R1.tex" 1789488126 53961 27a698377a06e1bbb17fcc28f30d5913 ""
   (generated)
   "manuscript-R1.aux"
   "manuscript-R1.log"

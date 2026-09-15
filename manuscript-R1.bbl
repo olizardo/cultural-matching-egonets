@@ -1,5 +1,15 @@
 \begin{thebibliography}{}
 
+\bibitem[Allison, 1982]{allison1982}
+Allison, P.~D. (1982).
+\newblock Discrete-time methods for the analysis of event histories.
+\newblock {\em Sociological Methodology}, 13:61--98.
+
+\bibitem[Allison, 2014]{allison2014}
+Allison, P.~D. (2014).
+\newblock {\em Event History Analysis: Regression for Longitudinal Event Data}.
+\newblock SAGE Publications, Thousand Oaks, CA.
+
 \bibitem[Bahulkar et~al., 2017]{bahulkar2017co-evolution-d04}
 Bahulkar, A., Szymanski, B.~K., Chan, K., and Lizardo, O. (2017).
 \newblock Co-evolution of two networks representing different social relations
@@ -15,6 +25,11 @@ Bahulkar, A., Szymanski, B.~K., Lizardo, O., Dong, Y., Yang, Y., and Chawla,
   data.
 \newblock {\em 2016 {IEEE}/{ACM} International Conference on Advances in Social
   Networks Analysis and Mining ({ASONAM})}, pages 1197--1204.
+
+\bibitem[Bates et~al., 2015]{bates2015}
+Bates, D., M{\"a}chler, M., Bolker, B., and Walker, S. (2015).
+\newblock Fitting linear mixed-effects models using \texttt{lme4}.
+\newblock {\em Journal of Statistical Software}, 67(1):1--48.
 
 \bibitem[Borgatti, 2005]{borgatti2005}
 Borgatti, S.~P. (2005).
@@ -36,6 +51,11 @@ Bourdieu, P. (1986).
 Bourdieu, P. (1990).
 \newblock {\em The Logic of Practice}.
 \newblock Polity Press, Cambridge.
+
+\bibitem[Box-Steffensmeier and Jones, 2004]{boxsteffensmeier2004}
+Box-Steffensmeier, J.~M. and Jones, B.~S. (2004).
+\newblock {\em Event History Modeling: A Guide for Social Scientists}.
+\newblock Cambridge University Press, Cambridge.
 
 \bibitem[Burt, 2000]{burt2000}
 Burt, R.~S. (2000).
@@ -140,6 +160,13 @@ Kleinbaum, A.~M. (2018).
 \newblock Reor\-gani\-zation and tie decay choices.
 \newblock {\em Management Science}, 64(5):2219--2237.
 
+\bibitem[Krackhardt and Handcock, 2007]{krackhardt2007heider-29f}
+Krackhardt, D. and Handcock, M.~S. (2007).
+\newblock Heider vs simmel: Emergent features in dynamic structures.
+\newblock In {\em Statistical Network Analysis: Models, Issues, and New
+  Directions}, Lecture Notes in Computer Science, pages 14--27. Springer,
+  Berlin, Heidelberg.
+
 \bibitem[Laumann et~al., 1989]{laumann1989boundary-0af}
 Laumann, E.~O., Marsden, P.~V., and Prensky, D. (1989).
 \newblock The boundary specification problem in network analysis.
@@ -198,6 +225,12 @@ Martin, J.~L. and Yeung, K.-T. (2006).
 \newblock Persistence of close personal ties over a 12-year period.
 \newblock {\em Social Networks}, 28(4):331--362.
 
+\bibitem[{McFarland} et~al., 2014]{mcfarland2014network-735}
+{McFarland}, D.~A., Moody, J., Diehl, D., Smith, J.~A., and Thomas, R.~J.
+  (2014).
+\newblock Network ecology and adolescent social structure.
+\newblock {\em American sociological review}, 79(6):1088--1121.
+
 \bibitem[{McPherson}, 2004]{mcpherson2004blau-9fe}
 {McPherson}, J.~M. (2004).
 \newblock A blau space primer: prolegomenon to an ecology of affiliation.
@@ -219,6 +252,11 @@ Morgan, D.~L., Neal, M.~B., and Carder, P. (1997).
 \newblock The stability of core and peripheral networks over time.
 \newblock {\em Social Networks}, 19(1):9--25.
 
+\bibitem[{R Core Team}, 2026]{Rmanual}
+{R Core Team} (2026).
+\newblock {\em R: A Language and Environment for Statistical Computing}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria.
+
 \bibitem[Roy et~al., 2022]{roy2022turnover}
 Roy, C., Bhattacharya, K., Dunbar, R. I.~M., and Kaski, K. (2022).
 \newblock Turnover in close friendships.
@@ -234,7 +272,7 @@ Shalizi, C.~R. and Thomas, A.~C. (2011).
 Singer, J.~D. and Willett, J.~B. (1993).
 \newblock It’s about time: Using discrete-time survival analysis to study
   duration and the timing of events.
-\newblock {\em Journal of educational statistics}, 18(2):155--195.
+\newblock {\em Journal of Educational Statistics}, 18(2):155--195.
 
 \bibitem[Stinchcombe, 1965]{stinchcombe1965}
 Stinchcombe, A.~L. (1965).

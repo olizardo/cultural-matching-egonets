@@ -3,44 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: manuscript-R1.aux
 The style file: apalike.bst
 Database file #1: manuscript_citations.bib
-You've used 50 entries,
+You've used 57 entries,
             1935 wiz_defined-function locations,
-            783 strings with 11383 characters,
-and the built_in function-call counts, 20291 in all, are:
-= -- 2044
-> -- 701
-< -- 42
-+ -- 246
-- -- 223
-* -- 1714
-:= -- 3470
-add.period$ -- 156
-call.type$ -- 50
-change.case$ -- 352
-chr.to.int$ -- 49
-cite$ -- 50
-duplicate$ -- 777
-empty$ -- 1501
-format.name$ -- 299
-if$ -- 4005
+            821 strings with 12458 characters,
+and the built_in function-call counts, 22944 in all, are:
+= -- 2309
+> -- 799
+< -- 48
++ -- 278
+- -- 255
+* -- 1928
+:= -- 3932
+add.period$ -- 178
+call.type$ -- 57
+change.case$ -- 400
+chr.to.int$ -- 56
+cite$ -- 57
+duplicate$ -- 885
+empty$ -- 1694
+format.name$ -- 342
+if$ -- 4530
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 53
-newline$ -- 253
-num.names$ -- 162
-pop$ -- 267
+missing$ -- 61
+newline$ -- 288
+num.names$ -- 183
+pop$ -- 312
 preamble$ -- 1
-purify$ -- 355
+purify$ -- 406
 quote$ -- 0
-skip$ -- 604
+skip$ -- 684
 stack$ -- 0
-substring$ -- 1653
-swap$ -- 107
-text.length$ -- 7
+substring$ -- 1827
+swap$ -- 122
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 294
+type$ -- 332
 warning$ -- 0
-while$ -- 194
+while$ -- 217
 width$ -- 0
-write$ -- 660
+write$ -- 753
