@@ -184,6 +184,8 @@ To confirm that our findings are not artifacts of our primary mixed-effects spec
 
 As shown in the table, the fixed-effects models yield results that are remarkably consistent with our random-effects main models. Closed-form cultural matching ($OR = 1.05, p < 0.10$) and open-ended activity matching ($OR = 1.06, p < 0.05$) remain positive predictors of protection from tie decay, with odds ratios that are very close in magnitude to the baseline models. Crucially, in this strict within-ego specification, \textit{cultural network opacity} emerges as a highly significant accelerator of tie decay ($OR = 0.92, p < 0.01$ for protection from decay), reducing protection from tie decay by \SI{8.2}{\percent} per unknown domain. This confirms that while opacity may correlate with overall cultural matching rates across individuals, \textit{within} an individual's personal network, a lack of cultural knowledge about a specific alter is a powerful, independent signal of tie decay. The structural controls---such as being ``Close'' ($OR = 1.99, p < 0.001$)---also maintain their consistent associations with the baseline hazard of tie decay, although the structural embeddedness of the tie is no longer a statistically significant predictor of tie decay at conventional levels.
 
+To visually evaluate the substantive magnitude of these within-ego relationships, Figure \ref{fig-fe-predictions} plots the predicted probability of protection from tie decay across the observed values of closed-form cultural matching, open-ended activity matching, and cultural network opacity, conditioning on ego fixed effects. Across an individual's personal network, increasing closed-form cultural matching from 0 to 6 domain matches increases the predicted probability of tie persistence from \SI{29.8}{\percent} to \SI{34.4}{\percent}, while increasing open-ended activity matching from 0 to 5 shared activities elevates persistence from \SI{28.7}{\percent} to \SI{33.4}{\percent}. In contrast, cultural network opacity imposes a substantial penalty on tie durability within personal networks: increasing the number of unknown domains from 0 to 6 reduces the predicted probability of protection from tie decay from \SI{31.7}{\percent} to \SI{23.7}{\percent}, representing an \SI{8.0}{\percent} decline in persistence. This confirms that even after purging all between-ego sorting, selection biases, and stable individual traits, cultural matching and opacity powerfully govern the decay of social ties.
+
 \input{Tabs/robustness_models.tex}
 
 \section{Discussion}\label{discussion}
@@ -225,6 +227,13 @@ Beyond network theory, these findings carry practical implications for instituti
 \centering
 \includegraphics[width=\linewidth,keepaspectratio]{Plots/interaction_closeness.png}
 \caption{Predicted Probability of Protection from Tie Decay by Cultural Matching, Cultural Network Opacity, and Subjective Closeness.}\label{fig-closeness-interactions}
+\end{figure}
+
+\newpage
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth,keepaspectratio]{Plots/fe_predicted_probabilities.png}
+\caption{Predicted Probability of Protection from Tie Decay from Ego Fixed-Effects Model.}\label{fig-fe-predictions}
 \end{figure}
 
 

@@ -34,7 +34,7 @@ The project uses longitudinal survey and network data from the NetSense study.
   * Structural embeddedness / triadic closure (`common_alters`, count of shared contacts in ego's network, 0–19; standardized in models).
   * Subjective closeness (Tie strength: Close, Somewhat Close, Not Close).
   * Controls: `same_dorm`, `is_friend`, `race_homophily`, `freq_daily`, ego/alter gender, tie duration (linear and squared), and wave transition fixed effects.
-* **Reporting & Reproducibility**: Unified Quarto notebook (`analysis.qmd`) exporting generated tables (`Tabs/`) and figures (`Plots/`) directly to LaTeX (`manuscript-R1.tex` and `manuscript.tex`).
+* **Reporting & Reproducibility**: Unified R deliverables script (`Code/generate_deliverables.R`) exporting generated tables (`Tabs/`) and figures (`Plots/`) directly to LaTeX (`manuscript-R1.tex` and `manuscript.tex`).
 * **Overleaf Integration**:
   * Connected to Overleaf Git remote: `https://git.overleaf.com/6a42d5015a4bdf4b1804e7c8` (remote name: `overleaf`).
   * Push command to sync with Overleaf: `git push overleaf HEAD:main`.
@@ -55,12 +55,12 @@ To ensure strict conceptual and empirical clarity across the manuscript, tables,
 
 ## Project Structure
 * `data/`: R datasets ready for modeling (`data/processed/adjacent_waves.rds`, `ego_race.rds`, `alter_race.rds`).
-* `analysis.qmd`: Reproducible Quarto notebook containing data wrangling, model estimation, and output generation.
+* `Code/generate_deliverables.R`: Standalone reproducible R script for model estimation, table generation (`Tabs/`), and figure rendering (`Plots/`).
 * `manuscript-R1.tex`: Revision 1 manuscript LaTeX source.
 * `manuscript.tex`: Original submission LaTeX source.
 * `manuscript_citations.bib`: BibTeX citations for bibliography generation.
 * `Tabs/`: Generated LaTeX table inputs (`desc_cont.tex`, `desc_cat.tex`, `main_models.tex`, `robustness_models.tex`, `dislike_models.tex`).
-* `Plots/`: Generated figure outputs (`main_effects.png`, `interaction_closeness.png`).
+* `Plots/`: Generated figure outputs (`main_effects.png`, `interaction_closeness.png`, `fe_predicted_probabilities.png`).
 * `response_to_reviewers.md`: Point-by-point response to editor and reviewers.
 * `REVISION_PLAN_SOCIAL_NETWORKS.md`: Detailed prioritized revision roadmap.
 

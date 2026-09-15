@@ -1,4 +1,4 @@
-\begin{table}
+\begin{table}[htbp]
 \centering
 \begin{talltblr}[         %% tabularray outer open
 caption={Descriptive Statistics (Categorical Variables)\label{tbl-descriptives-cat}},
@@ -8,23 +8,23 @@ colspec={Q[]Q[]Q[]Q[]},
 hline{2}={1-4}{solid, black, 0.05em},
 hline{1}={1-4}{solid, black, 0.08em},
 hline{16}={1-4}{solid, black, 0.08em},
-column{1-2}={}{halign=l},
-column{3-4}={}{halign=r},
+column{1,2}={}{halign=l},
+column{3,4}={}{halign=r},
 }                     %% tabularray inner close
-&    & N & Percent \\
-Tie Persisted & 0 & 3935 & \num{70.47} \\
-& 1 & 1649 & \num{29.53} \\
-Ego Gender & Men & 2901 & \num{51.95} \\
-& Women & 2471 & \num{44.25} \\
-Alter Gender & Men & 2839 & \num{50.84} \\
-& Women & 2728 & \num{48.85} \\
-Subjective Closeness & Not Close & 565 & \num{10.12} \\
-& Somewhat Close & 2611 & \num{46.76} \\
-& Close & 2400 & \num{42.98} \\
-Interaction Frequency & Daily & 4824 & \num{86.39} \\
-& Weekly & 760 & \num{13.61} \\
-Race Homophily & Heterophilous & 510 & \num{9.13} \\
-& Homophilous & 1508 & \num{27.01} \\
-& Unknown & 3566 & \num{63.86} \\
+Variable & Category & N & Percent \\
+Tie Persisted (Protection from Tie Decay) & 0 (Decayed) & \num{3935} & \num{70.5}\% \\
+ & 1 (Persisted) & \num{1649} & \num{29.5}\% \\
+Ego Gender Identity & Men & \num{2901} & \num{54.0}\% \\
+ & Women & \num{2471} & \num{46.0}\% \\
+Alter Gender Identity & Men & \num{2839} & \num{51.0}\% \\
+ & Women & \num{2728} & \num{49.0}\% \\
+Subjective Closeness & Not Close & \num{565} & \num{10.1}\% \\
+ & Somewhat Close & \num{2611} & \num{46.8}\% \\
+ & Close & \num{2400} & \num{43.0}\% \\
+Interaction Frequency & Weekly & \num{760} & \num{13.6}\% \\
+ & Daily & \num{4824} & \num{86.4}\% \\
+Race Homophily & Heterophilous & \num{510} & \num{9.1}\% \\
+ & Homophilous & \num{1508} & \num{27.0}\% \\
+ & Unknown & \num{3566} & \num{63.9}\% \\
 \end{talltblr}
 \end{table}

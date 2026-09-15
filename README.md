@@ -11,21 +11,25 @@ This project examines how cultural matching (shared tastes in music, movies, boo
 The project directory is structured as follows:
 
 ```text
-├── analysis.qmd                    # Main reproducible Quarto notebook for data prep, modeling, and output generation (primary entry point)
+├── Code/
+│   ├── generate_deliverables.R     # Standalone R script producing all tables and plots (primary entry point)
+│   ├── prep_all_waves.R            # Data preparation and structural embeddedness pipeline
+│   └── prep_race.R                 # Ego and alter race harmonizer
 ├── data/                           # Processed R datasets ready for modeling
 ├── Plots/                          # Directory where analysis plots and marginal effects graphs are saved
 ├── Tabs/                           # Directory where all reproduced regression tables and descriptive stats are saved
-├── manuscript.tex                  # Main LaTeX manuscript
+├── manuscript-R1.tex               # Working Revision 1 LaTeX manuscript
+├── manuscript.tex                  # Original submission LaTeX manuscript
 ├── manuscript_citations.bib        # BibTeX citations file
 ├── renv.lock                       # renv lockfile for exact package versions
-└── AGENTS.md                       # Project history and meta-documentation
+└── AGENTS.md                       # Project history, style standards, and meta-documentation
 ```
 
 ---
 
 ## 🛠️ Prerequisites & Installation
 
-To run the reproducibility workflow, you will need **R** and the **Quarto** CLI (pre-installed in Positron and RStudio).
+To run the reproducibility workflow, you will need **R** (>= 4.2.0).
 
 ### 1. Required R Packages
 Ensure you have the required R packages installed. You can restore the exact package versions used in this project using `renv` by running the following command in your R console:
@@ -34,19 +38,19 @@ Ensure you have the required R packages installed. You can restore the exact pac
 renv::restore()
 ```
 
-The primary dependencies include `tidyverse`, `lme4`, `marginaleffects`, `modelsummary`, `broom.mixed`, and `here`.
+The primary dependencies include `tidyverse`, `lme4`, `survival`, `marginaleffects`, and `here`.
 
 ---
 
 ## 🚀 How to Reproduce the Findings
 
 1. **Clone the Repository**: Clone this repository to your local machine using git or download it as a ZIP file.
-2. **Open the Project**: Open the `.Rproj` (if created) or the working directory in your editor (e.g., Positron or RStudio). This ensures paths are resolved correctly relative to the project root via the `here` package.
+2. **Open the Project**: Open the working directory in your editor (e.g., Positron or RStudio). This ensures paths are resolved correctly relative to the project root via the `here` package.
 3. **Install Dependencies**: Run `renv::restore()` to install the required packages.
 4. **Run the Computational Pipeline**:
-   * **Using the Command Line (Quarto CLI)**:
+   * **Using the Command Line**:
      ```bash
-     quarto render analysis.qmd
+     Rscript Code/generate_deliverables.R
      ```
    * **Using R**:
      ```R
