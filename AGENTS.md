@@ -119,13 +119,13 @@ To ensure strict conceptual and empirical clarity across the manuscript, tables,
 
 #### High Priority (Tier 1: Methodological & Modeling Tasks in `Code/generate_deliverables.R`)
 - [x] **Tier 1.1: Structural Embeddedness Controls (R1 #1, #5)**: Compute triadic closure / shared neighbors / embeddedness metrics in NetSense; add to models and report in main tables. (Completed)
-- [ ] **Tier 1.2: Tie Rekindling & Discrete-Time Event History Formalization (R1 #4)**: Formally document the discrete-time risk set, absorbing first dissolution vs. repeated spell handling, and tie sequence distribution across 8 waves in Section 3.
-- [ ] **Tier 1.3: Empirical Stability of Cultural Tastes (R1 #2)**: Compute test-retest reliability / correlation / Jaccard similarity of taste items across waves to empirically validate the durability assumption.
-- [ ] **Tier 1.4: Alters as Egos / Two-Way Dyadic Clustering (R1 #6)**: Estimate cross-classified random effects models (`(1 | egoid) + (1 | alterid)`) or dyadic clustered SEs; present robustness results.
-- [ ] **Tier 1.5: Cultural Matching Operationalization Sensitivity (R1 #5)**: Disaggregate matches into positive interest alignment vs. shared disinterest/dislikes; run sensitivity models.
-- [ ] **Tier 1.6: Node Persistence & Survivorship/Attrition Bias (R1 #7)**: Perform ego retention analysis and sensitivity models for high-retention egos.
+- [x] **Tier 1.2: Tie Rekindling & Discrete-Time Event History Formalization (R1 #4)**: Formally document the discrete-time risk set, absorbing first dissolution vs. repeated spell handling, and tie sequence distribution across 8 waves in Section 3. (Completed)
+- [x] **Tier 1.3: Empirical Stability of Cultural Tastes (R1 #2)**: Compute test-retest reliability / correlation / Jaccard similarity of taste items across waves to empirically validate the durability assumption. (Completed)
+- [x] **Tier 1.4: Alters as Egos / Two-Way Dyadic Clustering (R1 #6)**: Estimate cross-classified random effects models (`(1 | egoid) + (1 | alterid)`) or dyadic clustered SEs; present robustness results. (Completed)
+- [x] **Tier 1.5: Cultural Matching Operationalization Sensitivity (R1 #5)**: Disaggregate matches into positive interest alignment vs. shared disinterest/dislikes; run sensitivity models. (Completed)
+- [x] **Tier 1.6: Node Persistence & Survivorship/Attrition Bias (R1 #7)**: Perform ego retention analysis and sensitivity models for high-retention egos. (Completed)
 
 #### Medium Priority (Tier 2: Theoretical Reframing in `manuscript-R1.tex`)
-- [ ] **Tier 2.7: De-escalate "Culture vs. Structure" Confrontational Framing (R1 Intro)**: Reframe the Introduction and Theoretical Framework from a zero-sum contest to an integrative co-evolutionary and complementary mechanism framework.
-- [ ] **Tier 2.8: Positional Differences & Campus Social Structure (R2 #2)**: Expand discussion and modeling of structural positions, residential arrangements, and exogenous identity criteria.
-- [ ] **Tier 2.9: Conversion of Cultural Capital across Social Locations (R2 #3)**: Elaborate on how cultural capital conversion to social capital differs across campus structural strata.
+- [x] **Tier 2.7: De-escalate "Culture vs. Structure" Confrontational Framing (R1 Intro)**: Reframe the Introduction and Theoretical Framework from a zero-sum contest to an integrative co-evolutionary and complementary mechanism framework. (Completed)
+- [x] **Tier 2.8: Positional Differences & Campus Social Structure (R2 #2)**: Expand discussion and modeling of structural positions, residential arrangements, and exogenous identity criteria. (Completed)
+- [x] **Tier 2.9: Conversion of Cultural Capital across Social Locations (R2 #3)**: Elaborate on how cultural capital conversion to social capital differs across campus structural strata. (Completed)

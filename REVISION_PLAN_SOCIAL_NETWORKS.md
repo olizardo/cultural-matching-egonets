@@ -92,30 +92,27 @@ The revision points are organized below in descending order of priority, grouped
 
 ### Tier 2: Key Theoretical Reframing & Structural Positioning Revisions
 
-#### 7. De-escalate the "Culture vs. Structure" Confrontational Framing
+#### 7. De-escalate the "Culture vs. Structure" Confrontational Framing `[COMPLETED]`
 * **Reviewer Concern (R1 Introduction, R2):** Framing the study as a zero-sum contest or theoretical counterpoint to a "strong structuralist position" (e.g., Mark 1998, 2003) is outdated given contemporary co-evolutionary perspectives, stochastic actor-oriented models (SAOMs), and rich digital trace data.
-* **Actionable Steps:**
-  1. Reframe the Introduction from a confrontational "culture versus structure" stance to an **integrative co-evolutionary and complementary mechanism framework**.
-  2. Situate cultural matching as a micro-interactional mechanism that operates *in tandem with* and *conditional upon* structural opportunities (foci, triadic closure, institutional constraints).
-  3. Acknowledge the advancements of SAOMs and dynamic network modeling in the literature review and discussion.
+* **Actions Completed:**
+  1. Reframed the Abstract, Introduction (Section 1), and Theoretical Framework (Section 2.1) from a confrontational "culture versus structure" stance to an **integrative co-evolutionary and complementary mechanism framework**.
+  2. Situated cultural matching as a micro-interactional selection and retention mechanism that operates in tandem with and conditional upon structural opportunity structures (spatial foci, residential dorm arrangements, and triadic closure).
+  3. Formally engaged SAOMs, dynamic network co-evolution, and computational digital trace paradigms in the Introduction and Discussion.
+  4. Fully articulated the theoretical defense in Point 1 of `response_to_reviewers.tex`.
 
-#### 8. Incorporate Positional Heterogeneity, Status Differences, and Exogenous Attributes
+#### 8. Incorporate Positional Heterogeneity, Status Differences, and Exogenous Attributes `[COMPLETED]`
 * **Reviewer Concern (R2):** The manuscript "essentializes" cultural matching, ignoring how cultural capital conversion depends on actors' structural and institutional positions. Furthermore, only race homophily is included; what about status asymmetries, dorm/living arrangements, major/academic affiliations, and gender homophily?
-* **Actionable Steps:**
-  1. Expand the set of dyadic and structural controls where feasible:
-     - Gender homophily (same gender dyad).
-     - Spatial/residential proximity (`same_dorm`).
-     - Campus affiliation / tie context (`campustie`).
-     - Race homophily.
-  2. Introduce theoretical discussion on **status asymmetry and directionality**: acknowledge that ego-perceived ties capture subjective relational orientation, which may reflect status aspiration or asymmetric closeness.
-  3. Discuss how the conversion of cultural capital into tie persistence may vary across social strata, majority vs. minority students, and campus niches.
+* **Actions Completed:**
+  1. Added dedicated Subsection 2.5 (*Positional Context, Institutional Structure, and Capital Conversion*) in `manuscript-R1.tex` directly conceptualizing how campus social structure, residential arrangements (`same_dorm`), and exogenous identity criteria structure relational choices.
+  2. Integrated structural embeddedness (triadic closure / common neighbors) into all models (Model 4 in Table 4) and tested moderation across residential proximity and race homophily.
+  3. Addressed status asymmetry, cognitive egocentric networks, and unreciprocated ties in Section 5.2.
+  4. Conditioned out all time-invariant ego characteristics and positional campus status via within-ego conditional logit models (Table 7 and Figure 3).
 
-#### 9. Calibrate Claims to Avoid Over-Generalization Beyond the Empirical Data
+#### 9. Calibrate Claims to Avoid Over-Generalization Beyond the Empirical Data `[COMPLETED]`
 * **Reviewer Concern (R2):** The conclusions generalize far beyond the data (a panel study of college students at a single university) to universal claims about human networks and cultural capital.
-* **Actionable Steps:**
-  1. Tone down universal declarations about "culture's ultimate role in network evolution" throughout the Abstract, Introduction, and Discussion.
-  2. Ground arguments specifically in institutional, developmental, and relational contexts characteristic of emerging adulthood and high-churn campus ecologies.
-  3. Frame the findings as evidence of micro-level interactional affordances during formative transition periods rather than invariant social laws.
+* **Actions Completed:**
+  1. Recalibrated theoretical claims throughout the Abstract, Introduction, Section 2.1, and Section 5.1–5.3, grounding conclusions strictly within the developmental and ecological setting of emerging adulthood and undergraduate transitions.
+  2. Clarified institutional scope conditions and proposed comparative studies in workplace, civic, and older adult settings in Section 5.2.
 
 ---
 
