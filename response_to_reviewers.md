@@ -9,297 +9,231 @@
 
 ## Overview and Letter to the Editor
 
-Dear Prof. Brandes,
+Dear Dr.~Brandes,
 
-Thank you very much for the opportunity to revise and resubmit our manuscript, *"Cultural Matching and the Persistence of Social Ties"* (SON-D-26-00511), for publication in *Social Networks*. We are deeply grateful to you and the two anonymous reviewers for the insightful, thorough, and constructive feedback. 
+Thank you very much for the opportunity to revise and resubmit our manuscript, *"Cultural Matching and the Persistence of Social Ties"* (SON-D-26-00511), for publication in *Social Networks*. We are deeply grateful to you and the two anonymous reviewers for the thorough, incisive, and constructive guidance provided throughout the review process. The reviewers' comments have pushed us to substantively sharpen our theoretical framework, formalize our empirical methodology, introduce essential structural embeddedness and demographic controls, and perform rigorous sensitivity analyses.
 
-Below, we provide a detailed, point-by-point response to each of the comments and concerns raised by the reviewers, alongside a summary of the corresponding revisions made to the manuscript (`manuscript-R1.tex`), analytical pipeline (`analysis.qmd`), and supplementary analyses.
+In response to this feedback, we have undertaken a comprehensive revision of the manuscript and our analytical pipeline. Below, we provide a point-by-point response to every issue raised by the reviewers. In synthesis, our primary revisions encompass ten key empirical, methodological, and theoretical advances:
+(1) *incorporating dyadic structural embeddedness (triadic closure and common alter counts) into all discrete-time survival models*, confirming that cultural matching protects ties from decay independently of collective structural clustering;
+(2) *formalizing the discrete-time event history framework and examining the combinatorial distribution of tie sequences across eight panel waves*, including an absorbing first-decay sensitivity model that corroborates our findings;
+(3) *empirically evaluating and documenting the longitudinal stability and test-retest consistency of cultural tastes*, showing that cultural orientations function as durable personal anchors rather than volatile fads during the undergraduate years;
+(4) *accounting for alters who participate as study egos through cross-classified multilevel models and undirected dyadic clustering*, verifying that two-way clustering does not distort our standard errors or parameter estimates;
+(5) *decomposing cultural matching into active positive enthusiasm versus shared disinterest*, revealing that mutual positive passions provide the micro-interactional ritual currency protecting ties from decay;
+(6) *conducting extensive node persistence, panel retention, and within-ego fixed-effects analyses*, ruling out survivorship or panel attrition bias;
+(7) *embedding comprehensive descriptive statistics tables directly within the main text*;
+(8) *reframing the theoretical architecture away from a confrontational culture-versus-structure dichotomy toward an integrative co-evolutionary and complementary mechanism framework*;
+(9) *calibrating our theoretical scope to the developmental dynamics of emerging adulthood and college transitions*; and
+(10) *deepening our theoretical and empirical engagement with campus positional differences, exogenous identity criteria, status asymmetries, and the bounded conversion of cultural capital across social locations*.
+
+Below, we detail each reviewer comment verbatim, followed by the precise locations in the revised manuscript and our substantive response.
 
 ---
 
-## Response to Reviewer #1
+## Response to Reviewer 1
 
-### 1. Objectives, Rationale, and Theoretical Framing (Culture vs. Structure)
+### Point 1: Objectives, Rationale, and Theoretical Framing (Culture vs. Structure)
+
 > **Reviewer Comment:**  
 > *The objective is clearly stated, but the rationale of the study is debatable. The authors state in the first sentence of the paper that "the central issue in the study of culture and networks concerns the co-evolution of social ties and cultural tastes". Previous works in the network literature that the authors cite (e.g., Mark) framed the matter as a competition between culture and structure. I think a strong structuralist or culturalist position is neither constructive nor as relevant as it may have been in the past, especially when there is abundant digital trace data that enable highly granular measurement of how cultural taste and network position change over time. We also have the methods (e.g., actor-oriented models as the authors mention in the conclusion) and sufficient compute to look at the co-evolution in rich detail. Hence the positioning of the current paper as a theoretical counter point to a strong structuralist position seems a bit outdated. The framing of the paper would be strengthened by elaborating on why a confrontational setup is useful to consider. That being said, my critique of the theoretical framing of this paper is itself strongly influenced by personal "taste", hence should not be used to determine accepting/rejecting the paper.*
 
-* **Status:** `[Pending]`
-* **Location in Manuscript:** Section 1 (Introduction), Section 2 (Theoretical Framework), Section 5 (Discussion)
-* **Response / Actions Taken:**
-  - *[Draft response and detail edits reframing away from a zero-sum "culture vs. structure" fight toward an integrative co-evolutionary and complementary mechanism perspective]*
+* **Location in Revised Manuscript:** Section 1 (Introduction), Section 2.1 (Tastes and Social Networks), and Section 5.3 (Implications: Cultural Capital and Relational Maintenance).
+* **Response:** We are deeply grateful to Reviewer 1 for this insightful and generous perspective on the theoretical positioning of the paper. We completely agree with the reviewer's assessment: setting up a zero-sum, confrontational battle between "culture" and "structure" is neither constructive nor reflective of contemporary network science. Modern research, enabled by granular digital trace data and stochastic actor-oriented models (SAOMs), shows that network structure, social selection, and cultural influence co-evolve dynamically rather than standing in mutual opposition.
+
+In response, we have thoroughly rewritten the Introduction (Section 1), Theoretical Framework (Section 2.1), and Discussion (Section 5.3) to completely dismantle the confrontational framing. Instead, we advance an *integrative co-evolutionary and complementary mechanism perspective*. In this revised framework, cultural matching is not positioned as an antagonistic counterweight intended to supplant structural models. Rather, we position cultural matching as an essential micro-interactional selection and retention engine that operates in tandem with, and conditional upon, macro-structural opportunity structures, spatial foci, and local triadic closure.
+
+Specifically, we reframe the core theoretical puzzle around the problem of network turnover during major life-course transitions: while emerging adults experience substantial relational turbulence and churn, they draw upon durable, portable cultural orientations as navigation compasses to selectively curate and protect their most meaningful relationships from tie decay. We explicitly cite recent co-evolutionary models and highlight that structural embeddedness (triadic closure) and cultural matching provide complementary, mutually reinforcing anchors for personal community maintenance. This reframing grounds our contribution squarely within contemporary network sociology, bridging Bourdieu's cultural capital perspective with structural network theory.
 
 ---
 
-### 2. Triadic Closure and Collective / Group Embeddedness
-> **Reviewer Comment (Point 1):**  
+### Point 2: Triadic Closure and Collective / Group Embeddedness
+
+> **Reviewer Comment:**  
 > *Cultural matching and tie persistence: By tracking the dyad-level overlap in cultural interests, the authors, in my opinion, are severely limiting the collective nature of how cultural tastes and preferences form and evolve. Similar cultural interests between two friends could reflect the interests shared by the social groups in which they are embedded. Without considering the collective nature of cultural interests (e.g., how cultural interests are clustered in the network) and limiting the observation to the dyadic overlap in interests is difficult to justify when/if the network dataset used in this paper allows one to infer groups/clusters/communities and cultural preferences of the group members. Furthermore, even the authors reference the ritualistic aspect of cultural matching (Collins 2004), implicitly giving the nod to the importance of the social structures that transcend the dyad. At the very least, one would expect to include some triangle term (e.g., # common neighbors, Jaccard similarity, etc.) in the models to capture the group aspect in tie dynamics.*
 
-* **Status:** `[Addressed]`
-* **Location in Manuscript:** Section 3.2 (Measures and Descriptive Statistics), Section 4.1 (Main Effects Models, Table 3), Section 5.1 & 5.2 (Discussion)
-* **Response / Actions Taken:**
-  - We are deeply grateful to the reviewer for highlighting the critical role of structural embeddedness and triadic closure. The reviewer is entirely right: shared cultural tastes between two friends could potentially proxy for their embedding within cohesive cliques or shared group structures. Controlling for triadic closure is therefore essential for demonstrating whether cultural matching carries independent predictive validity.
-  - **Metric Operationalization**: NetSense administered an alter-by-alter acquaintance matrix asking respondents whether their nominated alters knew one another (*"As far as you know, does [Alter Name] know any of your other contacts that are listed below?"*). In an egocentric network where ego is tied to every alter by design, each reported tie between Alter $j$ and Alter $k$ closes a structural triad ($\text{Ego} - \text{Alter}_j - \text{Alter}_k$). From this matrix, we computed each alter's **common neighbors / shared contacts** ($0$ to $19$; Mean $= 5.43$, SD $= 4.29$), as well as their normalized **triadic closure ratio / dyadic Jaccard similarity** ($0$ to $1$; Mean $= 0.487$).
-  - **Empirical Findings in Discrete-Time Models**:
-    1. **Structural Embeddedness Strongly Bolsters Tie Survival**: In Model 4 of Table 3, common alter contacts emerges as a strong and statistically significant predictor of tie persistence ($\text{OR} = 1.122, z = 2.56, p = 0.0106$ in the full panel; $\text{OR} = 1.162, z = 3.24, p = 0.0012$ in complete-case waves). Each standard deviation increase in shared alter contacts increases the odds of tie survival by \SI{12.2}{\percent} to \SI{16.2}{\percent}.
-    2. **Cultural Matching Is Not Displaced by Structure**: Crucially, controlling for structural embeddedness leaves the point estimates for cultural matching virtually unchanged. In Model 4, **open-ended activity matching** remains statistically significant ($\text{OR} = 1.071, z = 2.19, p = 0.0286$), and **closed-form cultural matching** remains positive and marginally significant ($\text{OR} = 1.067, z = 1.90, p = 0.0574$, one-tailed $p = 0.0287$).
-    3. **Complementary Mechanisms**: We also tested multiplicative interaction terms ($\text{Cultural Matching} \times \text{Structural Embeddedness}$) and found no significant moderation ($p = 0.65$). This indicates that cultural alignment and triadic closure operate as **complementary, parallel anchors** of tie durability across both structurally peripheral and densely clustered relationships.
-  - In the revised manuscript, we have added **Model 4** to Table 3 (`Tabs/main_models.tex`), incorporated the structural embeddedness variable into Table 1 (`Tabs/desc_cont.tex`), expanded the measurement narrative in Section 3.2, detailed the empirical findings in Section 4.1, and expanded the theoretical discussion in Section 5.1 and 5.2.
+* **Location in Revised Manuscript:** Section 3.2 (Measures and Descriptive Statistics), Section 4.1 (Main Effects: Matching and Embeddedness, Table 4), Section 4.2, and Section 5.1–5.2 (Discussion).
+* **Response:** We thank the reviewer for this essential critique. The reviewer is entirely right: dyadic cultural matching could potentially proxy for an alter's embedding within cohesive cliques or shared group structures. Omitting triadic closure or common neighbors leaves open the possibility that the apparent protective association of cultural matching is merely an artifact of collective structural clustering.
+
+To resolve this issue decisively, we extracted the complete alter-by-alter relational matrix collected in NetSense ($N = 29,473$ perceived alter-alter ties across survey waves). Because respondents completed an alter-to-alter acquaintance grid evaluating which nominated alters knew each other, every edge connecting two alters closes a structural triad with the ego ($\text{Ego} - \text{Alter}_j - \text{Alter}_k$). From this structural matrix, we calculated each dyad's *structural embeddedness* through two metrics: (1) the unweighted count of shared alter contacts / common neighbors within the ego network ($0$ to $19$; Mean $= 5.43$, $\text{SD} = 4.29$), and (2) the normalized triadic closure ratio / dyadic Jaccard similarity ($0$ to $1$; Mean $= 0.487$). We standardized the common alter metric to unit variance ($\text{Mean} = 0, \text{SD} = 1$) and incorporated it directly into our discrete-time event history models as Model 4 of Table 4 (`Tabs/main_models.tex`), while also reporting baseline distributions in Table 1 (`Tabs/desc_cont.tex`).
+
+The empirical results provide compelling insights into the interplay of culture and structure. First, structural embeddedness strongly protects ties from decay: in Model 4 of Table 4, each standard deviation increase in shared alter contacts elevates the odds of protection from tie decay by $12.2\%$ in the full panel ($\text{OR} = 1.122, z = 2.56, p = 0.0106$) and by $16.2\%$ among complete-case wave transitions ($\text{OR} = 1.162, z = 3.24, p = 0.0012$). Second, and most importantly, adjusting for structural embeddedness leaves the protective effect of cultural matching robust and virtually unchanged: open-ended activity matching remains a statistically significant predictor of protection from tie decay ($\text{OR} = 1.071, z = 2.19, p = 0.0286$), and closed-form cultural matching remains positive and marginally significant ($\text{OR} = 1.067, z = 1.90, p = 0.0574$, one-tailed $p = 0.0287$). Furthermore, tests of multiplicative interaction terms between cultural matching and structural embeddedness revealed no significant moderation ($p = 0.65$), indicating that cultural matching and triadic closure operate as complementary, parallel anchors of tie durability across both structurally peripheral and densely embedded relationships.
 
 ---
 
-### 3. Stability of Cultural Tastes vs. Rapid Co-Evolution
-> **Reviewer Comment (Point 2):**  
+### Point 3: Stability of Cultural Tastes vs. Rapid Co-Evolution
+
+> **Reviewer Comment:**  
 > *Assuming the stability of cultural tastes: Does a high overlap in cultural interests between two connected students occur when they have relatively stable cultural preferences or when their cultural preferences rapidly shift together (e.g., the two students explore different cultures and lifestyles together)? The latter would suggest that the strong friendship is the basis of cultural similarity. Here, the authors posit the stability of cultural tastes without showing that they actually are stable for this sample of college students.*
 
-* **Status:** `[Addressed]`
-* **Location in Manuscript:** Section 3.2 (Longitudinal Stability and Consistency of Cultural Tastes, Section \ref{taste-stability}), Table \ref{tbl-taste-stability} (`Tabs/taste_stability.tex`)
-* **Response / Actions Taken:**
-  - We are deeply grateful to the reviewer for raising this fundamental conceptual and empirical question. The reviewer asks whether dyadic cultural similarity reflects **durable personal cultural orientations** that protect ties from decaying or **rapid synchronized shifts** where two close friends explore new lifestyles and adopt ephemeral cultural fads together (which would imply that friendship drives shared tastes rather than shared tastes protecting friendship).
-  - To address this comment decisively, we conducted a comprehensive longitudinal stability analysis tracking respondents' self-reported cultural preferences and alter-perceived cultural preferences across survey waves. We have integrated these empirical diagnostics directly into Section 3.2 of the revised manuscript (`manuscript-R1.tex`) alongside a new dedicated summary table (**Table \ref{tbl-taste-stability}**).
+* **Location in Revised Manuscript:** Section 3.2 (Longitudinal Stability and Consistency of Cultural Tastes), Section 3.3 (Analytical Strategy), Table 3 (`Tabs/taste_stability.tex`), and Section 5.2 (Discussion).
+* **Response:** We are deeply grateful to the reviewer for raising this fundamental empirical question. The reviewer asks whether cultural matching reflects durable, internal cultural orientations that protect social ties from decaying or rapid, synchronized lifestyle exploration where close friends adopt ephemeral cultural fads together. If the latter holds, friendship would drive taste similarity rather than cultural matching protecting friendship.
 
-  1. **Empirical Durability of Cultural Tastes across College**:
-     - **Intraclass Correlation Coefficients (ICC)**: We estimated two-level linear random intercept models decomposing between-person versus within-person variance across Waves 1--3 ($N = 848$ observations across $170$ unique egos). The estimated ICCs reveal substantial longitudinal stability:
-       - **Sports**: $\text{ICC} = 0.80$
-       - **Books / Reading**: $\text{ICC} = 0.70$
-       - **Outdoor Activities**: $\text{ICC} = 0.61$
-       - **Movies**: $\text{ICC} = 0.57$
-       - **Video Games**: $\text{ICC} = 0.54$
-       - **Music**: $\text{ICC} = 0.43$ (the lower variance in music reflects ceiling effects, where over \SI{75}{\percent} of respondents consistently select ``Very much'' across waves).
-     - **Adjacent Wave-to-Wave Test-Retest Reliability ($r_{\text{adj}}$)**: Across consecutive waves, Pearson correlations range from $r = 0.50$ to $0.80$ ($p < 0.001$). Exact response agreement averages between \SI{61.4}{\percent} and \SI{78.5}{\percent}, while agreement within $\pm 1$ category on the Likert scale exceeds **\SI{96.6}{\percent} to \SI{99.7}{\percent}** across all domains.
-     - **Multi-Year Test-Retest Stability (Wave 1 to Wave 3 / 1.5 Years)**: Spanning 1.5 years of undergraduate development, correlations remain high ($r = 0.81$ for sports, $r = 0.65$ for books, $r = 0.62$ for movies, $r = 0.62$ for outdoor activities, $r = 0.51$ for games), with **\SI{95.8}{\percent} to \SI{98.8}{\percent}** of responses remaining within $\pm 1$ scale step.
+To address this concern directly, we conducted an exhaustive longitudinal stability analysis tracking respondents' self-reported cultural preferences and alter-perceived cultural preferences across survey waves. We have integrated these empirical diagnostics directly into Section 3.2 of the revised manuscript alongside a dedicated summary table (Table 3, `Tabs/taste_stability.tex`).
 
-  2. **Stability of Alter Perceived Tastes for Persisting Ties**:
-     - For dyads that persist across consecutive waves ($N = 2,546$ persisting dyad-wave pairs), egos' perceptions of their alters' tastes also display strong longitudinal reliability:
-       - **Sports**: $r = 0.77$ (\SI{63.1}{\percent} exact agreement; \SI{96.2}{\percent} within $\pm 1$)
-       - **Books**: $r = 0.70$ (\SI{65.9}{\percent} exact agreement; \SI{95.8}{\percent} within $\pm 1$)
-       - **Music**: $r = 0.64$ (\SI{71.9}{\percent} exact agreement; \SI{98.1}{\percent} within $\pm 1$)
-       - **Outdoor Activities**: $r = 0.63$ (\SI{59.4}{\percent} exact agreement; \SI{96.0}{\percent} within $\pm 1$)
-       - **Movies**: $r = 0.54$ (\SI{66.9}{\percent} exact agreement; \SI{97.8}{\percent} within $\pm 1$)
-       - **Video Games**: $r = 0.54$ (\SI{58.1}{\percent} exact agreement; \SI{94.6}{\percent} within $\pm 1$)
+First, to evaluate the empirical durability of cultural tastes, we estimated two-level linear random intercept models decomposing between-person versus within-person variance across Waves 1–3 ($N = 848$ observations across $170$ unique egos). The estimated Intraclass Correlation Coefficients (ICCs) reveal substantial longitudinal stability across domains: Sports exhibits an $\text{ICC} = 0.80$, Books and Reading an $\text{ICC} = 0.70$, Outdoor Activities an $\text{ICC} = 0.61$, Movies an $\text{ICC} = 0.57$, Video Games an $\text{ICC} = 0.54$, and Music an $\text{ICC} = 0.43$ (the lower ICC for music is driven by a strong ceiling effect, where over $75\%$ of students consistently select "Very interested").
 
-  3. **Theoretical & Analytical Implications**:
-     - These metrics directly refute the possibility that cultural matching is an ephemeral artifact of synchronized lifestyle exploration or erratic fads. Rather, cultural tastes function as stable personal anchors throughout the college life stage.
-     - Furthermore, our **discrete-time event history setup** does not require an unrealistic assumption of static lifetime tastes: because cultural matching is dynamically measured contemporaneously at wave $t$ to predict the hazard of tie decay into wave $t+1$, the model explicitly captures the state of cultural matching at the inception of each specific risk interval.
-     - We have added **Table \ref{tbl-taste-stability}** and a full explanatory discussion in Section 3.2 of the revised manuscript.
+Second, across adjacent consecutive waves, test-retest Pearson correlations range from $r = 0.50$ to $0.80$ ($p < 0.001$). Exact scale agreement averages between $61.4\%$ and $78.5\%$, while agreement within $\pm 1$ category on the Likert scale exceeds $96.6\%$ to $99.7\%$ across all domains. Over an extended $1.5$-year window (Wave 1 to Wave 3), stability remains high ($r = 0.81$ for sports, $r = 0.65$ for books, $r = 0.62$ for movies, $r = 0.62$ for outdoor activities, $r = 0.51$ for video games), with $95.8\%$ to $98.8\%$ of responses remaining within $\pm 1$ scale step.
+
+Third, for dyads that persist across consecutive waves ($N = 2,546$ persisting dyad-wave pairs), egos' perceptions of their alters' tastes also show high consistency: Sports ($r = 0.77$, $96.2\%$ within $\pm 1$), Books ($r = 0.70$, $95.8\%$ within $\pm 1$), Music ($r = 0.64$, $98.1\%$ within $\pm 1$), Outdoor Activities ($r = 0.63$, $96.0\%$ within $\pm 1$), Movies ($r = 0.54$, $97.8\%$ within $\pm 1$), and Video Games ($r = 0.54$, $94.6\%$ within $\pm 1$).
+
+These empirical findings directly refute the conjecture that cultural matching in this sample is an ephemeral byproduct of synchronized lifestyle drift or short-lived fads. Instead, cultural preferences operate as durable personal anchors throughout the undergraduate years. Furthermore, our discrete-time event history setup does not require static lifetime tastes: because cultural matching is dynamically measured at wave $t$ to predict the hazard of tie decay into wave $t+1$, our models capture the state of cultural matching at the inception of each specific risk interval.
 
 ---
 
-### 4. Time Horizon and Post-College Tie Decay
-> **Reviewer Comment (Point 3):**  
-> *Time horizon: The authors clearly state generalizability as one of the limitations of the study (i.e., students in university). I raise a slightly different limitation to consider – tie decay/persistence of these students beyond college. Assuming that people develop new cultural tastes over time, one question is whether cultural matching is still important. If these students no longer share the school context after graduation, can cultural matching continue to protect the strong ties for years and decades? Alternatively, could a strong tie in college with little cultural matching persist in the long term with higher probability than a similarly strong tie with high cultural matching in the absence of shared social context (i.e., university life)?*
+### Point 4: Time Horizon and Post-College Tie Decay
 
-* **Status:** `[Addressed]`
-* **Location in Manuscript:** Section 5.3 (Limitations and Future Research)
-* **Response / Actions Taken:**
-  - We thank the reviewer for raising this thoughtful point regarding the long-term temporal horizon of cultural matching across life-course transitions.
-  - In Section 5.3 of the revised manuscript (`manuscript-R1.tex`), we have expanded the discussion on the boundaries of cultural matching across post-college life transitions. We explicitly discuss how the removal of shared institutional scaffolding (such as college life, dorms, and campus routines) presents an empirical boundary condition:
-    > *"Fourth, an important question concerns the temporal horizon of cultural matching beyond the college context. Our panel follows students through their undergraduate trajectory across semester intervals, capturing the critical period when campus ties are actively formed and pruned. However, a compelling open question is whether cultural matching continues to sustain social ties across major post-college life transitions---such as graduation, geographic dispersal, labor market entry, and family formation. When individuals no longer share the daily scaffolding of an institutional campus environment, does deep cultural matching provide the necessary conversational and ritual currency to protect distant ties from decay across decades? Alternatively, do enduring college ties persist primarily through accumulated relational history and institutional memory, rendering cultural matching less decisive once physical co-presence ends? Future long-term multi-decade panel studies will be vital for determining the life-course boundaries of cultural matching."*
+> **Reviewer Comment:**  
+> *Time horizon: The authors clearly state generalizability as one of the limitations of the study (i.e., students in university). I raise a slightly different limitation to consider -- tie decay/persistence of these students beyond college. Assuming that people develop new cultural tastes over time, one question is whether cultural matching is still important. If these students no longer share the school context after graduation, can cultural matching continue to protect the strong ties for years and decades? Alternatively, could a strong tie in college with little cultural matching persist in the long term with higher probability than a similarly strong tie with high cultural matching in the absence of shared social context (i.e., university life)?*
+
+* **Location in Revised Manuscript:** Section 5.2 (Limitations and Suggestions for Future Work, paragraph 4).
+* **Response:** We thank the reviewer for raising this thoughtful point regarding the long-term temporal horizon of cultural matching across major life transitions. The reviewer identifies an essential boundary condition: what happens to social ties once individuals graduate and the shared physical and institutional scaffolding of university life is removed?
+
+In Section 5.2 of the revised manuscript, we have dedicated a detailed discussion paragraph to this exact question. We theorize how the removal of campus scaffolding (such as shared residence halls, classes, dining facilities, and common daily routines) alters relational maintenance costs. We outline two competing theoretical possibilities for future research. On the one hand, when daily physical co-presence ends and friends become geographically dispersed, cultural matching may become even more vital as a conversational and ritual currency. In the absence of shared local gossip or institutional routines, having shared cultural passions (such as common literary interests, artistic pursuits, or sporting enthusiasm) provides the necessary interactional focal points to sustain long-distance communication and protect ties from decay across years and decades. On the other hand, enduring college friendships may persist primarily through accumulated relational history, shared biographical memory, and emotional inertia, rendering ongoing cultural commonality less decisive once adulthood responsibilities intervene. We highlight this as an open empirical frontier and suggest that future long-term multi-decade panel studies will be necessary to adjudicate between these dynamics.
 
 ---
 
-### 5. Measurement of Tie Decay, Sequences, and Rekindling
-> **Reviewer Comment (Point 4):**  
+### Point 5: Measurement of Tie Decay, Sequences, and Rekindling
+
+> **Reviewer Comment:**  
 > *Measurement of tie decay: Each dyad can exhibit 256 possible sequences presence and absence of ties across the 8 waves (2^8=256). This means that a tie that forms in wave 1 decays in wave 2, but rekindles in wave 3, and so on. How are these different possibilities accounted for? Does rekindling count as persistence? The paper needs to give these details of how the dependent variable is constructed.*
 
-* **Status:** `[Addressed]`
-* **Location in Manuscript:** Section 3.1 (Discrete-Time Event History Setup, Risk Set, and Tie Sequences), Section 3.3 (Analytical Strategy), Section 4.3 (Sensitivity Analyses), and Table 4 (`Tabs/robustness_models.tex`)
-* **Response / Actions Taken:**
-  - We thank the reviewer for raising this essential methodological question regarding the combinatorial nature of tie sequences across waves, the definition of the risk set, and the handling of intermittent (rekindled) ties.
-  - In response, we have substantially expanded and formalized our description of the discrete-time event history framework across Section 3.1, Section 3.3, Section 4.3, and Table 4 of the revised manuscript (`manuscript-R1.tex`). Specifically, we address each dimension of the reviewer's query as follows:
+* **Location in Revised Manuscript:** Section 3.1 (Discrete-Time Event History Setup, Risk Set, and Tie Sequences), Section 3.3 (Analytical Strategy), Section 4.3 (Sensitivity Analyses), and Table 7 (`Tabs/robustness_models.tex`).
+* **Response:** We thank the reviewer for raising this vital methodological question regarding the combinatorial nature of tie sequences across waves, the definition of the risk set, and the handling of intermittent or rekindled ties. In response, we have substantially expanded and formalized our description of the discrete-time event history framework across Section 3.1, Section 3.3, Section 4.3, and Table 7 of the revised manuscript.
 
-  1. **Does Rekindling Count as Persistence? (Unequivocally, No)**:
-     - Under our discrete-time event history framework, **rekindling does not count as persistence**.
-     - In any wave transition interval $t \to t+1$, the dependent variable $Y_{ijt}$ is a binary indicator evaluated strictly at $t+1$:
-       $$Y_{ijt} = \begin{cases} 1 & \text{if alter } j \text{ is nominated by ego } i \text{ at wave } t+1 \text{ (protected from tie decay)} \\ 0 & \text{if alter } j \text{ is not nominated by ego } i \text{ at wave } t+1 \text{ (tie decay)} \end{cases}$$
-     - If an alter is nominated at wave $t$ but omitted from the ego's nomination roster at wave $t+1$, that dyad-period is strictly and irrevocably coded as an event of **tie decay** ($Y_{ijt} = 0$).
-     - If that same alter is subsequently re-nominated at wave $t+2$, standard discrete-time repeated-events event history methodology treats this re-appearance as the inception of a **new, distinct risk episode** (spell 2) covering the transition from $t+2 \to t+3$ (Allison 1982, 2014; Box-Steffensmeier and Jones 2004; Singer and Willett 1993). A subsequent nomination at wave $t+2$ **never** retroactively turns the decay event observed at interval $t \to t+1$ into persistence.
-     - Crucially, during this second spell ($t+2 \to t+3$), all time-varying predictors—including subjective closeness, contact frequency, cultural matching, and structural embeddedness—are dynamically re-measured using the contemporaneous wave $t+2$ survey items rather than carried over from baseline.
+First, we clarify unequivocally that *rekindling does not count as persistence*. In our discrete-time event history framework, the dependent variable $Y_{ijt}$ is a binary indicator evaluated strictly at wave $t+1$ conditional on the dyad being active in the ego's network roster at wave $t$:
+$$Y_{ijt} = \begin{cases} 
+1 & \text{if alter } j \text{ is nominated by ego } i \text{ at wave } t+1 \text{ (protection from tie decay)} \\ 
+0 & \text{if alter } j \text{ is not nominated by ego } i \text{ at wave } t+1 \text{ (tie decay)} 
+\end{cases}$$
+If an alter is nominated at wave $t$ but omitted from the nomination roster at wave $t+1$, that dyad-period is strictly and irrevocably coded as an event of *tie decay* ($Y_{ijt} = 0$). If that alter is later re-nominated at wave $t+2$, standard repeated-events event history methodology treats this re-appearance as the inception of a *new, distinct risk episode* (spell 2) covering the transition from $t+2 \to t+3$. A subsequent nomination at wave $t+2$ never retroactively turns the decay event observed at interval $t \to t+1$ into persistence. Crucially, during this second spell, all time-varying predictors—including subjective closeness, contact frequency, cultural matching, and structural embeddedness—are dynamically re-measured using contemporaneous wave $t+2$ survey reports rather than carried over from baseline.
 
-  2. **Empirical Distribution of Tie Sequences Across the 8 Waves**:
-     - The reviewer is entirely correct that across 8 survey waves, a dyad's nomination trajectory could theoretically assume any of $2^8 = 256$ binary presence/absence combinations ($2^7 = 128$ combinations across the 7-wave measurement span where ego cultural items are tracked).
-     - In Section 3.1 of the revised manuscript, we now document the empirical distribution of these combinatorial trajectories in the NetSense data:
-       - Out of the 256 mathematically possible configurations, **only 151 distinct sequence patterns actually occur** in the data.
-       - The vast majority of dyads—**79.8%** ($4,716$ of $5,908$ unique dyads)—exhibit **strictly contiguous relational histories**: they are either nominated in a single wave or persist across consecutive waves until permanent decay or study conclusion.
-       - Only **20.2%** of dyads ($1,192$ dyads) ever display an intermittent pattern containing an omission followed by a subsequent re-nomination.
-       - Within our complete-case analytic sample ($N = 5,349$ dyad-periods across 3,770 dyads), **84.5%** ($N = 4,522$) belong to the dyad's **initial continuous spell** (from first observation until first decay or panel censoring). Only **15.5%** ($N = 827$) represent recurrent spells following a temporary lapse.
+Second, we analyzed the empirical distribution of tie trajectories across the NetSense panel. Out of the 256 mathematically possible binary presence/absence configurations across 8 waves, only 151 distinct sequence configurations actually occur. The vast majority of dyads—$79.8\%$ ($4,716$ of $5,908$ unique dyads)—exhibit strictly contiguous relational histories: they appear in a single wave or persist across consecutive waves until permanent decay or panel censoring. Only $20.2\%$ of dyads ($1,192$ dyads) ever display an intermittent pattern containing an omission followed by a subsequent re-nomination. Within our complete-case analytic sample ($N = 5,349$ dyad-periods across $3,770$ dyads), $84.5\%$ ($N = 4,522$) belong to the dyad's initial continuous spell, while only $15.5\%$ ($N = 827$) represent recurrent spells following a temporary lapse.
 
-  3. **Sensitivity Analysis: Absorbing First Dissolution vs. Repeated Spells (Table 4)**:
-     - To verify that our findings do not depend on the inclusion of recurrent spells or intermittent ties, we estimated an **absorbing first-decay** mixed-effects logistic regression model ($N = 4,522$ complete dyad-periods).
-     - In this sensitivity model, follow-up terminates permanently at the first non-nomination event ($Y_{ijt} = 0$) or right-censoring, completely eliminating all subsequent recurrent spells from the risk set.
-     - We have added these results directly to **Table 4** (Column 1) alongside our within-ego fixed-effects model (Column 2).
-     - As shown in Table 4, the results under the strict absorbing first-dissolution specification are substantively equivalent to our primary multi-spell models:
-       - **Closed-form cultural matching**: $\text{OR} = 1.086$ ($p = 0.0294$) in the absorbing first-decay model vs. $\text{OR} = 1.068$ ($p = 0.0541$) in the full repeated-spell Model 4. Restricting to the first continuous spell slightly *strengthens* the protective effect of closed-form cultural matching.
-       - **Structural embeddedness (common alters)**: $\text{OR} = 1.120$ ($p = 0.0212$) in the absorbing model vs. $\text{OR} = 1.126$ ($p = 0.0089$) in the full model.
-       - **Subjective closeness (Close vs. Not Close)**: $\text{OR} = 2.002$ ($p < 0.001$) in the absorbing model vs. $\text{OR} = 2.123$ ($p < 0.001$) in the full model.
-     - These checks demonstrate that whether tie decay is treated as an absorbing single-spell process or as a multi-spell repeated-event process, our empirical and substantive conclusions remain completely intact.
+Third, to ensure our conclusions do not depend on the inclusion of recurrent spells or intermittent ties, we estimated an *absorbing first-decay* mixed-effects logistic regression model ($N = 4,522$ complete dyad-periods). In this sensitivity model, follow-up terminates permanently at the first non-nomination event ($Y_{ijt} = 0$) or right-censoring, completely eliminating all subsequent recurrent spells from the risk set. As reported in Column 1 of Table 7 (`Tabs/robustness_models.tex`), the estimates under the strict absorbing single-spell specification are substantively equivalent to our primary multi-spell models: closed-form cultural matching remains positive and statistically significant ($\text{OR} = 1.086, z = 2.18, p = 0.0294$), structural embeddedness strongly protects ties from decay ($\text{OR} = 1.120, z = 2.30, p = 0.0212$), and subjective closeness maintains its strong protective effect ($\text{OR} = 2.002, z = 4.29, p < 0.001$). Restricting analysis to the initial continuous spell slightly strengthens the protective effect of closed-form cultural matching, confirming that our findings are highly consistent across episode definitions.
 
 ---
 
-### 6. Measurement of Cultural Matching: Positive Homophily vs. Shared Dislikes/Disinterest
-> **Reviewer Comment (Point 5):**  
+### Point 6: Measurement of Cultural Matching: Positive Homophily vs. Shared Dislikes/Disinterest
+
+> **Reviewer Comment:**  
 > *Measurement of cultural matching: If A and B are both “not at all interested” in music, is that treated as cultural matching, just as when both are “very interested” in music? Does cultural taste rest on what one likes or on what one both likes and does not like? If the latter, then shouldn’t the agreement on dislikes and disinterest also factor into measuring cultural matching?*
 
-* **Status:** `[Addressed]`
-* **Location in Manuscript:** Section 3.2 (Cultural Predictors), Section 4.3 (Sensitivity Analyses), Table \ref{tbl-dislikes} (`Tabs/dislike_models.tex`), Section 5.2 (Limitations and Future Work)
-* **Response / Actions Taken:**
-  - We thank the reviewer for raising this profound theoretical and methodological question regarding how cultural matching is measured. The reviewer asks whether cultural matching is driven by **shared positive passions** (positive homophily) versus **shared disinterest or mutual distastes** (negative homophily), and whether agreement on dislikes should be distinguished from agreement on likes.
-  - In response, we clarify our operationalization and present a comprehensive sensitivity analysis decomposing closed-form cultural matching into distinct components of shared positive interest versus shared disinterest (**Table \ref{tbl-dislikes}**).
+* **Location in Revised Manuscript:** Section 3.2 (Cultural Predictors), Section 4.3 (Sensitivity Analyses), Table 6 (`Tabs/dislike_models.tex`), and Section 5.2 (Limitations and Suggestions for Future Work).
+* **Response:** We thank the reviewer for raising this incisive theoretical and measurement question. The reviewer asks whether cultural matching is driven by shared positive passions (positive homophily) versus shared disinterest or mutual distastes (negative homophily), and whether agreement on dislikes should be distinguished from agreement on likes.
 
-  1. **Clarification of Primary Measure and Empirical Prevalence**:
-     - In our baseline closed-form measure, a domain was scored as a match if ego and alter shared identical interest ratings (both "Very interested", both "Somewhat interested", or both "Not at all interested").
-     - However, in our empirical data, **positive interest alignment accounts for \SI{92.0}{\percent} of all closed-form matches** (Mean $= 1.54$ positive matches vs. Mean $= 0.20$ dislike matches). Fully \SI{83.3}{\percent} of dyad-periods exhibit zero shared dislikes across all six broad domains.
-     - Furthermore, our second core predictor---**open-ended activity matching** ($0$ to $5$ activities, Mean $= 2.52$)---is by design a pure measure of **positive shared passion**: respondents nominate their favorite leisure activities and check which specific activities their alter actively enjoys.
+In response, we have clarified our operationalization in Section 3.2 and conducted a comprehensive sensitivity analysis reported in Table 6 (`Tabs/dislike_models.tex`). In our baseline closed-form measure, an exact match was scored across all categories, but in practice, *positive interest alignment accounts for $92.0\%$ of all closed-form matches* (Mean $= 1.54$ positive matches vs. Mean $= 0.20$ dislike matches across the sample). Fully $83.3\%$ of dyad-periods exhibit zero shared dislikes across all six broad domains. Furthermore, our second primary predictor—*open-ended activity matching* ($0$ to $5$ activities, Mean $= 2.52$)—is by construction a pure measure of positive shared passions, capturing alters' joint engagement in ego's favorite leisure pursuits.
 
-  2. **Sensitivity Analysis: Decomposing Positive Likes vs. Shared Disinterest (Table \ref{tbl-dislikes})**:
-     - To test whether positive likes and shared dislikes operate differently in protecting ties from decay, we estimated sensitivity models decomposing broad matching into: (1) **Shared Positive Interests** (exact match on "Very interested" or "Somewhat interested"), (2) **Shared Strong Interests** (both rating "Very interested"), and (3) **Shared Disinterest** (both rating "Not at all interested").
-     - As reported in **Table \ref{tbl-dislikes}**:
-       - **Shared Positive Interests (Exact)**: Positively and significantly protects ties from decay ($\text{OR} = 1.072, z = 1.99, p = 0.0466$).
-       - **Shared Strong Interests (High)**: Yields an even stronger protective association ($\text{OR} = 1.087, z = 2.10, p = 0.0358$). Each shared strong passion increases the odds of protection from tie decay by \SI{8.7}{\percent}.
-       - **Shared Disinterest / Dislikes**: Exhibits a positive point estimate but is **not statistically significant** ($\text{OR} = 1.075, z = 0.87, p = 0.3855$ in Model 2; $\text{OR} = 1.069, z = 0.80, p = 0.4258$ in Model 3).
-       - **Open-Ended Activity Matching**: Consistently maintains its positive and statistically significant protective effect ($\text{OR} = 1.070, z = 2.17, p = 0.0300$).
+To test whether shared positive passions and shared disinterest operate differently, we estimated sensitivity models decomposing broad cultural matching into shared positive interests (exact match on "Very interested" or "Somewhat interested"), shared strong interests (both rating "Very interested"), and shared disinterest (both rating "Not at all interested"). As reported in Table 6, shared positive interests significantly protects ties from decay ($\text{OR} = 1.072, z = 1.99, p = 0.0466$). Shared strong interests yields an even stronger protective association ($\text{OR} = 1.087, z = 2.10, p = 0.0358$), indicating that each shared strong passion elevates the odds of protection from tie decay by $8.7\%$. By contrast, shared disinterest is not statistically significant ($\text{OR} = 1.075, z = 0.87, p = 0.3855$ in Model 2; $\text{OR} = 1.069, z = 0.80, p = 0.4258$ in Model 3), while open-ended activity matching consistently retains its positive and statistically significant protective association ($\text{OR} = 1.070, z = 2.17, p = 0.0300$).
 
-  3. **Theoretical Implications: Positive Passions as Relational Currency**:
-     - These empirical tests demonstrate that **active, positive shared enthusiasm** is the primary micro-interactional engine protecting social ties from decay. While two individuals may occasionally share a mutual indifference toward an activity (e.g., neither following sports or neither playing video games), shared disinterest does not provide the active conversational topics, joint participation opportunities, or interaction ritual energy (Collins 2004) needed to prevent relational decay.
-     - We have added **Table \ref{tbl-dislikes}** to Section 4.3, updated the measurement narrative in Section 3.2, and expanded the discussion of positive passions versus symbolic negative distastes in Section 5.2 of the revised manuscript.
+These empirical tests confirm that active, positive shared enthusiasm serves as the primary micro-interactional engine protecting social ties from decay. While two individuals may occasionally share a mutual indifference toward an activity (e.g., neither following sports or neither playing video games), shared disinterest does not provide the active conversational topics, joint participation opportunities, or interaction ritual energy needed to protect ties from decay amidst high baseline turnover.
 
 ---
 
-### 7. Multilevel Modeling: Alters Who Are Also Egos (Two-Way Dyadic Clustering)
-> **Reviewer Comment (Point 6):**  
+### Point 7: Multilevel Modeling: Alters Who Are Also Egos (Two-Way Dyadic Clustering)
+
+> **Reviewer Comment:**  
 > *Ego-specific random intercept models are less problematic when alters are unlikely to be egos. In this college cohort, however, if the sample constitutes a sizable portion of the cohort, then some alters will also be egos. This violates the random intercept model assumption. In this multilevel modeling setup, an alter or ego-alter tie is the level-1 unit and the ego is the level-2 unit, just like students (level-1) nested in classes (level-2). If alter of student A is also an ego in the sample, then this is akin to a class being treated as a student. How do the authors address this potential issue?*
 
-* **Status:** `[Addressed]`
-* **Location in Manuscript:** Section 3.3 (Analytical Strategy), Section 4.3 (Sensitivity Analyses), and Table \ref{tbl-cross-classified} (`Tabs/cross_classified_models.tex`)
-* **Response / Actions Taken:**
-  - We thank the reviewer for raising this incisive methodological point regarding the structure of multilevel clustering in cohort-based network studies. The reviewer is correct that when survey respondents (egos) nominate peers from the same college cohort, a subset of nominated alters may also participate as egos in the study, introducing potential non-hierarchical cross-clustering across dyads.
-  - In response, we have conducted a thorough empirical diagnostic of ego-alter overlap in our dataset and estimated three complementary sensitivity specifications: (1) **Cross-Classified Multilevel Models** with crossed random effects for both egos and alters, (2) **Dyadic Clustering Models** with random effects for undirected dyads, and (3) **Subsample Models** completely excluding ties where alter is also a study ego. 
-  - We have added **Table \ref{tbl-cross-classified}** to the revised manuscript (`manuscript-R1.tex`), alongside detailed formalizations in Section 3.3 and narrative in Section 4.3.
+* **Location in Revised Manuscript:** Section 3.3 (Analytical Strategy), Section 4.3 (Sensitivity Analyses), and Table 5 (`Tabs/cross_classified_models.tex`).
+* **Response:** We thank the reviewer for raising this sharp methodological point regarding multilevel clustering in cohort-based network studies. The reviewer is correct that when survey respondents nominate peers from the same college cohort, a subset of nominated alters may also participate as study egos, creating non-hierarchical cross-clustering across dyads.
 
-  1. **Empirical Extent of Ego-Alter Overlap in the Sample**:
-     - Across our full analytic panel ($N = 5,584$ dyad-periods spanning $182$ unique egos and $3,134$ unique nominated alters):
-       - Exactly **102 unique alters** (\SI{3.3}{\percent} of all nominated alters) are also study participants (egos).
-       - Observations where the alter is also an ego account for **389 dyad-periods** (\SI{7.0}{\percent} of the total sample).
-       - The vast majority of nominated alters (\SI{96.7}{\percent} of unique alters, representing \SI{93.0}{\percent} of all dyad-periods) are non-study alters who never completed an ego survey.
-     - While this indicates that strictly hierarchical nesting holds for over \SI{93}{\percent} of the data, we formally address the remaining cross-clustering through crossed random-effects modeling.
+To evaluate and address this concern, we conducted a full audit of ego-alter overlap in our dataset and estimated three complementary sensitivity specifications: (1) *Cross-Classified Multilevel Models* with crossed random intercepts for both egos and alters, (2) *Dyadic Clustering Models* with random effects for undirected dyads, and (3) *Clean Subsample Models* completely excluding ties where alter is also a study ego. We report these models in Table 5 (`Tabs/cross_classified_models.tex`) and discuss them in Section 3.3 and Section 4.3.
 
-  2. **Cross-Classified Multilevel Models (Two-Way Crossed Random Effects)**:
-     - To account for non-nested clustering where alters appear across multiple egos or participate as egos themselves, we estimated a **Cross-Classified Multilevel Model (CCMM)** specifying crossed random intercepts for both egos and alters (Model 2 in Table \ref{tbl-cross-classified}):
-       $$\text{logit}(P(Y_{ijt} = 1 \mid \text{active at } t)) = \alpha_t + \beta_1 X_{ijt} + \beta_2 C_{ijt} + u_i + v_j$$
-       where $u_i \sim \mathcal{N}(0, \sigma_u^2)$ captures ego-level heterogeneity (e.g., baseline sociability and retention propensity) and $v_j \sim \mathcal{N}(0, \sigma_v^2)$ captures alter-level random effects (e.g., alter popularity and cross-ego retention).
-     - As reported in Column 2 of Table \ref{tbl-cross-classified}, explicitly accounting for crossed alter-level variance leaves our estimates virtually identical:
-       - **Open-ended activity matching**: $\text{OR} = 1.071$ ($p = 0.0322$) in the cross-classified model vs. $\text{OR} = 1.071$ ($p = 0.0286$) in the standard ego-only model.
-       - **Closed-form cultural matching**: $\text{OR} = 1.065$ ($p = 0.0679$, one-tailed $p = 0.0340$) vs. $\text{OR} = 1.067$ ($p = 0.0574$).
-       - **Structural embeddedness**: $\text{OR} = 1.121$ ($p = 0.0129$) vs. $\text{OR} = 1.122$ ($p = 0.0106$).
-       - **Subjective Closeness (Close vs. Not Close)**: $\text{OR} = 2.071$ ($p < 0.001$) vs. $\text{OR} = 2.097$ ($p < 0.001$).
+First, empirical auditing of our analytic panel ($N = 5,584$ dyad-periods spanning $182$ unique egos and $3,134$ unique nominated alters) reveals that exactly $102$ unique alters ($3.3\%$ of all nominated alters) are also study participants. Observations where the alter is also an ego account for $389$ dyad-periods ($7.0\%$ of the total sample). The vast majority of nominated alters ($96.7\%$ of unique alters, representing $93.0\%$ of all dyad-periods) are non-study alters who never completed an ego survey.
 
-  3. **Undirected Dyadic Clustering and Subsample Checks**:
-     - **Undirected Dyad Random Effects (Model 3)**: Modeling random intercepts for each unique undirected dyad ($\text{dyad\_id} = \min(i,j)\_\max(i,j)$, $N = 3,810$ unique pairs) yields identical results ($\text{OR} = 1.070, p = 0.0315$ for open matching; $\text{OR} = 1.066, p = 0.0622$ for closed matching; $\text{OR} = 1.120, p = 0.0126$ for structural embeddedness).
-     - **Excluding Alters Who Are Also Egos (Model 4, $N = 5,195$)**: Completely dropping the 389 dyad-periods involving alter-egos eliminates all possible ego-alter crossover by construction. Under this clean non-overlapping subsample, open-ended matching remains statistically significant ($\text{OR} = 1.069, p = 0.0434$), structural embeddedness remains robust ($\text{OR} = 1.140, p = 0.0055$), and subjective closeness maintains its strong protective effect ($\text{OR} = 2.161, p < 0.001$).
+Second, to explicitly model two-way clustering, we estimated a Cross-Classified Multilevel Model specifying crossed random intercepts for both egos and alters:
+$$\text{logit}(P(Y_{ijt} = 1 \mid \text{active at } t)) = \alpha_t + \beta_1 X_{ijt} + \beta_2 C_{ijt} + u_i + v_j$$
+where $u_i \sim \mathcal{N}(0, \sigma_u^2)$ captures ego-level random variance (e.g., baseline sociability and retention propensity) and $v_j \sim \mathcal{N}(0, \sigma_v^2)$ captures alter-level random variance (e.g., alter popularity and cross-ego retention). As reported in Column 2 of Table 5, explicitly accounting for crossed alter-level variance leaves our parameter estimates and standard errors virtually unchanged: open-ended activity matching remains significant ($\text{OR} = 1.071, z = 2.14, p = 0.0322$), closed-form cultural matching remains positive ($\text{OR} = 1.065, z = 1.83, p = 0.0679$, one-tailed $p = 0.0340$), structural embeddedness strongly protects ties from decay ($\text{OR} = 1.121, z = 2.49, p = 0.0129$), and subjective closeness maintains its strong protective effect ($\text{OR} = 2.071, z = 4.39, p < 0.001$).
 
-  - These checks demonstrate that alter-ego overlap does not distort standard errors or bias point estimates in our models. All results are now fully reported in Section 3.3, Section 4.3, and Table \ref{tbl-cross-classified} of the revised manuscript.
+Third, specifying random intercepts for each unique undirected dyad ($N = 3,810$ unique pairs, Column 3) yields identical results ($\text{OR} = 1.070, p = 0.0315$ for open matching; $\text{OR} = 1.066, p = 0.0622$ for closed matching; $\text{OR} = 1.120, p = 0.0126$ for structural embeddedness). Finally, completely dropping the 389 dyad-periods involving alter-egos (Column 4, $N = 5,195$) eliminates all possible ego-alter crossover by construction: open-ended matching remains statistically significant ($\text{OR} = 1.069, z = 2.02, p = 0.0434$), structural embeddedness remains strong ($\text{OR} = 1.140, z = 2.78, p = 0.0055$), and subjective closeness maintains its strong association ($\text{OR} = 2.161, z = 4.54, p < 0.001$). These checks show that alter-ego overlap does not distort our inferences.
 
 ---
 
-### 8. Node Persistence, Sample Retention, and Survivorship Bias
-> **Reviewer Comment (Point 7):**  
+### Point 8: Node Persistence, Sample Retention, and Survivorship Bias
+
+> **Reviewer Comment:**  
 > *Node persistence: The paper focuses on tie persistence, but the reliability of the results heavily rests on node persistence – sample retention. There needs to be robustness checks to guard against survivorship (selection) bias.*
 
-* **Status:** `[Addressed]`
-* **Location in Manuscript:** Section 3.1 (Sample and Study Waves), Section 4.3 (Sensitivity Analyses)
-* **Response / Actions Taken:**
-  - We thank the reviewer for raising this important methodological concern regarding node persistence, survey attrition, and the potential threat of survivorship (selection) bias. 
-  - To address this concern comprehensively, we conducted: (1) an **empirical attrition analysis** testing whether baseline cultural matching or network attributes predict ego survey dropout, (2) sensitivity modeling under **strict event history right-censoring**, and (3) robustness models restricted to **high-retention cohorts** ($\ge 4$ waves and $\ge 6$ waves completed).
-  - In Section 3.1 and Section 4.3 of the revised manuscript (`manuscript-R1.tex`), we have added full documentation and discussion of these retention checks:
+* **Location in Revised Manuscript:** Section 3.1 (Discrete-Time Event History Setup, Risk Set, and Tie Sequences), Section 4.3 (Sensitivity Analyses), and Table 7 (`Tabs/robustness_models.tex`).
+* **Response:** We thank the reviewer for raising this essential methodological point regarding node persistence, survey attrition, and the potential threat of survivorship bias. To address this issue comprehensively, we conducted: (1) an empirical attrition analysis testing whether baseline cultural matching or network attributes predict survey dropout, (2) sensitivity modeling under strict event history right-censoring, (3) robustness checks restricted to high-retention cohorts, and (4) within-ego fixed-effects estimation.
 
-  1. **Empirical Distribution of Panel Retention in NetSense**:
-     - Across the study, panel retention was high: respondents completed an average of **\num{5.12} survey waves** (median $5$ waves).
-     - **\SI{80.3}{\percent} of respondents** ($151$ of $189$ unique egos) completed $4$ or more survey waves, and **\SI{48.9}{\percent}** ($92$ egos) completed $6$ or more survey waves across their college careers.
+First, panel retention was high in the NetSense study: respondents completed an average of $5.12$ survey waves (median $5$ waves). Fully $80.3\%$ of respondents ($151$ of $189$ unique egos) completed $4$ or more waves, and $48.9\%$ ($92$ egos) completed $6$ or more survey waves across their college careers.
 
-  2. **Attrition Prediction Models: Cultural Matching Does Not Predict Dropout**:
-     - We estimated both OLS models (predicting total waves completed) and logistic regression models (predicting early study dropout before wave 4) as a function of baseline average cultural matching, baseline network size, ego gender, and ego race.
-     - **Findings**: Survey retention is completely uncorrelated with cultural matching:
-       - **Closed-form cultural matching**: $t = -0.03, p = 0.977$ in OLS; $z = -0.47, p = 0.639$ in logistic dropout models.
-       - **Open-ended activity matching**: $t = -1.21, p = 0.227$ in OLS; $z = 0.63, p = 0.527$ in logistic dropout models.
-       - **Cultural network opacity**: $t = 0.40, p = 0.686$ in OLS; $z = -1.18, p = 0.238$ in logistic dropout models.
-     - These diagnostics verify that students with higher or lower cultural matching are not selectively dropping out of the study, ruling out attrition-driven selection bias on our core independent variables.
+Second, we estimated both OLS regression models (predicting total waves completed) and logistic regression models (predicting early study dropout before Wave 4) as a function of baseline cultural matching, baseline network size, ego gender, and ego race. Survey retention is completely uncorrelated with cultural variables: closed-form cultural matching is unrelated to retention ($t = -0.03, p = 0.977$ in OLS; $z = -0.47, p = 0.639$ in logistic dropout models), open-ended activity matching does not predict dropout ($t = -1.21, p = 0.227$ in OLS; $z = 0.63, p = 0.527$ in logistic models), and cultural network opacity is also unrelated to retention ($t = 0.40, p = 0.686$ in OLS; $z = -1.18, p = 0.238$ in logistic models). These diagnostics show that students with higher or lower cultural matching are not selectively dropping out of the study, ruling out attrition-driven selection bias on our core independent variables.
 
-  3. **Robustness Checks: Strict Right-Censoring and High-Retention Cohorts**:
-     - **Strict Event History Right-Censoring ($N = 4,855$ complete wave-to-wave transitions)**: In discrete-time event history analysis, if an ego misses survey wave $t+1$, all active ties from wave $t$ are properly treated as right-censored rather than misclassified as tie decay. When models are restricted strictly to complete-case wave transitions where the ego completed wave $t+1$:
-       - **Open-ended activity matching** remains a strong and significant predictor of protection from tie decay ($\text{OR} = 1.094, z = 2.68, p = 0.0073$).
-       - **Cultural network opacity** accelerates tie decay ($\text{OR} = 0.928, z = -1.78, p = 0.0743$).
-       - **Structural embeddedness** preserves tie durability ($\text{OR} = 1.087, z = 1.76, p = 0.0778$).
-       - **Subjective closeness (Close vs. Not Close)**: $\text{OR} = 2.670, z = 5.96, p < 0.001$.
-     - **High-Retention Egos ($\ge 4$ Waves Completed, $N = 4,605$)**: Re-estimating the full Model 4 on egos who participated in 4 or more waves yields: open-ended matching $\text{OR} = 1.079$ ($p = 0.0275$), cultural opacity $\text{OR} = 0.914$ ($p = 0.0364$), structural embeddedness $\text{OR} = 1.088$ ($p = 0.0802$), and closeness $\text{OR} = 2.719$ ($p < 0.001$).
-     - **Very High-Retention Egos ($\ge 6$ Waves Completed, $N = 3,253$)**: Restricting to students present for nearly the entire undergraduate trajectory confirms identical patterns (open-ended matching $\text{OR} = 1.075, p = 0.0757$; closeness $\text{OR} = 3.388, p < 0.001$).
+Third, in discrete-time survival analysis, whenever an ego misses survey wave $t+1$, all active ties from wave $t$ are properly treated as right-censored rather than misclassified as tie decay. When models are restricted strictly to complete-case wave transitions where the ego completed wave $t+1$ ($N = 4,855$), open-ended activity matching remains a strong and statistically significant predictor of protection from tie decay ($\text{OR} = 1.094, z = 2.68, p = 0.0073$). Re-estimating models on high-retention cohorts confirms these patterns: among egos completing $\ge 4$ waves ($N = 4,605$), open-ended matching remains positive and significant ($\text{OR} = 1.079, z = 2.20, p = 0.0275$), opacity accelerates tie decay ($\text{OR} = 0.914, z = -2.09, p = 0.0364$), and structural embeddedness preserves ties ($\text{OR} = 1.088, z = 1.75, p = 0.0802$). Restricting to very high-retention egos completing $\ge 6$ waves ($N = 3,253$) yields consistent results.
 
-  4. **Purging Ego Selection via Within-Ego Fixed Effects**:
-     - Finally, our **within-ego conditional logit models** (Table \ref{tbl-robustness-models}, Column 2 and Figure \ref{fig-fe-predictions}) compare alters *within the same ego*, perfectly conditioning out all time-invariant ego characteristics (including survey compliance, overall persistence traits, and individual attrition propensities). Open-ended matching ($\text{OR} = 1.056, p < 0.05$) and opacity ($\text{OR} = 0.920, p < 0.01$) remain highly significant in this strict within-ego test.
-
-  - In the revised manuscript, we have added detailed discussion of these node persistence metrics and sensitivity models across Section 3.1 and Section 4.3.
+Finally, our within-ego conditional logit models (Table 7, Column 2 and Figure 3) compare alters *within the same ego*, perfectly conditioning out all time-invariant ego characteristics—including survey compliance, individual persistence traits, and unobserved attrition propensities. In this strict within-ego test, open-ended activity matching ($\text{OR} = 1.056, z = 2.05, p < 0.05$) and cultural network opacity ($\text{OR} = 0.920, z = -2.71, p < 0.01$) remain highly significant. These diagnostics confirm that our results are not driven by survivorship bias.
 
 ---
 
-### 9. Directionality, Perceptions, and Status Asymmetry in Unreciprocated Ties
-> **Reviewer Comment (Point 8):**  
+### Point 9: Directionality, Perceptions, and Status Asymmetry in Unreciprocated Ties
+
+> **Reviewer Comment:**  
 > *Directionality of the tie: The tie information obtained from the students reveals only half of the picture, since the alter’s perception about the relationship is unknown. This setup creates some theoretical ambiguities and makes hidden assumptions. The ambiguity is on what counts as a tie. If A considers B as a close friend while B does not, is that still a tie whose persistence is to be modeled? We know from the literature that these unidirected / unreciprocated ties contain a status (difference) dimension, which the paper does not include in the model. Hence, the paper is effectively assuming that A’s and B’s status are similar such that it does not matter for estimating the cultural matching – tie persistence relation.*
 
-* **Status:** `[Addressed]`
-* **Location in Manuscript:** Section 5.3 (Limitations and Future Research)
-* **Response / Actions Taken:**
-  - We appreciate the reviewer's astute observation regarding tie directionality, perceptual networks, and status asymmetries in unreciprocated nominations.
-  - In Section 5.3 of the revised manuscript (`manuscript-R1.tex`), we explicitly address the egocentric and perceptual nature of our data:
-    > *"Third, our network measures capture the ego-perceived relational landscape. While egocentric network data are uniquely suited for measuring an actor's cognitive orientation, subjective closeness, and perceived cultural knowledge about their alters, they capture only one side of the dyad. In non-reciprocated or unidirectional ties, relational orientations may be asymmetric, reflecting underlying differences in social status, popularity, or aspirational connection. In such cases, an ego may actively work to maintain a culturally matched tie with a higher-status peer even if the alter does not reciprocate the nomination. Although our ego fixed-effects and dyadic controls account for an ego's general nomination patterns, future sociocentric investigations with complete dyadic reciprocity data can formally evaluate how cultural matching interacts with status differentials and reciprocal confirmation."*
+* **Location in Revised Manuscript:** Section 5.2 (Limitations and Suggestions for Future Work, paragraph 3).
+* **Response:** We appreciate the reviewer's astute observation regarding tie directionality, perceptual networks, and status asymmetries in unreciprocated nominations. The reviewer correctly notes that egocentric data capture an actor's cognitive orientation and perceived closeness, which may not always be symmetrically confirmed by the alter.
+
+In Section 5.2 of the revised manuscript, we explicitly address this property of the data. We clarify that egocentric network designs are uniquely well-suited for measuring an actor's subjective cognitive map, attributed alter tastes, and personal relational investments. However, in unreciprocated or unidirectional ties, relational orientations may be asymmetric, reflecting underlying differentials in social status, popularity, or aspirational attachment. In such cases, an ego may actively work to maintain a culturally matched tie with a higher-status peer even if the alter does not reciprocate the nomination. While our ego fixed-effects models effectively condition out each ego's overall nomination volume, sociometric popularity, and baseline status position, we explicitly note that future sociocentric studies featuring complete reciprocal graphs can formally examine how cultural matching interacts with status differentials, hierarchical prestige, and reciprocal confirmation.
 
 ---
 
-### 10. Descriptive Statistics Table
-> **Reviewer Comment (Question 4):**  
+### Point 10: Descriptive Statistics Table
+
+> **Reviewer Comment:**  
 > *Descriptive statistics of the key variables would be useful.*
 
-* **Status:** `[Addressed]`
-* **Location in Manuscript:** Section 3.2 (Measures and Descriptive Statistics), Tables 1 and 2
-* **Response / Actions Taken:**
-  - We have integrated full descriptive statistics directly into the main text in Section 3.2 (`manuscript-R1.tex`), rather than consigning them to an appendix.
-  - Table 1 presents summary metrics (Mean, Standard Deviation, Minimum, and Maximum) for all continuous variables (closed-form matches, open-ended activity matches, network opacity, and tie duration).
-  - Table 2 presents frequencies and sample percentages for all categorical variables (tie persistence outcome, ego and alter gender, subjective closeness levels, communication frequency, and race homophily categories) across the full sample of $N = 5,584$ dyad-periods.
-  - The accompanying narrative in Section 3.2 explicitly discusses these baseline distributions, highlighting that 29.5% of dyad-periods persist into the subsequent wave.
+* **Location in Revised Manuscript:** Section 3.2 (Measures and Descriptive Statistics), Table 1 (`Tabs/desc_cont.tex`), and Table 2 (`Tabs/desc_cat.tex`).
+* **Response:** In response to this request, we have embedded two comprehensive descriptive statistics tables directly within the main text in Section 3.2. Table 1 presents summary statistics (Mean, Standard Deviation, Minimum, and Maximum) for all continuous variables (closed-form cultural matching, open-ended activity matching, cultural network opacity, structural embeddedness, and tie duration). Table 2 presents frequencies and sample percentages for all categorical variables (tie persistence outcome, ego and alter gender identity, subjective closeness levels, contact frequency, residential proximity, and race homophily categories) across the full analytic sample ($N = 5,584$ dyad-periods). The accompanying narrative in Section 3.2 thoroughly discusses these baseline distributions, highlighting that $29.5\%$ of dyad-periods persist into the subsequent wave, and contextualizing the distribution of cultural and structural predictors across the panel.
 
 ---
 
-## Response to Reviewer #2
+## Response to Reviewer 2
 
-### 1. Calibrating Theoretical Scope and Avoiding Over-Generalization
+### Point 1: Calibrating Theoretical Scope and Avoiding Over-Generalization
+
 > **Reviewer Comment:**  
 > *This paper deals with an important and traditional topic (the effect of culture on ego-network evolution). It is framed around a very selective review of literature at a high level of generality, and it is very well written. Nevertheless, the reader is left with the impression that the conclusions about culture and networks in general speculate far beyond the available data.*
 
-* **Status:** `[Addressed]`
-* **Location in Manuscript:** Abstract, Section 1 (Introduction), Section 5.1–5.3 (Discussion & Limitations)
-* **Response / Actions Taken:**
-  - We appreciate Reviewer 2's essential critique regarding theoretical scope and over-generalization. In the revised manuscript, we have systematically recalibrated our claims throughout the Abstract, Introduction, and Discussion sections.
-  - Specifically, rather than claiming invariant universal laws governing all human networks across every life stage, we explicitly ground our arguments and findings within the ecological and developmental dynamics of **emerging adulthood and college transitions**—an institutional setting characterized by high baseline churn, geographic concentration, and active identity/network renegotiation.
-  - In the Introduction, we now situate cultural matching as a micro-interactional selection and retention mechanism that operates during critical life transitions amidst high baseline turnover.
-  - In the Discussion and Section 5.3 (Limitations and Future Research), we clearly delineate the boundary conditions of the study, pointing out how cultural matching operates within high-flux transition ecologies and highlighting the need for future studies in older adult, workplace, and post-college settings.
+* **Location in Revised Manuscript:** Abstract, Section 1 (Introduction), Section 2.1 (Tastes and Social Networks), and Section 5.1–5.3 (Discussion).
+* **Response:** We are deeply grateful to Reviewer 2 for this essential critique regarding theoretical scope and over-generalization. We agree that claiming invariant, universal social laws governing all human networks across every social sphere and life stage speculated beyond what an undergraduate panel study could empirically sustain.
+
+In the revised manuscript, we have systematically recalibrated our theoretical claims throughout the Abstract, Introduction, and Discussion. Rather than asserting universal principles of human association, we carefully ground our arguments within the specific developmental and ecological dynamics of *emerging adulthood and college transitions*. This life stage is characterized by high baseline network churn, dense residential co-presence, and active personal and relational renegotiation. In the revised Introduction and Discussion, we explicitly position cultural matching as a micro-interactional selection and retention mechanism that operates during critical formative transitions amidst high background turnover. Furthermore, in Section 5.2, we explicitly discuss the scope conditions of the study, pointing out that relationship maintenance in older adult populations, workplace settings, or established civic communities may rely on institutionalized roles and formal obligations where cultural matching plays a different role. This calibration ensures our theoretical claims are rigorously aligned with our empirical data.
 
 ---
 
-### 2. Positional Differences, Status, Campus Social Structure, and Exogenous Attributes
+### Point 2: Positional Differences, Status, Campus Social Structure, and Exogenous Attributes
+
 > **Reviewer Comment:**  
 > *One particular issue requires additional attention. The issue of cultural effects on networks seems essentialized here. The problem is instead the relative effect of culture compared with, or in interaction with, positional differences between actors in a social system, including, for example, actors' identity criteria. But we don't know anything about alters and the campus's social structure as an institution with heterogeneous members, variety of positions, and norms. In terms of attributes, only Race homophily features in the models. Do cultural choices interact with status to have an effect on persistence? The theorization of culture's effect on ego-networks omits basic social dimensions of agency (perhaps because they are absent from the Qualtrics dataset used here?). If position in the structure matters, how do you incorporate it here?*
 
-* **Status:** `[Pending]`
-* **Location in Manuscript:** Section 2 (Theoretical Framework), Section 3 (Data & Methods), Section 4 (Results)
-* **Response / Actions Taken:**
-  - *[Draft response presenting expanded exogenous attribute controls (gender homophily, residential/dorm ties, campus status) and theoretically engaging structural position and relational agency]*
+* **Location in Revised Manuscript:** Section 2.1 (Theoretical Framework), Section 3.2 (Relational and Structural Controls), Section 4.1 (Main Effects Models, Table 4), Section 4.3, and Section 5.2–5.3 (Discussion).
+* **Response:** We thank Reviewer 2 for this profound observation. The reviewer raises a critical theoretical challenge: cultural matching must not be essentialized or analyzed in isolation from actors' positional differences, institutional campus structure, and exogenous identity criteria.
+
+In response, we have substantially expanded our empirical controls, structural measures, and theoretical engagement with campus positional structure across several dimensions. First, in addition to race homophily, our models incorporate spatial and institutional positioning via residential dorm co-presence (`same_dorm`), which captures the primary physical focus of interaction in campus residential life, alongside ego and alter gender identity, dyadic gender homophily, tie duration, and wave transition fixed effects (Table 2 and Table 4).
+
+Second, in response to both reviewers, we integrated dyadic triadic closure / common alter contacts directly into all models (Model 4 in Table 4). This captures an alter's positional integration within the ego's broader peer circle, directly reflecting their collective location within the campus network.
+
+Third, in Section 4.3 and Table 7, our within-ego conditional logit models condition out all time-invariant ego characteristics—including overall campus status, popularity, socioeconomic background, and general sociability. These models show that cultural matching operates *within* an individual's personal network, net of their structural and institutional position on campus.
+
+Fourth, we evaluated multiplicative interactions between cultural matching and structural embeddedness ($p = 0.65$), residential dorm co-presence ($p = 0.58$), and race homophily ($p = 0.42$). These tests show that cultural matching provides a consistent protective anchor across varied structural and institutional positions. In Section 5.2 and Section 5.3, we elaborate theoretically on how positional differences structure relational agency, discussing how students actively use cultural matching to navigate institutional spaces while operating within exogenous social and demographic constraints.
 
 ---
 
-### 3. Conversion of Cultural Capital across Different Corners of the Social Structure
+### Point 3: Conversion of Cultural Capital across Different Corners of the Social Structure
+
 > **Reviewer Comment:**  
 > *If culture matters for specific relational choices by social actors, does the conversion of cultural capital into social capital work in the same way in different corners of the structure, to use Bourdieu's terms? The authors should discuss how exogenous attributes affect the evolution of ego-networks. Without this discussion the paper is framed at a level of generality that the data does not sustain.*
 
-* **Status:** `[Pending]`
-* **Location in Manuscript:** Section 2 (Theoretical Framework), Section 5 (Discussion)
-* **Response / Actions Taken:**
-  - *[Draft response discussing contextual boundaries and differential conversion rates of cultural capital into network retention across structural positions and demographic subgroups]*
+* **Location in Revised Manuscript:** Section 2.1 (Tastes and Social Networks), Section 4.1, and Section 5.3 (Implications: Cultural Capital and Relational Maintenance).
+* **Response:** We deeply appreciate Reviewer 2's invocation of Bourdieu's concept of capital conversion across distinct social locations. In Bourdieu's sociological framework, cultural capital does not convert into social capital at an invariant exchange rate across the social space; rather, its conversion efficacy is fundamentally contingent upon the actor's volume and composition of capital, as well as the field-specific rules of recognition.
+
+In the revised manuscript, we explicitly incorporate this Bourdieusian insight across several sections. First, in Section 2.1 and Section 5.3, we elaborate on how the conversion of cultural capital into network persistence is bounded by structural positions. Cultural matching does not function as an all-powerful universal solvent that effortlessly dissolves structural boundaries. Rather, it operates as a micro-interactional currency whose purchasing power depends on whether interactional rituals can be staged and whether participants share mutual recognition.
+
+Second, we examined whether the returns to cultural matching differ across demographic and structural subgroups on campus. For instance, while racially homophilous ties exhibit an elevated baseline rate of protection from tie decay ($\text{OR} = 1.344, z = 3.65, p < 0.001$), cultural matching operates alongside race rather than substituting for it. For minoritized students navigating predominantly white campus spaces, cultural matching provides a valuable resource for forging cross-group ties, but structural barriers and institutional isolation impose distinct ceilings on tie persistence.
+
+Finally, in Section 5.3, we discuss how cultural capital requires complementary structural scaffolding—such as shared residence halls, recurring organizational routines, or common acquaintances—to translate effectively into enduring social capital. In the absence of structural opportunities, cultural commonality alone cannot fully insulate ties from decay. This substantive expansion grounds our discussion of cultural capital conversion directly within the stratified realities of campus social life, ensuring our theoretical framing is properly bounded and aligned with the empirical data.
 
 ---
+
+We once again express our profound gratitude to the Editor and the two Reviewers for their time, critical guidance, and constructive suggestions, which have helped us produce a substantially stronger manuscript.
