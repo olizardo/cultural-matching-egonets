@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.8.31)  14 SEP 2026 15:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.8.31)  15 SEP 2026 13:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**manuscript.tex
-(./manuscript.tex
+**manuscript-R1.tex
+(./manuscript-R1.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16>
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrartcl.cls
@@ -621,8 +621,8 @@ File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
 ))
 Package hyperref Info: Option `colorlinks' set `true' on input line 40.
 
-(./manuscript.aux)
-\openout1 = `manuscript.aux'.
+(./manuscript-R1.aux)
+\openout1 = `manuscript-R1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
 LaTeX Font Info:    ... okay on input line 46.
@@ -731,7 +731,36 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [5] (./Tabs/desc_cont.tex
+ [5] [6]
+(./Tabs/desc_cont.tex
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+) (./Tabs/desc_cat.tex
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+) [7] [8]
+(./Tabs/taste_stability.tex
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+) [9] [10] [11] [12] (./Tabs/main_models.tex
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -741,7 +770,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 )
-(./Tabs/desc_cat.tex
+[13] [14] [15] (./Tabs/cross_classified_models.tex
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -750,7 +779,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-) [6] [7] [8] [9] [10] (./Tabs/main_models.tex
+) (./Tabs/dislike_models.tex
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -759,8 +788,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-) [11]
-[12] (./Tabs/robustness_models.tex
+) [16] [17] [18] (./Tabs/robustness_models.tex
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -769,50 +797,61 @@ Package microtype Info: Loading generic protrusion settings for font family
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-) [13] [14] [15] [16] [17]
-<Plots/main_effects.png, id=364, 578.16pt x 433.62pt>
+) [19] [20] [21] [22] [23]
+<Plots/main_effects.png, id=446, 469.755pt x 303.534pt>
 File: Plots/main_effects.png Graphic file (type png)
 <use Plots/main_effects.png>
-Package pdftex.def Info: Plots/main_effects.png  used on input line 228.
-(pdftex.def)             Requested size: 446.76004pt x 335.06616pt.
- [18 <./Plots/main_effects.png>]
-<Plots/interaction_closeness.png, id=369, 867.24pt x 325.215pt>
+Package pdftex.def Info: Plots/main_effects.png  used on input line 262.
+(pdftex.def)             Requested size: 446.76004pt x 288.67523pt.
+
+[24 <./Plots/main_effects.png>]
+<Plots/interaction_closeness.png, id=452, 469.755pt x 433.62pt>
 File: Plots/interaction_closeness.png Graphic file (type png)
 <use Plots/interaction_closeness.png>
-Package pdftex.def Info: Plots/interaction_closeness.png  used on input line 23
-5.
-(pdftex.def)             Requested size: 446.76004pt x 167.53473pt.
- [19 <./Plots/interaction_closeness.png>] (./manuscript.bbl
-[20
+Package pdftex.def Info: Plots/interaction_closeness.png  used on input line 26
+9.
+(pdftex.def)             Requested size: 446.76004pt x 412.3932pt.
+ [25 <./Plots/interaction_closeness.png>]
+<Plots/fe_predicted_probabilities.png, id=458, 469.755pt x 505.89pt>
+File: Plots/fe_predicted_probabilities.png Graphic file (type png)
+<use Plots/fe_predicted_probabilities.png>
+Package pdftex.def Info: Plots/fe_predicted_probabilities.png  used on input li
+ne 276.
+(pdftex.def)             Requested size: 446.76004pt x 481.12538pt.
 
-] [21] [22]) [23] (./manuscript.aux) ) 
+[26 <./Plots/fe_predicted_probabilities.png>] (./manuscript-R1.bbl [27
+
+]
+[28] [29]) [30] (./manuscript-R1.aux) ) 
 Here is how much of TeX's memory you used:
- 19043 strings out of 478051
- 351157 string characters out of 5840943
- 1908330 words of memory out of 5000000
- 38622 multiletter control sequences out of 15000+600000
- 539611 words of font info for 192 fonts, out of 8000000 for 9000
+ 19296 strings out of 478051
+ 358961 string characters out of 5840943
+ 1939330 words of memory out of 5000000
+ 38839 multiletter control sequences out of 15000+600000
+ 548094 words of font info for 204 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,10n,106p,10605b,1148s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/omarlizardo/.texlive2022/texmf-va
-r/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmtt9.pfb>
-Output written on manuscript.pdf (23 pages, 518942 bytes).
+ 108i,13n,106p,10608b,1163s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9
+.pfb>
+Output written on manuscript-R1.pdf (30 pages, 608398 bytes).
 PDF statistics:
- 550 PDF objects out of 1000 (max. 8388607)
- 489 compressed objects within 5 object streams
- 114 named destinations out of 1000 (max. 500000)
- 36027 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 652 PDF objects out of 1000 (max. 8388607)
+ 577 compressed objects within 6 object streams
+ 135 named destinations out of 1000 (max. 500000)
+ 36040 words of extra memory for PDF output out of 42996 (max. 10000000)
 

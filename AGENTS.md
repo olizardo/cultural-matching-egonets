@@ -3,37 +3,129 @@
 ## Overview
 This project examines how cultural matching (shared tastes in music, movies, books, sports, games, outdoor activities) predicts the persistence of social ties over time using longitudinal egocentric network data (NetSense).
 
+## Journal Submission & Review Status (September 2026)
+* **Journal**: *Social Networks* (Manuscript **SON-D-26-00511**)
+* **Title**: *Cultural Matching and the Persistence of Social Ties*
+* **Co-Editor**: Ulrik Brandes
+* **Decision**: **Major Revision** (Received September 14, 2026; Resubmission Deadline: **November 20, 2026**)
+* **Revision Tracking Documents**:
+  * [`REVISION_PLAN_SOCIAL_NETWORKS.md`](REVISION_PLAN_SOCIAL_NETWORKS.md): Complete prioritized revision strategy across Tier 1 (Methodology/Modeling), Tier 2 (Theoretical Reframing), and Tier 3 (Scope/Limitations).
+  * [`response_to_reviewers.md`](response_to_reviewers.md): Live point-by-point response document tracking status, manuscript section changes, and draft responses.
+  * [`manuscript-R1.tex`](manuscript-R1.tex): Working revision LaTeX manuscript.
+
+---
+
 ## Data Sources
-The project uses two main data sources from the NetSense study, originally provided as Stata `.dta` files.
-*Note: The raw files were deleted from the local workspace. They can be found in the global path:* `/home/omarlizardo/ACADEMIC AND COURSE MATERIALS/NetSense`
-1. **Ego Data**: `demographics_longitudinal_clean.dta` (or `demsurveyMergedCodedDisID.dta`) - Contains ego demographics (including race) and cultural taste items. Located in `/home/omarlizardo/ACADEMIC AND COURSE MATERIALS/NetSense/Surveys/`
-2. **Alter/Network Data**: `network_surveys_longitudinal_clean.dta` (or `netsurveysMergedWideCodedFDAC-with-DatesPosition.dta`) - Contains alter attributes (including alter race), tie characteristics, and alter cultural taste items across multiple waves in a wide format. Located in `/home/omarlizardo/ACADEMIC AND COURSE MATERIALS/NetSense/Data/`
+The project uses longitudinal survey and network data from the NetSense study.
+*Data Location:* `/home/omarlizardo/projects/NETWORKS/NetSense`
+1. **Ego Data**: `demographics_longitudinal_clean.csv` / `.dta` - Contains ego demographics (including race, gender) and cultural taste items across waves. Located in `/home/omarlizardo/projects/NETWORKS/NetSense/Surveys/`
+2. **Alter/Network Data**: `network_surveys_longitudinal_clean.csv` / `.rds` / `.dta` - Contains alter attributes (including alter race, gender), tie characteristics, contact frequency, subjective closeness, and alter cultural taste items across waves. Located in `/home/omarlizardo/projects/NETWORKS/NetSense/Data/`
+3. **Perceived Alter-to-Alter Networks**: `alter_alter_ties_longitudinal.rds` / `.csv` / `.dta` ($N = 29,473$ perceived ties) - Dyadic edge list connecting alters nominated within each respondent's ego network across Waves 1–5, 7, and 8. Located in `/home/omarlizardo/projects/NETWORKS/NetSense/Data/`
+4. **Ego-Network Structural Metrics**: `ego_network_metrics_longitudinal.rds` / `.csv` / `.dta` ($N = 804$ ego-waves) - Tracks personal network size ($k$), potential pairs, reported ties, and network density. Located in `/home/omarlizardo/projects/NETWORKS/NetSense/Data/`
+
+---
 
 ## Analytical Approach
-*   **Previous Approach**: Stata-based workflow analyzing tie persistence across adjacent waves (Wave 1-2, 2-3, 2-5, 5-6) using random-effects logistic regression (`xtlogit`).
-*   **Modern R Approach**: 
-    *   **Data Wrangling**: `tidyverse` replacing Stata's `reshape` and `egen`.
-    *   **Modeling**: Discrete-Time Survival Analysis (event history modeling) using `lme4::glmer()` to model the hazard of tie dissolution across all waves simultaneously.
-    *   **Refined Measures**: Disaggregating the simple `num_match` sum to test domain-specific cultural matches and exploring the role of "Don't Know" responses (network opacity).
-    *   **Reporting**: Fully reproducible, unified Quarto architecture (`manuscript.qmd`) where models are fit natively and results (`modelsummary` tables, `marginaleffects` plots) are generated dynamically upon rendering.
+* **Discrete-Time Survival Analysis**: Event history modeling using `lme4::glmer()` to model the hazard of tie decay across all wave transition intervals ($N = 5,349$ complete dyad-period cases).
+* **Core Measures**:
+  * Closed-form cultural matching (broad domain count, 0–6).
+  * Open-ended activity matching (favorite leisure activities count, 0–5).
+  * Cultural network opacity (unknown preference count / "Don't Know", 0–6).
+  * Structural embeddedness / triadic closure (`common_alters`, count of shared contacts in ego's network, 0–19; standardized in models).
+  * Subjective closeness (Tie strength: Close, Somewhat Close, Not Close).
+  * Controls: `same_dorm`, `is_friend`, `race_homophily`, `freq_daily`, ego/alter gender, tie duration (linear and squared), and wave transition fixed effects.
+* **Reporting & Reproducibility**: Unified R deliverables script (`Code/generate_deliverables.R`) exporting generated tables (`Tabs/`) and figures (`Plots/`) directly to LaTeX (`manuscript-R1.tex` and `manuscript.tex`).
+* **Overleaf Integration**:
+  * Connected to Overleaf Git remote: `https://git.overleaf.com/6a42d5015a4bdf4b1804e7c8` (remote name: `overleaf`).
+  * Push command to sync with Overleaf: `git push overleaf HEAD:main`.
+  * Preamble configuration: Uses `silence` package to suppress kernel `\showhyphens` warnings on TeX Live 2024/2025, robust conditional loading for `siunitx`, and `\apptocmd{\thebibliography}{\sloppy}{}{}` to prevent bibliography overfull margins.
 
-## Project Structure
-*   `data/`: R datasets ready for modeling.
-*   `analysis.qmd`: The reproducible Quarto notebook containing data prep, modeling, and output generation (saving to `Plots/` and `Tabs/`).
-*   `manuscript.tex`: The main LaTeX manuscript file that inputs the generated plots and tables.
-*   `manuscript_citations.bib`: BibTeX citations for bibliography generation.
+---
 
-## Current Status and Progress (June 2026)
-*   **Unified Reproducible Architecture**: Ported all external R scripts (data prep, baseline models, domain models, opacity models, and model comparison) directly into `analysis.qmd` as executable R chunks. Enabled caching for faster re-renders. Deleted all obsolete external asset folders (`R/`, `reports/`, `Tabs/`, `Plots/`).
-*   **Data Prep Fixes**: Fixed ego gender (`female` set to `gender == "Female"`) and reconstructed the `campustie` variable across waves. This resolved a missing data bug, rescuing thousands of observations and allowing the full estimation of $N = 5,336$ dyad-periods across all waves.
-*   **Tie-Level Controls and Race Homophily**:
-    *   Removed network structure controls (`meanclose`, `friendnet`, `kinnet`) and added a `same_dorm` tie-level indicator.
-    *   Constructed a `race_homophily` indicator by extracting raw ego ethnicity from `demographics_longitudinal_clean.csv` and raw alter race from `network_surveys_longitudinal_clean.csv` using the open-source `.csv` versions in the global NetSense folder. Built mapping files (`ego_race.rds` and `alter_race.rds`) in `data/processed/` that link `sender` -> `egoid` and `receiver` -> `alterid`. Added this control to all models in `analysis.qmd`.
-*   **Model Estimates**:
-    *   *Baseline Model*: Robust positive effect of aggregate cultural matches on tie persistence.
-    *   *Opacity Models*: Network opacity (unknown preference domains) significantly increases the hazard of tie dissolution. Formal statistical tests of second differences in average marginal effects demonstrate that the interaction between network opacity and cultural matching is null.
-    *   *Model Comparison*: Added a comprehensive model comparison showing that the Opacity Main Effects model has the best fit (lowest AIC/BIC), with a simplified table summarizing only GOF stats.
-*   **Literature and Theory Integration**: Successfully extracted rich theoretical background and classical citations (such as Bourdieu, Burt, Mark, McPherson, Lazarsfeld, and Holt) from old Word drafts using Quarto's pandoc utility. Integrated these concepts to write a comprehensive `Introduction` and `Theoretical Framework`, complete with a `.bib` bibliography.
-*   **Recent Updates (July 2026)**:
-    *   **Citation Formatting**: Switched citation style from `plainnat` to `apalike` in `manuscript.tex`. Cleaned up `manuscript_citations.bib` by systematically removing all `url` fields to maintain cleaner bibliography rendering.
-    *   **Manuscript Structural Edits**: Reorganized `manuscript.tex` to improve logic and flow. Moved the "Strength-Mediated Matching Hypothesis" from the Opacity subsection to its own dedicated subsection. Added a clearer "Roadmap" paragraph at the end of the Introduction. Added a dedicated "Summary of Hypotheses" section at the end of the Theoretical Framework. Created explicit signposting at the beginning of the Results section. Expanded the concluding discussion to include practical/real-world implications of cultural matching for university administrators and community building.
+## Terminological Consistency Standards (MANDATORY FOR ALL EDITS)
+To ensure strict conceptual and empirical clarity across the manuscript, tables, figures, and response documents:
+1. **Outcome Terminology**:
+   - Strictly refer to the relational outcome as **"tie decay"** (or **"protection from tie decay"**, **"protecting ties from decay"**, **"hazard of tie decay"**).
+   - **Prohibited Outcome Variants**: Do **NOT** use *"tie dissolution"*, *"tie survival"*, or *"tie retention"* to describe the dependent variable or relational outcome.
+2. **Predictor Terminology**:
+   - Strictly and exclusively use the theoretical term **"cultural matching"** (e.g., *"closed-form cultural matching"*, *"open-ended activity matching"*, *"protection from tie decay through cultural matching"*).
+   - **Prohibited Predictor Variants**: Do **NOT** use *"cultural alignment"*, *"cultural affinity"*, *"cultural resonance"*, *"cultural compatibility"*, *"shared tastes"*, or *"shared cultural tastes"*.
+3. **In-Text Emphasis (Italics vs. Boldface)**:
+   - Strictly use **italics** (`\textit{...}` or `\emph{...}`) instead of boldface (`\textbf{...}`) for emphasizing terms, concepts, hypothesis labels (e.g., *\textit{Hypothesis 1}*), and statistical variables in running manuscript prose.
+   - Reserve boldface strictly for section headings, table captions, and table header rows.
+4. **Plain Language for Educational Stage & Setting**:
+   - Strictly use **"college"** or **"undergraduate"** (e.g., *"college careers"*, *"college peer networks"*, *"undergraduate trajectory"*, *"college students"*, *"post-college"*) rather than Latinate/inflated adjectives.
+   - **Prohibited Variants**: Do **NOT** use *"collegiate"* (e.g., *"collegiate careers"*, *"collegiate trajectory"*, *"collegiate setting"*) or *"post-collegiate"*.
+
+---
+
+## Project Structure & Deliverables Taxonomy
+* `data/`: R datasets ready for modeling (`data/processed/adjacent_waves.rds`, `ego_race.rds`, `alter_race.rds`).
+* `Code/`:
+  * `Code/generate_deliverables.R`: Primary standalone script producing all tables and plots.
+  * `Code/prep_all_waves.R`: Data ingestion and structural embeddedness pipeline.
+  * `Code/prep_race.R`: Race harmonizer.
+* `manuscript-R1.tex`: Revision 1 working LaTeX manuscript (synced with Overleaf).
+* `manuscript.tex`: Original submission LaTeX source.
+* `manuscript_citations.bib`: BibTeX citations for bibliography generation.
+* `Tabs/` (Manuscript Tables):
+  * Table 1: `Tabs/desc_cont.tex` — Continuous Descriptive Statistics
+  * Table 2: `Tabs/desc_cat.tex` — Categorical Descriptive Statistics
+  * Table 3: `Tabs/main_models.tex` — Odds Ratios for Protection from Tie Decay (Models 1–4)
+  * Table 4: `Tabs/robustness_models.tex` — Sensitivity Models: Ego Fixed-Effects (Conditional Logit)
+* `Plots/` (Manuscript Figures, 6.5 in, 300 DPI):
+  * Figure 1: `Plots/main_effects.png` — Average Marginal Effects on Protection from Tie Decay (Model 4 with Structural Embeddedness)
+  * Figure 2: `Plots/interaction_closeness.png` — Average Marginal Effects by Subjective Closeness (adjusting for Structural Embeddedness)
+  * Figure 3: `Plots/fe_predicted_probabilities.png` — Counterfactual Within-Ego Predicted Probabilities from Ego Fixed-Effects Model
+* `response_to_reviewers.md`: Point-by-point response to editor and reviewers.
+* `REVISION_PLAN_SOCIAL_NETWORKS.md`: Detailed prioritized revision roadmap.
+
+---
+
+## Revision Progress & Tasks
+
+### Completed Tasks
+1. **Revision Setup & Overleaf Git Remote**:
+   - Created `manuscript-R1.tex` as the dedicated working file for the revision.
+   - Connected and synchronized with Overleaf Git remote (`https://git.overleaf.com/6a42d5015a4bdf4b1804e7c8`).
+   - Created `REVISION_PLAN_SOCIAL_NETWORKS.md` and `response_to_reviewers.md`.
+2. **Tier 3 (Discussion & Scope Revisions)**:
+   - **Time Horizon & Post-College Tie Dynamics (R1 #3)**: Expanded Section 5.2 to discuss the decay/persistence of ties after college graduation when institutional scaffolding is removed.
+   - **Directionality, Perceptions, and Status Asymmetry (R1 #8)**: Added explicit discussion in Section 5.2 clarifying egocentric cognitive network boundaries, unreciprocated nominations, and status differences.
+3. **Tier 2.10 (Calibrating Claims / Avoiding Over-Generalization)**:
+   - Calibrated theoretical language in the Abstract, Introduction, and Section 5.1–5.3 to ground conclusions in emerging adulthood and college transitions rather than invariant universal laws (R2 #1).
+4. **Tier 1.7 (Descriptive Statistics Tables)**:
+   - Embedded Table 1 (`Tabs/desc_cont.tex`) and Table 2 (`Tabs/desc_cat.tex`) directly into Section 3.2 (*Measures and Descriptive Statistics*) in `manuscript-R1.tex` with thorough descriptive narrative (R1 #4, R2). Removed duplicate appendix.
+5. **Tier 1.1 (Structural Embeddedness Controls - R1 #1, #5)**:
+   - Extracted perceived alter-to-alter contacts from `alter_alter_ties_longitudinal.rds` and computed dyadic common neighbors / triadic closure counts ($0\text{--}19$) and normalized triadic closure ratios ($0\text{--}1$).
+   - Integrated structural embeddedness into `Code/prep_all_waves.R`, `data/processed/adjacent_waves.rds`, and estimated Model 4 in `Code/generate_deliverables.R`.
+   - Structural embeddedness strongly predicts protection from tie decay ($\text{OR} = 1.122, p = 0.0106$); open-ended activity matching ($\text{OR} = 1.071, p = 0.0286$) and closed-form cultural matching ($\text{OR} = 1.067, p = 0.0574$) remain positive and robust.
+   - Updated Table 1 (`desc_cont.tex`), Table 3 (`main_models.tex`), Table 4 (`robustness_models.tex`), Section 3.2, 4.1, 5.1–5.2 in `manuscript-R1.tex`.
+6. **Global Style Guidelines & Terminological Standardization**:
+   - Enforced strict prohibition on "demonstrate" (replaced with "show"), "utilize", generic "robust", "percentage points", and Latinisms.
+   - Standardized outcome terminology strictly to **"tie decay"** (e.g. *protection from tie decay*, *hazard of tie decay*) and predictor strictly to **"cultural matching"** across the entire manuscript and tables.
+   - Added formal software citations for R (`Rmanual`) and `lme4` (`bates2015`) in text and `manuscript_citations.bib`.
+   - Restructured Discussion into the CUA Tripartite architecture (`Summary of Key Results`, `Limitations and Suggestions for Future Work` covering 5 analytical dimensions in full paragraphs, `Implications: Cultural Capital and Relational Maintenance`).
+7. **Decoupled Asset Pipeline (`Code/generate_deliverables.R`)**:
+   - Ported data preparation, modeling, table formatting, and figure plotting from `analysis.qmd` into `Code/generate_deliverables.R`, removing runtime Quarto document overhead.
+8. **Updated Figures 1 & 2 and Added Figure 3 (Ego Fixed-Effects)**:
+   - Re-computed Figure 1 (`Plots/main_effects.png`) adjusting for structural embeddedness (`common_alters_std`).
+   - Re-computed Figure 2 (`Plots/interaction_closeness.png`) adjusting for structural embeddedness.
+   - Added Figure 3 (`Plots/fe_predicted_probabilities.png`), computing within-ego counterfactual predicted probabilities from conditional logit (`mod_fe`) via uniroot-solved individual fixed effects $\hat{\alpha}_i$. Integrated Figure 3 into Section 4.3 of `manuscript-R1.tex`.
+
+---
+
+### Remaining Revision Tasks
+
+#### High Priority (Tier 1: Methodological & Modeling Tasks in `Code/generate_deliverables.R`)
+- [x] **Tier 1.1: Structural Embeddedness Controls (R1 #1, #5)**: Compute triadic closure / shared neighbors / embeddedness metrics in NetSense; add to models and report in main tables. (Completed)
+- [ ] **Tier 1.2: Tie Rekindling & Discrete-Time Event History Formalization (R1 #4)**: Formally document the discrete-time risk set, absorbing first dissolution vs. repeated spell handling, and tie sequence distribution across 8 waves in Section 3.
+- [ ] **Tier 1.3: Empirical Stability of Cultural Tastes (R1 #2)**: Compute test-retest reliability / correlation / Jaccard similarity of taste items across waves to empirically validate the durability assumption.
+- [ ] **Tier 1.4: Alters as Egos / Two-Way Dyadic Clustering (R1 #6)**: Estimate cross-classified random effects models (`(1 | egoid) + (1 | alterid)`) or dyadic clustered SEs; present robustness results.
+- [ ] **Tier 1.5: Cultural Matching Operationalization Sensitivity (R1 #5)**: Disaggregate matches into positive interest alignment vs. shared disinterest/dislikes; run sensitivity models.
+- [ ] **Tier 1.6: Node Persistence & Survivorship/Attrition Bias (R1 #7)**: Perform ego retention analysis and sensitivity models for high-retention egos.
+
+#### Medium Priority (Tier 2: Theoretical Reframing in `manuscript-R1.tex`)
+- [ ] **Tier 2.7: De-escalate "Culture vs. Structure" Confrontational Framing (R1 Intro)**: Reframe the Introduction and Theoretical Framework from a zero-sum contest to an integrative co-evolutionary and complementary mechanism framework.
+- [ ] **Tier 2.8: Positional Differences & Campus Social Structure (R2 #2)**: Expand discussion and modeling of structural positions, residential arrangements, and exogenous identity criteria.
+- [ ] **Tier 2.9: Conversion of Cultural Capital across Social Locations (R2 #3)**: Elaborate on how cultural capital conversion to social capital differs across campus structural strata.

@@ -1,46 +1,46 @@
-This is BibTeX, Version 0.99e (TeX Live 2026)
+This is BibTeX, Version 0.99d (TeX Live 2022/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: manuscript.aux
 The style file: apalike.bst
 Database file #1: manuscript_citations.bib
-You've used 47 entries,
+You've used 50 entries,
             1935 wiz_defined-function locations,
-            762 strings with 10797 characters,
-and the built_in function-call counts, 19077 in all, are:
-= -- 1920
-> -- 660
-< -- 40
-+ -- 232
-- -- 211
-* -- 1608
-:= -- 3261
-add.period$ -- 147
-call.type$ -- 47
-change.case$ -- 332
-chr.to.int$ -- 46
-cite$ -- 47
-duplicate$ -- 735
-empty$ -- 1410
-format.name$ -- 280
-if$ -- 3769
+            783 strings with 11377 characters,
+and the built_in function-call counts, 20291 in all, are:
+= -- 2044
+> -- 701
+< -- 42
++ -- 246
+- -- 223
+* -- 1714
+:= -- 3470
+add.period$ -- 156
+call.type$ -- 50
+change.case$ -- 352
+chr.to.int$ -- 49
+cite$ -- 50
+duplicate$ -- 777
+empty$ -- 1501
+format.name$ -- 299
+if$ -- 4005
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 50
-newline$ -- 238
-num.names$ -- 151
-pop$ -- 256
+missing$ -- 53
+newline$ -- 253
+num.names$ -- 162
+pop$ -- 267
 preamble$ -- 1
-purify$ -- 335
+purify$ -- 355
 quote$ -- 0
-skip$ -- 571
+skip$ -- 604
 stack$ -- 0
-substring$ -- 1537
-swap$ -- 105
-text.length$ -- 8
+substring$ -- 1653
+swap$ -- 107
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 276
+type$ -- 294
 warning$ -- 0
-while$ -- 181
+while$ -- 194
 width$ -- 0
-write$ -- 621
+write$ -- 660

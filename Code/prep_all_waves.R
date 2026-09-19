@@ -2,15 +2,22 @@ library(tidyverse)
 library(here)
 
 # 1. Load Raw Data
-egos <- read_csv("/home/omarlizardo/ACADEMIC AND COURSE MATERIALS/NetSense/Surveys/demographics_longitudinal_clean.csv", show_col_types=FALSE) %>%
+netsense_dir <- "/home/omarlizardo/projects/NETWORKS/NetSense"
+egos <- read_csv(file.path(netsense_dir, "Surveys", "demographics_longitudinal_clean.csv"), show_col_types=FALSE) %>%
   distinct(sender, .keep_all = TRUE)
-nets <- read_csv("/home/omarlizardo/ACADEMIC AND COURSE MATERIALS/NetSense/Data/network_surveys_longitudinal_clean.csv", show_col_types=FALSE)
+nets <- read_csv(file.path(netsense_dir, "Data", "network_surveys_longitudinal_clean.csv"), show_col_types=FALSE)
+aat <- readRDS(file.path(netsense_dir, "Data", "alter_alter_ties_longitudinal.rds"))
+enm <- readRDS(file.path(netsense_dir, "Data", "ego_network_metrics_longitudinal.rds"))
 
 # 2. Extract Alter Ties
 df_alters <- nets %>% 
+  mutate(
+    egoid = sub("\\.0+$", "", as.character(sender)),
+    alterid = if_else(is.na(receiver), NA_character_, sub("\\.0+$", "", as.character(receiver)))
+  ) %>%
   select(
-    egoid = sender, 
-    alterid = receiver, 
+    egoid, 
+    alterid, 
     wave, 
     closeness, 
     duration_ = duration, 
@@ -67,7 +74,8 @@ df_all_waves <- df_t %>%
 
 # 4. Reshape Ego Cultural and Demographic Data
 ego_long <- egos %>%
-  select(egoid = sender, gender_1, matches("^interestitems[1-6]_[1-7]$")) %>%
+  mutate(egoid = sub("\\.0+$", "", as.character(sender))) %>%
+  select(egoid, gender_1, matches("^interestitems[1-6]_[1-7]$")) %>%
   pivot_longer(
     cols = matches("^interestitems[1-6]_[1-7]$"),
     names_to = c("domain_num", "wave"),
@@ -97,9 +105,56 @@ ego_long <- egos %>%
   mutate(female = ifelse(gender_1 == "Female", 1, 0)) %>%
   select(-gender_1)
 
-# 5. Merge Together
+# 5. Extract Structural Embeddedness Metrics from Alter-Alter Network
+pos_ties <- bind_rows(
+  aat %>% select(sender, wave, pos = alter1_pos, other_pos = alter2_pos),
+  aat %>% select(sender, wave, pos = alter2_pos, other_pos = alter1_pos)
+) %>%
+  distinct(sender, wave, pos, other_pos)
+
+pos_degree <- pos_ties %>%
+  group_by(sender, wave, pos) %>%
+  summarise(alter_pos_degree = n(), .groups = "drop")
+
+pos_map <- nets %>%
+  filter(!is.na(position), !is.na(receiver)) %>%
+  mutate(
+    sender = sub("\\.0+$", "", as.character(sender)),
+    receiver = sub("\\.0+$", "", as.character(receiver)),
+    wave = as.integer(wave),
+    position = as.integer(position)
+  ) %>%
+  select(sender, wave, position, receiver) %>%
+  distinct()
+
+enm_clean <- enm %>%
+  mutate(
+    sender = sub("\\.0+$", "", as.character(sender)),
+    wave = as.integer(wave)
+  )
+
+alter_embedded_pos <- pos_map %>%
+  left_join(pos_degree, by = c("sender", "wave", "position" = "pos")) %>%
+  mutate(alter_pos_degree = replace_na(alter_pos_degree, 0)) %>%
+  left_join(enm_clean %>% select(sender, wave, alters_nominated, density), by = c("sender", "wave")) %>%
+  mutate(
+    alter_closure_ratio = if_else(alters_nominated > 1, alter_pos_degree / (alters_nominated - 1), 0)
+  )
+
+alter_metrics_by_receiver <- alter_embedded_pos %>%
+  group_by(sender, wave, receiver) %>%
+  summarise(
+    common_alters = max(alter_pos_degree),
+    triadic_closure = max(alter_closure_ratio),
+    ego_density = suppressWarnings(max(density, na.rm = TRUE)),
+    .groups = "drop"
+  ) %>%
+  mutate(ego_density = if_else(is.infinite(ego_density), NA_real_, ego_density))
+
+# 6. Merge Together
 df_final <- df_all_waves %>%
   left_join(ego_long, by = c("egoid", "wave")) %>%
+  left_join(alter_metrics_by_receiver, by = c("egoid" = "sender", "wave" = "wave", "alterid" = "receiver")) %>%
   mutate(
     # Matches
     match_music = as.numeric(egomusic_ == altermusic_ & !is.na(egomusic_) & !is.na(altermusic_) & egomusic_ < 5 & altermusic_ < 5),

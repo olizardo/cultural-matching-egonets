@@ -1,0 +1,18 @@
+# Editor directories
+.posit/
+.Rproj.user/
+.vscode/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.out
+
+# Quarto temporary artifacts
+*_cache/
+*_files/
