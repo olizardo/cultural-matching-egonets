@@ -69,15 +69,19 @@ To ensure strict conceptual and empirical clarity across the manuscript, tables,
 * `manuscript.tex`: Original submission LaTeX source.
 * `manuscript_citations.bib`: BibTeX citations for bibliography generation.
 * `Tabs/` (Manuscript Tables):
-  * Table 1: `Tabs/desc_cont.tex` — Continuous Descriptive Statistics
-  * Table 2: `Tabs/desc_cat.tex` — Categorical Descriptive Statistics
-  * Table 3: `Tabs/main_models.tex` — Odds Ratios for Protection from Tie Decay (Models 1–4)
-  * Table 4: `Tabs/robustness_models.tex` — Sensitivity Models: Ego Fixed-Effects (Conditional Logit)
+  * Table 1: `Tabs/desc_cont.tex` — Continuous Descriptive Statistics (`\label{tbl-descriptives-cont}`)
+  * Table 2: `Tabs/desc_cat.tex` — Categorical Descriptive Statistics (`\label{tbl-descriptives-cat}`)
+  * Table 3: `Tabs/taste_stability.tex` — Longitudinal Stability and Consistency of Cultural Tastes (`\label{tbl-taste-stability}`)
+  * Table 4: `Tabs/main_models.tex` — Main Effects Models (Models 1–4, with Structural Embeddedness) (`\label{tbl-models}`)
+  * Table 5: `Tabs/cross_classified_models.tex` — Sensitivity Analysis: Cross-Classified Random Effects and Dyadic Clustering Models (`\label{tbl-cross-classified}`)
+  * Table 6: `Tabs/dislike_models.tex` — Sensitivity Analysis: Decomposing Shared Positive Interests vs. Shared Disinterest (`\label{tbl-dislikes}`)
+  * Table 7: `Tabs/robustness_models.tex` — Sensitivity Models: Absorbing First Dissolution and Ego Fixed-Effects (`\label{tbl-robustness-models}`)
 * `Plots/` (Manuscript Figures, 6.5 in, 300 DPI):
-  * Figure 1: `Plots/main_effects.png` — Average Marginal Effects on Protection from Tie Decay (Model 4 with Structural Embeddedness)
-  * Figure 2: `Plots/interaction_closeness.png` — Average Marginal Effects by Subjective Closeness (adjusting for Structural Embeddedness)
-  * Figure 3: `Plots/fe_predicted_probabilities.png` — Counterfactual Within-Ego Predicted Probabilities from Ego Fixed-Effects Model
-* `response_to_reviewers.md`: Point-by-point response to editor and reviewers.
+  * Figure 1: `Plots/main_effects.png` — Average Marginal Effects on Protection from Tie Decay (Model 4 with Structural Embeddedness) (`\label{fig-combined}`)
+  * Figure 2: `Plots/interaction_closeness.png` — Average Marginal Effects by Subjective Closeness (adjusting for Structural Embeddedness) (`\label{fig-closeness-interactions}`)
+  * Figure 3: `Plots/fe_predicted_probabilities.png` — Counterfactual Within-Ego Predicted Probabilities from Ego Fixed-Effects Model (`\label{fig-fe-predictions}`)
+* `response_to_reviewers.tex`: Publication-grade LaTeX point-by-point response memo formatted with `tcolorbox`, first-person singular, and verified cross-references.
+* `response_to_reviewers.md`: Synchronized Markdown mirror of the response memo.
 * `REVISION_PLAN_SOCIAL_NETWORKS.md`: Detailed prioritized revision roadmap.
 
 ---
@@ -112,10 +116,33 @@ To ensure strict conceptual and empirical clarity across the manuscript, tables,
    - Re-computed Figure 1 (`Plots/main_effects.png`) adjusting for structural embeddedness (`common_alters_std`).
    - Re-computed Figure 2 (`Plots/interaction_closeness.png`) adjusting for structural embeddedness.
    - Added Figure 3 (`Plots/fe_predicted_probabilities.png`), computing within-ego counterfactual predicted probabilities from conditional logit (`mod_fe`) via uniroot-solved individual fixed effects $\hat{\alpha}_i$. Integrated Figure 3 into Section 4.3 of `manuscript-R1.tex`.
+9. **Empirical Durability of Cultural Tastes (R1 #2)**:
+   - Estimated two-level random intercept models decomposing between- vs. within-ego variance across Waves 1–3 ($N = 848$ observations across $170$ egos).
+   - Documented high ICCs ($0.43\text{--}0.80$), test-retest reliability ($r = 0.50\text{--}0.80$, agreement within $\pm 1$ scale step $>96\%$), 1.5-year stability ($r = 0.51\text{--}0.81$), and alter taste consistency for persisting ties ($r = 0.54\text{--}0.77$) in Table 3 (`Tabs/taste_stability.tex`) and Section 3.2.
+10. **Two-Way Dyadic Clustering & Cross-Classified Models (R1 #6)**:
+   - Audited sample for alter-ego crossover ($102$ alters / $3.3\%$ of alters, $389$ dyad-periods / $7.0\%$).
+   - Estimated cross-classified multilevel models (`(1|egoid) + (1|alterid)`), undirected dyadic clustering ($N = 3,810$ pairs), and clean non-overlapping subsamples ($N = 5,195$), demonstrating that crossed random variance leaves estimates virtually identical. Reported in Table 5 (`Tabs/cross_classified_models.tex`) and Section 4.3.
+11. **Positive Matching vs. Shared Dislikes/Disinterest (R1 #5)**:
+   - Disaggregated broad cultural matching into positive exact, strong positive, and shared disinterest.
+   - Showed positive interest alignment accounts for $92.0\%$ of closed-form matches; positive enthusiasm protects ties ($\text{OR} = 1.087, p = 0.0358$), whereas mutual disinterest is null ($\text{OR} = 1.075, p = 0.3855$). Reported in Table 6 (`Tabs/dislike_models.tex`) and Section 4.3.
+12. **Tie Sequence Combinatorics & Absorbing First Dissolution (R1 #4)**:
+   - Formalized discrete-time hazard framework; documented that of 256 possible sequences across 8 waves, only 151 occur ($79.8\%$ contiguous; $84.5\%$ first spell).
+   - Clarified that rekindling does not count as persistence (starts a new spell with re-measured covariates).
+   - Estimated an absorbing first-decay model ($N = 4,522$), showing closed-form cultural matching remains significant ($\text{OR} = 1.086, p = 0.0294$). Reported in Table 7 (`Tabs/robustness_models.tex`) and Section 4.3.
+13. **Theoretical Reframing of Introduction & Framework (R1 #1, R2 #1, #2, #3)**:
+   - Dismantled confrontational culture vs. structure framing in Abstract, Section 1, and Section 2.1; reframed around an integrative co-evolutionary and complementary mechanism framework.
+   - Added dedicated Section 2.5 (*Positional Context, Institutional Structure, and Capital Conversion*), theorizing campus structural positions, residential foci (`same_dorm`), exogenous demographic categories (gender, race), and Bourdieu's capital conversion framework.
+   - Calibrated theoretical claims to emerging adulthood and college transitions.
+14. **Document Typesetting & Response Memo Generation**:
+   - Converted `response_to_reviewers.tex` to publication-grade LaTeX (`tcolorbox` callouts, first-person singular, full academic prose paragraphs, zero software-tracker tags).
+   - Replaced Quarto's `scrartcl` in `manuscript-R1.tex` with standard LaTeX `article` (11pt, Latin Modern font, 1.0-inch margins), ensuring classic serif typography across all headings, titles, and body text.
+   - Standardized narrative voice to first-person singular (*"I"*, *"my"*) throughout `manuscript-R1.tex`.
+   - Verified that all 63 citations in `manuscript-R1.tex` resolve in `manuscript_citations.bib` (including `feld1982social-f52`, `granovetter1973`, `feld1981`, and `lizardo2016why-418`).
 
 ---
 
-### Remaining Revision Tasks
+### Revision Status & Task Audit
+All substantive revision tasks across Tier 1 (Methodology & Modeling), Tier 2 (Theoretical Reframing), and Tier 3 (Scope & Limitations) are **100% completed**. All deliverables (`manuscript-R1.tex`, `response_to_reviewers.tex`, `response_to_reviewers.md`, `Tabs/`, `Plots/`) are in full alignment and synchronized across GitHub and Overleaf.
 
 #### High Priority (Tier 1: Methodological & Modeling Tasks in `Code/generate_deliverables.R`)
 - [x] **Tier 1.1: Structural Embeddedness Controls (R1 #1, #5)**: Compute triadic closure / shared neighbors / embeddedness metrics in NetSense; add to models and report in main tables. (Completed)
