@@ -10,11 +10,6 @@ Allison, P.~D. (1982).
 \newblock Discrete-time methods for the analysis of event histories.
 \newblock {\em Sociological Methodology}, 13:61--98.
 
-\bibitem[Allison, 2014]{allison2014}
-Allison, P.~D. (2014).
-\newblock {\em Event History Analysis: Regression for Longitudinal Event Data}.
-\newblock SAGE Publications, Thousand Oaks, CA.
-
 \bibitem[Bahulkar et~al., 2017]{bahulkar2017co-evolution-d04}
 Bahulkar, A., Szymanski, B.~K., Chan, K., and Lizardo, O. (2017).
 \newblock Co-evolution of two networks representing different social relations
@@ -77,6 +72,11 @@ Carley, K.~M. (1991).
 \newblock A theory of group stability.
 \newblock {\em American Sociological Review}, 56(3):331--354.
 
+\bibitem[Carley and Krackhardt, 1996]{carley1996cognitive-8e6}
+Carley, K.~M. and Krackhardt, D. (1996).
+\newblock Cognitive inconsistencies and non-symmetric friendship.
+\newblock {\em Social networks}, 18(1):1--27.
+
 \bibitem[Childress and Nault, 2019]{childress2019encultured-e58}
 Childress, C. and Nault, J.-F. (2019).
 \newblock Encultured biases: The role of products in pathways to inequality.
@@ -105,6 +105,12 @@ Cornwell, B., Schumm, L.~P., Laumann, E.~O., Goldman, A.~W., and Compernolle,
 \newblock {\em The Journals of Gerontology: Series B},
   76(Supplement\_3):S266--S275.
 
+\bibitem[Davis, 1963]{davis1963structural-90b}
+Davis, J.~A. (1963).
+\newblock Structural balance, mechanical solidarity, and interpersonal
+  relations.
+\newblock {\em The American journal of sociology}, 68(4):444--462.
+
 \bibitem[DiMaggio, 1987]{dimaggio1987}
 DiMaggio, P. (1987).
 \newblock Classification in art.
@@ -114,12 +120,6 @@ DiMaggio, P. (1987).
 Edelmann, A. and Vaisey, S. (2014).
 \newblock Cultural resources and cultural distinction in networks.
 \newblock {\em Poetics}, 46:22--37.
-
-\bibitem[Erickson, 1988]{erickson1988}
-Erickson, B.~H. (1988).
-\newblock The relational basis of attitudes.
-\newblock In Wellman, B. and Berkowitz, S.~D., editors, {\em Social Structures:
-  A Network Approach}, pages 99--121. Cambridge University Press, Cambridge.
 
 \bibitem[Erickson, 1996]{erickson1996}
 Erickson, B.~H. (1996).
@@ -132,6 +132,16 @@ Feld, S. and Grofman, B. (2009).
 \newblock In Hedstrom", P. and Bearman"], P., editors, {\em Oxford Handbook of
   Analytical Sociology}, pages 521--543. Oxford University Press Oxford,
   Oxford, {UK}.
+
+\bibitem[Feld, 1981]{feld1981}
+Feld, S.~L. (1981).
+\newblock The focused organization of social ties.
+\newblock {\em American Journal of Sociology}, 86(5):1015--1035.
+
+\bibitem[Feld, 1982]{feld1982social-f52}
+Feld, S.~L. (1982).
+\newblock Social structural determinants of similarity among associates.
+\newblock {\em American sociological review}, 47(6):797--801.
 
 \bibitem[Granovetter, 1973]{granovetter1973strength-f5f}
 Granovetter, M.~S. (1973).
@@ -149,6 +159,12 @@ Hachen, D., Wang, C., Sepulvado, B., and Lizardo, O. (2022).
   coupling of context and social ties across multiple types of foci.
 \newblock {\em Social networks}.
 
+\bibitem[Hammer, 1985]{hammer1985implications-6de}
+Hammer, M. (1985).
+\newblock Implications of behavioral and cognitive reciprocity in social
+  network data.
+\newblock {\em Social networks}, 7(2):189--201.
+
 \bibitem[Holt, 1998]{holt1998}
 Holt, D.~B. (1998).
 \newblock Does cultural capital structure american consumption?
@@ -159,6 +175,12 @@ Kempnich, M., W{\"o}lfer, R., Hewstone, M., and Dunbar, R. I.~M. (2024).
 \newblock How the size and structure of egocentric networks change during a
   life transition.
 \newblock {\em Advances in Life Course Research}.
+
+\bibitem[Kim et~al., 2024]{kim2024networking-a1c}
+Kim, L., Smith, S., Dahlander, L., and McFarland, D.~A. (2024).
+\newblock Networking a career: Individual adaptation in the network ecology of
+  faculty.
+\newblock {\em Social Networks}, 77:166--179.
 
 \bibitem[Kleinbaum, 2018]{kleinbaum2018reorganization-4a1}
 Kleinbaum, A.~M. (2018).
@@ -196,6 +218,12 @@ Lizardo, O. (2006).
 \newblock How cultural tastes shape personal networks.
 \newblock {\em American Sociological Review}, 71(5):778--807.
 
+\bibitem[Lizardo, 2016]{lizardo2016why-418}
+Lizardo, O. (2016).
+\newblock Why “cultural matters” matter: Culture talk as the mobilization
+  of cultural capital in interaction.
+\newblock {\em Poetics}, 58:1--17.
+
 \bibitem[Marin and Hampton, 2007]{marin2007simplifying-74e}
 Marin, A. and Hampton, K.~N. (2007).
 \newblock Simplifying the personal network name generator: Alternatives to
@@ -225,11 +253,6 @@ Marsden, P.~V. and Campbell, K.~E. (1984).
 \newblock {\em Social forces; a scientific medium of social study and
   interpretation}, 63(2):482.
 
-\bibitem[Martin and Yeung, 2006]{martin2006}
-Martin, J.~L. and Yeung, K.-T. (2006).
-\newblock Persistence of close personal ties over a 12-year period.
-\newblock {\em Social Networks}, 28(4):331--362.
-
 \bibitem[{McFarland} et~al., 2014]{mcfarland2014network-735}
 {McFarland}, D.~A., Moody, J., Diehl, D., Smith, J.~A., and Thomas, R.~J.
   (2014).
@@ -246,6 +269,17 @@ McPherson, M., Smith-Lovin, L., and Cook, J.~M. (2001).
 \newblock Birds of a feather: Homophily in social networks.
 \newblock {\em Annual Review of Sociology}, 27(1):415--444.
 
+\bibitem[Meuleman, 2021]{meuleman2021cultural-094}
+Meuleman, R. (2021).
+\newblock Cultural connections: the relation between cultural tastes and
+  socioeconomic network resources.
+\newblock {\em Poetics}, 86:101540.
+
+\bibitem[Meuleman and Jæger, 2023]{meuleman2023cultural-eab}
+Meuleman, R. and Jæger, M.~M. (2023).
+\newblock Cultural talk or cultural walk? highbrow tastes and network quality.
+\newblock {\em Social science research}, 111:102855.
+
 \bibitem[Mize, 2019]{mize2019best}
 Mize, T.~D. (2019).
 \newblock Best practices for estimating, interpreting, and presenting nonlinear
@@ -261,6 +295,12 @@ Morgan, D.~L., Neal, M.~B., and Carder, P. (1997).
 {R Core Team} (2026).
 \newblock {\em R: A Language and Environment for Statistical Computing}.
 \newblock R Foundation for Statistical Computing, Vienna, Austria.
+
+\bibitem[Rivera et~al., 2010]{rivera2010dynamics-e3e}
+Rivera, M.~T., Soderstrom, S.~B., and Uzzi, B. (2010).
+\newblock Dynamics of dyads in social networks: Assortative, relational, and
+  proximity mechanisms.
+\newblock {\em Annual review of sociology}, 36(1):91--115.
 
 \bibitem[Roy et~al., 2022]{roy2022turnover}
 Roy, C., Bhattacharya, K., Dunbar, R. I.~M., and Kaski, K. (2022).
@@ -317,10 +357,5 @@ Wellman, B., Wong, R. Y.-L., Tindall, D., and Nazer, N. (1997).
 \newblock A decade of network change: Turnover, persistence and stability in
   personal communities.
 \newblock {\em Social Networks}, 19(1):27--50.
-
-\bibitem[Werner and Parmelee, 1979]{werner1979}
-Werner, C. and Parmelee, P. (1979).
-\newblock Similarity of leisure activities and friendship selection.
-\newblock {\em Personality and Social Psychology Bulletin}, 5(2):240--242.
 
 \end{thebibliography}
