@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.8.31)  24 SEP 2026 18:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2026.8.31)  24 SEP 2026 19:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -735,17 +735,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
-Overfull \hbox (2.86469pt too wide) in paragraph at lines 90--91
-\T1/lmr/m/n/12 (-20) If shared cultural knowledge protects ties from decay, the
-n a \T1/lmr/m/it/12 (-20) lack \T1/lmr/m/n/12 (-20) of mutual cultural knowledg
-e---
- []
-
-[5]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 14.
- (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [6]
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -763,8 +757,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-)
-(./Tabs/desc_cat.tex
+
+[8]) (./Tabs/desc_cat.tex
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -773,7 +767,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-) [8] [9] [10] (./Tabs/taste_stability.tex
+) [9] [10] (./Tabs/taste_stability.tex
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -834,7 +828,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-) [19] [20] (./Tabs/robustness_models.tex
+) (./Tabs/robustness_models.tex
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -843,8 +837,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-)
-[21] [22] [23] [24]
+) [19]
+[20] [21] [22] [23] [24]
 <Plots/main_effects.png, id=511, 469.755pt x 303.534pt>
 File: Plots/main_effects.png Graphic file (type png)
 <use Plots/main_effects.png>
@@ -870,10 +864,10 @@ ne 308.
 ] [29] [30]) [31] (./manuscript-R1.aux) ) 
 Here is how much of TeX's memory you used:
  17501 strings out of 478051
- 306903 string characters out of 5840943
- 1911330 words of memory out of 5000000
+ 306909 string characters out of 5840943
+ 1927330 words of memory out of 5000000
  36919 multiletter control sequences out of 15000+600000
- 620193 words of font info for 254 fonts, out of 8000000 for 9000
+ 620235 words of font info for 254 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  89i,13n,101p,1592b,1163s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf/fonts/enc/dvips/lm/l
@@ -890,7 +884,7 @@ s/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb><
 /public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on manuscript-R1.pdf (31 pages, 692667 bytes).
+Output written on manuscript-R1.pdf (31 pages, 693147 bytes).
 PDF statistics:
  734 PDF objects out of 1000 (max. 8388607)
  655 compressed objects within 7 object streams

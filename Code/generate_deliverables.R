@@ -1081,7 +1081,7 @@ dislike_lines <- c(
   "\\begin{talltblr}[         %% tabularray outer open",
   "caption={Sensitivity Analysis: Decomposing Shared Positive Interests versus Shared Disinterest\\label{tbl-dislikes}},",
   "note{}={+ p \\num{< 0.1}, * p \\num{< 0.05}, ** p \\num{< 0.01}, *** p \\num{< 0.001}},",
-  sprintf("note{ }={Note: All models include controls for ego and alter gender identity, gender interaction, race homophily, wave transition fixed effects, and ego random intercepts ($N = %s$ dyad-periods across %d egos). Model 1 is the primary aggregated matching model. Model 2 decomposes closed-form matching into exact positive interest matches and shared disinterest. Model 3 isolates strong positive matches (both rating interest as ``Very much'').},",
+  sprintf("note{ }={Note: All models include controls for ego and alter gender identity, gender interaction, race homophily, wave transition fixed effects, and ego random intercepts ($N = %s$ dyad-periods across %d egos). Model 1 is the primary aggregated matching model. Model 2 decomposes closed-form matching into exact positive interest matches and shared disinterest. Model 3 isolates strong positive matches (ego rating both self and alter as ``Very much''). All alter ratings are ego-reported perceptions, not direct alter self-reports.},",
           format(nobs(mod_decomp1), big.mark = ","), length(unique(model.frame(mod_decomp1)$egoid))),
   "]                     %% tabularray outer close",
   "{                     %% tabularray inner open",
