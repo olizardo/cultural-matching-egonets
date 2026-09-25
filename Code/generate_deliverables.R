@@ -51,6 +51,38 @@ df_period <- readRDS(here("data", "processed", "adjacent_waves.rds")) %>%
 dir.create(here("Tabs"), showWarnings = FALSE, recursive = TRUE)
 dir.create(here("Plots"), showWarnings = FALSE, recursive = TRUE)
 
+# ------------------------------------------------------------------------------
+# DIAGNOSTIC: Node Persistence / Ego Survey Retention (Section 3.1, Response
+# to Reviewers Point 8). "Waves completed" is defined at the level of the
+# *network* survey instrument (i.e., whether an ego submitted a nomination
+# roster in a given wave) -- not the demographics survey, which is a distinct
+# instrument with different completion patterns. This reproduces the panel
+# retention figures cited in the manuscript (N unique egos, mean/median waves
+# completed, and the shares completing >= 4 and >= 6 of the 8 survey waves).
+# ------------------------------------------------------------------------------
+nets_rds_path <- "/home/omarlizardo/projects/NETWORKS/NetSense/Data/network_surveys_longitudinal_clean.rds"
+if (file.exists(nets_rds_path)) {
+  nets_raw <- readRDS(nets_rds_path)
+  waves_per_ego <- nets_raw %>%
+    mutate(egoid = sub("\\.0+$", "", as.character(sender))) %>%
+    filter(!is.na(sender)) %>%
+    distinct(egoid, wave) %>%
+    count(egoid, name = "n_waves")
+  n_ego_pop <- nrow(waves_per_ego)
+  n_ge4 <- sum(waves_per_ego$n_waves >= 4)
+  n_ge6 <- sum(waves_per_ego$n_waves >= 6)
+  message(sprintf(
+    "      Diagnostic: node persistence across the full NetSense network-survey population (N = %d egos): Mean = %.2f waves, Median = %.0f waves, >=4 waves: %d (%.1f%%), >=6 waves: %d (%.1f%%)",
+    n_ego_pop, mean(waves_per_ego$n_waves), median(waves_per_ego$n_waves), n_ge4, 100 * n_ge4 / n_ego_pop, n_ge6, 100 * n_ge6 / n_ego_pop
+  ))
+  # Note: this counts a wave as "completed" if the ego appears at least once
+  # as a sender in that wave's roster, after excluding rows with a missing
+  # sender ID (588 rows; leaving them in would inflate the unique-ego count
+  # to 189 via a spurious "NA" ego). With NA senders excluded, this exactly
+  # reproduces the manuscript's reported N = 188, mean = 5.12, median = 5,
+  # 80.3% (>= 4 waves), and 48.9% (>= 6 waves).
+}
+
 # ==============================================================================
 # SECTION 1: DESCRIPTIVE STATISTICS (TABLES 1 & 2)
 # ==============================================================================
@@ -327,6 +359,41 @@ mod_embed <- glmer(
   data = df_period, family = binomial(link = "logit"), control = glmer_ctrl, nAGQ = 0
 )
 
+# ------------------------------------------------------------------------------
+# SUPPLEMENTARY DIAGNOSTICS: Structural Embeddedness (Response to Reviewers, Point 2)
+# Reproduces two figures cited in the response letter/manuscript that are not
+# otherwise written to any Tabs/ output: (1) the normalized closure ratio, a
+# second embeddedness operationalization alongside the raw common_alters
+# count, and (2) the embeddedness OR restricted to waves where the
+# alter-alter acquaintance matrix was actually administered (all waves except
+# Wave 6, where common_alters_std is imputed to 0 and absorbed by wave fixed
+# effects).
+# ------------------------------------------------------------------------------
+triadic_closure_stats <- summarise(
+  df_period,
+  n = sum(!is.na(triadic_closure)),
+  mean = mean(triadic_closure, na.rm = TRUE),
+  sd = sd(triadic_closure, na.rm = TRUE),
+  min = min(triadic_closure, na.rm = TRUE),
+  max = max(triadic_closure, na.rm = TRUE)
+)
+message(sprintf(
+  "      Diagnostic: normalized closure ratio (N = %d): Mean = %.3f, SD = %.3f, range [%.2f, %.2f]",
+  triadic_closure_stats$n, triadic_closure_stats$mean, triadic_closure_stats$sd,
+  triadic_closure_stats$min, triadic_closure_stats$max
+))
+
+mod_embed_wave_measured <- glmer(
+  as.formula(paste("persisted ~ num_match_closed + open_match_count + num_unknown + common_alters_std +", ctrl_vars, "+ (1 | egoid)")),
+  data = filter(df_period, wave != 6), family = binomial(link = "logit"), control = glmer_ctrl, nAGQ = 0
+)
+s_embed_wm <- summary(mod_embed_wave_measured)$coefficients
+message(sprintf(
+  "      Diagnostic: structural embeddedness OR restricted to waves with a measured alter-alter matrix (N = %d, excludes Wave 6): OR = %.3f, z = %.2f, p = %.4f",
+  nobs(mod_embed_wave_measured), exp(s_embed_wm["common_alters_std", "Estimate"]),
+  s_embed_wm["common_alters_std", "z value"], s_embed_wm["common_alters_std", "Pr(>|z|)"]
+))
+
 # Helper function to extract odds ratios, SEs, and formatting
 get_coefs <- function(mod) {
   s <- summary(mod)$coefficients
@@ -491,6 +558,10 @@ message("[4/5] Estimating closeness interactions and generating Figure 2...")
 
 ctrl_vars_int <- "common_alters_std + same_dorm + is_friend + race_homophily + freq_daily + female_factor * alterfemale_factor + duration_c + duration_sq_c + period"
 
+# Full control set (adds structural embeddedness to the base control block),
+# used by the Section 6 decomposition models so they are nested versions of mod_embed.
+ctrl_vars_full <- paste0("common_alters_std + ", ctrl_vars)
+
 mod_close_int_closed <- glmer(
   as.formula(paste("persisted ~ num_match_closed * close_factor +", ctrl_vars_int, "+ (1 | egoid)")),
   data = df_period, family = binomial(link = "logit"), control = glmer_ctrl, nAGQ = 0
@@ -574,7 +645,7 @@ ggsave(here("Plots", "interaction_closeness.png"), plot = p_int, width = 6.5, he
 # ==============================================================================
 message("[5/5] Estimating sensitivity models (first dissolution & ego FE), Table 4, and Figure 3...")
 
-# Sensitivity Model 1: Absorbing First Dissolution (First continuous spell only)
+# Sensitivity Model 1: Absorbing First Decay (First continuous spell only)
 df_period_spells <- df_period %>%
   arrange(egoid, alterid, wave) %>%
   group_by(egoid, alterid) %>%
@@ -607,7 +678,7 @@ mod_fe <- clogit(
   method = "efron"
 )
 
-# Table 4: Sensitivity Models (Absorbing First Dissolution and Ego Fixed-Effects)
+# Table 4: Sensitivity Models (Absorbing First Decay and Ego Fixed-Effects)
 s_first <- summary(mod_first)$coefficients
 s_fe <- summary(mod_fe)$coefficients
 
@@ -630,7 +701,7 @@ rob_lines <- c(
   "\\begin{table}[htbp]",
   "\\centering",
   "\\begin{talltblr}[         %% tabularray outer open",
-  "caption={Sensitivity Models: Absorbing First Dissolution and Ego Fixed-Effects\\label{tbl-robustness-models}},",
+  "caption={Sensitivity Models: Absorbing First Decay and Ego Fixed-Effects\\label{tbl-robustness-models}},",
   "note{}={+ p \\num{< 0.1}, * p \\num{< 0.05}, ** p \\num{< 0.01}, *** p \\num{< 0.001}},",
   "note{ }={Note: Model 1 restricts follow-up strictly to the initial continuous tie spell until first tie decay or censoring, excluding all subsequent recurrent/rekindled spells. Model 2 stratifies the likelihood by ego (conditional logit), isolating within-ego variation. Both models adjust for alter gender and wave transition fixed effects; Model 1 also includes ego gender and an ego random intercept.},",
   "]                     %% tabularray outer close",
@@ -820,14 +891,18 @@ df_period_cc <- df_period %>%
     alter_is_ego = alterid %in% unique(df_period$egoid)
   )
 
-form_crossed <- as.formula(paste("persisted ~ num_match_closed + open_match_count + num_unknown +", ctrl_vars, "+ (1 | egoid) + (1 | alterid)"))
+# Use ctrl_vars_full (adds common_alters_std) so structural embeddedness is
+# estimated consistently across all four specifications in Table 5 -- the
+# manuscript text and response letter both report embeddedness ORs for the
+# crossed/dyad/excl.-alter-ego models, so those models must actually include it.
+form_crossed <- as.formula(paste("persisted ~ num_match_closed + open_match_count + num_unknown +", ctrl_vars_full, "+ (1 | egoid) + (1 | alterid)"))
 fit_crossed <- glmer(form_crossed, data = df_period_cc, family = binomial, control = glmer_ctrl, nAGQ = 0)
 
-form_dyad <- as.formula(paste("persisted ~ num_match_closed + open_match_count + num_unknown +", ctrl_vars, "+ (1 | egoid) + (1 | dyad_id)"))
+form_dyad <- as.formula(paste("persisted ~ num_match_closed + open_match_count + num_unknown +", ctrl_vars_full, "+ (1 | egoid) + (1 | dyad_id)"))
 fit_dyad <- glmer(form_dyad, data = df_period_cc, family = binomial, control = glmer_ctrl, nAGQ = 0)
 
 df_no_alter_ego <- df_period_cc %>% filter(!alter_is_ego)
-form_no_ae <- as.formula(paste("persisted ~ num_match_closed + open_match_count + num_unknown +", ctrl_vars, "+ (1 | egoid)"))
+form_no_ae <- as.formula(paste("persisted ~ num_match_closed + open_match_count + num_unknown +", ctrl_vars_full, "+ (1 | egoid)"))
 fit_no_alter_ego <- glmer(form_no_ae, data = df_no_alter_ego, family = binomial, control = glmer_ctrl, nAGQ = 0)
 
 get_full_coefs <- function(mod, name) {
@@ -871,7 +946,8 @@ cc_lines <- c(
   "\\begin{talltblr}[         %% tabularray outer open",
   "caption={Sensitivity Analysis: Cross-Classified Random Effects and Dyadic Clustering Models\\label{tbl-cross-classified}},",
   "note{}={+ p \\num{< 0.1}, * p \\num{< 0.05}, ** p \\num{< 0.01}, *** p \\num{< 0.001}},",
-  "note{ }={Note: All models control for ego and alter gender identity, gender interaction, race homophily, and wave transition fixed effects. Model 1 is the primary hierarchical random-intercept model. Model 2 estimates crossed random intercepts for both egos and alters. Model 3 specifies random intercepts for egos and unique undirected dyads. Model 4 excludes the 389 dyad-periods where alter is also a survey ego.},",
+  sprintf("note{ }={Note: All models control for ego and alter gender identity, gender interaction, race homophily, structural embeddedness, and wave transition fixed effects. Model 1 is the primary hierarchical random-intercept model. Model 2 estimates crossed random intercepts for both egos and alters. Model 3 specifies random intercepts for egos and unique undirected dyads. Model 4 excludes the %d dyad-periods where alter is also a survey ego, within the complete-case modeled sample.},",
+          nobs(mod_embed) - nobs(fit_no_alter_ego)),
   "]                     %% tabularray outer close",
   "{                     %% tabularray inner open",
   "width=\\linewidth,",
@@ -908,8 +984,11 @@ for (t in names(display_terms_cc)) {
   cc_lines <- c(cc_lines, sprintf(" & %s \\\\", paste(row_ses, collapse = " & ")))
 }
 
-n_obs <- c(nrow(df_period_cc), nrow(df_period_cc), nrow(df_period_cc), nrow(df_no_alter_ego))
-n_egos <- c(length(unique(df_period_cc$egoid)), length(unique(df_period_cc$egoid)), length(unique(df_period_cc$egoid)), length(unique(df_no_alter_ego$egoid)))
+# Report the actual complete-case N used by each fitted model (nobs()), not the
+# raw pre-NA-drop row count of df_period_cc/df_no_alter_ego -- glmer silently
+# drops rows with missing covariates, so these can differ from nrow().
+n_obs <- sapply(list(mod_embed, fit_crossed, fit_dyad, fit_no_alter_ego), nobs)
+n_egos <- sapply(list(mod_embed, fit_crossed, fit_dyad, fit_no_alter_ego), function(mod) length(unique(model.frame(mod)$egoid)))
 var_ego_str <- sapply(list(mod_embed, fit_crossed, fit_dyad, fit_no_alter_ego), function(mod) {
   vc <- as.data.frame(VarCorr(mod))
   sprintf("%.3f", vc$sdcor[vc$grp == "egoid"])
@@ -1002,7 +1081,8 @@ dislike_lines <- c(
   "\\begin{talltblr}[         %% tabularray outer open",
   "caption={Sensitivity Analysis: Decomposing Shared Positive Interests versus Shared Disinterest\\label{tbl-dislikes}},",
   "note{}={+ p \\num{< 0.1}, * p \\num{< 0.05}, ** p \\num{< 0.01}, *** p \\num{< 0.001}},",
-  "note{ }={Note: All models include controls for ego and alter gender identity, gender interaction, race homophily, wave transition fixed effects, and ego random intercepts ($N = 5,584$ dyad-periods across $182$ egos). Model 1 is the primary aggregated matching model. Model 2 decomposes closed-form matching into exact positive interest matches and shared disinterest. Model 3 isolates strong positive matches (both rating interest as ``Very much'').},",
+  sprintf("note{ }={Note: All models include controls for ego and alter gender identity, gender interaction, race homophily, wave transition fixed effects, and ego random intercepts ($N = %s$ dyad-periods across %d egos). Model 1 is the primary aggregated matching model. Model 2 decomposes closed-form matching into exact positive interest matches and shared disinterest. Model 3 isolates strong positive matches (both rating interest as ``Very much'').},",
+          format(nobs(mod_decomp1), big.mark = ","), length(unique(model.frame(mod_decomp1)$egoid))),
   "]                     %% tabularray outer close",
   "{                     %% tabularray inner open",
   "width=\\linewidth,",
@@ -1045,8 +1125,9 @@ dislike_lines <- c(
   dislike_lines,
   sprintf("Ego Random Intercept SD ($\\sigma_u$) & \\num{%.3f} & \\num{%.3f} & \\num{%.3f} \\\\", 
           as.data.frame(VarCorr(mod_embed))$sdcor[1], as.data.frame(VarCorr(mod_decomp1))$sdcor[1], as.data.frame(VarCorr(mod_decomp2))$sdcor[1]),
-  sprintf("Dyad-Periods ($N$) & \\num{%d} & \\num{%d} & \\num{%d} \\\\", nrow(df_decomposed), nrow(df_decomposed), nrow(df_decomposed)),
-  sprintf("Unique Egos & \\num{%d} & \\num{%d} & \\num{%d} \\\\", length(unique(df_decomposed$egoid)), length(unique(df_decomposed$egoid)), length(unique(df_decomposed$egoid))),
+  sprintf("Dyad-Periods ($N$) & \\num{%d} & \\num{%d} & \\num{%d} \\\\", nobs(mod_embed), nobs(mod_decomp1), nobs(mod_decomp2)),
+  sprintf("Unique Egos & \\num{%d} & \\num{%d} & \\num{%d} \\\\",
+          length(unique(model.frame(mod_embed)$egoid)), length(unique(model.frame(mod_decomp1)$egoid)), length(unique(model.frame(mod_decomp2)$egoid))),
   "\\end{talltblr}",
   "\\end{table}"
 )

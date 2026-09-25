@@ -68,6 +68,18 @@ The primary dependencies include `tidyverse`, `lme4`, `survival`, `marginaleffec
 
 ---
 
+## 🔍 Reproducibility Note: Supplementary Diagnostics
+
+`Code/generate_deliverables.R` prints three supplementary figures to the console during the run that are cited in `response_to_reviewers.md`/`.tex` and `manuscript-R1.tex` but are not written to any file in `Tabs/`:
+
+* **Node persistence / ego panel retention** (right after the analytic panel is built): unique egos in the full NetSense network-survey population, mean/median waves completed, and the shares completing ≥ 4 and ≥ 6 of the 8 waves. Requires `network_surveys_longitudinal_clean.rds`.
+* **Normalized closure ratio** (a second structural-embeddedness metric alongside the raw common-alters count reported in Table 1): mean, SD, and range.
+* **Structural embeddedness OR restricted to waves with a measured alter-alter matrix** (excludes Wave 6, when the acquaintance grid was not administered).
+
+These three figures previously existed only as hand-typed numbers with no corresponding code, having originated in an earlier exploratory `analysis.qmd` session. They are now recomputed from source on every pipeline run; check the console/log output of `Rscript Code/generate_deliverables.R` against the response letter if these figures ever need to be re-verified.
+
+---
+
 ## 📝 License & Citation
 
 If you use the materials or code in this repository, please cite the forthcoming paper or project repository appropriately.

@@ -1,15 +1,14 @@
 # Fdb version 4
-["bibtex manuscript-R1"] 1790212102 "manuscript-R1.aux" "manuscript-R1.bbl" "manuscript-R1" 1790212109 0
+["bibtex manuscript-R1"] 1790300997 "manuscript-R1.aux" "manuscript-R1.bbl" "manuscript-R1" 1790301003 0
   "./manuscript_citations.bib" 1790211889 26595 03089fa64e73b0a04d2baf9e4fbe7304 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "manuscript-R1.aux" 1790212109 28674 b99b97a9f70f850cde6c43926673c004 "pdflatex"
+  "manuscript-R1.aux" 1790301003 28578 59982978315cfed60cc2b622febbb12f "pdflatex"
   (generated)
   "manuscript-R1.bbl"
   "manuscript-R1.blg"
   (rewritten before read)
-["pdflatex"] 1790212102 "/home/omarlizardo/projects/NETWORKS/cultural-matching-egonets/manuscript-R1.tex" "manuscript-R1.pdf" "manuscript-R1" 1790212109 0
+["pdflatex"] 1790300997 "manuscript-R1.tex" "manuscript-R1.pdf" "manuscript-R1" 1790301003 0
   "/etc/texmf/web2c/texmf.cnf" 1788206240 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/omarlizardo/projects/NETWORKS/cultural-matching-egonets/manuscript-R1.tex" 1790212064 69222 07390373f26deb4e75b7579f9c00af75 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm" 1136768653 3584 f80ddd985bd00e29e9a6047ebd9d4781 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -158,19 +157,19 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1681034085 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1788206246 128028 f533b797fba58d231669ea19e894e23e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788206257 6475499 fb4e6b2646b507c942999532e4f51627 ""
-  "Plots/fe_predicted_probabilities.png" 1789494240 111113 13546acecd28c520abcced47b231c2c7 ""
-  "Plots/interaction_closeness.png" 1789494229 124710 670a5ec96216992e9432125104d09b86 ""
-  "Plots/main_effects.png" 1789494227 79232 dbc641ac59a3207f5d7f245bca1bd32a ""
-  "Tabs/cross_classified_models.tex" 1789494241 3235 8d429953de5560a15ceb9fe4fb05f6a4 ""
-  "Tabs/desc_cat.tex" 1789494222 1298 f4216f48849261a2044f109c3e3dee02 ""
-  "Tabs/desc_cont.tex" 1789494222 978 97976365a9dfc9c0a90ba5b7077576e6 ""
-  "Tabs/dislike_models.tex" 1789504993 3105 3e313d27a5a81a1ad1efe16eeded9b05 ""
-  "Tabs/main_models.tex" 1789494224 2899 948bb648c9c505fd88b2f416adba4d7f ""
-  "Tabs/robustness_models.tex" 1789494239 2422 14c9ec9cb1846b9e99dc0b83d3f9fb8c ""
-  "Tabs/taste_stability.tex" 1789494223 1933 ba053ba56b5f21c02aa86ee7debf7e2d ""
-  "manuscript-R1.aux" 1790212109 28674 b99b97a9f70f850cde6c43926673c004 "pdflatex"
-  "manuscript-R1.bbl" 1790212102 14558 531f6e98afd39e24a72e4e7b0fbbaff8 "bibtex manuscript-R1"
-  "manuscript-R1.tex" 1790212064 69222 07390373f26deb4e75b7579f9c00af75 ""
+  "Plots/fe_predicted_probabilities.png" 1790300981 111113 13546acecd28c520abcced47b231c2c7 ""
+  "Plots/interaction_closeness.png" 1790300973 124710 670a5ec96216992e9432125104d09b86 ""
+  "Plots/main_effects.png" 1790300970 79232 dbc641ac59a3207f5d7f245bca1bd32a ""
+  "Tabs/cross_classified_models.tex" 1790300982 3378 2cdcd41b44085578e2cba3692d0eaf85 ""
+  "Tabs/desc_cat.tex" 1790300967 1298 f4216f48849261a2044f109c3e3dee02 ""
+  "Tabs/desc_cont.tex" 1790300967 978 97976365a9dfc9c0a90ba5b7077576e6 ""
+  "Tabs/dislike_models.tex" 1790300983 3103 66e5233f506504c8e8e22bf8278e6dd6 ""
+  "Tabs/main_models.tex" 1790300969 2899 948bb648c9c505fd88b2f416adba4d7f ""
+  "Tabs/robustness_models.tex" 1790300980 2416 55a4545e4f2ee9db34c1d44f0a88ea0b ""
+  "Tabs/taste_stability.tex" 1790300968 1933 ba053ba56b5f21c02aa86ee7debf7e2d ""
+  "manuscript-R1.aux" 1790301003 28578 59982978315cfed60cc2b622febbb12f "pdflatex"
+  "manuscript-R1.bbl" 1790300997 14558 531f6e98afd39e24a72e4e7b0fbbaff8 "bibtex manuscript-R1"
+  "manuscript-R1.tex" 1790300952 69558 afd5a45d56697022cf38aa5ca7e2fd4c ""
   (generated)
   "manuscript-R1.aux"
   "manuscript-R1.log"
